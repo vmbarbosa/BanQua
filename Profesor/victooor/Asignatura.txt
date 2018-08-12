@@ -1,0 +1,5 @@
+historia;HIS123;es acerca del pasado;
+matematicas;MAT145;tiene numeros pero tambien letras;
+español;ESP849;trata de un idioma romance;
+Ingles;ING456;Lo hablan los gringos;
+Antropologia;4654;Antro del pologo;
