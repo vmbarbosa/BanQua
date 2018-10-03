@@ -249,7 +249,7 @@ public class Principal extends javax.swing.JFrame {
 
         Foto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Foto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_256.png"))); // NOI18N
-        PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 190));
+        PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 180, 200));
 
         BottonHome.setBackground(new java.awt.Color(128, 156, 237));
         BottonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2302(0)_48.png"))); // NOI18N
