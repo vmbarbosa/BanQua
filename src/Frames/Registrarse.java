@@ -93,8 +93,7 @@ public class Registrarse extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel2.setBackground(new java.awt.Color(0, 87, 116));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-cerrar-ventana-40.png"))); // NOI18N
@@ -117,8 +116,7 @@ public class Registrarse extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel1.setBackground(new java.awt.Color(0, 103, 142));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -219,7 +217,7 @@ public class Registrarse extends javax.swing.JFrame {
         jPanel1.add(Contra, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel7.setForeground(new java.awt.Color(255, 204, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Las contraseñas no son iguales.");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -232,7 +230,7 @@ public class Registrarse extends javax.swing.JFrame {
         jPanel1.add(jLabel7, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel8.setForeground(new java.awt.Color(255, 204, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("El campo de la cedula es un campo de solo numeros.");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -244,9 +242,10 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 40, 0, 31);
         jPanel1.add(jLabel8, gridBagConstraints);
 
-        BottonRegistrar.setBackground(new java.awt.Color(0, 102, 102));
         BottonRegistrar.setText("Registrar");
-        BottonRegistrar.setColorNormal(new java.awt.Color(0, 102, 102));
+        BottonRegistrar.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonRegistrar.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonRegistrar.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonRegistrarActionPerformed(evt);
@@ -277,9 +276,11 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(20, 2, 0, 31);
         jPanel1.add(VerificarContra1, gridBagConstraints);
 
-        BottonIngresarFoto.setBackground(new java.awt.Color(0, 102, 102));
+        BottonIngresarFoto.setBackground(new java.awt.Color(128, 156, 237));
         BottonIngresarFoto.setText("Ingresar foto de perfil");
-        BottonIngresarFoto.setColorNormal(new java.awt.Color(0, 102, 102));
+        BottonIngresarFoto.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonIngresarFoto.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonIngresarFoto.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonIngresarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonIngresarFotoActionPerformed(evt);
@@ -295,7 +296,7 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
         jPanel1.add(BottonIngresarFoto, gridBagConstraints);
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(128, 141, 238));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(Foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 200));
 

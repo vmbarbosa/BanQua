@@ -47,8 +47,7 @@ public class InicioSeccion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel2.setBackground(new java.awt.Color(0, 87, 116));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-cerrar-ventana-40.png"))); // NOI18N
@@ -62,13 +61,13 @@ public class InicioSeccion extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel1.setBackground(new java.awt.Color(0, 103, 142));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        rSButtonMetro1.setBackground(new java.awt.Color(0, 102, 102));
         rSButtonMetro1.setText("Ingresar");
-        rSButtonMetro1.setColorNormal(new java.awt.Color(0, 102, 102));
+        rSButtonMetro1.setColorHover(new java.awt.Color(128, 188, 255));
+        rSButtonMetro1.setColorNormal(new java.awt.Color(128, 156, 237));
+        rSButtonMetro1.setColorPressed(new java.awt.Color(128, 140, 207));
         rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSButtonMetro1ActionPerformed(evt);
@@ -83,9 +82,10 @@ public class InicioSeccion extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(21, 16, 17, 26);
         jPanel1.add(rSButtonMetro1, gridBagConstraints);
 
-        ButtonRecuperarContraseña.setBackground(new java.awt.Color(0, 102, 102));
         ButtonRecuperarContraseña.setText("Recuperar Contraseña");
-        ButtonRecuperarContraseña.setColorNormal(new java.awt.Color(0, 102, 102));
+        ButtonRecuperarContraseña.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonRecuperarContraseña.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonRecuperarContraseña.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonRecuperarContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRecuperarContraseñaActionPerformed(evt);
@@ -137,9 +137,10 @@ public class InicioSeccion extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(17, 0, 7, 11);
         jPanel1.add(Password, gridBagConstraints);
 
-        BottonRegistro.setBackground(new java.awt.Color(0, 102, 102));
-        BottonRegistro.setText("Registrarce");
-        BottonRegistro.setColorNormal(new java.awt.Color(0, 102, 102));
+        BottonRegistro.setText("Registrar");
+        BottonRegistro.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonRegistro.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonRegistro.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonRegistroActionPerformed(evt);

@@ -27,14 +27,7 @@
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="0" type="rgb"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-            <MatteColorBorder>
-              <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
-            </MatteColorBorder>
-          </Border>
+          <Color blue="74" green="57" red="0" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -66,14 +59,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="0" type="rgb"/>
-        </Property>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-            <MatteColorBorder>
-              <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
-            </MatteColorBorder>
-          </Border>
+          <Color blue="8e" green="67" red="0" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -86,12 +72,15 @@
       <SubComponents>
         <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro1">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Ingresar"/>
+            <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="bc" red="80" type="rgb"/>
+            </Property>
             <Property name="colorNormal" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
+              <Color blue="ed" green="9c" red="80" type="rgb"/>
+            </Property>
+            <Property name="colorPressed" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cf" green="8c" red="80" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -105,12 +94,15 @@
         </Component>
         <Component class="rsbuttom.RSButtonMetro" name="ButtonRecuperarContrase&#xf1;a">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Recuperar Contrase&#xf1;a"/>
+            <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="bc" red="80" type="rgb"/>
+            </Property>
             <Property name="colorNormal" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
+              <Color blue="ed" green="9c" red="80" type="rgb"/>
+            </Property>
+            <Property name="colorPressed" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cf" green="8c" red="80" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -170,12 +162,15 @@
         </Component>
         <Component class="rsbuttom.RSButtonMetro" name="BottonRegistro">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
+            <Property name="text" type="java.lang.String" value="Registrar"/>
+            <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="bc" red="80" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Registrarce"/>
             <Property name="colorNormal" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="0" type="rgb"/>
+              <Color blue="ed" green="9c" red="80" type="rgb"/>
+            </Property>
+            <Property name="colorPressed" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cf" green="8c" red="80" type="rgb"/>
             </Property>
           </Properties>
           <Events>

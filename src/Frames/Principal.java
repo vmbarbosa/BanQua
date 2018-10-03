@@ -227,8 +227,8 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1050, 800));
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel2.setBackground(new java.awt.Color(0, 103, 142));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-cerrar-ventana-40.png"))); // NOI18N
@@ -242,22 +242,22 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
-        PanelMenu.setBackground(new java.awt.Color(0, 153, 153));
-        PanelMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
         PanelMenu.setPreferredSize(new java.awt.Dimension(217, 502));
         PanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Foto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Foto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_256.png"))); // NOI18N
-        PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 220));
+        PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 190));
 
-        BottonHome.setBackground(new java.awt.Color(0, 102, 102));
+        BottonHome.setBackground(new java.awt.Color(128, 156, 237));
         BottonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2302(0)_48.png"))); // NOI18N
-        BottonHome.setText("Home");
+        BottonHome.setText("Home             ");
         BottonHome.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonHome.setColorHover(new java.awt.Color(0, 153, 153));
-        BottonHome.setColorNormal(new java.awt.Color(0, 102, 102));
-        BottonHome.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonHome.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonHome.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonHome.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonHome.setFocusPainted(false);
         BottonHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonHome.addActionListener(new java.awt.event.ActionListener() {
@@ -267,13 +267,14 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 183, 42));
 
-        BottonPerfil.setBackground(new java.awt.Color(0, 102, 102));
+        BottonPerfil.setBackground(new java.awt.Color(128, 156, 237));
         BottonPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonPerfil.setText("Perfil");
         BottonPerfil.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonPerfil.setColorHover(new java.awt.Color(0, 153, 153));
-        BottonPerfil.setColorNormal(new java.awt.Color(0, 102, 102));
-        BottonPerfil.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonPerfil.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonPerfil.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonPerfil.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonPerfil.setFocusPainted(false);
         BottonPerfil.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonPerfil.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonPerfil.addActionListener(new java.awt.event.ActionListener() {
@@ -283,13 +284,14 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 183, 42));
 
-        BottonEdiInfo.setBackground(new java.awt.Color(0, 102, 102));
+        BottonEdiInfo.setBackground(new java.awt.Color(128, 156, 237));
         BottonEdiInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonEdiInfo.setText("Añadir        ");
         BottonEdiInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonEdiInfo.setColorHover(new java.awt.Color(0, 153, 153));
-        BottonEdiInfo.setColorNormal(new java.awt.Color(0, 102, 102));
-        BottonEdiInfo.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonEdiInfo.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEdiInfo.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEdiInfo.setFocusPainted(false);
         BottonEdiInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonEdiInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonEdiInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -299,13 +301,14 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonEdiInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
 
-        BottonVerInfo.setBackground(new java.awt.Color(0, 102, 102));
+        BottonVerInfo.setBackground(new java.awt.Color(128, 156, 237));
         BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
         BottonVerInfo.setText("Ver Información");
         BottonVerInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonVerInfo.setColorHover(new java.awt.Color(0, 153, 153));
-        BottonVerInfo.setColorNormal(new java.awt.Color(0, 102, 102));
-        BottonVerInfo.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonVerInfo.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonVerInfo.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonVerInfo.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonVerInfo.setFocusPainted(false);
         BottonVerInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonVerInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonVerInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -315,13 +318,14 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonVerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 183, 42));
 
-        BottonGenrExam.setBackground(new java.awt.Color(0, 102, 102));
+        BottonGenrExam.setBackground(new java.awt.Color(128, 156, 237));
         BottonGenrExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonGenrExam.setText("Crear Examen");
         BottonGenrExam.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonGenrExam.setColorHover(new java.awt.Color(0, 153, 153));
-        BottonGenrExam.setColorNormal(new java.awt.Color(0, 102, 102));
-        BottonGenrExam.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonGenrExam.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonGenrExam.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonGenrExam.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonGenrExam.setFocusPainted(false);
         BottonGenrExam.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonGenrExam.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonGenrExam.addActionListener(new java.awt.event.ActionListener() {
@@ -340,30 +344,28 @@ public class Principal extends javax.swing.JFrame {
         Home.setBackground(new java.awt.Color(204, 204, 204));
         Home.setLayout(new java.awt.BorderLayout());
 
-        jPanel8.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel8.setBackground(new java.awt.Color(0, 87, 116));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1057, Short.MAX_VALUE)
+            .addGap(0, 1059, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 538, Short.MAX_VALUE)
+            .addGap(0, 544, Short.MAX_VALUE)
         );
 
         Home.add(jPanel8, java.awt.BorderLayout.CENTER);
 
-        jPanel9.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel9.setBackground(new java.awt.Color(0, 87, 116));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1057, Short.MAX_VALUE)
+            .addGap(0, 1059, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,6 +414,11 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonGuardarFoto.setBackground(new java.awt.Color(0, 153, 153));
         ButtonGuardarFoto.setText("Guardar Foto");
+        ButtonGuardarFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonGuardarFotoActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -724,7 +731,7 @@ public class Principal extends javax.swing.JFrame {
 
         Menu.addTab("Agregar", Agregar);
 
-        Asignatura.setBackground(new java.awt.Color(204, 204, 204));
+        Asignatura.setBackground(new java.awt.Color(236, 236, 236));
         Asignatura.setLayout(new java.awt.GridBagLayout());
 
         jPanel12.setBackground(new java.awt.Color(0, 102, 102));
@@ -899,6 +906,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.ipadx = 234;
+        gridBagConstraints.weightx = 1.7;
         gridBagConstraints.insets = new java.awt.Insets(21, 10, 17, 10);
         jPanel13.add(NombreDelTema, gridBagConstraints);
 
@@ -1411,7 +1419,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 802, Short.MAX_VALUE)
+            .addGap(0, 804, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout InformeTablasLayout = new javax.swing.GroupLayout(InformeTablas);
@@ -1747,25 +1755,27 @@ public class Principal extends javax.swing.JFrame {
     private void BottonVerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfoActionPerformed
         Metodos met = new Metodos();
         met.ReincioComboBox(Asig2, Asig3, tema, nivel);
-        try {
-            Desbloqueo = false;
-            modelo = (DefaultTableModel) mostrar.getModel();
-            modelo.setColumnCount(0);
-            modelo.setRowCount(0);
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
-            int h = 0;
-            Asig2.removeAllItems();
-            Asig3.removeAllItems();
-            Asig2.addItem("...");
-            Asig3.addItem("...");
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
-            Desbloqueo = true;
-            Menu.setSelectedComponent(Ver);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        if (Menu.getSelectedComponent() != Ver) {
+            try {
+                Desbloqueo = false;
+                modelo = (DefaultTableModel) mostrar.getModel();
+                modelo.setColumnCount(0);
+                modelo.setRowCount(0);
+                sw1 = true;
+                sw2 = true;
+                sw3 = true;
+                int h = 0;
+                Asig2.removeAllItems();
+                Asig3.removeAllItems();
+                Asig2.addItem("...");
+                Asig3.addItem("...");
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
+                Desbloqueo = true;
+                Menu.setSelectedComponent(Ver);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_BottonVerInfoActionPerformed
 
@@ -1841,42 +1851,31 @@ public class Principal extends javax.swing.JFrame {
         MostarAsig(profesor);
     }//GEN-LAST:event_ButtonMostrarIZQActionPerformed
 
+
     private void ButtonAgregarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarPreguntaActionPerformed
-        Desbloqueo = false;
         String Asignatura2 = (String) ComboAsignaturaS.getSelectedItem();
         String tema = (String) ComboBoxTemas.getSelectedItem();
         Metodos e = new Metodos();
-        String nom, jor = "";
-        nom = Preguntas.getText();
+        String InfoPregunta = "";
+        int jor = 0;
+        InfoPregunta = Preguntas.getText();
         String opcNiv = (String) ComboNivel.getSelectedItem();
         if (opcNiv.equals("Facil")) {
-            jor = "1";
+            jor = 1;
         } else {
             if (opcNiv.equals("Medio")) {
-                jor = "2";
+                jor = 2;
             } else {
                 if (opcNiv.equals("Dificil")) {
-                    jor = "3";
+                    jor = 3;
                 }
             }
         }
-        String total = jor + ";" + nom + ";" + "disponible;--------;";
+        
+        String total = Integer.toString(jor) + ";" + InfoPregunta + ";" + "disponible;--------;";
         String temp;
         Asignatura a = getAsignatura(Asignatura2);
         Tema t = getTema(tema, a);
-//        Pregunta preg = new Pregunta(nom, Integer.parseInt(jor), "disponible", "--------");
-//        a.addPregunta(preg);
-//        if (opcNiv.equals("Facil")) {
-//            t.addPregunta_1(preg);
-//        } else {
-//            if (opcNiv.equals("Medio")) {
-//                t.addPregunta_2(preg);
-//            } else {
-//                if (opcNiv.equals("Dificil")) {
-//                    t.addPregunta_3(preg);
-//                }
-//            }
-//        }
         String x = "Profesor/" + usuario + "/" + Asignatura2 + "/" + tema + "/Preguntas_" + jor + ".txt";
         String y = "Profesor/" + usuario + "/" + Asignatura2 + "/Preguntas.txt";
         if (Asignatura2.equals("...")) {
@@ -1888,7 +1887,7 @@ public class Principal extends javax.swing.JFrame {
                 if (opcNiv.equals("...")) {
                     JOptionPane.showMessageDialog(null, "No ha Selccionado ninguna Dificultad.");
                 } else {
-                    if (nom.equals("")) {
+                    if (InfoPregunta.equals("")) {
                         JOptionPane.showMessageDialog(null, "No ha escrito ninguna pregunta.");
                     } else {
                         try {
@@ -1912,32 +1911,37 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboBoxTemasActionPerformed
 
     private void ButtonAgregarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarTemaActionPerformed
-        String tema = this.NombreDelTema.getText();
-        Metodos met = new Metodos();
+        String tema = NombreDelTema.getText();
         String r = (String) ComboAsignatura.getSelectedItem();
-        Asignatura as = null;
-        for (Asignatura a : profesor.getAsignaturas()) {
-            if (r.equals(a.getNombre())) {
-                as = a;
-            }
-        }
-        String x = "Profesor/" + usuario + "/" + r + "/Temas.txt";
-        String temp;
-        try {
-            temp = met.concatenar(x);
-            met.guardar(temp, x, tema + ";" + DescripcionTema.getText() + ";");
-            /*Tema t = new Tema(tema, DescripcionTema.getText(), as);*/
-            File carpeta = new File("Profesor/" + usuario + "/" + r + "/" + tema);
-            carpeta.mkdirs();
-            File fl = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_1.txt");
-            fl.createNewFile();
-            File f2 = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_2.txt");
-            f2.createNewFile();
-            File f3 = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_3.txt");
-            f3.createNewFile();
+        if (!tema.equals("")) {
+            if (!r.equals("...")) {
+                boolean verifexis = profesor.VerificarTema(tema, r, DescripcionTema.getText());
+                if (verifexis == false) {
+                    profesor.AddTema(tema, r, DescripcionTema.getText());
+                    Metodos met = new Metodos();
+                    String x = "Profesor/" + usuario + "/" + r + "/Temas.txt";
+                    String temp;
+                    try {
+                        temp = met.concatenar(x);
+                        met.guardar(temp, x, tema + ";" + DescripcionTema.getText() + ";");
+                        File carpeta = new File("Profesor/" + usuario + "/" + r + "/" + tema);
+                        carpeta.mkdirs();
+                        File fl = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_1.txt");
+                        fl.createNewFile();
+                        File f2 = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_2.txt");
+                        f2.createNewFile();
+                        File f3 = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_3.txt");
+                        f3.createNewFile();
 
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna Asignatura.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "No ha escrito el nombre del Tema.");
         }
     }//GEN-LAST:event_ButtonAgregarTemaActionPerformed
 
@@ -1952,30 +1956,31 @@ public class Principal extends javax.swing.JFrame {
     private void addAsigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAsigActionPerformed
         String Asigna = this.NombreDelaAsignatura.getText();
         String codigo = this.codMat.getText();
-        if (!Asigna.equals("")) {
-            try {
-                Metodos met = new Metodos();
-                String x = "Profesor/" + usuario + "/Asignatura.txt";
-                String temp;
+        boolean verifexis = profesor.VerificarAsignatura(Asigna, codigo);
+        if (verifexis == false) {
+            if (!Asigna.equals("") && !codigo.equals("")) {
+                try {
+                    Metodos met = new Metodos();
+                    String x = "Profesor/" + usuario + "/Asignatura.txt";
+                    String temp;
 
-                temp = met.concatenar(x);
-                met.guardar(temp, x, Asigna + ";" + codigo + ";" + this.Descripcion.getText() + ";");
-                //ComboaAsignatura.addItem(Asigna);
-                File carpeta = new File("Profesor/" + usuario + "/" + Asigna);
-                carpeta.mkdirs();
-                File fichero = new File("Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
-                fichero.createNewFile();
-                File P = new File("Profesor/" + usuario + "/" + Asigna + "/Preguntas.txt");
-                P.createNewFile();
-                Asignatura a = new Asignatura(Asigna, this.Descripcion.getText(), codigo);
-                profesor.AddAsignatura(a);
-                JOptionPane.showMessageDialog(null, "ASIGNATURA CREADA SATISFACTORIAMENTE");
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    temp = met.concatenar(x);
+                    met.guardar(temp, x, Asigna + ";" + codigo + ";" + this.Descripcion.getText() + ";");
+                    //ComboaAsignatura.addItem(Asigna);
+                    File carpeta = new File("Profesor/" + usuario + "/" + Asigna);
+                    carpeta.mkdirs();
+                    File fichero = new File("Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
+                    fichero.createNewFile();
+                    Asignatura a = new Asignatura(Asigna, this.Descripcion.getText(), codigo);
+                    profesor.AddAsignatura(a);
+                    JOptionPane.showMessageDialog(null, "Asignatura creada satisfactoriamente.");
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Asignatura y Codigo son campos obligatorios.");
             }
-
-        } else {
-            JOptionPane.showMessageDialog(null, "NO HA ESCRITO UN NOMBRE PARA LA ASIGNATURA.");
         }
     }//GEN-LAST:event_addAsigActionPerformed
 
@@ -2590,7 +2595,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void pregKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pregKeyReleased
         Metodos met = new Metodos();
-        System.out.println("entre "+preg.getText());
+        System.out.println("entre " + preg.getText());
         this.AvisoNumeros.setVisible(false);
         if (met.confNum(this.preg.getText())) {
             this.AvisoNumeros.setVisible(false);
@@ -2617,6 +2622,10 @@ public class Principal extends javax.swing.JFrame {
     private void ButtonGenerarInforme3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGenerarInforme3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonGenerarInforme3ActionPerformed
+
+    private void ButtonGuardarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGuardarFotoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonGuardarFotoActionPerformed
 
     ///METODOS!!
     private Asignatura getAsignatura(String nombre) {

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -62,6 +63,43 @@ public class Profesor {
     public void AddAsignatura(Asignatura asigna) {
         Asignaturas.add(asigna);
     }
+    
+    public void AddPreguntas(String Asig, int Nivel, String Tema, String Pregunta){
+        
+    }
+    
+    public void AddTema(String Tema, String asig, String Descripcion) {
+        for (Asignatura Asignatura1 : Asignaturas) {
+            if (Asignatura1.getNombre().equals(asig)) {
+                Tema AdTema = new Tema(Tema, Descripcion, Asignatura1);
+                Asignatura1.AddTema(AdTema);
+            }
+        }
+    }
+
+    public boolean VerificarTema(String Tema, String asig, String Descripcion) {
+        for (Asignatura Asignatura1 : Asignaturas) {
+            if (Asignatura1.getNombre().equals(asig)) {
+                Tema AdTema = new Tema(Tema, Descripcion, Asignatura1);
+                return Asignatura1.VerificarTema2(AdTema);
+            }
+        }
+        return false;
+    }
+
+    public boolean VerificarAsignatura(String asigna, String codigo) {
+        for (Asignatura Asignatura1 : Asignaturas) {
+            if (Asignatura1.getNombre().equals(asigna)) {
+                JOptionPane.showMessageDialog(null, "Esta Asginatura ya ha sido creada");
+                return true;
+            }
+            if (Asignatura1.getCodigo().equals(codigo)) {
+                JOptionPane.showMessageDialog(null, "Esta Codigo ya ha sido usado.");
+                return true;
+            }
+        }
+        return false;
+    }
 
     public ArrayList<Asignatura> getAsignaturas() {
         return this.Asignaturas;
@@ -78,7 +116,7 @@ public class Profesor {
                 for (int i = 1; i < 4; i++) {
                     Boolean verificador = false;
                     for (Pregunta preg : temas.getPreguntas(i)) {
-                        if (!preg.fecha.equals( "--------")) {
+                        if (!preg.fecha.equals("--------")) {
                             verificador = Desbloqueador(preg.fecha + "/"); //Se le pone el / extra porque el metodo desco necesita que el caracter que se le indique
                             if (verificador.equals(true)) {//es el encargado de separar los elementos en este caso año, mes y dia. qudaria algo asi yyyy/MM/dd/. 
                                 preg.setEstado("Disponible");

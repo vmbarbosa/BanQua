@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Asignatura {
     String descripcion;  //ESTO LO HIZO VALERIA
     String codigo;
     ArrayList<Tema> temas = new ArrayList();
-    ArrayList <Pregunta> preguntas = new ArrayList();
+    ArrayList<Pregunta> preguntas = new ArrayList();
 
     public Asignatura(String Nombre, String desc, String cod) {
         this.Nombre = Nombre;
@@ -45,12 +46,17 @@ public class Asignatura {
 
     /**
      * Envia los temas que esten almacenados actualmente
+     *
      * @throws FileNotFoundException
-     * @throws IOException 
+     * @throws IOException
      */
+    public void AddTema(Tema AdTema) {
+        this.getTemas().add(AdTema);
+    }
+
     public void setTemas() throws FileNotFoundException, IOException {
 
-        File f = new File("Profesor/"+usuario+"/" + Nombre + "/Temas.txt");
+        File f = new File("Profesor\\" + usuario + "\\" + Nombre + "\\Temas.txt");
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         Metodos e = new Metodos();
@@ -65,9 +71,10 @@ public class Asignatura {
             }
         }
     }
-    
+
     /**
      * Agrega un tema
+     *
      * @param t Tema recibido y lo agrega a los demas temas
      */
     public void addTema(Tema t) {
@@ -82,17 +89,30 @@ public class Asignatura {
         }
         return tema;
     }
-    
-    public String getNombre (){
+
+    public boolean VerificarTema2(Tema tema) {
+        for (Tema tema1 : temas) {
+            if (tema1.getNombre().equals(tema.getNombre())) {
+                JOptionPane.showMessageDialog(null, "El nombre ya fue usado en otro tema.");
+                return true;
+            }
+            if(tema1.getDescripcion().equals(tema.getDescripcion())){
+                JOptionPane.showMessageDialog(null, "La descripcion ya fue usada en otro tema.");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getNombre() {
         return this.Nombre;
     }
 
     public String getDescripcion() {  //ESTO LO HIZO VALERIA
         return descripcion;
     }
-    
-    
-    public ArrayList <Tema> getTemas (){
+
+    public ArrayList<Tema> getTemas() {
         return this.temas;
     }
 
@@ -104,7 +124,7 @@ public class Asignatura {
         return preguntas;
     }
 
-    public void addPregunta (Pregunta p){
+    public void addPregunta(Pregunta p) {
         preguntas.add(p);
     }
 
