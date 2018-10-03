@@ -228,7 +228,7 @@ public class Principal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1050, 800));
 
         jPanel2.setBackground(new java.awt.Color(0, 103, 142));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-cerrar-ventana-40.png"))); // NOI18N
@@ -243,6 +243,7 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
+        PanelMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         PanelMenu.setPreferredSize(new java.awt.Dimension(217, 502));
         PanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -379,8 +380,8 @@ public class Principal extends javax.swing.JFrame {
         Perfil.setBackground(new java.awt.Color(204, 204, 204));
         Perfil.setLayout(new java.awt.BorderLayout());
 
-        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel6.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         Foto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -395,8 +396,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel6.add(Foto1, gridBagConstraints);
 
         BottonEditFoto.setText("Editar foto");
-        BottonEditFoto.setColorNormal(new java.awt.Color(0, 153, 153));
-        BottonEditFoto.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonEditFoto.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEditFoto.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonEditFoto.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonEditFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonEditFotoActionPerformed(evt);
@@ -412,8 +414,10 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(20, 17, 15, 18);
         jPanel6.add(BottonEditFoto, gridBagConstraints);
 
-        ButtonGuardarFoto.setBackground(new java.awt.Color(0, 153, 153));
         ButtonGuardarFoto.setText("Guardar Foto");
+        ButtonGuardarFoto.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonGuardarFoto.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonGuardarFoto.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonGuardarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGuardarFotoActionPerformed(evt);
@@ -432,8 +436,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(2, 0));
 
-        jPanel7.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel7.setBackground(new java.awt.Color(0, 87, 116));
         jPanel7.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -513,8 +516,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel7.add(Usuario1, gridBagConstraints);
 
         BottonCamContra.setText("Cambiar contraseña");
-        BottonCamContra.setColorNormal(new java.awt.Color(0, 153, 153));
-        BottonCamContra.setColorPressed(new java.awt.Color(255, 255, 255));
+        BottonCamContra.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonCamContra.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonCamContra.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonCamContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonCamContraActionPerformed(evt);
@@ -532,8 +536,8 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jPanel7);
 
-        CambioClave.setBackground(new java.awt.Color(0, 102, 102));
-        CambioClave.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        CambioClave.setBackground(new java.awt.Color(0, 87, 116));
+        CambioClave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         CambioClave.setLayout(new java.awt.GridBagLayout());
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -595,7 +599,9 @@ public class Principal extends javax.swing.JFrame {
         CambioClave.add(NuevaContra, gridBagConstraints);
 
         ButtonCambio.setText("Hacer Cambio");
-        ButtonCambio.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonCambio.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonCambio.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonCambio.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonCambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonCambioActionPerformed(evt);
@@ -611,7 +617,7 @@ public class Principal extends javax.swing.JFrame {
         CambioClave.add(ButtonCambio, gridBagConstraints);
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel27.setForeground(new java.awt.Color(255, 204, 0));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setText("Las contraseñas no son iguales.");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -633,7 +639,7 @@ public class Principal extends javax.swing.JFrame {
         Agregar.setBackground(new java.awt.Color(204, 204, 204));
         Agregar.setLayout(new java.awt.GridBagLayout());
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(0, 87, 116));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new java.awt.BorderLayout());
 
@@ -665,7 +671,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 14, 18);
         Agregar.add(jPanel3, gridBagConstraints);
 
-        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel4.setBackground(new java.awt.Color(0, 87, 116));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setLayout(new java.awt.BorderLayout());
 
@@ -697,7 +703,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 14, 18);
         Agregar.add(jPanel4, gridBagConstraints);
 
-        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel5.setBackground(new java.awt.Color(0, 87, 116));
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel5.setLayout(new java.awt.BorderLayout());
 
@@ -734,7 +740,7 @@ public class Principal extends javax.swing.JFrame {
         Asignatura.setBackground(new java.awt.Color(236, 236, 236));
         Asignatura.setLayout(new java.awt.GridBagLayout());
 
-        jPanel12.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel12.setBackground(new java.awt.Color(0, 87, 116));
         jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel12.setLayout(new java.awt.GridBagLayout());
 
@@ -867,10 +873,10 @@ public class Principal extends javax.swing.JFrame {
 
         Menu.addTab("Asigantura", Asignatura);
 
-        Tema.setBackground(new java.awt.Color(204, 204, 204));
+        Tema.setBackground(new java.awt.Color(247, 243, 243));
         Tema.setLayout(new java.awt.GridBagLayout());
 
-        jPanel13.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel13.setBackground(new java.awt.Color(0, 87, 116));
         jPanel13.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel13.setLayout(new java.awt.GridBagLayout());
 
@@ -910,8 +916,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(21, 10, 17, 10);
         jPanel13.add(NombreDelTema, gridBagConstraints);
 
-        AgregarDescripcionTema.setBackground(new java.awt.Color(0, 102, 102));
-        AgregarDescripcionTema.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        AgregarDescripcionTema.setBackground(new java.awt.Color(0, 87, 116));
+        AgregarDescripcionTema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AgregarDescripcionTema.setForeground(new java.awt.Color(255, 255, 255));
         AgregarDescripcionTema.setText("Agregar descripcion");
         AgregarDescripcionTema.addActionListener(new java.awt.event.ActionListener() {
@@ -958,7 +964,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel13.add(jScrollPane2, gridBagConstraints);
 
         ButtonAgregarTema.setText("Agregar");
-        ButtonAgregarTema.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonAgregarTema.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonAgregarTema.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonAgregarTema.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonAgregarTema.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ButtonAgregarTema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAgregarTemaActionPerformed(evt);
@@ -988,6 +997,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 10);
         jPanel13.add(jLabel17, gridBagConstraints);
 
+        ComboAsignatura.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ComboAsignatura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1013,7 +1023,7 @@ public class Principal extends javax.swing.JFrame {
         Pregunta.setBackground(new java.awt.Color(255, 255, 255));
         Pregunta.setLayout(new java.awt.GridBagLayout());
 
-        jPanel14.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel14.setBackground(new java.awt.Color(0, 87, 116));
         jPanel14.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel14.setLayout(new java.awt.GridBagLayout());
 
@@ -1178,7 +1188,7 @@ public class Principal extends javax.swing.JFrame {
         Ver.setBackground(new java.awt.Color(204, 204, 204));
         Ver.setLayout(new java.awt.GridBagLayout());
 
-        jPanel11.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel11.setBackground(new java.awt.Color(0, 87, 116));
         jPanel11.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1207,7 +1217,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 240, 0);
         Ver.add(jPanel11, gridBagConstraints);
 
-        jPanel16.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel16.setBackground(new java.awt.Color(0, 87, 116));
         jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1267,7 +1277,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(16, 27, 1, 20);
         Ver.add(ButtonGenerarInforme, gridBagConstraints);
 
-        jPanel18.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel18.setBackground(new java.awt.Color(0, 87, 116));
         jPanel18.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1408,7 +1418,7 @@ public class Principal extends javax.swing.JFrame {
 
         Menu.addTab("Ver", Ver);
 
-        jPanel19.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel19.setBackground(new java.awt.Color(0, 87, 116));
         jPanel19.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
@@ -1443,7 +1453,7 @@ public class Principal extends javax.swing.JFrame {
 
         Info_Examen.setLayout(new java.awt.GridBagLayout());
 
-        jPanel17.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel17.setBackground(new java.awt.Color(0, 87, 116));
         jPanel17.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel17.setLayout(new java.awt.GridBagLayout());
 
@@ -1532,7 +1542,7 @@ public class Principal extends javax.swing.JFrame {
         Generar.setBackground(new java.awt.Color(204, 204, 204));
         Generar.setLayout(new java.awt.GridBagLayout());
 
-        jPanel15.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel15.setBackground(new java.awt.Color(0, 87, 116));
         jPanel15.setLayout(new java.awt.GridBagLayout());
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1690,7 +1700,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel15.add(seme, gridBagConstraints);
 
         AvisoNumeros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        AvisoNumeros.setForeground(new java.awt.Color(255, 0, 51));
+        AvisoNumeros.setForeground(new java.awt.Color(255, 204, 0));
         AvisoNumeros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AvisoNumeros.setText("*El numero de preguntas es solo numerico.");
         gridBagConstraints = new java.awt.GridBagConstraints();
