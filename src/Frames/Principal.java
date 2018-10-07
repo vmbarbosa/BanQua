@@ -65,7 +65,6 @@ public class Principal extends javax.swing.JFrame {
     static boolean sw3 = true; //boolean para preguntas
     Profesor profesor = new Profesor();
     DefaultTableModel modelo;
-    Boolean Desbloqueo = false;// Varaible para tapar huecos
 
     public Principal() {
         initComponents();
@@ -808,7 +807,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(30, 20, 0, 0);
         jPanel12.add(jLabel13, gridBagConstraints);
 
-        AgregarDescripcion.setBackground(new java.awt.Color(0, 102, 102));
+        AgregarDescripcion.setBackground(new java.awt.Color(0, 87, 116));
         AgregarDescripcion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         AgregarDescripcion.setForeground(new java.awt.Color(255, 255, 255));
         AgregarDescripcion.setText("Agregar descripcion");
@@ -826,7 +825,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel12.add(AgregarDescripcion, gridBagConstraints);
 
         addAsig.setText("Agregar");
-        addAsig.setColorNormal(new java.awt.Color(0, 153, 153));
+        addAsig.setColorHover(new java.awt.Color(128, 188, 255));
+        addAsig.setColorNormal(new java.awt.Color(128, 156, 237));
+        addAsig.setColorPressed(new java.awt.Color(128, 140, 207));
+        addAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addAsig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addAsigActionPerformed(evt);
@@ -1027,10 +1029,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel14.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel14.setLayout(new java.awt.GridBagLayout());
 
+        jLabel10.setBackground(new java.awt.Color(255, 204, 0));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(255, 204, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("Escriba la pregunta aqui.");
+        jLabel10.setText("*Escriba la pregunta aqui.");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -1083,11 +1086,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel14.add(jLabel20, gridBagConstraints);
 
         ComboBoxTemas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
-        ComboBoxTemas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxTemasActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -1140,9 +1138,10 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
         jPanel14.add(jLabel21, gridBagConstraints);
 
-        ButtonAgregarPregunta.setBackground(new java.awt.Color(0, 153, 153));
         ButtonAgregarPregunta.setText("Agregar Pregunta");
-        ButtonAgregarPregunta.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonAgregarPregunta.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonAgregarPregunta.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonAgregarPregunta.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonAgregarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAgregarPreguntaActionPerformed(evt);
@@ -1159,9 +1158,13 @@ public class Principal extends javax.swing.JFrame {
         jPanel14.add(ButtonAgregarPregunta, gridBagConstraints);
 
         ComboAsignaturaS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
-        ComboAsignaturaS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboAsignaturaSActionPerformed(evt);
+        ComboAsignaturaS.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                ComboAsignaturaSPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1194,7 +1197,9 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonMostrarIZQ.setText("Mostrar ");
         ButtonMostrarIZQ.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonMostrarIZQ.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonMostrarIZQ.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonMostrarIZQ.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonMostrarIZQ.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonMostrarIZQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarIZQActionPerformed(evt);
@@ -1222,16 +1227,22 @@ public class Principal extends javax.swing.JFrame {
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Asig2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
-        Asig2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Asig2ActionPerformed(evt);
+        Asig2.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                Asig2PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
         jPanel16.add(Asig2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, -1));
 
         ButtonMostrarCENT.setText("Mostrar");
         ButtonMostrarCENT.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonMostrarCENT.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonMostrarCENT.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonMostrarCENT.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonMostrarCENT.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonMostrarCENT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarCENTActionPerformed(evt);
@@ -1247,7 +1258,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("Los temas de una Asig");
+        jLabel36.setText("Temas de la Asignatura");
         jPanel16.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 20));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1262,7 +1273,9 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonGenerarInforme.setText("Generar Informe");
         ButtonGenerarInforme.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonGenerarInforme.setColorNormal(new java.awt.Color(0, 102, 102));
+        ButtonGenerarInforme.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonGenerarInforme.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonGenerarInforme.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonGenerarInforme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGenerarInformeActionPerformed(evt);
@@ -1282,17 +1295,25 @@ public class Principal extends javax.swing.JFrame {
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Asig3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
-        Asig3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Asig3ActionPerformed(evt);
+        Asig3.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                Asig3PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
         jPanel18.add(Asig3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 150, -1));
 
         tema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
-        tema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                temaActionPerformed(evt);
+        tema.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                temaPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
         jPanel18.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 150, -1));
@@ -1302,7 +1323,9 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonMostrarDER.setText("Mostar");
         ButtonMostrarDER.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonMostrarDER.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonMostrarDER.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonMostrarDER.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonMostrarDER.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonMostrarDER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarDERActionPerformed(evt);
@@ -1330,8 +1353,8 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Un conjunto de Preguntas");
-        jPanel18.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 190, 20));
+        jLabel6.setText("Preguntas");
+        jPanel18.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 20));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -1344,7 +1367,9 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonGenerarInforme1.setText("Generar Informe");
         ButtonGenerarInforme1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonGenerarInforme1.setColorNormal(new java.awt.Color(0, 102, 102));
+        ButtonGenerarInforme1.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonGenerarInforme1.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonGenerarInforme1.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonGenerarInforme1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGenerarInforme1ActionPerformed(evt);
@@ -1361,7 +1386,9 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonGenerarInforme2.setText("Generar Informe");
         ButtonGenerarInforme2.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonGenerarInforme2.setColorNormal(new java.awt.Color(0, 102, 102));
+        ButtonGenerarInforme2.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonGenerarInforme2.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonGenerarInforme2.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonGenerarInforme2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGenerarInforme2ActionPerformed(evt);
@@ -1378,7 +1405,9 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonGenerarInforme3.setText("Generar Informe");
         ButtonGenerarInforme3.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonGenerarInforme3.setColorNormal(new java.awt.Color(0, 102, 102));
+        ButtonGenerarInforme3.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonGenerarInforme3.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonGenerarInforme3.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonGenerarInforme3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGenerarInforme3ActionPerformed(evt);
@@ -1457,9 +1486,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel17.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel17.setLayout(new java.awt.GridBagLayout());
 
-        generarExamen.setBackground(new java.awt.Color(0, 153, 153));
         generarExamen.setText("Añadir Pregunta");
-        generarExamen.setColorNormal(new java.awt.Color(0, 153, 153));
+        generarExamen.setColorHover(new java.awt.Color(128, 188, 255));
+        generarExamen.setColorNormal(new java.awt.Color(128, 156, 237));
+        generarExamen.setColorPressed(new java.awt.Color(128, 140, 207));
         generarExamen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generarExamenActionPerformed(evt);
@@ -1500,11 +1530,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel17.add(jLabel29, gridBagConstraints);
 
         temas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
-        temas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                temasActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -1662,9 +1687,10 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 0, 6, 17);
         jPanel15.add(asigna, gridBagConstraints);
 
-        ButtonAddPreg.setBackground(new java.awt.Color(0, 153, 153));
         ButtonAddPreg.setText("Generar");
-        ButtonAddPreg.setColorNormal(new java.awt.Color(0, 153, 153));
+        ButtonAddPreg.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonAddPreg.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonAddPreg.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonAddPreg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAddPregActionPerformed(evt);
@@ -1744,7 +1770,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonGenrExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExamActionPerformed
-        Desbloqueo = false;
+
         String item = "";
         asigna.removeAllItems();
         asigna.addItem("...");
@@ -1767,7 +1793,6 @@ public class Principal extends javax.swing.JFrame {
         met.ReincioComboBox(Asig2, Asig3, tema, nivel);
         if (Menu.getSelectedComponent() != Ver) {
             try {
-                Desbloqueo = false;
                 modelo = (DefaultTableModel) mostrar.getModel();
                 modelo.setColumnCount(0);
                 modelo.setRowCount(0);
@@ -1781,7 +1806,6 @@ public class Principal extends javax.swing.JFrame {
                 Asig3.addItem("...");
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
-                Desbloqueo = true;
                 Menu.setSelectedComponent(Ver);
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -1790,24 +1814,20 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonVerInfoActionPerformed
 
     private void BottonEdiInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEdiInfoActionPerformed
-        Desbloqueo = false;
+
         Menu.setSelectedComponent(Agregar);
     }//GEN-LAST:event_BottonEdiInfoActionPerformed
 
     private void BottonPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonPerfilActionPerformed
-        Desbloqueo = false;
+
         Menu.setSelectedComponent(Perfil);
         this.CambioClave.setVisible(false);
     }//GEN-LAST:event_BottonPerfilActionPerformed
 
     private void BottonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonHomeActionPerformed
-        Desbloqueo = false;
+
         Menu.setSelectedComponent(Home);
     }//GEN-LAST:event_BottonHomeActionPerformed
-
-    private void temasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_temasActionPerformed
 
     private void ButtonAddPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddPregActionPerformed
         if (seme.getSelectedIndex() != 0 && asigna.getSelectedIndex() != 0) {
@@ -1881,7 +1901,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         }
-        
+
         String total = Integer.toString(jor) + ";" + InfoPregunta + ";" + "disponible;--------;";
         String temp;
         Asignatura a = getAsignatura(Asignatura2);
@@ -1915,10 +1935,6 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_ButtonAgregarPreguntaActionPerformed
-
-    private void ComboBoxTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxTemasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxTemasActionPerformed
 
     private void ButtonAgregarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarTemaActionPerformed
         String tema = NombreDelTema.getText();
@@ -2161,7 +2177,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_generarExamenActionPerformed
 
     private void FotoPreguntasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FotoPreguntasMouseClicked
-        Desbloqueo = false;
+
         int h = 0;
         ComboAsignaturaS.removeAllItems();
         ComboAsignaturaS.addItem("...");
@@ -2173,81 +2189,8 @@ public class Principal extends javax.swing.JFrame {
         }
         met.ReincioComboBox(ComboBoxTemas, ComboNivel);
         met.ReincioTextArea(Preguntas);
-        Desbloqueo = true;
         Menu.setSelectedComponent(Pregunta);
     }//GEN-LAST:event_FotoPreguntasMouseClicked
-
-    private void ComboAsignaturaSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsignaturaSActionPerformed
-        if (Desbloqueo.equals(true)) {
-            String TempAsigna = (String) ComboAsignaturaS.getSelectedItem();
-            if (!TempAsigna.equals("...")) {
-                ComboBoxTemas.setEnabled(true);
-                ComboNivel.setEnabled(true);
-                Preguntas.setEnabled(true);
-                Metodos met = new Metodos();
-                this.ComboBoxTemas.removeAllItems();
-                this.ComboBoxTemas.addItem("...");
-                int h = 0;
-                try {
-                    h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.ComboBoxTemas, h);
-                    if (h < 1) {
-                        JOptionPane.showMessageDialog(null, "LA ASIGNATURA QUE HA SELECCIONADO NO TIENE TEMAS, SE DESEA USAR ESTA ASIGNATURA ES NECESARIO QUE AÑADA TEMAS.");
-                        ComboBoxTemas.setEnabled(false);
-                        ComboNivel.setEnabled(false);
-                        Preguntas.setEnabled(false);
-                    }
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_ComboAsignaturaSActionPerformed
-
-    private void Asig3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Asig3ActionPerformed
-        if (Desbloqueo.equals(true)) {
-            String TempAsigna = (String) Asig3.getSelectedItem();
-            if (!TempAsigna.equals("...")) {
-                tema.setEnabled(true);
-                nivel.setEnabled(true);
-                Metodos met = new Metodos();
-                this.ComboBoxTemas.removeAllItems();
-                this.ComboBoxTemas.addItem("...");
-                int h = 0;
-                try {
-                    h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
-                    if (h < 1) {
-                        JOptionPane.showMessageDialog(null, "LA ASIGNATURA QUE HA SELECCIONADO NO TIENE TEMAS, SE DESEA USAR ESTA ASIGNATURA ES NECESARIO QUE AÑADA TEMAS.");
-                        tema.setEnabled(false);
-                        nivel.setEnabled(false);
-                    }
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } else {
-                JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_Asig3ActionPerformed
-
-    private void Asig2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Asig2ActionPerformed
-        if (Desbloqueo.equals(true)) {
-            String TempAsig = (String) Asig2.getSelectedItem();
-            if ("...".equals(TempAsig)) {
-                JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_Asig2ActionPerformed
-
-    private void temaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temaActionPerformed
-        if (Desbloqueo.equals(true)) {
-            String TempTema = (String) tema.getSelectedItem();
-            if ("...".equals(TempTema)) {
-                JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_temaActionPerformed
 
     private void ButtonMostrarDERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMostrarDERActionPerformed
         // TODO add your handling code here:
@@ -2636,6 +2579,69 @@ public class Principal extends javax.swing.JFrame {
     private void ButtonGuardarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGuardarFotoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonGuardarFotoActionPerformed
+
+    private void Asig2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_Asig2PopupMenuWillBecomeInvisible
+        if ("...".equals(Asig2.getSelectedItem())) {
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto. bua", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Asig2PopupMenuWillBecomeInvisible
+
+    private void Asig3PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_Asig3PopupMenuWillBecomeInvisible
+        String TempAsigna = (String) Asig3.getSelectedItem();
+        if (!TempAsigna.equals("...")) {
+            tema.setEnabled(true);
+            nivel.setEnabled(true);
+            Metodos met = new Metodos();
+            this.ComboBoxTemas.removeAllItems();
+            this.ComboBoxTemas.addItem("...");
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
+                if (h < 1) {
+                    JOptionPane.showMessageDialog(null, "LA ASIGNATURA QUE HA SELECCIONADO NO TIENE TEMAS, SE DESEA USAR ESTA ASIGNATURA ES NECESARIO QUE AÑADA TEMAS.");
+                    tema.setEnabled(false);
+                    nivel.setEnabled(false);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Asig3PopupMenuWillBecomeInvisible
+
+    private void temaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_temaPopupMenuWillBecomeInvisible
+        String TempTema = (String) tema.getSelectedItem();
+        if ("...".equals(TempTema)) {
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_temaPopupMenuWillBecomeInvisible
+
+    private void ComboAsignaturaSPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
+        String TempAsigna = (String) ComboAsignaturaS.getSelectedItem();
+        if (!TempAsigna.equals("...")) {
+            ComboBoxTemas.setEnabled(true);
+            ComboNivel.setEnabled(true);
+            Preguntas.setEnabled(true);
+            Metodos met = new Metodos();
+            this.ComboBoxTemas.removeAllItems();
+            this.ComboBoxTemas.addItem("...");
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.ComboBoxTemas, h);
+                if (h < 1) {
+                    JOptionPane.showMessageDialog(null, "LA ASIGNATURA QUE HA SELECCIONADO NO TIENE TEMAS, SE DESEA USAR ESTA ASIGNATURA ES NECESARIO QUE AÑADA TEMAS.");
+                    ComboBoxTemas.setEnabled(false);
+                    ComboNivel.setEnabled(false);
+                    Preguntas.setEnabled(false);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
 
     ///METODOS!!
     private Asignatura getAsignatura(String nombre) {
