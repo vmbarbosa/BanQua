@@ -95,9 +95,18 @@ public class Principal extends javax.swing.JFrame {
         Foto2 = new javax.swing.JLabel();
         BottonHome = new rsbuttom.RSButtonMetro();
         BottonPerfil = new rsbuttom.RSButtonMetro();
-        BottonEdiInfo = new rsbuttom.RSButtonMetro();
         BottonVerInfo = new rsbuttom.RSButtonMetro();
         BottonGenrExam = new rsbuttom.RSButtonMetro();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
+        SubMenu = new javax.swing.JTabbedPane();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        BottonEdiInfo1 = new rsbuttom.RSButtonMetro();
+        BottonEdiInfo2 = new rsbuttom.RSButtonMetro();
+        BottonEdiInfo3 = new rsbuttom.RSButtonMetro();
+        jLabel37 = new javax.swing.JLabel();
+        BottonEdiInfo = new rsbuttom.RSButtonMetro();
         jPanel20 = new javax.swing.JPanel();
         Menu = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
@@ -227,7 +236,6 @@ public class Principal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1050, 800));
 
         jPanel2.setBackground(new java.awt.Color(0, 103, 142));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-cerrar-ventana-40.png"))); // NOI18N
@@ -242,7 +250,6 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
-        PanelMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         PanelMenu.setPreferredSize(new java.awt.Dimension(217, 502));
         PanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -284,23 +291,6 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 183, 42));
 
-        BottonEdiInfo.setBackground(new java.awt.Color(128, 156, 237));
-        BottonEdiInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
-        BottonEdiInfo.setText("Añadir        ");
-        BottonEdiInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonEdiInfo.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonEdiInfo.setColorNormal(new java.awt.Color(128, 156, 237));
-        BottonEdiInfo.setColorPressed(new java.awt.Color(128, 140, 207));
-        BottonEdiInfo.setFocusPainted(false);
-        BottonEdiInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        BottonEdiInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BottonEdiInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonEdiInfoActionPerformed(evt);
-            }
-        });
-        PanelMenu.add(BottonEdiInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
-
         BottonVerInfo.setBackground(new java.awt.Color(128, 156, 237));
         BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
         BottonVerInfo.setText("Ver Información");
@@ -335,6 +325,156 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonGenrExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 183, 42));
 
+        jPanel21.setBackground(new java.awt.Color(0, 103, 142));
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        PanelMenu.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 220, 40));
+
+        jPanel22.setBackground(new java.awt.Color(0, 103, 142));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        PanelMenu.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 780, -1, -1));
+
+        jPanel10.setBackground(new java.awt.Color(0, 103, 142));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 225, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+
+        SubMenu.addTab("tab1", jPanel10);
+
+        jPanel23.setBackground(new java.awt.Color(0, 103, 142));
+
+        BottonEdiInfo1.setBackground(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
+        BottonEdiInfo1.setText("Temas");
+        BottonEdiInfo1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonEdiInfo1.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEdiInfo1.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo1.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEdiInfo1.setFocusPainted(false);
+        BottonEdiInfo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonEdiInfo1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonEdiInfo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonEdiInfo1ActionPerformed(evt);
+            }
+        });
+
+        BottonEdiInfo2.setBackground(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
+        BottonEdiInfo2.setText("Preguntas");
+        BottonEdiInfo2.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonEdiInfo2.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEdiInfo2.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo2.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEdiInfo2.setFocusPainted(false);
+        BottonEdiInfo2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonEdiInfo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonEdiInfo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonEdiInfo2ActionPerformed(evt);
+            }
+        });
+
+        BottonEdiInfo3.setBackground(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
+        BottonEdiInfo3.setText("Asignaturas");
+        BottonEdiInfo3.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonEdiInfo3.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEdiInfo3.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo3.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEdiInfo3.setFocusPainted(false);
+        BottonEdiInfo3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonEdiInfo3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonEdiInfo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonEdiInfo3ActionPerformed(evt);
+            }
+        });
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("--------------------------");
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BottonEdiInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                        .addContainerGap(31, Short.MAX_VALUE)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BottonEdiInfo3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BottonEdiInfo2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BottonEdiInfo3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BottonEdiInfo1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BottonEdiInfo2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        SubMenu.addTab("tab2", jPanel23);
+
+        PanelMenu.add(SubMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 530, 230, 270));
+
+        BottonEdiInfo.setBackground(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
+        BottonEdiInfo.setText("Añadir        ");
+        BottonEdiInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonEdiInfo.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEdiInfo.setColorNormal(new java.awt.Color(128, 156, 237));
+        BottonEdiInfo.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEdiInfo.setFocusPainted(false);
+        BottonEdiInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonEdiInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonEdiInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonEdiInfoActionPerformed(evt);
+            }
+        });
+        PanelMenu.add(BottonEdiInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
+
         getContentPane().add(PanelMenu, java.awt.BorderLayout.LINE_START);
 
         jPanel20.setLayout(new java.awt.CardLayout(-9, -28));
@@ -350,11 +490,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1059, Short.MAX_VALUE)
+            .addGap(0, 1311, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 544, Short.MAX_VALUE)
+            .addGap(0, 913, Short.MAX_VALUE)
         );
 
         Home.add(jPanel8, java.awt.BorderLayout.CENTER);
@@ -365,7 +505,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1059, Short.MAX_VALUE)
+            .addGap(0, 1311, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -736,11 +876,10 @@ public class Principal extends javax.swing.JFrame {
 
         Menu.addTab("Agregar", Agregar);
 
-        Asignatura.setBackground(new java.awt.Color(236, 236, 236));
+        Asignatura.setBackground(new java.awt.Color(206, 238, 251));
         Asignatura.setLayout(new java.awt.GridBagLayout());
 
         jPanel12.setBackground(new java.awt.Color(0, 87, 116));
-        jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel12.setLayout(new java.awt.GridBagLayout());
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -1454,11 +1593,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1033, Short.MAX_VALUE)
+            .addGap(0, 1285, Short.MAX_VALUE)
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 804, Short.MAX_VALUE)
+            .addGap(0, 1173, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout InformeTablasLayout = new javax.swing.GroupLayout(InformeTablas);
@@ -1785,12 +1924,14 @@ public class Principal extends javax.swing.JFrame {
         met.ReincioJTextField(evaluacion, preg);
         fecha.setCalendar(null);
         AvisoNumeros.setVisible(false);
+        SubMenu.setSelectedIndex(0);
         Menu.setSelectedComponent(Generar);
     }//GEN-LAST:event_BottonGenrExamActionPerformed
 
     private void BottonVerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfoActionPerformed
         Metodos met = new Metodos();
         met.ReincioComboBox(Asig2, Asig3, tema, nivel);
+        SubMenu.setSelectedIndex(0);
         if (Menu.getSelectedComponent() != Ver) {
             try {
                 modelo = (DefaultTableModel) mostrar.getModel();
@@ -1814,18 +1955,17 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonVerInfoActionPerformed
 
     private void BottonEdiInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEdiInfoActionPerformed
-
-        Menu.setSelectedComponent(Agregar);
+        SubMenu.setSelectedIndex(1);
     }//GEN-LAST:event_BottonEdiInfoActionPerformed
 
     private void BottonPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonPerfilActionPerformed
-
+        SubMenu.setSelectedIndex(0);
         Menu.setSelectedComponent(Perfil);
         this.CambioClave.setVisible(false);
     }//GEN-LAST:event_BottonPerfilActionPerformed
 
     private void BottonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonHomeActionPerformed
-
+        SubMenu.setSelectedIndex(0);
         Menu.setSelectedComponent(Home);
     }//GEN-LAST:event_BottonHomeActionPerformed
 
@@ -2019,26 +2159,26 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregarDescripcionActionPerformed
 
     private void FotoTemasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FotoTemasMouseClicked
-        String item = "";
-        ComboAsignatura.removeAllItems();
-        ComboAsignatura.addItem("...");
-        for (Asignatura a : profesor.getAsignaturas()) {
-            item = a.getNombre();
-            ComboAsignatura.addItem(item);
-        }
-        Metodos met = new Metodos();
-        met.ReincioJTextField(NombreDelTema);
-        met.ReincioTextArea(DescripcionTema);
-        AgregarDescripcionTema.setSelected(false);
-        Menu.setSelectedComponent(Tema);
+//        String item = "";
+//        ComboAsignatura.removeAllItems();
+//        ComboAsignatura.addItem("...");
+//        for (Asignatura a : profesor.getAsignaturas()) {
+//            item = a.getNombre();
+//            ComboAsignatura.addItem(item);
+//        }
+//        Metodos met = new Metodos();
+//        met.ReincioJTextField(NombreDelTema);
+//        met.ReincioTextArea(DescripcionTema);
+//        AgregarDescripcionTema.setSelected(false);
+//        Menu.setSelectedComponent(Tema);
     }//GEN-LAST:event_FotoTemasMouseClicked
 
     private void FotoMateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FotoMateriaMouseClicked
-        Metodos met = new Metodos();
-        met.ReincioJTextField(NombreDelaAsignatura, codMat);
-        met.ReincioTextArea(Descripcion);
-        AgregarDescripcion.setSelected(false);
-        Menu.setSelectedComponent(Asignatura);
+//        Metodos met = new Metodos();
+//        met.ReincioJTextField(NombreDelaAsignatura, codMat);
+//        met.ReincioTextArea(Descripcion);
+//        AgregarDescripcion.setSelected(false);
+//        Menu.setSelectedComponent(Asignatura);
     }//GEN-LAST:event_FotoMateriaMouseClicked
 
     private void ButtonCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCambioActionPerformed
@@ -2177,19 +2317,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_generarExamenActionPerformed
 
     private void FotoPreguntasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FotoPreguntasMouseClicked
-
-        int h = 0;
-        ComboAsignaturaS.removeAllItems();
-        ComboAsignaturaS.addItem("...");
-        Metodos met = new Metodos();
-        try {
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsignaturaS, h);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        met.ReincioComboBox(ComboBoxTemas, ComboNivel);
-        met.ReincioTextArea(Preguntas);
-        Menu.setSelectedComponent(Pregunta);
+//
+//        int h = 0;
+//        ComboAsignaturaS.removeAllItems();
+//        ComboAsignaturaS.addItem("...");
+//        Metodos met = new Metodos();
+//        try {
+//            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsignaturaS, h);
+//        } catch (IOException ex) {
+//            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        met.ReincioComboBox(ComboBoxTemas, ComboNivel);
+//        met.ReincioTextArea(Preguntas);
+//        Menu.setSelectedComponent(Pregunta);
     }//GEN-LAST:event_FotoPreguntasMouseClicked
 
     private void ButtonMostrarDERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMostrarDERActionPerformed
@@ -2558,12 +2698,6 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pregKeyReleased
 
-    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
-        dispose();
-        InicioSeccion ini = new InicioSeccion();
-        ini.setVisible(true);
-    }//GEN-LAST:event_IconCerrarMouseClicked
-
     private void ButtonGenerarInforme1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGenerarInforme1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonGenerarInforme1ActionPerformed
@@ -2642,6 +2776,50 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
+
+    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
+        dispose();
+        InicioSeccion ini = new InicioSeccion();
+        ini.setVisible(true);
+    }//GEN-LAST:event_IconCerrarMouseClicked
+
+    private void BottonEdiInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEdiInfo1ActionPerformed
+        String item = "";
+        ComboAsignatura.removeAllItems();
+        ComboAsignatura.addItem("...");
+        for (Asignatura a : profesor.getAsignaturas()) {
+            item = a.getNombre();
+            ComboAsignatura.addItem(item);
+        }
+        Metodos met = new Metodos();
+        met.ReincioJTextField(NombreDelTema);
+        met.ReincioTextArea(DescripcionTema);
+        AgregarDescripcionTema.setSelected(false);
+        Menu.setSelectedComponent(Tema);        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonEdiInfo1ActionPerformed
+
+    private void BottonEdiInfo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEdiInfo2ActionPerformed
+        int h = 0;
+        ComboAsignaturaS.removeAllItems();
+        ComboAsignaturaS.addItem("...");
+        Metodos met = new Metodos();
+        try {
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsignaturaS, h);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        met.ReincioComboBox(ComboBoxTemas, ComboNivel);
+        met.ReincioTextArea(Preguntas);
+        Menu.setSelectedComponent(Pregunta);        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonEdiInfo2ActionPerformed
+
+    private void BottonEdiInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEdiInfo3ActionPerformed
+        Metodos met = new Metodos();
+        met.ReincioJTextField(NombreDelaAsignatura, codMat);
+        met.ReincioTextArea(Descripcion);
+        AgregarDescripcion.setSelected(false);
+        Menu.setSelectedComponent(Asignatura);
+    }//GEN-LAST:event_BottonEdiInfo3ActionPerformed
 
     ///METODOS!!
     private Asignatura getAsignatura(String nombre) {
@@ -2859,6 +3037,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel AvisoNumeros;
     private rsbuttom.RSButtonMetro BottonCamContra;
     private rsbuttom.RSButtonMetro BottonEdiInfo;
+    private rsbuttom.RSButtonMetro BottonEdiInfo1;
+    private rsbuttom.RSButtonMetro BottonEdiInfo2;
+    private rsbuttom.RSButtonMetro BottonEdiInfo3;
     private rsbuttom.RSButtonMetro BottonEditFoto;
     private rsbuttom.RSButtonMetro BottonGenrExam;
     private rsbuttom.RSButtonMetro BottonHome;
@@ -2903,6 +3084,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel Perfil;
     private javax.swing.JPanel Pregunta;
     private javax.swing.JTextArea Preguntas;
+    private javax.swing.JTabbedPane SubMenu;
     private javax.swing.JPanel Tema;
     private javax.swing.JLabel TituloMateria;
     private javax.swing.JLabel TituloPreguntas;
@@ -2946,6 +3128,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2953,6 +3136,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -2964,6 +3148,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
