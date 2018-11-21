@@ -229,12 +229,12 @@ public class Principal extends javax.swing.JFrame {
         Foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
         PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 180, 200));
 
-        BottonHome.setBackground(new java.awt.Color(23, 158, 224));
+        BottonHome.setBackground(new java.awt.Color(76, 185, 239));
         BottonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2302(0)_48.png"))); // NOI18N
         BottonHome.setText("Home             ");
         BottonHome.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonHome.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonHome.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonHome.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonHome.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonHome.setFocusPainted(false);
         BottonHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -246,12 +246,11 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 183, 42));
 
-        BottonPerfil.setBackground(new java.awt.Color(23, 158, 224));
         BottonPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonPerfil.setText("Perfil");
         BottonPerfil.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonPerfil.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonPerfil.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonPerfil.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonPerfil.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonPerfil.setFocusPainted(false);
         BottonPerfil.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -263,12 +262,11 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 183, 42));
 
-        BottonVerInfo.setBackground(new java.awt.Color(23, 158, 224));
         BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
         BottonVerInfo.setText("Ver Información");
         BottonVerInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonVerInfo.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonVerInfo.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonVerInfo.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonVerInfo.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonVerInfo.setFocusPainted(false);
         BottonVerInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -280,12 +278,11 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonVerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 183, 42));
 
-        ButtonGenerarInforme.setBackground(new java.awt.Color(23, 158, 224));
         ButtonGenerarInforme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         ButtonGenerarInforme.setText("Informe");
         ButtonGenerarInforme.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         ButtonGenerarInforme.setColorHover(new java.awt.Color(128, 188, 255));
-        ButtonGenerarInforme.setColorNormal(new java.awt.Color(23, 158, 224));
+        ButtonGenerarInforme.setColorNormal(new java.awt.Color(76, 185, 239));
         ButtonGenerarInforme.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonGenerarInforme.setFocusPainted(false);
         ButtonGenerarInforme.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -350,7 +347,7 @@ public class Principal extends javax.swing.JFrame {
         BottonTemas.setText("Temas");
         BottonTemas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonTemas.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonTemas.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonTemas.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonTemas.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonTemas.setFocusPainted(false);
         BottonTemas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -365,7 +362,7 @@ public class Principal extends javax.swing.JFrame {
         BottonPreguntas.setText("Preguntas");
         BottonPreguntas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonPreguntas.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonPreguntas.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonPreguntas.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonPreguntas.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonPreguntas.setFocusPainted(false);
         BottonPreguntas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -380,7 +377,7 @@ public class Principal extends javax.swing.JFrame {
         BottonAsignatura.setText("Asignaturas");
         BottonAsignatura.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonAsignatura.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonAsignatura.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonAsignatura.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonAsignatura.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonAsignatura.setFocusPainted(false);
         BottonAsignatura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -426,12 +423,11 @@ public class Principal extends javax.swing.JFrame {
 
         PanelMenu.add(SubMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 580, 230, 240));
 
-        BottonEditInfo.setBackground(new java.awt.Color(23, 158, 224));
         BottonEditInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonEditInfo.setText("Añadir        ");
         BottonEditInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonEditInfo.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonEditInfo.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonEditInfo.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonEditInfo.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonEditInfo.setFocusPainted(false);
         BottonEditInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -443,12 +439,11 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonEditInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
 
-        BottonGenrExam.setBackground(new java.awt.Color(23, 158, 224));
         BottonGenrExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonGenrExam.setText("Crear Examen");
         BottonGenrExam.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonGenrExam.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonGenrExam.setColorNormal(new java.awt.Color(23, 158, 224));
+        BottonGenrExam.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonGenrExam.setColorPressed(new java.awt.Color(128, 140, 207));
         BottonGenrExam.setFocusPainted(false);
         BottonGenrExam.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -965,7 +960,7 @@ public class Principal extends javax.swing.JFrame {
         Menu.addTab("Tema", Tema);
 
         Pregunta.setBackground(new java.awt.Color(255, 255, 255));
-        Pregunta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Pregunta.setLayout(new java.awt.GridBagLayout());
 
         ComboAsignaturaS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
         ComboAsignaturaS.setMaximumSize(new java.awt.Dimension(37, 20));
@@ -978,46 +973,112 @@ public class Principal extends javax.swing.JFrame {
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
-        Pregunta.add(ComboAsignaturaS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 180, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 143;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        Pregunta.add(ComboAsignaturaS, gridBagConstraints);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 87, 116));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel18.setText("Asignatura");
-        Pregunta.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 160, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 96;
+        gridBagConstraints.ipady = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
+        Pregunta.add(jLabel18, gridBagConstraints);
 
         ComboBoxTemas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
         ComboBoxTemas.setMaximumSize(new java.awt.Dimension(37, 20));
-        Pregunta.add(ComboBoxTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 180, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 143;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+        Pregunta.add(ComboBoxTemas, gridBagConstraints);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 87, 116));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel19.setText("Temas");
-        Pregunta.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 230, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 190;
+        gridBagConstraints.ipady = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        Pregunta.add(jLabel19, gridBagConstraints);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 87, 116));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel21.setText("Dificultad");
-        Pregunta.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 230, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 175;
+        gridBagConstraints.ipady = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        Pregunta.add(jLabel21, gridBagConstraints);
 
         ComboNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
-        Pregunta.add(ComboNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 180, 30));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 127;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        Pregunta.add(ComboNivel, gridBagConstraints);
 
         jLabel10.setBackground(new java.awt.Color(255, 153, 51));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 102, 51));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("*Escriba la pregunta aqui.");
-        Pregunta.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 177, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        Pregunta.add(jLabel10, gridBagConstraints);
 
         Preguntas.setColumns(20);
         Preguntas.setLineWrap(true);
         Preguntas.setRows(5);
         jScrollPane3.setViewportView(Preguntas);
 
-        Pregunta.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 1412, 388));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 1389;
+        gridBagConstraints.ipady = 365;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 32);
+        Pregunta.add(jScrollPane3, gridBagConstraints);
 
         ButtonAgregarPregunta.setText("Agregar Pregunta");
         ButtonAgregarPregunta.setColorHover(new java.awt.Color(128, 188, 255));
@@ -1029,38 +1090,55 @@ public class Principal extends javax.swing.JFrame {
                 ButtonAgregarPreguntaActionPerformed(evt);
             }
         });
-        Pregunta.add(ButtonAgregarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 760, 180, 53));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 55;
+        gridBagConstraints.ipady = 36;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(32, 20, 43, 0);
+        Pregunta.add(ButtonAgregarPregunta, gridBagConstraints);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 87, 116));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel20.setText(" Agregar Pregunta");
         jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
-        Pregunta.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 370, 40));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 240;
+        gridBagConstraints.ipady = 21;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
+        Pregunta.add(jLabel20, gridBagConstraints);
 
         Menu.addTab("Pregunta", Pregunta);
 
-        Ver.setBackground(new java.awt.Color(255, 255, 255));
+        Ver.setBackground(new java.awt.Color(0, 87, 116));
         Ver.setLayout(new java.awt.GridBagLayout());
 
-        jPanel11.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        ButtonMostrarIZQ.setBackground(new java.awt.Color(1, 128, 176));
         ButtonMostrarIZQ.setText("Mostrar ");
         ButtonMostrarIZQ.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         ButtonMostrarIZQ.setColorHover(new java.awt.Color(128, 188, 255));
-        ButtonMostrarIZQ.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonMostrarIZQ.setColorNormal(new java.awt.Color(0, 103, 142));
         ButtonMostrarIZQ.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonMostrarIZQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarIZQActionPerformed(evt);
             }
         });
-        jPanel11.add(ButtonMostrarIZQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 170, 30));
+        jPanel11.add(ButtonMostrarIZQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, 30));
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setForeground(new java.awt.Color(0, 87, 116));
         jLabel35.setText("Todas las Asignaturas");
         jPanel11.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 160, -1));
 
@@ -1068,12 +1146,12 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 10;
-        gridBagConstraints.ipady = 30;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 30, 0, 0);
         Ver.add(jPanel11, gridBagConstraints);
 
-        jPanel16.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1089,26 +1167,27 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel16.add(Asig2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, -1));
 
+        ButtonMostrarCENT.setBackground(new java.awt.Color(1, 128, 176));
         ButtonMostrarCENT.setText("Mostrar");
         ButtonMostrarCENT.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         ButtonMostrarCENT.setColorHover(new java.awt.Color(128, 188, 255));
-        ButtonMostrarCENT.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonMostrarCENT.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonMostrarCENT.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonMostrarCENT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarCENTActionPerformed(evt);
             }
         });
-        jPanel16.add(ButtonMostrarCENT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 170, 30));
+        jPanel16.add(ButtonMostrarCENT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 170, 30));
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setForeground(new java.awt.Color(0, 87, 116));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel30.setText("Asignatura");
         jPanel16.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, -1));
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setForeground(new java.awt.Color(0, 87, 116));
         jLabel36.setText("Temas de la Asignatura");
         jPanel16.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 20));
 
@@ -1116,12 +1195,12 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 10;
-        gridBagConstraints.ipady = 30;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(30, 30, 0, 0);
         Ver.add(jPanel16, gridBagConstraints);
 
-        jPanel18.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
         jPanel18.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1152,10 +1231,11 @@ public class Principal extends javax.swing.JFrame {
         nivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
         jPanel18.add(nivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 150, -1));
 
+        ButtonMostrarDER.setBackground(new java.awt.Color(1, 128, 176));
         ButtonMostrarDER.setText("Mostar");
         ButtonMostrarDER.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         ButtonMostrarDER.setColorHover(new java.awt.Color(128, 188, 255));
-        ButtonMostrarDER.setColorNormal(new java.awt.Color(128, 156, 237));
+        ButtonMostrarDER.setColorNormal(new java.awt.Color(0, 103, 142));
         ButtonMostrarDER.setColorPressed(new java.awt.Color(128, 140, 207));
         ButtonMostrarDER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1165,25 +1245,25 @@ public class Principal extends javax.swing.JFrame {
         jPanel18.add(ButtonMostrarDER, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 170, 30));
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setForeground(new java.awt.Color(0, 87, 116));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel31.setText("Temas");
         jPanel18.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 180, 20));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setForeground(new java.awt.Color(0, 87, 116));
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel32.setText("Dificultad");
         jPanel18.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, -1));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setForeground(new java.awt.Color(0, 87, 116));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel33.setText("Asignatura");
         jPanel18.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(0, 87, 116));
         jLabel6.setText("Preguntas");
         jPanel18.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 20));
 
@@ -1192,7 +1272,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(30, 30, 56, 0);
         Ver.add(jPanel18, gridBagConstraints);
 
         mostrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1209,7 +1289,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.gridheight = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1177;
         gridBagConstraints.ipady = 763;
