@@ -78,10 +78,9 @@ public class Profesor {
     }
 
     public boolean VerificarTema(String Tema, String asig, String Descripcion) {
-        for (Asignatura Asignatura1 : Asignaturas) {
-            if (Asignatura1.getNombre().equals(asig)) {
-                Tema AdTema = new Tema(Tema, Descripcion, Asignatura1);
-                return Asignatura1.VerificarTema2(AdTema);
+        for (Asignatura asignatura : Asignaturas) {
+            if (asignatura.getNombre().equals(asig)) {
+                return asignatura.VerificarTema2(Tema, Descripcion);
             }
         }
         return false;

@@ -1,1 +1,3 @@
-Matematicas;Mat112;Reconocer polinomios y binomios de orden natural;
+Matematicas;MAT4433;Una materia sobre numeros;
+Frances;LFR8246;Lengua rumanse del oriente medio;
+Procesos;PRO7824;Llevar acabo los conocimientos previos en materiales.;

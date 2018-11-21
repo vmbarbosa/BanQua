@@ -28,9 +28,9 @@ public class Tema {
     String Nombre;
     String descripcion;  //ESTO LO HIZO VALERIA
     Asignatura asignatura;
-    ArrayList<Pregunta> preguntas_1 = new ArrayList();
-    ArrayList<Pregunta> preguntas_2 = new ArrayList();
-    ArrayList<Pregunta> preguntas_3 = new ArrayList();
+    ArrayList<Pregunta> preguntas_1 ;
+    ArrayList<Pregunta> preguntas_2 ;
+    ArrayList<Pregunta> preguntas_3 ;
 
     public Tema(String titulo, String desc, Asignatura asig) {
         this.Nombre = titulo;
@@ -65,7 +65,7 @@ public class Tema {
 
         while (br.ready()) {
             String contenido = br.readLine();
-            if (contenido != null && contenido!="") {
+            if (contenido != null && !contenido.equals("")) {
                 String info = e.Desco(contenido, 2, ";");
                 String estado = e.Desco(contenido, 3, ";");
                 String fecha = e.Desco(contenido, 4, ";");

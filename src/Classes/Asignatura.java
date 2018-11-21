@@ -90,13 +90,13 @@ public class Asignatura {
         return tema;
     }
 
-    public boolean VerificarTema2(Tema tema) {
+    public boolean VerificarTema2(String Tema, String Descripcion) {
         for (Tema tema1 : temas) {
-            if (tema1.getNombre().equals(tema.getNombre())) {
+            if (tema1.getNombre().equals(Tema)) {
                 JOptionPane.showMessageDialog(null, "El nombre ya fue usado en otro tema.");
                 return true;
             }
-            if(tema1.getDescripcion().equals(tema.getDescripcion())){
+            if(tema1.getDescripcion().equals(Descripcion)){
                 JOptionPane.showMessageDialog(null, "La descripcion ya fue usada en otro tema.");
                 return true;
             }
