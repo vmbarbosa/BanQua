@@ -28,7 +28,7 @@ public class Asignatura {
     String Nombre;
     String descripcion;  //ESTO LO HIZO VALERIA
     String codigo;
-    ArrayList<Tema> temas = new ArrayList();
+    ArrayList<Tema> temas;
     ArrayList<Pregunta> preguntas = new ArrayList();
 
     public Asignatura(String Nombre, String desc, String cod) {
@@ -44,14 +44,28 @@ public class Asignatura {
 
     }
 
-    /**
-     * Envia los temas que esten almacenados actualmente
-     *
-     * @throws FileNotFoundException
-     * @throws IOException
-     */
     public void AddTema(Tema AdTema) {
         this.getTemas().add(AdTema);
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setTemas(ArrayList<Tema> temas) {
+        this.temas = temas;
+    }
+
+    public void setPreguntas(ArrayList<Pregunta> preguntas) {
+        this.preguntas = preguntas;
     }
 
     public void setTemas() throws FileNotFoundException, IOException {
@@ -70,6 +84,8 @@ public class Asignatura {
                 addTema(new Tema(nombre, descripcion, this));
             }
         }
+        fr.close();
+        br.close();
     }
 
     /**

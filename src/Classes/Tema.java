@@ -48,6 +48,46 @@ public class Tema {
         }
     }
 
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Asignatura getAsignatura() {
+        return asignatura;
+    }
+
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
+    }
+
+    public ArrayList<Pregunta> getPreguntas_1() {
+        return preguntas_1;
+    }
+
+    public void setPreguntas_1(ArrayList<Pregunta> preguntas_1) {
+        this.preguntas_1 = preguntas_1;
+    }
+
+    public ArrayList<Pregunta> getPreguntas_2() {
+        return preguntas_2;
+    }
+
+    public void setPreguntas_2(ArrayList<Pregunta> preguntas_2) {
+        this.preguntas_2 = preguntas_2;
+    }
+
+    public ArrayList<Pregunta> getPreguntas_3() {
+        return preguntas_3;
+    }
+
+    public void setPreguntas_3(ArrayList<Pregunta> preguntas_3) {
+        this.preguntas_3 = preguntas_3;
+    }
+
     /**
      * Llena los ArrayList filtrando las preguntas en dificultades, para que
      * cada ArrayList almacene las preguntas

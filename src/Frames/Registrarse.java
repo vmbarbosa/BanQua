@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Classes.Metodos;
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -27,11 +30,25 @@ public class Registrarse extends javax.swing.JFrame {
     InicioSeccion inicio = new InicioSeccion();
     Metodos met = new Metodos();
     String rutaImagen = "";
+    int mouseX;
+    int mouseY;
 
     public Registrarse() {
         initComponents();
-        this.jLabel8.setVisible(false);
-        this.jLabel7.setVisible(false);
+        
+        jLabel8.setForeground(Color.decode("#00678e"));
+        jLabel7.setForeground(Color.decode("#00678e"));
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -94,6 +111,16 @@ public class Registrarse extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel2MouseDragged(evt);
+            }
+        });
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel2MousePressed(evt);
+            }
+        });
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cruz.png"))); // NOI18N
@@ -127,7 +154,7 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(19, 40, 0, 0);
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -158,7 +185,6 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(43, 40, 0, 0);
         jPanel1.add(jLabel4, gridBagConstraints);
@@ -168,10 +194,10 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel5.setText("Verificar contraseña: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(19, 40, 0, 0);
         jPanel1.add(jLabel5, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
@@ -180,12 +206,15 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 2, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(19, 2, 0, 31);
         jPanel1.add(Nombre1, gridBagConstraints);
 
         Cedula1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Cedula1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Cedula1KeyReleased(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -210,7 +239,7 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 16;
-        gridBagConstraints.gridheight = 10;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(43, 2, 0, 31);
@@ -222,11 +251,12 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel7.setText("Las contraseñas no son iguales.");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.gridheight = 4;
         gridBagConstraints.ipadx = 108;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 40, 0, 0);
         jPanel1.add(jLabel7, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -256,25 +286,28 @@ public class Registrarse extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 21;
+        gridBagConstraints.gridy = 16;
         gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(43, 11, 24, 0);
+        gridBagConstraints.insets = new java.awt.Insets(54, 11, 24, 0);
         jPanel1.add(BottonRegistrar, gridBagConstraints);
 
         VerificarContra1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 VerificarContra1KeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                VerificarContra1KeyReleased(evt);
+            }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
-        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 16;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 2, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(19, 2, 0, 31);
         jPanel1.add(VerificarContra1, gridBagConstraints);
 
         BottonIngresarFoto.setText("Ingresar foto de perfil");
@@ -291,24 +324,24 @@ public class Registrarse extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(30, 10, 0, 0);
         jPanel1.add(BottonIngresarFoto, gridBagConstraints);
 
         jPanel3.setBackground(new java.awt.Color(23, 158, 224));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Foto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Foto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_256.png"))); // NOI18N
+        Foto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Perfil Blanco.png"))); // NOI18N
         Foto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
         jPanel3.add(Foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 200));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 8;
+        gridBagConstraints.gridheight = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
         jPanel1.add(jPanel3, gridBagConstraints);
@@ -321,6 +354,9 @@ public class Registrarse extends javax.swing.JFrame {
 
     private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
         dispose();
+        this.setVisible(false);
+        InicioSeccion ini = new InicioSeccion();
+        ini.setVisible(true);
     }//GEN-LAST:event_IconCerrarMouseClicked
 
     private void RegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegresarMouseClicked
@@ -405,20 +441,47 @@ public class Registrarse extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonIngresarFotoActionPerformed
 
     private void Cedula1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Cedula1KeyPressed
-        if (met.confNum(this.Cedula1.getText())) {
-            this.jLabel8.setVisible(false);
-        } else {
-            this.jLabel8.setVisible(true);
-        }
+//        if (met.confNum(this.Cedula1.getText())) {
+//            this.jLabel8.setVisible(false);
+//        } else {
+//            this.jLabel8.setVisible(true);
+//        }
     }//GEN-LAST:event_Cedula1KeyPressed
 
     private void VerificarContra1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VerificarContra1KeyPressed
-        if (this.Contra.getText().equals(this.VerificarContra1.getText())) {
-            this.jLabel7.setVisible(false);
-        } else {
-            this.jLabel7.setVisible(true);
-        }
+//        if (this.Contra.getText().equals(this.VerificarContra1.getText())) {
+//            this.jLabel7.setVisible(false);
+//        } else {
+//            this.jLabel7.setVisible(true);
+//        }
     }//GEN-LAST:event_VerificarContra1KeyPressed
+
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - mouseX, y - mouseY);
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void VerificarContra1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VerificarContra1KeyReleased
+        if (this.Contra.getText().equals(this.VerificarContra1.getText())) {
+            this.jLabel7.setForeground(Color.decode("#00678e"));
+        } else {
+            this.jLabel7.setForeground(Color.decode("#FFCC00"));
+        }
+    }//GEN-LAST:event_VerificarContra1KeyReleased
+
+    private void Cedula1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Cedula1KeyReleased
+        if (met.confNum(this.Cedula1.getText())) {
+            this.jLabel8.setForeground(Color.decode("#00678e"));
+        } else {
+            this.jLabel8.setForeground(Color.decode("#FFCC00"));
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_Cedula1KeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro BottonIngresarFoto;

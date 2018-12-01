@@ -19,7 +19,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
- * Tiene la mayoria de los metodos generales, se crearon asi para mayor organizacion
+ * Tiene la mayoria de los metodos generales, se crearon asi para mayor
+ * organizacion
+ *
  * @author Victor Barbosa
  * @author Valeria Osorio
  * @author Daniel Valencia
@@ -56,11 +58,8 @@ public class Metodos {
     }
 
     public void guardar(String temp, String x, String info) throws IOException {
-        String b = "";
-        int conpilador = 1;
         File F = new File(x);
         FileWriter fw = new FileWriter(F);
-        Metodos e = new Metodos();
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(fw);
 
@@ -71,8 +70,8 @@ public class Metodos {
         bw.close();
         fw.close();
     }
-    
-      public void comboBox(String archivo, JComboBox combo) throws FileNotFoundException, IOException {
+
+    public void comboBox(String archivo, JComboBox combo) throws FileNotFoundException, IOException {
         File F = new File(archivo);
         FileReader fr = new FileReader(F);
         BufferedReader br = new BufferedReader(fr);
@@ -80,20 +79,19 @@ public class Metodos {
         String line = br.readLine();
         while (line != null) {
             String[] parts = line.split(";");
-            String item = parts [0];
+            String item = parts[0];
             combo.addItem(item);
             line = br.readLine();
         }
     }
 
-      /*
+    /*
         El metodo de leer archivo resive el nombre del archivo y retorna un ArrayList de vectores de String
         Retorna el Array donde cada vector es una linea de registro y cada posiciond del vector es un campo del registro
         que se se paro por coma. 
         Si es que me acuerdo bien, estoy 90% seguro que es asi como guarda ese Array.
-      */
-      
-     public ArrayList<String[]> LeerArchivoDaniel(String Nombre) {
+     */
+    public ArrayList<String[]> LeerArchivoDaniel(String Nombre) {
         FileReader fw;
         try {
             File f = new File(Nombre);
@@ -113,7 +111,8 @@ public class Metodos {
         }
         return null;
     }
-     /*
+
+    /*
         El metodo encontrar archivo resive el nombre del archivo, el nombre del usuario a validar y J es la posicion
         en el archivo en que se encuentran los diferentes usuarios es decir 
         
@@ -122,21 +121,21 @@ public class Metodos {
      
         en este caso J=1 por que se encuentra en la columna 1, tomando como columnas la separacion por cada coma.        
      */
-    public boolean EncontrarUsuario (String NombreArchivo, String Usuario,String pasword, int j) {
+    public boolean EncontrarUsuario(String NombreArchivo, String Usuario, String pasword, int j) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre;
         for (int i = 0; i < registros.size(); i++) {
             nombre = registros.get(i)[j];
             if (nombre.equals(Usuario)) {
-                if((registros.get(i)[j+1]).equals(pasword)){
-                return true;
+                if ((registros.get(i)[j + 1]).equals(pasword)) {
+                    return true;
                 }
             }
         }
         return false;
     }
-    
-    public String EncontrarNombre (String NombreArchivo, String Usuario) {
+
+    public String EncontrarNombre(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
         for (int i = 0; i < registros.size(); i++) {
@@ -148,8 +147,8 @@ public class Metodos {
         }
         return nombre;
     }
-    
-    public String EncontrarCedula (String NombreArchivo, String Usuario) {
+
+    public String EncontrarCedula(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
         for (int i = 0; i < registros.size(); i++) {
@@ -161,8 +160,8 @@ public class Metodos {
         }
         return nombre;
     }
-    
-     public String EncontrarFoto (String NombreArchivo, String Usuario) {
+
+    public String EncontrarFoto(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
         for (int i = 0; i < registros.size(); i++) {
@@ -174,8 +173,8 @@ public class Metodos {
         }
         return nombre;
     }
-    
-    public boolean ValidarPregunta (String NombreArchivo, String PreguntaaValidar, int posicion) {
+
+    public boolean ValidarPregunta(String NombreArchivo, String PreguntaaValidar, int posicion) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String Pregunta;
         for (int i = 0; i < registros.size(); i++) {
@@ -186,8 +185,8 @@ public class Metodos {
         }
         return true;
     }
-    
-    public boolean confNum(String x){
+
+    public boolean confNum(String x) {
         try {
             Integer.parseInt(x);
             return true;
@@ -195,21 +194,17 @@ public class Metodos {
             return false;
         }
     }
-            
+
     public String LeerArchivo(String Nombre) throws IOException {
         File F = new File(Nombre);
         FileReader fw = new FileReader(F);
         BufferedReader bw = new BufferedReader(fw);
         String L = "";
         String x = "";
-        while (true) {
+        while (x != null) {
             x = bw.readLine();
-
-            if (x != null) {
-                L = L + x + "\r\n";
-
-            } else {
-                break;
+            if(x!=null){
+            L = L + x + "\r\n";
             }
         }
         bw.close();
@@ -392,8 +387,7 @@ public class Metodos {
         }
         fr.close();
         br.close();
-        
-        
+
         return ty;
 
     }
@@ -418,20 +412,20 @@ public class Metodos {
 
         return j;
     }
-    
-    public int NombreArchivo(String f){
-        
-        int x =0;
+
+    public int NombreArchivo(String f) {
+
+        int x = 0;
         for (int i = 0; i < f.length(); i++) {
-            if(f.substring(i, i+1).equals("\\")){
-            x=i;
+            if (f.substring(i, i + 1).equals("\\")) {
+                x = i;
             }
         }
-        
+
         return x;
-    
+
     }
-    
+
     public String Desco(String x, int y, String h) {              //Desco se va a encargar que dependiendo de la poscion y, extraer un campo especifico
         int cont = 0;
         int j = 0, i = 0;
@@ -450,39 +444,39 @@ public class Metodos {
             }
             i = i + 1;
         }
-        
-            
-            
-        
+
         return ty;
     }
 
-    public int Generador_de_Combobox(String x, JComboBox y, int  h2) throws FileNotFoundException, IOException {
-        
+    public int Generador_de_Combobox(String x, JComboBox y, int h2) throws FileNotFoundException, IOException {
+
         File f = new File(x);
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         String g;
         while (br.ready()) {
-            g = br.readLine();  
+            g = br.readLine();
             Metodos p = new Metodos();
             String h = p.Desco(g, 1, ";");
             y.addItem(h);
-            h2=h2+1;
+            h2 = h2 + 1;
         }
         return h2;
     }
-    public void ReincioComboBox(JComboBox... j){
+
+    public void ReincioComboBox(JComboBox... j) {
         for (JComboBox jComboBox : j) {
             jComboBox.setSelectedIndex(0);
         }
     }
-    public void ReincioJTextField(JTextField... o){
+
+    public void ReincioJTextField(JTextField... o) {
         for (JTextField jtext : o) {
             jtext.setText("");
         }
     }
-    public void ReincioTextArea(JTextArea... a){
+
+    public void ReincioTextArea(JTextArea... a) {
         for (JTextArea jTextArea : a) {
             jTextArea.setText("");
         }

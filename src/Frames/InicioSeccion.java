@@ -5,23 +5,30 @@
  */
 package Frames;
 
+import Classes.Controlador;
+import Classes.Correo;
 import Classes.Metodos;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author danie
  */
 public class InicioSeccion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InicioSeccion
-     */
     public InicioSeccion() {
         initComponents();
     }
 
     public static String usuario = "";
     public static String nombre_profesor = "";
+    int mouseX;
+    int mouseY;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
@@ -42,6 +49,16 @@ public class InicioSeccion extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel2MouseDragged(evt);
+            }
+        });
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel2MousePressed(evt);
+            }
+        });
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cruz.png"))); // NOI18N
@@ -187,18 +204,58 @@ public class InicioSeccion extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+     private String codigo = generarCodigo();
+
+    public String generarCodigo() {
+        Random aleatorio = new Random(System.currentTimeMillis());
+        int intAletorio1 = aleatorio.nextInt(100) * 555;
+        aleatorio.setSeed(System.currentTimeMillis());
+        int intAletorio2 = aleatorio.nextInt(10000) * 333;
+        aleatorio.setSeed(System.currentTimeMillis());
+        return intAletorio1 + "codigo" + intAletorio2;
+    }
+
+    Correo co = new Correo();
+
+    public void enviarCorreo() {
+        co.setContrasena("Daniel2018");
+        co.setUsuarriodelCorreo("temporalpeach2018@gmail.com");
+        co.setAsunto("Cambio de contraseña");
+        co.setDestino(JOptionPane.showInputDialog("Escriba el correo donde desea resivir el codigo"));
+        co.setMensaje(codigo);
+        co.setNombredelArchivo("");
+        co.setRutadelArchivo("");
+
+        Controlador c = new Controlador();
+        if (c.enviarCorreo(co)) {
+            JOptionPane.showMessageDialog(null, "Se envio el correo", "ENVIADO", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se envio el correo", "NO ENVIADO", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
-        Metodos met=new Metodos();
-        String direUsu="Usuario.txt";
-        if (met.EncontrarUsuario(direUsu, Usuario.getText(), Password.getText(),2)) {
+        Metodos met = new Metodos();
+        String direUsu = "Usuario.txt";
+        if (met.EncontrarUsuario(direUsu, Usuario.getText(), Password.getText(), 2)) {
             usuario = Usuario.getText();
             nombre_profesor = met.EncontrarNombre(direUsu, usuario);
-            Principal prin=new Principal();
+            Principal prin = new Principal();
             prin.setVisible(true);
             this.setVisible(false);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "INGRESO ERRONEO", "VERIFICAR PASWORD O NICKNAME", JOptionPane.ERROR_MESSAGE);
+        }
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
@@ -209,15 +266,24 @@ public class InicioSeccion extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonRegistroActionPerformed
 
     private void ButtonRecuperarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRecuperarContraseñaActionPerformed
-               
+        enviarCorreo();
     }//GEN-LAST:event_ButtonRecuperarContraseñaActionPerformed
 
     private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_IconCerrarMouseClicked
 
-    
-    
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - mouseX, y - mouseY);
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
     public static void main(String[] args) {
         InicioSeccion ini = new InicioSeccion();
         ini.setVisible(true);

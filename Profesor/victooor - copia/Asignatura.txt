@@ -1,3 +1,3 @@
 Matematicas;MAT4439;Una materia sobre numeros;
 Frances;LFR8246;Lengua rumanse del oriente medio;
-Procesos;Pro856;Una materia sobre aplicar lo aprendido en ciencia de los materiales;
+Procesos;PRO7824;Llevar acabo los conocimientos previos en materiales.;
