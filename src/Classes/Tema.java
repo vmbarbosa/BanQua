@@ -125,7 +125,21 @@ public class Tema {
             }
         }
     }
-
+    
+    public void EnviarPreguntas(int r,ArrayList<Pregunta> preguntascambio ){
+        switch (r) {
+                    case 1:
+                        preguntas_1 = preguntascambio ;
+                        break;
+                    case 2:
+                        preguntas_2 = preguntascambio ;
+                        break;
+                    case 3:
+                        preguntas_3 = preguntascambio ;
+                        break;
+                }
+    }
+    
     public void addAsignatura(Asignatura asig) {
         asignatura = asig;
     }

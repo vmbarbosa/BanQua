@@ -35,20 +35,10 @@ public class Registrarse extends javax.swing.JFrame {
 
     public Registrarse() {
         initComponents();
-        
+
         jLabel8.setForeground(Color.decode("#00678e"));
         jLabel7.setForeground(Color.decode("#00678e"));
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
     }
 
     /**
@@ -195,50 +185,54 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(19, 40, 0, 0);
         jPanel1.add(jLabel5, gridBagConstraints);
+
+        Nombre1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 16;
+        gridBagConstraints.gridwidth = 19;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(19, 2, 0, 31);
         jPanel1.add(Nombre1, gridBagConstraints);
 
+        Cedula1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Cedula1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Cedula1KeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Cedula1KeyReleased(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 16;
+        gridBagConstraints.gridwidth = 19;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 2, 0, 31);
         jPanel1.add(Cedula1, gridBagConstraints);
+
+        Usuario1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 16;
+        gridBagConstraints.gridwidth = 19;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(21, 2, 0, 31);
         jPanel1.add(Usuario1, gridBagConstraints);
+
+        Contra.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 16;
+        gridBagConstraints.gridwidth = 19;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -252,7 +246,7 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.gridwidth = 18;
         gridBagConstraints.gridheight = 4;
         gridBagConstraints.ipadx = 108;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -266,16 +260,16 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 25;
+        gridBagConstraints.gridwidth = 29;
         gridBagConstraints.ipadx = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 40, 0, 31);
         jPanel1.add(jLabel8, gridBagConstraints);
 
         BottonRegistrar.setText("Registrar");
-        BottonRegistrar.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonRegistrar.setColorNormal(new java.awt.Color(23, 158, 224));
-        BottonRegistrar.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonRegistrar.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonRegistrar.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonRegistrar.setColorPressed(new java.awt.Color(0, 159, 239));
         BottonRegistrar.setMaximumSize(new java.awt.Dimension(180, 30));
         BottonRegistrar.setMinimumSize(new java.awt.Dimension(180, 30));
         BottonRegistrar.setPreferredSize(new java.awt.Dimension(180, 30));
@@ -285,25 +279,25 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 16;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.ipadx = -10;
+        gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(54, 11, 24, 0);
+        gridBagConstraints.insets = new java.awt.Insets(33, 2, 43, 0);
         jPanel1.add(BottonRegistrar, gridBagConstraints);
 
+        VerificarContra1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         VerificarContra1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                VerificarContra1KeyPressed(evt);
-            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 VerificarContra1KeyReleased(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 16;
+        gridBagConstraints.gridwidth = 19;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -311,11 +305,11 @@ public class Registrarse extends javax.swing.JFrame {
         jPanel1.add(VerificarContra1, gridBagConstraints);
 
         BottonIngresarFoto.setText("Ingresar foto de perfil");
-        BottonIngresarFoto.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonIngresarFoto.setColorNormal(new java.awt.Color(23, 158, 224));
-        BottonIngresarFoto.setColorPressed(new java.awt.Color(128, 140, 207));
-        BottonIngresarFoto.setMaximumSize(new java.awt.Dimension(180, 30));
-        BottonIngresarFoto.setMinimumSize(new java.awt.Dimension(180, 30));
+        BottonIngresarFoto.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonIngresarFoto.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonIngresarFoto.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonIngresarFoto.setMaximumSize(new java.awt.Dimension(180, 31));
+        BottonIngresarFoto.setMinimumSize(new java.awt.Dimension(180, 31));
         BottonIngresarFoto.setPreferredSize(new java.awt.Dimension(180, 30));
         BottonIngresarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,8 +320,9 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipady = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(19, 10, 0, 0);
         jPanel1.add(BottonIngresarFoto, gridBagConstraints);
 
         jPanel3.setBackground(new java.awt.Color(23, 158, 224));
@@ -368,46 +363,51 @@ public class Registrarse extends javax.swing.JFrame {
     private void BottonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonRegistrarActionPerformed
         if (met.confNum(this.Cedula1.getText())) {
             if (Contra.getText().equals(VerificarContra1.getText())) {
+                Object foto2 = "";
                 if (!this.rutaImagen.equals("")) {
-                    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                    String Nombre2 = this.Nombre1.getText();
-                    int Cedula2 = Integer.parseInt(this.Cedula1.getText());
-                    String NickName2 = this.Usuario1.getText();
-                    Object Pasword2 = this.Contra.getText();
-                    Object foto2 = this.rutaImagen;
-                    model.addRow(new Object[]{Nombre2, Cedula2, NickName2, Pasword2, foto2});
-
-                    try (BufferedWriter bw = new BufferedWriter(new FileWriter("Usuario.txt", true))) {
-                        int filas = jTable1.getRowCount();
-                        for (int i = 0; i < filas; i++) {
-                            Object Nombre = model.getValueAt(i, 0);
-                            Object Cedula = model.getValueAt(i, 1);
-                            Object NickName = model.getValueAt(i, 2);
-                            Object Pasword = model.getValueAt(i, 3);
-                            Object Foto = model.getValueAt(i, 4);
-                            bw.write(Nombre + "," + Cedula + "," + NickName + "," + Pasword + "," + Foto);
-                            bw.newLine();
-                        }
-                    } catch (Exception e) {
-                    }
-                    this.setVisible(false);
-                    Nombre1.setText("");
-                    Cedula1.setText("");
-                    Usuario1.setText("");
-                    Contra.setText("");
-                    VerificarContra1.setText("");
-                    JOptionPane.showMessageDialog(this, "Registro Exitoso.", "Notificacion.", JOptionPane.INFORMATION_MESSAGE);
-                    inicio.setVisible(true);
-                    File f = new File("Profesor/" + NickName2);
-                    f.mkdir();
-                    File F = new File("Profesor/" + NickName2 + "/Asignatura.txt");
-                    try {
-                        F.createNewFile();
-                    } catch (IOException ex) {
-                        Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    foto2 = this.rutaImagen;
                 } else {
-                    JOptionPane.showMessageDialog(this, "No ha seleccionado una foto.", "Error!", JOptionPane.ERROR_MESSAGE);
+                    foto2 = "$";
+                }
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                String Nombre2 = this.Nombre1.getText();
+                int Cedula2 = Integer.parseInt(this.Cedula1.getText());
+                String NickName2 = this.Usuario1.getText();
+                Object Pasword2 = this.Contra.getText();
+                model.addRow(new Object[]{Nombre2, Cedula2, NickName2, Pasword2, foto2});
+
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("Usuario.txt", true))) {
+                    int filas = jTable1.getRowCount();
+                    for (int i = 0; i < filas; i++) {
+                        Object Nombre = model.getValueAt(i, 0);
+                        Object Cedula = model.getValueAt(i, 1);
+                        Object NickName = model.getValueAt(i, 2);
+                        Object Pasword = model.getValueAt(i, 3);
+                        Object Foto = model.getValueAt(i, 4);
+                        bw.write(Nombre + "," + Cedula + "," + NickName + "," + Pasword + "," + Foto);
+                        bw.newLine();
+                    }
+                } catch (Exception e) {
+                }
+                this.setVisible(false);
+                Nombre1.setText("");
+                Cedula1.setText("");
+                Usuario1.setText("");
+                Contra.setText("");
+                VerificarContra1.setText("");
+                JOptionPane.showMessageDialog(this, "Registro Exitoso.", "Notificacion.", JOptionPane.INFORMATION_MESSAGE);
+                inicio.setVisible(true);
+                File Pro = new File("Profesor");
+                if (!Pro.exists()) {
+                    Pro.mkdirs();
+                }
+                File f = new File("Profesor/" + NickName2);
+                f.mkdir();
+                File F = new File("Profesor/" + NickName2 + "/Asignatura.txt");
+                try {
+                    F.createNewFile();
+                } catch (IOException ex) {
+                    Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } else {
                 Nombre1.setText("");
@@ -439,22 +439,6 @@ public class Registrarse extends javax.swing.JFrame {
             Foto1.setIcon(new ImageIcon(foto));
         }
     }//GEN-LAST:event_BottonIngresarFotoActionPerformed
-
-    private void Cedula1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Cedula1KeyPressed
-//        if (met.confNum(this.Cedula1.getText())) {
-//            this.jLabel8.setVisible(false);
-//        } else {
-//            this.jLabel8.setVisible(true);
-//        }
-    }//GEN-LAST:event_Cedula1KeyPressed
-
-    private void VerificarContra1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_VerificarContra1KeyPressed
-//        if (this.Contra.getText().equals(this.VerificarContra1.getText())) {
-//            this.jLabel7.setVisible(false);
-//        } else {
-//            this.jLabel7.setVisible(true);
-//        }
-    }//GEN-LAST:event_VerificarContra1KeyPressed
 
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         mouseX = evt.getX();

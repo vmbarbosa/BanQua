@@ -16,8 +16,11 @@ import Classes.Profesor;
 import Classes.Tema;
 import static Frames.InicioSeccion.nombre_profesor;
 import static Frames.InicioSeccion.usuario;
+import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.Frame;
+import java.awt.SystemColor;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -52,6 +55,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
+import rsbuttom.RSButtonMetro;
 
 /**
  *
@@ -79,11 +83,11 @@ public class Principal extends javax.swing.JFrame {
     static boolean sw3 = true; //boolean para preguntas
     Profesor profesor = new Profesor();
     DefaultTableModel modelo;
-    
 
     public Principal() {
         initComponents();
         BarraCorrediza();
+        this.getContentPane().setBackground(Color.BLACK);;
         Metodos met = new Metodos();
         profesor.ActualizarDatos();
         this.Nombre1.setText(InicioSeccion.nombre_profesor);
@@ -91,17 +95,8 @@ public class Principal extends javax.swing.JFrame {
         this.Usuario1.setText(usuario);
         SubMenu.setSelectedIndex(0);
         FotoDefault();
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        CambiarAmbienteGrafico();
+
     }
 
     /**
@@ -183,9 +178,9 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         DescripcionTema = new javax.swing.JTextArea();
         ButtonAgregarTema = new rsbuttom.RSButtonMetro();
+        AdTema = new javax.swing.JLabel();
         Pregunta = new javax.swing.JPanel();
         ComboAsignaturaS = new javax.swing.JComboBox<>();
-        jLabel18 = new javax.swing.JLabel();
         ComboBoxTemas = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -195,6 +190,10 @@ public class Principal extends javax.swing.JFrame {
         Preguntas = new javax.swing.JTextArea();
         ButtonAgregarPregunta = new rsbuttom.RSButtonMetro();
         jLabel20 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        AdTem = new javax.swing.JLabel();
+        AdDif = new javax.swing.JLabel();
+        AdAsig = new javax.swing.JLabel();
         Ver = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         ButtonMostrarIZQ = new rsbuttom.RSButtonMetro();
@@ -208,6 +207,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        AdAsig2 = new javax.swing.JLabel();
+        AdAsig3 = new javax.swing.JLabel();
+        AdAsig4 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         TablaPreg = new javax.swing.JTable();
         jPanel16 = new javax.swing.JPanel();
@@ -215,11 +217,8 @@ public class Principal extends javax.swing.JFrame {
         ButtonMostrarCENT = new rsbuttom.RSButtonMetro();
         jLabel30 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        AdAsig1 = new javax.swing.JLabel();
         ButtonGenerarInforme = new rsbuttom.RSButtonMetro();
-        InformeTablas = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
-        Info_Examen = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
         Generar = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -242,6 +241,10 @@ public class Principal extends javax.swing.JFrame {
         ndif = new javax.swing.JComboBox<>();
         generarExamen = new rsbuttom.RSButtonMetro();
         Separador = new javax.swing.JLabel();
+        AsAd = new javax.swing.JLabel();
+        NivAd = new javax.swing.JLabel();
+        SeAd = new javax.swing.JLabel();
+        TemAd = new javax.swing.JLabel();
         EditAsig = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         NomEditAsig = new javax.swing.JTextField();
@@ -282,16 +285,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel56 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
         TablaPregEdit = new javax.swing.JTable();
-        addAsig7 = new rsbuttom.RSButtonMetro();
-        addAsig8 = new rsbuttom.RSButtonMetro();
-        addAsig9 = new rsbuttom.RSButtonMetro();
+        ButtomEditPreg = new rsbuttom.RSButtonMetro();
+        ElemEditPreg = new rsbuttom.RSButtonMetro();
+        GuarEditPreg = new rsbuttom.RSButtonMetro();
         FechaPreg = new com.toedter.calendar.JDateChooser();
         EstadPreg = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        DesButto = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         ComboNivPreg = new javax.swing.JComboBox<>();
+        jLabel59 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 87, 116));
@@ -319,9 +323,9 @@ public class Principal extends javax.swing.JFrame {
         BottonEditInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Portafolio.png"))); // NOI18N
         BottonEditInfo.setText("Añadir        ");
         BottonEditInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonEditInfo.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonEditInfo.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonEditInfo.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEditInfo.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonEditInfo.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonEditInfo.setColorPressed(new java.awt.Color(0, 159, 239));
         BottonEditInfo.setFocusPainted(false);
         BottonEditInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonEditInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -335,9 +339,9 @@ public class Principal extends javax.swing.JFrame {
         BottonGenrExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonGenrExam.setText("Crear Examen");
         BottonGenrExam.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonGenrExam.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonGenrExam.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonGenrExam.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonGenrExam.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonGenrExam.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonGenrExam.setColorPressed(new java.awt.Color(0, 159, 239));
         BottonGenrExam.setFocusPainted(false);
         BottonGenrExam.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonGenrExam.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -350,13 +354,12 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonGenrExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 183, 42));
 
-        BottonHome.setBackground(new java.awt.Color(76, 185, 239));
         BottonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2302(0)_48.png"))); // NOI18N
         BottonHome.setText("Home             ");
         BottonHome.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonHome.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonHome.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonHome.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonHome.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonHome.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonHome.setColorPressed(new java.awt.Color(0, 159, 239));
         BottonHome.setFocusPainted(false);
         BottonHome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -370,9 +373,9 @@ public class Principal extends javax.swing.JFrame {
         BottonPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonPerfil.setText("Perfil");
         BottonPerfil.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonPerfil.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonPerfil.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonPerfil.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonPerfil.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonPerfil.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonPerfil.setColorPressed(new java.awt.Color(0, 159, 239));
         BottonPerfil.setFocusPainted(false);
         BottonPerfil.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonPerfil.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -401,9 +404,9 @@ public class Principal extends javax.swing.JFrame {
         BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
         BottonVerInfo.setText("Ver - Editar");
         BottonVerInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonVerInfo.setColorHover(new java.awt.Color(128, 188, 255));
-        BottonVerInfo.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonVerInfo.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonVerInfo.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonVerInfo.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonVerInfo.setColorPressed(new java.awt.Color(0, 159, 239));
         BottonVerInfo.setFocusPainted(false);
         BottonVerInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonVerInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -450,9 +453,9 @@ public class Principal extends javax.swing.JFrame {
         BottonTemas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonTemas.setText("Temas");
         BottonTemas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonTemas.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonTemas.setColorHover(new java.awt.Color(133, 207, 244));
         BottonTemas.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonTemas.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonTemas.setColorPressed(new java.awt.Color(18, 143, 205));
         BottonTemas.setFocusPainted(false);
         BottonTemas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonTemas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -466,9 +469,9 @@ public class Principal extends javax.swing.JFrame {
         BottonPreguntas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonPreguntas.setText("Preguntas");
         BottonPreguntas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonPreguntas.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonPreguntas.setColorHover(new java.awt.Color(133, 207, 244));
         BottonPreguntas.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonPreguntas.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonPreguntas.setColorPressed(new java.awt.Color(18, 143, 205));
         BottonPreguntas.setFocusPainted(false);
         BottonPreguntas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonPreguntas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -482,9 +485,9 @@ public class Principal extends javax.swing.JFrame {
         BottonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonAsignatura.setText("Asignaturas");
         BottonAsignatura.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonAsignatura.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonAsignatura.setColorHover(new java.awt.Color(133, 207, 244));
         BottonAsignatura.setColorNormal(new java.awt.Color(76, 185, 239));
-        BottonAsignatura.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonAsignatura.setColorPressed(new java.awt.Color(18, 143, 205));
         BottonAsignatura.setFocusPainted(false);
         BottonAsignatura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonAsignatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -517,9 +520,9 @@ public class Principal extends javax.swing.JFrame {
         EditarAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarAsignatura.setText("Asignaturas");
         EditarAsignatura.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        EditarAsignatura.setColorHover(new java.awt.Color(128, 188, 255));
+        EditarAsignatura.setColorHover(new java.awt.Color(133, 207, 244));
         EditarAsignatura.setColorNormal(new java.awt.Color(76, 185, 239));
-        EditarAsignatura.setColorPressed(new java.awt.Color(128, 140, 207));
+        EditarAsignatura.setColorPressed(new java.awt.Color(18, 143, 205));
         EditarAsignatura.setFocusPainted(false);
         EditarAsignatura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditarAsignatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -533,9 +536,9 @@ public class Principal extends javax.swing.JFrame {
         EditarTemas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarTemas.setText("Temas");
         EditarTemas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        EditarTemas.setColorHover(new java.awt.Color(128, 188, 255));
+        EditarTemas.setColorHover(new java.awt.Color(133, 207, 244));
         EditarTemas.setColorNormal(new java.awt.Color(76, 185, 239));
-        EditarTemas.setColorPressed(new java.awt.Color(128, 140, 207));
+        EditarTemas.setColorPressed(new java.awt.Color(18, 143, 205));
         EditarTemas.setFocusPainted(false);
         EditarTemas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditarTemas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -549,9 +552,9 @@ public class Principal extends javax.swing.JFrame {
         EditarPreguntas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarPreguntas.setText("Preguntas");
         EditarPreguntas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        EditarPreguntas.setColorHover(new java.awt.Color(128, 188, 255));
+        EditarPreguntas.setColorHover(new java.awt.Color(133, 207, 244));
         EditarPreguntas.setColorNormal(new java.awt.Color(76, 185, 239));
-        EditarPreguntas.setColorPressed(new java.awt.Color(128, 140, 207));
+        EditarPreguntas.setColorPressed(new java.awt.Color(18, 143, 205));
         EditarPreguntas.setFocusPainted(false);
         EditarPreguntas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditarPreguntas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -597,9 +600,9 @@ public class Principal extends javax.swing.JFrame {
         Perfil.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 700, 120, 20));
 
         BottonCamContra.setText("Cambiar contraseña");
-        BottonCamContra.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonCamContra.setColorHover(new java.awt.Color(1, 165, 228));
         BottonCamContra.setColorNormal(new java.awt.Color(1, 128, 176));
-        BottonCamContra.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonCamContra.setColorPressed(new java.awt.Color(2, 95, 130));
         BottonCamContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonCamContraActionPerformed(evt);
@@ -619,8 +622,11 @@ public class Principal extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 ValNuevaContraKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ValNuevaContraKeyReleased(evt);
+            }
         });
-        Perfil.add(ValNuevaContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 700, 361, 26));
+        Perfil.add(ValNuevaContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 700, 361, 25));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 103, 142));
@@ -629,15 +635,15 @@ public class Principal extends javax.swing.JFrame {
         Perfil.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel27.setForeground(new java.awt.Color(255, 51, 51));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel27.setText("Las contraseñas no son iguales.");
         Perfil.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 740, 200, -1));
 
         ButtonCambio.setText("Hacer Cambio");
-        ButtonCambio.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonCambio.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonCambio.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonCambio.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonCambio.setColorPressed(new java.awt.Color(2, 95, 130));
         ButtonCambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonCambioActionPerformed(evt);
@@ -646,34 +652,34 @@ public class Principal extends javax.swing.JFrame {
         Perfil.add(ButtonCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 770, 160, 40));
 
         Nombre1.setEditable(false);
-        Nombre1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Nombre1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Nombre1.setForeground(new java.awt.Color(51, 51, 51));
         Nombre1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Nombre1.setMaximumSize(new java.awt.Dimension(7, 28));
         Nombre1.setMinimumSize(new java.awt.Dimension(7, 28));
         Nombre1.setOpaque(false);
         Nombre1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 360, 29));
+        Perfil.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 360, 28));
 
         Cedula1.setEditable(false);
-        Cedula1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Cedula1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Cedula1.setForeground(new java.awt.Color(51, 51, 51));
         Cedula1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Cedula1.setMaximumSize(new java.awt.Dimension(7, 28));
         Cedula1.setMinimumSize(new java.awt.Dimension(7, 28));
         Cedula1.setOpaque(false);
         Cedula1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 360, 29));
+        Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 360, 28));
 
         Usuario1.setEditable(false);
-        Usuario1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Usuario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Usuario1.setForeground(new java.awt.Color(51, 51, 51));
         Usuario1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         Usuario1.setMaximumSize(new java.awt.Dimension(7, 28));
         Usuario1.setMinimumSize(new java.awt.Dimension(7, 28));
         Usuario1.setOpaque(false);
         Usuario1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 360, 30));
+        Perfil.add(Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 360, 28));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 103, 142));
@@ -696,9 +702,9 @@ public class Principal extends javax.swing.JFrame {
         Perfil.add(Foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 180, 200));
 
         BottonEditFoto.setText("Editar foto");
-        BottonEditFoto.setColorHover(new java.awt.Color(128, 188, 255));
+        BottonEditFoto.setColorHover(new java.awt.Color(1, 165, 228));
         BottonEditFoto.setColorNormal(new java.awt.Color(1, 128, 176));
-        BottonEditFoto.setColorPressed(new java.awt.Color(128, 140, 207));
+        BottonEditFoto.setColorPressed(new java.awt.Color(2, 95, 130));
         BottonEditFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonEditFotoActionPerformed(evt);
@@ -707,9 +713,9 @@ public class Principal extends javax.swing.JFrame {
         Perfil.add(BottonEditFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 183, 38));
 
         ButtonGuardarFoto.setText("Imagen por Defecto");
-        ButtonGuardarFoto.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonGuardarFoto.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonGuardarFoto.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonGuardarFoto.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonGuardarFoto.setColorPressed(new java.awt.Color(2, 95, 130));
         ButtonGuardarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGuardarFotoActionPerformed(evt);
@@ -757,7 +763,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.ipadx = 231;
         gridBagConstraints.ipady = 21;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -801,8 +807,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 177;
         gridBagConstraints.ipady = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -820,7 +825,7 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(21, 20, 0, 0);
@@ -832,12 +837,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel12.setText("Descripcion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(27, 20, 0, 0);
         Asignatura.add(jLabel12, gridBagConstraints);
 
+        Descripcion.setEditable(false);
         Descripcion.setColumns(20);
         Descripcion.setLineWrap(true);
         Descripcion.setRows(5);
@@ -846,11 +852,11 @@ public class Principal extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 13;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1397;
-        gridBagConstraints.ipady = 443;
+        gridBagConstraints.ipady = 445;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -858,9 +864,9 @@ public class Principal extends javax.swing.JFrame {
         Asignatura.add(jScrollPane1, gridBagConstraints);
 
         addAsig.setText("Agregar");
-        addAsig.setColorHover(new java.awt.Color(128, 188, 255));
+        addAsig.setColorHover(new java.awt.Color(1, 165, 228));
         addAsig.setColorNormal(new java.awt.Color(1, 128, 176));
-        addAsig.setColorPressed(new java.awt.Color(128, 140, 207));
+        addAsig.setColorPressed(new java.awt.Color(2, 95, 130));
         addAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addAsig.setMaximumSize(new java.awt.Dimension(125, 17));
         addAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -872,7 +878,7 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.ipadx = 109;
         gridBagConstraints.ipady = 29;
@@ -893,7 +899,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.gridwidth = 14;
         gridBagConstraints.ipadx = 282;
         gridBagConstraints.ipady = 23;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -907,7 +913,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -919,6 +925,15 @@ public class Principal extends javax.swing.JFrame {
         ComboAsignatura.setMaximumSize(new java.awt.Dimension(20, 204));
         ComboAsignatura.setMinimumSize(new java.awt.Dimension(20, 20));
         ComboAsignatura.setPreferredSize(new java.awt.Dimension(20, 20));
+        ComboAsignatura.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                ComboAsignaturaPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -940,7 +955,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 12;
         gridBagConstraints.ipadx = 234;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(17, 30, 0, 0);
@@ -1000,20 +1015,20 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.gridwidth = 15;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1167;
-        gridBagConstraints.ipady = 401;
+        gridBagConstraints.ipadx = 1397;
+        gridBagConstraints.ipady = 404;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 254);
+        gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 24);
         Tema.add(jScrollPane2, gridBagConstraints);
 
         ButtonAgregarTema.setText("Agregar");
-        ButtonAgregarTema.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonAgregarTema.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonAgregarTema.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonAgregarTema.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonAgregarTema.setColorPressed(new java.awt.Color(2, 95, 130));
         ButtonAgregarTema.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ButtonAgregarTema.setMaximumSize(new java.awt.Dimension(125, 17));
         ButtonAgregarTema.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1032,6 +1047,20 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(32, 20, 43, 0);
         Tema.add(ButtonAgregarTema, gridBagConstraints);
+
+        AdTema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdTema.setForeground(new java.awt.Color(255, 0, 51));
+        AdTema.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdTema.setText("*Opcion no valida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.ipadx = 11;
+        gridBagConstraints.ipady = 13;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 13, 0, 0);
+        Tema.add(AdTema, gridBagConstraints);
 
         Menu.addTab("Tema", Tema);
 
@@ -1055,39 +1084,37 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 143;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         Pregunta.add(ComboAsignaturaS, gridBagConstraints);
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 87, 116));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel18.setText("Asignatura");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 96;
-        gridBagConstraints.ipady = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
-        Pregunta.add(jLabel18, gridBagConstraints);
-
         ComboBoxTemas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ComboBoxTemas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
         ComboBoxTemas.setMaximumSize(new java.awt.Dimension(40, 20));
         ComboBoxTemas.setMinimumSize(new java.awt.Dimension(40, 20));
         ComboBoxTemas.setPreferredSize(new java.awt.Dimension(40, 20));
+        ComboBoxTemas.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                ComboBoxTemasPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 143;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         Pregunta.add(ComboBoxTemas, gridBagConstraints);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1096,10 +1123,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel19.setText("Temas");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 190;
-        gridBagConstraints.ipady = 13;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.ipady = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         Pregunta.add(jLabel19, gridBagConstraints);
@@ -1110,10 +1136,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setText("Dificultad");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 175;
-        gridBagConstraints.ipady = 13;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 15;
+        gridBagConstraints.ipady = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         Pregunta.add(jLabel21, gridBagConstraints);
@@ -1123,10 +1149,20 @@ public class Principal extends javax.swing.JFrame {
         ComboNivel.setMaximumSize(new java.awt.Dimension(40, 20));
         ComboNivel.setMinimumSize(new java.awt.Dimension(40, 20));
         ComboNivel.setPreferredSize(new java.awt.Dimension(40, 20));
+        ComboNivel.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                ComboNivelPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 143;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -1135,14 +1171,14 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel10.setBackground(new java.awt.Color(255, 153, 51));
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel10.setForeground(new java.awt.Color(0, 87, 116));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("*Escriba la pregunta aqui.");
+        jLabel10.setText("Contendio de la pregunta:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 17;
         gridBagConstraints.ipady = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
@@ -1156,21 +1192,21 @@ public class Principal extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1389;
-        gridBagConstraints.ipady = 365;
+        gridBagConstraints.ipady = 387;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 32);
+        gridBagConstraints.insets = new java.awt.Insets(8, 20, 0, 32);
         Pregunta.add(jScrollPane3, gridBagConstraints);
 
         ButtonAgregarPregunta.setText("Agregar Pregunta");
-        ButtonAgregarPregunta.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonAgregarPregunta.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonAgregarPregunta.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonAgregarPregunta.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonAgregarPregunta.setColorPressed(new java.awt.Color(2, 95, 130));
         ButtonAgregarPregunta.setPreferredSize(new java.awt.Dimension(125, 17));
         ButtonAgregarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1179,8 +1215,8 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 55;
         gridBagConstraints.ipady = 36;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -1195,28 +1231,83 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridwidth = 8;
         gridBagConstraints.ipadx = 240;
         gridBagConstraints.ipady = 21;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
         Pregunta.add(jLabel20, gridBagConstraints);
 
+        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 87, 116));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel28.setText("Asignatura");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
+        Pregunta.add(jLabel28, gridBagConstraints);
+
+        AdTem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdTem.setForeground(new java.awt.Color(255, 0, 51));
+        AdTem.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdTem.setText("*Opcion no valida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 21;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 17, 0, 0);
+        Pregunta.add(AdTem, gridBagConstraints);
+
+        AdDif.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdDif.setForeground(new java.awt.Color(255, 0, 51));
+        AdDif.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdDif.setText("*Opcion no valida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 51;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 17, 0, 0);
+        Pregunta.add(AdDif, gridBagConstraints);
+
+        AdAsig.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdAsig.setForeground(new java.awt.Color(255, 0, 51));
+        AdAsig.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdAsig.setText("*Opcion no valida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 51;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 17, 0, 0);
+        Pregunta.add(AdAsig, gridBagConstraints);
+
         Menu.addTab("Pregunta", Pregunta);
 
-        Ver.setBackground(new java.awt.Color(0, 87, 116));
+        Ver.setBackground(new java.awt.Color(255, 255, 255));
         Ver.setLayout(new java.awt.GridBagLayout());
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel11.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ButtonMostrarIZQ.setBackground(new java.awt.Color(1, 128, 176));
         ButtonMostrarIZQ.setText("Mostrar ");
         ButtonMostrarIZQ.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonMostrarIZQ.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonMostrarIZQ.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonMostrarIZQ.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonMostrarIZQ.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonMostrarIZQ.setColorPressed(new java.awt.Color(2, 95, 130));
         ButtonMostrarIZQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarIZQActionPerformed(evt);
@@ -1239,7 +1330,7 @@ public class Principal extends javax.swing.JFrame {
         Ver.add(jPanel11, gridBagConstraints);
 
         jPanel18.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel18.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Asig3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
@@ -1252,7 +1343,12 @@ public class Principal extends javax.swing.JFrame {
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
-        jPanel18.add(Asig3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 150, -1));
+        Asig3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Asig3ActionPerformed(evt);
+            }
+        });
+        jPanel18.add(Asig3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, -1));
 
         tema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
         tema.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
@@ -1264,17 +1360,26 @@ public class Principal extends javax.swing.JFrame {
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
-        jPanel18.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 150, -1));
+        jPanel18.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 150, -1));
 
         nivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
-        jPanel18.add(nivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 150, -1));
+        nivel.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                nivelPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
+        jPanel18.add(nivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 150, -1));
 
         ButtonMostrarDER.setBackground(new java.awt.Color(1, 128, 176));
         ButtonMostrarDER.setText("Mostar");
         ButtonMostrarDER.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        ButtonMostrarDER.setColorHover(new java.awt.Color(128, 188, 255));
+        ButtonMostrarDER.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonMostrarDER.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonMostrarDER.setColorPressed(new java.awt.Color(128, 140, 207));
+        ButtonMostrarDER.setColorPressed(new java.awt.Color(2, 95, 130));
         ButtonMostrarDER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarDERActionPerformed(evt);
@@ -1292,18 +1397,36 @@ public class Principal extends javax.swing.JFrame {
         jLabel32.setForeground(new java.awt.Color(0, 87, 116));
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel32.setText("Dificultad");
-        jPanel18.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, -1));
+        jPanel18.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 60, -1));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 87, 116));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel33.setText("Asignatura");
-        jPanel18.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, -1));
+        jPanel18.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 130, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 87, 116));
         jLabel6.setText("Preguntas");
         jPanel18.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 20));
+
+        AdAsig2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdAsig2.setForeground(new java.awt.Color(255, 0, 51));
+        AdAsig2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdAsig2.setText("*Opcion no valida");
+        jPanel18.add(AdAsig2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, 20));
+
+        AdAsig3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdAsig3.setForeground(new java.awt.Color(255, 0, 51));
+        AdAsig3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdAsig3.setText("*Opcion no valida");
+        jPanel18.add(AdAsig3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 160, 20));
+
+        AdAsig4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        AdAsig4.setForeground(new java.awt.Color(255, 0, 51));
+        AdAsig4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AdAsig4.setText("*Opcion no valida");
+        jPanel18.add(AdAsig4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 160, 20));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1313,6 +1436,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(30, 30, 0, 0);
         Ver.add(jPanel18, gridBagConstraints);
 
+        TablaPreg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
         TablaPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         TablaPreg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1341,7 +1465,7 @@ public class Principal extends javax.swing.JFrame {
     Ver.add(jScrollPane4, gridBagConstraints);
 
     jPanel16.setBackground(new java.awt.Color(255, 255, 255));
-    jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+    jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
     jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
     Asig2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
@@ -1354,14 +1478,14 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
-    jPanel16.add(Asig2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 150, -1));
+    jPanel16.add(Asig2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, -1));
 
     ButtonMostrarCENT.setBackground(new java.awt.Color(1, 128, 176));
     ButtonMostrarCENT.setText("Mostrar");
     ButtonMostrarCENT.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-    ButtonMostrarCENT.setColorHover(new java.awt.Color(128, 188, 255));
+    ButtonMostrarCENT.setColorHover(new java.awt.Color(1, 165, 228));
     ButtonMostrarCENT.setColorNormal(new java.awt.Color(1, 128, 176));
-    ButtonMostrarCENT.setColorPressed(new java.awt.Color(128, 140, 207));
+    ButtonMostrarCENT.setColorPressed(new java.awt.Color(2, 95, 130));
     ButtonMostrarCENT.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             ButtonMostrarCENTActionPerformed(evt);
@@ -1373,12 +1497,18 @@ public class Principal extends javax.swing.JFrame {
     jLabel30.setForeground(new java.awt.Color(0, 87, 116));
     jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel30.setText("Asignatura");
-    jPanel16.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 110, -1));
+    jPanel16.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 110, -1));
 
     jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel36.setForeground(new java.awt.Color(0, 87, 116));
     jLabel36.setText("Temas de la Asignatura");
     jPanel16.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 20));
+
+    AdAsig1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AdAsig1.setForeground(new java.awt.Color(255, 0, 51));
+    AdAsig1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AdAsig1.setText("*Opcion no valida");
+    jPanel16.add(AdAsig1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, 20));
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
@@ -1392,9 +1522,9 @@ public class Principal extends javax.swing.JFrame {
     ButtonGenerarInforme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
     ButtonGenerarInforme.setText("Informe");
     ButtonGenerarInforme.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-    ButtonGenerarInforme.setColorHover(new java.awt.Color(128, 188, 255));
+    ButtonGenerarInforme.setColorHover(new java.awt.Color(1, 165, 228));
     ButtonGenerarInforme.setColorNormal(new java.awt.Color(1, 128, 176));
-    ButtonGenerarInforme.setColorPressed(new java.awt.Color(128, 140, 207));
+    ButtonGenerarInforme.setColorPressed(new java.awt.Color(2, 95, 130));
     ButtonGenerarInforme.setFocusPainted(false);
     ButtonGenerarInforme.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ButtonGenerarInforme.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1416,53 +1546,6 @@ public class Principal extends javax.swing.JFrame {
     Ver.add(ButtonGenerarInforme, gridBagConstraints);
 
     Menu.addTab("Ver", Ver);
-
-    jPanel19.setBackground(new java.awt.Color(0, 87, 116));
-    jPanel19.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-
-    javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-    jPanel19.setLayout(jPanel19Layout);
-    jPanel19Layout.setHorizontalGroup(
-        jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 1442, Short.MAX_VALUE)
-    );
-    jPanel19Layout.setVerticalGroup(
-        jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 854, Short.MAX_VALUE)
-    );
-
-    javax.swing.GroupLayout InformeTablasLayout = new javax.swing.GroupLayout(InformeTablas);
-    InformeTablas.setLayout(InformeTablasLayout);
-    InformeTablasLayout.setHorizontalGroup(
-        InformeTablasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(InformeTablasLayout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-    );
-    InformeTablasLayout.setVerticalGroup(
-        InformeTablasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-
-    Menu.addTab("Informe", InformeTablas);
-
-    Info_Examen.setLayout(new java.awt.GridBagLayout());
-
-    jPanel17.setBackground(new java.awt.Color(0, 87, 116));
-    jPanel17.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-    jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-    gridBagConstraints.ipadx = 110;
-    gridBagConstraints.ipady = 342;
-    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-    gridBagConstraints.insets = new java.awt.Insets(0, 498, 0, 549);
-    Info_Examen.add(jPanel17, gridBagConstraints);
-
-    Menu.addTab("Info_Examen", Info_Examen);
 
     Generar.setBackground(new java.awt.Color(255, 255, 255));
     Generar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1502,16 +1585,36 @@ public class Principal extends javax.swing.JFrame {
     jLabel4.setText("Semestre:");
     Generar.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
+    seme.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
     seme.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Primero", "Segundo" }));
     seme.setMaximumSize(new java.awt.Dimension(7, 20));
     seme.setMinimumSize(new java.awt.Dimension(7, 20));
     seme.setPreferredSize(new java.awt.Dimension(7, 20));
+    seme.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            semePopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     Generar.add(seme, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 250, 25));
 
+    asigna.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
     asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
     asigna.setMaximumSize(new java.awt.Dimension(7, 20));
     asigna.setMinimumSize(new java.awt.Dimension(7, 20));
     asigna.setPreferredSize(new java.awt.Dimension(7, 20));
+    asigna.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            asignaPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     asigna.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             asignaActionPerformed(evt);
@@ -1536,14 +1639,8 @@ public class Principal extends javax.swing.JFrame {
     preg.setMinimumSize(new java.awt.Dimension(7, 20));
     preg.setPreferredSize(new java.awt.Dimension(7, 20));
     preg.addKeyListener(new java.awt.event.KeyAdapter() {
-        public void keyPressed(java.awt.event.KeyEvent evt) {
-            pregKeyPressed(evt);
-        }
         public void keyReleased(java.awt.event.KeyEvent evt) {
             pregKeyReleased(evt);
-        }
-        public void keyTyped(java.awt.event.KeyEvent evt) {
-            pregKeyTyped(evt);
         }
     });
     Generar.add(preg, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 250, 25));
@@ -1560,9 +1657,9 @@ public class Principal extends javax.swing.JFrame {
     Generar.add(AvisoNumeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 270, -1));
 
     ButtonAddPreg.setText("Generar");
-    ButtonAddPreg.setColorHover(new java.awt.Color(128, 188, 255));
+    ButtonAddPreg.setColorHover(new java.awt.Color(1, 165, 228));
     ButtonAddPreg.setColorNormal(new java.awt.Color(1, 128, 176));
-    ButtonAddPreg.setColorPressed(new java.awt.Color(128, 140, 207));
+    ButtonAddPreg.setColorPressed(new java.awt.Color(2, 95, 130));
     ButtonAddPreg.setMaximumSize(new java.awt.Dimension(125, 17));
     ButtonAddPreg.setMinimumSize(new java.awt.Dimension(125, 17));
     ButtonAddPreg.setPreferredSize(new java.awt.Dimension(125, 17));
@@ -1579,6 +1676,15 @@ public class Principal extends javax.swing.JFrame {
     Generar.add(InfoTem, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
     temas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    temas.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            temasPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     Generar.add(temas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 250, 25));
 
     NivInfo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1587,10 +1693,19 @@ public class Principal extends javax.swing.JFrame {
     Generar.add(NivInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
 
     ndif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ndif.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            ndifPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     Generar.add(ndif, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, 250, 25));
 
     generarExamen.setText("Añadir Pregunta");
-    generarExamen.setColorHover(new java.awt.Color(128, 188, 255));
+    generarExamen.setColorHover(new java.awt.Color(1, 165, 228));
     generarExamen.setColorNormal(new java.awt.Color(1, 128, 176));
     generarExamen.setColorPressed(new java.awt.Color(128, 140, 207));
     generarExamen.addActionListener(new java.awt.event.ActionListener() {
@@ -1602,6 +1717,30 @@ public class Principal extends javax.swing.JFrame {
 
     Separador.setText("__________________________________________________________________________________________________________");
     Generar.add(Separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 700, -1));
+
+    AsAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AsAd.setForeground(new java.awt.Color(255, 0, 51));
+    AsAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AsAd.setText("*Opcion no valida");
+    Generar.add(AsAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 130, 20));
+
+    NivAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    NivAd.setForeground(new java.awt.Color(255, 0, 51));
+    NivAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    NivAd.setText("*Opcion no valida");
+    Generar.add(NivAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 620, 130, 20));
+
+    SeAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    SeAd.setForeground(new java.awt.Color(255, 0, 51));
+    SeAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    SeAd.setText("*Opcion no valida");
+    Generar.add(SeAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 130, 20));
+
+    TemAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    TemAd.setForeground(new java.awt.Color(255, 0, 51));
+    TemAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    TemAd.setText("*Opcion no valida");
+    Generar.add(TemAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 130, 20));
 
     Menu.addTab("Generar", Generar);
 
@@ -1710,10 +1849,10 @@ public class Principal extends javax.swing.JFrame {
     EditAsig.add(jScrollPane5, gridBagConstraints);
 
     BottonEditAsig.setText("Editar");
-    BottonEditAsig.setColorBorde(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-    BottonEditAsig.setColorHover(new java.awt.Color(128, 188, 255));
-    BottonEditAsig.setColorNormal(new java.awt.Color(255, 102, 0));
-    BottonEditAsig.setColorPressed(new java.awt.Color(128, 140, 207));
+    BottonEditAsig.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+    BottonEditAsig.setColorHover(new java.awt.Color(255, 157, 61));
+    BottonEditAsig.setColorNormal(new java.awt.Color(255, 127, 0));
+    BottonEditAsig.setColorPressed(new java.awt.Color(244, 121, 0));
     BottonEditAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     BottonEditAsig.setMaximumSize(new java.awt.Dimension(125, 17));
     BottonEditAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1775,9 +1914,9 @@ public class Principal extends javax.swing.JFrame {
     EditAsig.add(jScrollPane6, gridBagConstraints);
 
     GuaEditAsig.setText("Guardar");
-    GuaEditAsig.setColorHover(new java.awt.Color(128, 188, 255));
+    GuaEditAsig.setColorHover(new java.awt.Color(1, 165, 228));
     GuaEditAsig.setColorNormal(new java.awt.Color(1, 128, 176));
-    GuaEditAsig.setColorPressed(new java.awt.Color(128, 140, 207));
+    GuaEditAsig.setColorPressed(new java.awt.Color(2, 95, 130));
     GuaEditAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     GuaEditAsig.setMaximumSize(new java.awt.Dimension(125, 17));
     GuaEditAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1798,9 +1937,9 @@ public class Principal extends javax.swing.JFrame {
     EditAsig.add(GuaEditAsig, gridBagConstraints);
 
     ElimEditAsig.setText("Eliminar");
-    ElimEditAsig.setColorHover(new java.awt.Color(128, 188, 255));
+    ElimEditAsig.setColorHover(new java.awt.Color(255, 81, 81));
     ElimEditAsig.setColorNormal(new java.awt.Color(255, 0, 0));
-    ElimEditAsig.setColorPressed(new java.awt.Color(128, 140, 207));
+    ElimEditAsig.setColorPressed(new java.awt.Color(219, 0, 0));
     ElimEditAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ElimEditAsig.setMaximumSize(new java.awt.Dimension(125, 17));
     ElimEditAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1828,7 +1967,7 @@ public class Principal extends javax.swing.JFrame {
     jLabel48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel48.setForeground(new java.awt.Color(0, 87, 116));
     jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    jLabel48.setText(" Agregar Tema");
+    jLabel48.setText(" Editor Tema");
     jLabel48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
@@ -1976,9 +2115,9 @@ public class Principal extends javax.swing.JFrame {
 
     ButtomEditTem.setText("Editar");
     ButtomEditTem.setColorBorde(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-    ButtomEditTem.setColorHover(new java.awt.Color(128, 188, 255));
-    ButtomEditTem.setColorNormal(new java.awt.Color(255, 102, 0));
-    ButtomEditTem.setColorPressed(new java.awt.Color(128, 140, 207));
+    ButtomEditTem.setColorHover(new java.awt.Color(255, 157, 61));
+    ButtomEditTem.setColorNormal(new java.awt.Color(255, 127, 0));
+    ButtomEditTem.setColorPressed(new java.awt.Color(244, 121, 0));
     ButtomEditTem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ButtomEditTem.setMaximumSize(new java.awt.Dimension(125, 17));
     ButtomEditTem.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1999,9 +2138,9 @@ public class Principal extends javax.swing.JFrame {
     EditTem.add(ButtomEditTem, gridBagConstraints);
 
     ElimEditTem.setText("Eliminar");
-    ElimEditTem.setColorHover(new java.awt.Color(128, 188, 255));
+    ElimEditTem.setColorHover(new java.awt.Color(255, 81, 81));
     ElimEditTem.setColorNormal(new java.awt.Color(255, 0, 0));
-    ElimEditTem.setColorPressed(new java.awt.Color(128, 140, 207));
+    ElimEditTem.setColorPressed(new java.awt.Color(219, 0, 0));
     ElimEditTem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ElimEditTem.setMaximumSize(new java.awt.Dimension(125, 17));
     ElimEditTem.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2022,9 +2161,9 @@ public class Principal extends javax.swing.JFrame {
     EditTem.add(ElimEditTem, gridBagConstraints);
 
     GuardarTem.setText("Guardar");
-    GuardarTem.setColorHover(new java.awt.Color(128, 188, 255));
+    GuardarTem.setColorHover(new java.awt.Color(1, 165, 228));
     GuardarTem.setColorNormal(new java.awt.Color(1, 128, 176));
-    GuardarTem.setColorPressed(new java.awt.Color(128, 140, 207));
+    GuardarTem.setColorPressed(new java.awt.Color(2, 95, 130));
     GuardarTem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     GuardarTem.setMaximumSize(new java.awt.Dimension(125, 17));
     GuardarTem.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2055,37 +2194,33 @@ public class Principal extends javax.swing.JFrame {
     ComboAsigPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboAsigPreg.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboAsigPreg.setPreferredSize(new java.awt.Dimension(40, 20));
-    ComboAsigPreg.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-        }
-        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-            ComboAsigPregPopupMenuWillBecomeInvisible(evt);
-        }
-        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+    ComboAsigPreg.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ComboAsigPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 2;
-    gridBagConstraints.gridwidth = 4;
+    gridBagConstraints.gridy = 3;
+    gridBagConstraints.gridwidth = 6;
     gridBagConstraints.ipadx = 120;
     gridBagConstraints.ipady = 7;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(10, 22, 0, 0);
     EditPreg.add(ComboAsigPreg, gridBagConstraints);
 
     jLabel52.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel52.setForeground(new java.awt.Color(0, 87, 116));
     jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    jLabel52.setText("Ultimo uso");
+    jLabel52.setText("Contendio Pregunta");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 8;
-    gridBagConstraints.gridwidth = 2;
-    gridBagConstraints.ipadx = 16;
+    gridBagConstraints.gridy = 10;
+    gridBagConstraints.gridwidth = 4;
+    gridBagConstraints.ipadx = 3;
     gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 0);
     EditPreg.add(jLabel52, gridBagConstraints);
 
     ComboTemPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2093,19 +2228,15 @@ public class Principal extends javax.swing.JFrame {
     ComboTemPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboTemPreg.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboTemPreg.setPreferredSize(new java.awt.Dimension(40, 20));
-    ComboTemPreg.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-        }
-        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-            ComboTemPregPopupMenuWillBecomeInvisible(evt);
-        }
-        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+    ComboTemPreg.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ComboTemPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 5;
-    gridBagConstraints.gridy = 2;
-    gridBagConstraints.gridwidth = 28;
+    gridBagConstraints.gridx = 9;
+    gridBagConstraints.gridy = 3;
+    gridBagConstraints.gridwidth = 61;
     gridBagConstraints.ipadx = 110;
     gridBagConstraints.ipady = 7;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -2117,9 +2248,10 @@ public class Principal extends javax.swing.JFrame {
     jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel53.setText("Temas");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 5;
+    gridBagConstraints.gridx = 9;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 7;
+    gridBagConstraints.gridwidth = 11;
+    gridBagConstraints.gridheight = 2;
     gridBagConstraints.ipadx = 40;
     gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -2131,8 +2263,10 @@ public class Principal extends javax.swing.JFrame {
     jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel54.setText("Dificultad");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 50;
+    gridBagConstraints.gridx = 105;
     gridBagConstraints.gridy = 1;
+    gridBagConstraints.gridwidth = 107;
+    gridBagConstraints.gridheight = 2;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -2144,13 +2278,23 @@ public class Principal extends javax.swing.JFrame {
     ComboNivelA.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setPreferredSize(new java.awt.Dimension(40, 20));
+    ComboNivelA.addComponentListener(new java.awt.event.ComponentAdapter() {
+        public void componentShown(java.awt.event.ComponentEvent evt) {
+            ComboNivelAComponentShown(evt);
+        }
+    });
+    ComboNivelA.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ComboNivelAActionPerformed(evt);
+        }
+    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridy = 5;
     gridBagConstraints.ipadx = 20;
     gridBagConstraints.ipady = 4;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(10, 21, 0, 0);
     EditPreg.add(ComboNivelA, gridBagConstraints);
 
     InfoPreg.setColumns(20);
@@ -2161,28 +2305,28 @@ public class Principal extends javax.swing.JFrame {
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 10;
-    gridBagConstraints.gridwidth = 51;
+    gridBagConstraints.gridy = 11;
+    gridBagConstraints.gridwidth = 106;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
     gridBagConstraints.ipadx = 387;
     gridBagConstraints.ipady = 347;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(24, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(11, 21, 0, 0);
     EditPreg.add(jScrollPane9, gridBagConstraints);
 
     jLabel56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel56.setForeground(new java.awt.Color(0, 87, 116));
     jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    jLabel56.setText(" Agregar Pregunta");
+    jLabel56.setText(" Editar Pregunta");
     jLabel56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridwidth = 52;
+    gridBagConstraints.gridwidth = 213;
     gridBagConstraints.ipadx = 280;
     gridBagConstraints.ipady = 21;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(21, 21, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(23, 23, 0, 0);
     EditPreg.add(jLabel56, gridBagConstraints);
 
     TablaPregEdit.setModel(new javax.swing.table.DefaultTableModel(
@@ -2212,118 +2356,121 @@ public class Principal extends javax.swing.JFrame {
     jScrollPane10.setViewportView(TablaPregEdit);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 52;
+    gridBagConstraints.gridx = 213;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridheight = 13;
+    gridBagConstraints.gridheight = 14;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.ipadx = 935;
-    gridBagConstraints.ipady = 751;
+    gridBagConstraints.ipadx = 931;
+    gridBagConstraints.ipady = 747;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.weightx = 1.0;
     gridBagConstraints.weighty = 1.0;
-    gridBagConstraints.insets = new java.awt.Insets(21, 42, 57, 33);
+    gridBagConstraints.insets = new java.awt.Insets(23, 42, 59, 35);
     EditPreg.add(jScrollPane10, gridBagConstraints);
 
-    addAsig7.setText("Editar");
-    addAsig7.setColorBorde(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-    addAsig7.setColorHover(new java.awt.Color(128, 188, 255));
-    addAsig7.setColorNormal(new java.awt.Color(255, 102, 0));
-    addAsig7.setColorPressed(new java.awt.Color(128, 140, 207));
-    addAsig7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-    addAsig7.setMaximumSize(new java.awt.Dimension(125, 17));
-    addAsig7.setMinimumSize(new java.awt.Dimension(125, 17));
-    addAsig7.setPreferredSize(new java.awt.Dimension(125, 17));
-    addAsig7.addActionListener(new java.awt.event.ActionListener() {
+    ButtomEditPreg.setText("Editar");
+    ButtomEditPreg.setColorBorde(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+    ButtomEditPreg.setColorHover(new java.awt.Color(255, 157, 61));
+    ButtomEditPreg.setColorNormal(new java.awt.Color(255, 127, 0));
+    ButtomEditPreg.setColorPressed(new java.awt.Color(244, 121, 0));
+    ButtomEditPreg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    ButtomEditPreg.setMaximumSize(new java.awt.Dimension(125, 17));
+    ButtomEditPreg.setMinimumSize(new java.awt.Dimension(125, 17));
+    ButtomEditPreg.setPreferredSize(new java.awt.Dimension(125, 17));
+    ButtomEditPreg.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            addAsig7ActionPerformed(evt);
+            ButtomEditPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 11;
-    gridBagConstraints.gridwidth = 3;
+    gridBagConstraints.gridy = 12;
+    gridBagConstraints.gridwidth = 5;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
-    EditPreg.add(addAsig7, gridBagConstraints);
+    gridBagConstraints.insets = new java.awt.Insets(10, 21, 0, 0);
+    EditPreg.add(ButtomEditPreg, gridBagConstraints);
 
-    addAsig8.setText("Eliminar");
-    addAsig8.setColorHover(new java.awt.Color(128, 188, 255));
-    addAsig8.setColorNormal(new java.awt.Color(255, 0, 0));
-    addAsig8.setColorPressed(new java.awt.Color(128, 140, 207));
-    addAsig8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-    addAsig8.setMaximumSize(new java.awt.Dimension(125, 17));
-    addAsig8.setMinimumSize(new java.awt.Dimension(125, 17));
-    addAsig8.setPreferredSize(new java.awt.Dimension(125, 17));
-    addAsig8.addActionListener(new java.awt.event.ActionListener() {
+    ElemEditPreg.setText("Eliminar");
+    ElemEditPreg.setColorHover(new java.awt.Color(255, 81, 81));
+    ElemEditPreg.setColorNormal(new java.awt.Color(255, 0, 0));
+    ElemEditPreg.setColorPressed(new java.awt.Color(219, 0, 0));
+    ElemEditPreg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    ElemEditPreg.setMaximumSize(new java.awt.Dimension(125, 17));
+    ElemEditPreg.setMinimumSize(new java.awt.Dimension(125, 17));
+    ElemEditPreg.setPreferredSize(new java.awt.Dimension(125, 17));
+    ElemEditPreg.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            addAsig8ActionPerformed(evt);
+            ElemEditPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 3;
-    gridBagConstraints.gridy = 11;
-    gridBagConstraints.gridwidth = 10;
+    gridBagConstraints.gridx = 5;
+    gridBagConstraints.gridy = 12;
+    gridBagConstraints.gridwidth = 25;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(12, 10, 0, 0);
-    EditPreg.add(addAsig8, gridBagConstraints);
+    gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+    EditPreg.add(ElemEditPreg, gridBagConstraints);
 
-    addAsig9.setText("Guardar");
-    addAsig9.setColorHover(new java.awt.Color(128, 188, 255));
-    addAsig9.setColorNormal(new java.awt.Color(1, 128, 176));
-    addAsig9.setColorPressed(new java.awt.Color(128, 140, 207));
-    addAsig9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-    addAsig9.setMaximumSize(new java.awt.Dimension(125, 17));
-    addAsig9.setMinimumSize(new java.awt.Dimension(125, 17));
-    addAsig9.setPreferredSize(new java.awt.Dimension(125, 17));
-    addAsig9.addActionListener(new java.awt.event.ActionListener() {
+    GuarEditPreg.setText("Guardar");
+    GuarEditPreg.setColorHover(new java.awt.Color(1, 165, 228));
+    GuarEditPreg.setColorNormal(new java.awt.Color(1, 128, 176));
+    GuarEditPreg.setColorPressed(new java.awt.Color(2, 95, 130));
+    GuarEditPreg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    GuarEditPreg.setMaximumSize(new java.awt.Dimension(125, 17));
+    GuarEditPreg.setMinimumSize(new java.awt.Dimension(125, 17));
+    GuarEditPreg.setPreferredSize(new java.awt.Dimension(125, 17));
+    GuarEditPreg.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            addAsig9ActionPerformed(evt);
+            GuarEditPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 22;
-    gridBagConstraints.gridy = 11;
-    gridBagConstraints.gridwidth = 29;
+    gridBagConstraints.gridx = 44;
+    gridBagConstraints.gridy = 12;
+    gridBagConstraints.gridwidth = 62;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(12, 10, 0, 0);
-    EditPreg.add(addAsig9, gridBagConstraints);
+    gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+    EditPreg.add(GuarEditPreg, gridBagConstraints);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 9;
-    gridBagConstraints.gridwidth = 6;
+    gridBagConstraints.gridwidth = 10;
     gridBagConstraints.ipadx = 223;
-    gridBagConstraints.ipady = 4;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
     EditPreg.add(FechaPreg, gridBagConstraints);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 6;
-    gridBagConstraints.gridwidth = 6;
+    gridBagConstraints.gridy = 7;
+    gridBagConstraints.gridwidth = 10;
     gridBagConstraints.ipadx = 244;
     gridBagConstraints.ipady = 4;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
     EditPreg.add(EstadPreg, gridBagConstraints);
 
-    jButton1.setBackground(new java.awt.Color(255, 102, 102));
-    jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\Entypo_d83d(0)_32.png")); // NOI18N
+    DesButto.setBackground(new java.awt.Color(204, 204, 204));
+    DesButto.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            DesButtoActionPerformed(evt);
+        }
+    });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 12;
-    gridBagConstraints.gridy = 6;
-    gridBagConstraints.gridwidth = 11;
-    gridBagConstraints.gridheight = 2;
+    gridBagConstraints.gridx = 19;
+    gridBagConstraints.gridy = 7;
+    gridBagConstraints.gridwidth = 26;
     gridBagConstraints.ipadx = -25;
-    gridBagConstraints.ipady = -16;
+    gridBagConstraints.ipady = -17;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
-    EditPreg.add(jButton1, gridBagConstraints);
+    gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+    EditPreg.add(DesButto, gridBagConstraints);
 
     jLabel55.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel55.setForeground(new java.awt.Color(0, 87, 116));
@@ -2332,11 +2479,11 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 2;
+    gridBagConstraints.gridwidth = 3;
     gridBagConstraints.ipadx = 16;
     gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(19, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(18, 21, 0, 0);
     EditPreg.add(jLabel55, gridBagConstraints);
 
     jLabel57.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2345,12 +2492,12 @@ public class Principal extends javax.swing.JFrame {
     jLabel57.setText("Nivel Actual");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 2;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridwidth = 3;
     gridBagConstraints.ipadx = 11;
     gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(33, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(12, 21, 0, 0);
     EditPreg.add(jLabel57, gridBagConstraints);
 
     jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2359,12 +2506,12 @@ public class Principal extends javax.swing.JFrame {
     jLabel58.setText("Estado");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridy = 6;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 38;
     gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(jLabel58, gridBagConstraints);
 
     ComboNivPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2372,23 +2519,34 @@ public class Principal extends javax.swing.JFrame {
     ComboNivPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivPreg.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboNivPreg.setPreferredSize(new java.awt.Dimension(40, 20));
-    ComboNivPreg.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-        }
-        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-            ComboNivPregPopupMenuWillBecomeInvisible(evt);
-        }
-        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+    ComboNivPreg.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ComboNivPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 50;
-    gridBagConstraints.gridy = 2;
+    gridBagConstraints.gridx = 105;
+    gridBagConstraints.gridy = 3;
+    gridBagConstraints.gridwidth = 107;
     gridBagConstraints.ipadx = 20;
     gridBagConstraints.ipady = 7;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
     EditPreg.add(ComboNivPreg, gridBagConstraints);
+
+    jLabel59.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel59.setForeground(new java.awt.Color(0, 87, 116));
+    jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel59.setText("Ultimo uso");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridwidth = 2;
+    gridBagConstraints.ipadx = 16;
+    gridBagConstraints.ipady = 3;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 0);
+    EditPreg.add(jLabel59, gridBagConstraints);
 
     Menu.addTab("Pregunta", EditPreg);
 
@@ -2399,6 +2557,20 @@ public class Principal extends javax.swing.JFrame {
     pack();
     setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    public void CambiarAmbienteGrafico() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public void BarraCorrediza() {
         JScrollPane scrollPane = new JScrollPane(Fondo);
@@ -2432,8 +2604,12 @@ public class Principal extends javax.swing.JFrame {
         Separador.setVisible(false);
         NivInfo.setVisible(false);
         temas.setVisible(false);
+        TemAd.setVisible(false);
+        NivAd.setVisible(false);
         ndif.setVisible(false);
         InfoTem.setVisible(false);
+        SeAd.setVisible(false);
+        AsAd.setVisible(false);
         generarExamen.setVisible(false);
         asigna.removeAllItems();
         asigna.addItem("...");
@@ -2442,6 +2618,11 @@ public class Principal extends javax.swing.JFrame {
             item = a.getNombre();
             asigna.addItem(item);
         }
+        evaluacion.setEditable(true);
+        seme.setEnabled(true);
+        asigna.setEnabled(true);
+        fecha.setEnabled(true);
+        preg.setEditable(true);
         nombre.setText(nombre_profesor);
         Metodos met = new Metodos();
         met.ReincioComboBox(seme);
@@ -2457,26 +2638,33 @@ public class Principal extends javax.swing.JFrame {
 
         met.ReincioComboBox(Asig2, Asig3, tema, nivel);
         SubMenu.setSelectedIndex(2);
-        if (Menu.getSelectedComponent() != Ver) {
-            try {
-                modelo = (DefaultTableModel) TablaPreg.getModel();
-                modelo.setColumnCount(0);
-                modelo.setRowCount(0);
-                sw1 = true;
-                sw2 = true;
-                sw3 = true;
-                int h = 0;
-                Asig2.removeAllItems();
-                Asig3.removeAllItems();
-                Asig2.addItem("...");
-                Asig3.addItem("...");
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
-                met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
-                Menu.setSelectedComponent(Ver);
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            modelo = (DefaultTableModel) TablaPreg.getModel();
+            modelo.setColumnCount(0);
+            modelo.setRowCount(0);
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
+            int h = 0;
+            Asig2.removeAllItems();
+            Asig3.removeAllItems();
+            Asig2.addItem("...");
+            Asig3.addItem("...");
+            tema.setEnabled(false);
+            nivel.setEnabled(false);
+            AdAsig1.setVisible(false);
+            AdAsig2.setVisible(false);
+            AdAsig3.setVisible(false);
+            AdAsig4.setVisible(false);
+            ButtonMostrarCENT.setEnabled(false);
+            ButtonMostrarDER.setEnabled(false);
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
+            met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
+            Menu.setSelectedComponent(Ver);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }//GEN-LAST:event_BottonVerInfoActionPerformed
 
     private void BottonEditInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEditInfoActionPerformed
@@ -2487,6 +2675,14 @@ public class Principal extends javax.swing.JFrame {
     private void BottonPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonPerfilActionPerformed
         Menu.setSelectedComponent(Perfil);
         SubMenu.setSelectedIndex(0);
+        jLabel41.setVisible(false);
+        jLabel9.setVisible(false);
+        jLabel7.setVisible(false);
+        jLabel27.setVisible(false);
+        DesBoton(ButtonCambio);
+        ButtonCambio.setVisible(false);
+        NuevaContra.setVisible(false);
+        ValNuevaContra.setVisible(false);
     }//GEN-LAST:event_BottonPerfilActionPerformed
 
     private void BottonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonHomeActionPerformed
@@ -2495,50 +2691,55 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonHomeActionPerformed
 
     private void ButtonAddPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddPregActionPerformed
-        if (seme.getSelectedIndex() != 0 && asigna.getSelectedIndex() != 0) {
-            String tem;
-            titulo = evaluacion.getText();
-            nom = "Profesor: " + nombre_profesor;
-            String s = (String) seme.getSelectedItem();
-            if (s.equals("Primero")) {
-                sem = "10";
-            } else {
-                if (s.equals("Segundo")) {
-                    sem = "30";
-                }
-            }
-            String as = (String) asigna.getSelectedItem();;
-            mat = "Asignatura De " + asigna.getSelectedItem();
-            ev = "" + evaluacion.getText();
-            DateFormat FormaFecha = new SimpleDateFormat("dd-MM-yyyy");
-            fec = "" + FormaFecha.format(fecha.getDate());
-            num = Integer.parseInt(preg.getText());
-            Asignatura asig = null;
-            for (Asignatura a : profesor.getAsignaturas()) {
-                if (a.getNombre().equals(as)) {
-                    temas.removeAllItems();
-                    temas.addItem("...");
-                    for (Tema t : a.getTemas()) {
-                        tem = t.getNombre();
-                        temas.addItem(tem);
+        int TotalPreg = TotalPregPorAsig(profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1));
+        if (evaluacion.getText().equals("")) {
+            if (TotalPreg < Integer.parseInt(preg.getText())) {
+                String tem;
+                titulo = evaluacion.getText();
+                nom = "Profesor: " + nombre_profesor;
+                String s = (String) seme.getSelectedItem();
+                if (s.equals("Primero")) {
+                    sem = "10";
+                } else {
+                    if (s.equals("Segundo")) {
+                        sem = "30";
                     }
                 }
+                String as = (String) asigna.getSelectedItem();;
+                mat = "Asignatura De " + asigna.getSelectedItem();
+                ev = "" + evaluacion.getText();
+                DateFormat FormaFecha = new SimpleDateFormat("dd-MM-yyyy");
+                fec = "" + FormaFecha.format(fecha.getDate());
+                num = Integer.parseInt(preg.getText());
+                Asignatura asig = null;
+                for (Asignatura a : profesor.getAsignaturas()) {
+                    if (a.getNombre().equals(as)) {
+                        temas.removeAllItems();
+                        temas.addItem("...");
+                        for (Tema t : a.getTemas()) {
+                            tem = t.getNombre();
+                            temas.addItem(tem);
+                        }
+                    }
+                }
+                ndif.setSelectedIndex(0);
+                jud = 1;
+                Separador.setVisible(true);
+                NivInfo.setVisible(true);
+                temas.setVisible(true);
+                ndif.setVisible(true);
+                InfoTem.setVisible(true);
+                generarExamen.setVisible(true);
+                evaluacion.setEditable(false);
+                seme.setEnabled(false);
+                asigna.setEnabled(false);
+                fecha.setEnabled(false);
+                preg.setEditable(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "El numero de preguntas establecido es mayor del que posee la asigntura escogida /n se recomienda desbloquear preguntas o agregar nuevas.", "Advertencia", JOptionPane.ERROR_MESSAGE);
             }
-            ndif.setSelectedIndex(0);
-            jud = 1;
-            Separador.setVisible(true);
-            NivInfo.setVisible(true);
-            temas.setVisible(true);
-            ndif.setVisible(true);
-            InfoTem.setVisible(true);
-            generarExamen.setVisible(true);
-            evaluacion.setEditable(false);
-            seme.setEnabled(false);
-            asigna.setEnabled(false);
-            fecha.setEnabled(false);
-            preg.setEditable(false);
         } else {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Advertencia", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_ButtonAddPregActionPerformed
 
@@ -2598,6 +2799,7 @@ public class Principal extends javax.swing.JFrame {
                             e.guardar(temp, x, total);
                             JOptionPane.showMessageDialog(null, "Pregunta añadida exitosamente.");
                             Menu.setSelectedComponent(Home);
+
                         } catch (IOException ex) {
                             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -2847,34 +3049,15 @@ public class Principal extends javax.swing.JFrame {
         this.MostrarPreg(x, y, z, profesor);
     }//GEN-LAST:event_ButtonMostrarDERActionPerformed
 
-    private void pregKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pregKeyPressed
-//        Metodos met = new Metodos();
-//        if (met.confNum(this.preg.getText())) {
-//            this.AvisoNumeros.setVisible(false);
-//        } else {
-//            this.AvisoNumeros.setVisible(true);
-//        }        // TODO add your handling code here:
-    }//GEN-LAST:event_pregKeyPressed
-
-    private void pregKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pregKeyTyped
-//        Metodos met = new Metodos();
-//        System.out.println("entre "+preg.getText());
-//        this.AvisoNumeros.setVisible(false);
-//        if (met.confNum(this.preg.getText())) {
-//            this.AvisoNumeros.setVisible(false);
-//        } else {
-//            this.AvisoNumeros.setVisible(true);
-//        }        // TODO add your handling code here:
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pregKeyTyped
-
     private void pregKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pregKeyReleased
         Metodos met = new Metodos();
         System.out.println("entre " + preg.getText());
         this.AvisoNumeros.setVisible(false);
         if (met.confNum(this.preg.getText())) {
             this.AvisoNumeros.setVisible(false);
+            BloqDesBoton(ButtonAddPreg, "");
         } else {
+            BloqDesBoton(ButtonAddPreg, "...");
             this.AvisoNumeros.setVisible(true);
         }
         // TODO add your handling code here:
@@ -2882,47 +3065,79 @@ public class Principal extends javax.swing.JFrame {
 
     private void Asig2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_Asig2PopupMenuWillBecomeInvisible
         if ("...".equals(Asig2.getSelectedItem())) {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto. bua", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }        // TODO add your handling code here:
+            AdAsig1.setVisible(true);
+            AdAsig1.setText("*Opcion no valida");
+        } else {
+            String TempAsigna = (String) Asig2.getSelectedItem();
+            Metodos met = new Metodos();
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
+                if (h < 1) {
+                    AdAsig1.setVisible(true);
+                    AdAsig1.setText("*Asignatura sin Temas");
+                    BloqDesBoton(ButtonMostrarCENT, "...");
+                } else {
+                    AdAsig1.setVisible(false);
+                    BloqDesBoton(ButtonMostrarCENT, " ");
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        BloqDesBoton(ButtonMostrarCENT, (String) Asig2.getSelectedItem());
     }//GEN-LAST:event_Asig2PopupMenuWillBecomeInvisible
 
     private void Asig3PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_Asig3PopupMenuWillBecomeInvisible
         String TempAsigna = (String) Asig3.getSelectedItem();
         if (!TempAsigna.equals("...")) {
             tema.setEnabled(true);
-            nivel.setEnabled(true);
             Metodos met = new Metodos();
             this.tema.removeAllItems();
             this.tema.addItem("...");
+            AdAsig2.setVisible(false);
             int h = 0;
             try {
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
                 if (h < 1) {
-                    JOptionPane.showMessageDialog(null, "LA ASIGNATURA QUE HA SELECCIONADO NO TIENE TEMAS, SE DESEA USAR ESTA ASIGNATURA ES NECESARIO QUE AÑADA TEMAS.");
+                    AdAsig2.setVisible(true);
+                    AdAsig2.setText("*Asignatura sin Temas");
                     tema.setEnabled(false);
-                    nivel.setEnabled(false);
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }        // TODO add your handling code here:
+            AdAsig2.setVisible(true);
+            AdAsig2.setText("*Opcion no valida");
+            tema.setEnabled(false);
+        }
+        BloqDesBoton(ButtonMostrarDER, "...");
+        nivel.setEnabled(false);
     }//GEN-LAST:event_Asig3PopupMenuWillBecomeInvisible
 
     private void temaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_temaPopupMenuWillBecomeInvisible
         String TempTema = (String) tema.getSelectedItem();
         if ("...".equals(TempTema)) {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }        // TODO add your handling code here:
+            AdAsig3.setVisible(true);
+            nivel.setEnabled(false);
+            ButtonMostrarDER.setEnabled(false);
+        } else {
+            AdAsig3.setVisible(false);
+            nivel.setEnabled(true);
+            ButtonMostrarDER.setEnabled(false);
+            this.nivel.setSelectedIndex(0);
+        }
+        BloqDesBoton(ButtonMostrarDER, (String) Asig2.getSelectedItem());
     }//GEN-LAST:event_temaPopupMenuWillBecomeInvisible
 
     private void ComboAsignaturaSPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
         String TempAsigna = (String) ComboAsignaturaS.getSelectedItem();
         if (!TempAsigna.equals("...")) {
             ComboBoxTemas.setEnabled(true);
-            ComboNivel.setEnabled(true);
-            Preguntas.setEnabled(true);
+            ComboNivel.setEnabled(false);
+            Preguntas.setEnabled(false);
+            AdAsig.setVisible(false);
             Metodos met = new Metodos();
             this.ComboBoxTemas.removeAllItems();
             this.ComboBoxTemas.addItem("...");
@@ -2930,17 +3145,22 @@ public class Principal extends javax.swing.JFrame {
             try {
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.ComboBoxTemas, h);
                 if (h < 1) {
-                    JOptionPane.showMessageDialog(null, "LA ASIGNATURA QUE HA SELECCIONADO NO TIENE TEMAS, SE DESEA USAR ESTA ASIGNATURA ES NECESARIO QUE AÑADA TEMAS.");
-                    ComboBoxTemas.setEnabled(false);
-                    ComboNivel.setEnabled(false);
-                    Preguntas.setEnabled(false);
+                    AdAsig.setVisible(true);
+                    AdAsig.setText("*Asignatura sin Temas");
+
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }        // TODO add your handling code here:
+            AdAsig.setVisible(true);
+            AdAsig.setText("*Opcion no valida");
+            ComboBoxTemas.setEnabled(false);
+            ComboNivel.setEnabled(false);
+            Preguntas.setEnabled(false);
+            ButtonAgregarPregunta.setEnabled(false);
+        }
+        BloqDesBoton(ButtonAgregarPregunta, TempAsigna);
     }//GEN-LAST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
 
     private void BottonTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonTemasActionPerformed
@@ -2954,7 +3174,9 @@ public class Principal extends javax.swing.JFrame {
         Metodos met = new Metodos();
         met.ReincioJTextField(NombreDelTema);
         met.ReincioTextArea(DescripcionTema);
+        DesBoton(ButtonAgregarTema);
         AgregarDescripcionTema.setSelected(false);
+        AdTema.setVisible(false);
         Menu.setSelectedComponent(Tema);        // TODO add your handling code here:
     }//GEN-LAST:event_BottonTemasActionPerformed
 
@@ -2970,7 +3192,13 @@ public class Principal extends javax.swing.JFrame {
         }
         met.ReincioComboBox(ComboBoxTemas, ComboNivel);
         met.ReincioTextArea(Preguntas);
-        Menu.setSelectedComponent(Pregunta);        // TODO add your handling code here:
+        Menu.setSelectedComponent(Pregunta);
+        ComboBoxTemas.setEnabled(false);
+        ComboNivel.setEnabled(false);
+        BloqDesBoton(ButtonAgregarPregunta, "...");
+        AdAsig.setVisible(false);
+        AdTem.setVisible(false);
+        AdDif.setVisible(false);
     }//GEN-LAST:event_BottonPreguntasActionPerformed
 
     private void BottonAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonAsignaturaActionPerformed
@@ -2990,19 +3218,41 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreDelTemaActionPerformed
 
     private void ButtonCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCambioActionPerformed
-        if (this.NuevaContra.getText().equals("") || this.ValNuevaContra.getText().equals("")) {
+        if (!this.NuevaContra.getText().equals("") && !this.ValNuevaContra.getText().equals("")) {
+            FileWriter fw = null;
+            try {
+                Metodos met = new Metodos();
+                ArrayList<String[]> registros = met.LeerArchivoDaniel("Usuario.txt");
+                String nombre;
+                String Total = "";
+                for (int i = 0; i < registros.size(); i++) {
+                    nombre = registros.get(i)[2];
+                    if (nombre.equals(Usuario1.getText())) {
+                        if ((registros.get(i)[0]).equals(Nombre1.getText())) {
+                            Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + NuevaContra.getText() + "," + registros.get(i)[4] + "\r\n";
+                        }
+                    } else {
+                        Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "\r\n";
+                    }
+                }
+                File file = new File("Usuario.txt");
+                fw = new FileWriter(file);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(Total);
+                bw.close();
+                fw.close();
+                JOptionPane.showMessageDialog(this, "Cambio Exitoso", "Cambio Contraseña", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         } else {
-            JOptionPane.showMessageDialog(this, "ERROR", "ALGUNOS DE LOS CAMPOS ESTAN VACIOS", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Algun campo se encuentra vacio.", "Cambio Contraseña", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_ButtonCambioActionPerformed
 
     private void ValNuevaContraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValNuevaContraKeyPressed
-        if (this.NuevaContra.getText().equals(this.ValNuevaContra.getText())) {
-            this.jLabel27.setVisible(false);
-        } else {
-            this.jLabel27.setVisible(true);
-        }
+
     }//GEN-LAST:event_ValNuevaContraKeyPressed
 
     private void ButtonGuardarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGuardarFotoActionPerformed
@@ -3022,7 +3272,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonGuardarFotoActionPerformed
 
     private void BottonEditFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEditFotoActionPerformed
-        JFileChooser archivo ;
+        JFileChooser archivo;
         archivo = new JFileChooser();
         archivo.setFileSelectionMode(0);
         FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG,PNG", "jpg", "png");
@@ -3049,7 +3299,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonEditFotoActionPerformed
 
     private void BottonCamContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonCamContraActionPerformed
-        this.jLabel27.setVisible(false);
+        jLabel41.setVisible(true);
+        jLabel9.setVisible(true);
+        jLabel7.setVisible(true);
+        jLabel27.setVisible(false);
+        ButtonCambio.setVisible(true);
+        NuevaContra.setVisible(true);
+        ValNuevaContra.setVisible(true);
     }//GEN-LAST:event_BottonCamContraActionPerformed
 
     private void ButtonGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGenerarInformeActionPerformed
@@ -3216,33 +3472,19 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
+            ComboTemPreg.setEnabled(false);
+            ComboNivPreg.setEnabled(false);
+            ComboNivelA.setEnabled(false);
+            EstadPreg.setEditable(false);
+            FechaPreg.setEnabled(false);
+            InfoPreg.setEditable(false);
+            GuarEditPreg.setEnabled(false);
             Menu.setSelectedComponent(EditPreg);
+            DesButto.setEnabled(false);
+            ButtomEditPreg.setEnabled(true);
+            DesButto.setBackground(Color.GRAY);
         }
     }//GEN-LAST:event_EditarPreguntasActionPerformed
-
-    private void ComboAsigPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsigPregPopupMenuWillBecomeInvisible
-        String TempAsigna = (String) ComboAsigPreg.getSelectedItem();
-        if (!TempAsigna.equals("...")) {
-            ComboTemPreg.setEnabled(true);
-            ComboNivPreg.setEnabled(true);
-            Metodos met = new Metodos();
-            ComboTemPreg.removeAllItems();
-            ComboTemPreg.addItem("...");
-            int h = 0;
-            try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
-                if (h < 1) {
-                    JOptionPane.showMessageDialog(null, "La Asignatura que ha seleccionado no tiene temas.");
-                    ComboTemPreg.setEnabled(false);
-                    ComboNivPreg.setEnabled(false);
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }        // TODO        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboAsigPregPopupMenuWillBecomeInvisible
 
     private void TablaAsigKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaAsigKeyReleased
         String[] h = new String[3];
@@ -3442,17 +3684,148 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_GuardarTemActionPerformed
 
-    private void addAsig7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAsig7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addAsig7ActionPerformed
+    private void ButtomEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomEditPregActionPerformed
+        ComboNivelA.setEnabled(true);
+        InfoPreg.setEditable(true);
+        GuarEditPreg.setEnabled(true);
+        DesButto.setEnabled(true);
+    }//GEN-LAST:event_ButtomEditPregActionPerformed
 
-    private void addAsig8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAsig8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addAsig8ActionPerformed
+    private void ElemEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElemEditPregActionPerformed
 
-    private void addAsig9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAsig9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addAsig9ActionPerformed
+        Metodos met = new Metodos();
+        String ContendioPregunta = "";
+        String Total = "";
+        int cont = 0, i = 0;
+        Tema tem = null;
+        ArrayList<Pregunta> PregTemporal = new ArrayList();
+        for (Asignatura asignatura : profesor.getAsignaturas()) {
+            for (Tema tema : asignatura.getTemas()) {
+                if (asignatura.getNombre().equals(ComboAsigPreg.getSelectedItem())) {
+                    if (tema.getNombre().equals(ComboTemPreg.getSelectedItem())) {
+                        for (Pregunta pregunta : tema.getPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()))) {
+                            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
+
+                            } else {
+                                PregTemporal.add(pregunta);
+                                Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
+                            }
+                        }
+
+                        profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()), PregTemporal);
+                        cont = i;
+                    } else {
+                    }
+                }
+
+            }
+            i++;
+        }
+        File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
+        FileWriter fw;
+        try {
+            fw = new FileWriter(file);
+            ComboNivelA.setSelectedIndex(0);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(Total);
+            bw.close();
+            fw.close();
+            ComboNivelA.setSelectedIndex(0);
+            InfoPreg.setText("");
+            EstadPreg.setText("");
+            FechaPreg.setDate(null);
+            String asig = (String) ComboAsigPreg.getSelectedItem();
+            String tema = (String) ComboTemPreg.getSelectedItem();
+            String nivel = (String) ComboNivPreg.getSelectedItem();
+            MostrarPreg(asig, tema, nivel, profesor);
+            DesButto.setBackground(Color.GRAY);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_ElemEditPregActionPerformed
+
+    private void GuarEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuarEditPregActionPerformed
+
+        Metodos met = new Metodos();
+        String ContendioPregunta = "";
+        String Total = "";
+        int cont = 0, i = 0;
+        Tema tem = null;
+        ArrayList<Pregunta> PregTemporal = new ArrayList();
+        for (Asignatura asignatura : profesor.getAsignaturas()) {
+            for (Tema tema : asignatura.getTemas()) {
+                if (asignatura.getNombre().equals(ComboAsigPreg.getSelectedItem())) {
+                    if (tema.getNombre().equals(ComboTemPreg.getSelectedItem())) {
+                        for (Pregunta pregunta : tema.getPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()))) {
+                            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
+                                Date ka = FechaPreg.getDate();
+                                String fecha = "";
+                                if (ka == null) {
+                                    fecha = "--------";
+                                } else {
+                                    DateFormat FormaFecha = new SimpleDateFormat("yyyy/MM/dd");
+                                    fecha = FormaFecha.format(FechaPreg.getDate());
+                                }
+                                if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 0).toString().equals(ComboNivelA.getSelectedItem())) {
+                                    PregTemporal.add(new Pregunta(InfoPreg.getText(), Integer.parseInt((String) ComboNivelA.getSelectedItem()), EstadPreg.getText(), fecha));
+                                    Total = Total + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fecha + ";" + "\r\n";
+                                } else {
+                                    String TotalAuxiliar = "";
+                                    for (Pregunta pregunt : tema.getPreguntas(Integer.parseInt((String) ComboNivelA.getSelectedItem()))) {
+                                        TotalAuxiliar = TotalAuxiliar + +pregunt.getNivel() + ";" + pregunt.getContenido() + ";" + pregunt.getEstado() + ";" + pregunt.getFecha() + ";" + "\r\n";
+                                    }
+                                    TotalAuxiliar = TotalAuxiliar + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fecha + ";" + "\r\n";
+                                    profesor.getAsignaturas().get(i).getTemas().get(cont).getPreguntas(Integer.parseInt((String) ComboNivelA.getSelectedItem())).add(new Pregunta(InfoPreg.getText(), Integer.parseInt((String) ComboNivelA.getSelectedItem()), EstadPreg.getText(), fecha));
+                                    File fileA = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedItem() + ".txt");
+                                    FileWriter fwA;
+                                    try {
+                                        fwA = new FileWriter(fileA);
+                                        BufferedWriter bwA = new BufferedWriter(fwA);
+                                        bwA.write(TotalAuxiliar);
+                                        bwA.close();
+                                        fwA.close();
+                                    } catch (IOException ex) {
+                                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+
+                                    Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
+                                }
+                            }
+                            Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
+                        }
+                        profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()), PregTemporal);
+                        cont = i;
+                    } else {
+                    }
+                }
+
+            }
+            i++;
+        }
+        File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
+        FileWriter fw;
+        try {
+            fw = new FileWriter(file);
+            ComboNivelA.setSelectedIndex(0);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(Total);
+            bw.close();
+            fw.close();
+            ComboNivelA.setSelectedIndex(0);
+            InfoPreg.setText("");
+            EstadPreg.setText("");
+            FechaPreg.setDate(null);
+            String asig = (String) ComboAsigPreg.getSelectedItem();
+            String tema = (String) ComboTemPreg.getSelectedItem();
+            String nivel = (String) ComboNivPreg.getSelectedItem();
+            MostrarPreg(asig, tema, nivel, profesor);
+            DesButto.setBackground(Color.GRAY);
+            ComboNivelA.setEnabled(false);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_GuarEditPregActionPerformed
 
     private void ComboAsigEditPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsigEditPopupMenuWillBecomeInvisible
         String asig = (String) ComboAsigEdit.getSelectedItem();
@@ -3508,26 +3881,8 @@ public class Principal extends javax.swing.JFrame {
         DesEditTem.setText(h[1]);        // TODO add your handling code here:
     }//GEN-LAST:event_TablaTemMouseReleased
 
-    private void ComboTemPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboTemPregPopupMenuWillBecomeInvisible
-        String TempTema = (String) ComboTemPreg.getSelectedItem();
-        if ("...".equals(TempTema)) {
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboTemPregPopupMenuWillBecomeInvisible
-
-    private void ComboNivPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivPregPopupMenuWillBecomeInvisible
-        String asig = (String) ComboAsigPreg.getSelectedItem();
-        String tem = (String) ComboTemPreg.getSelectedItem();
-        String nivel = (String) ComboNivPreg.getSelectedItem();
-        if (!asig.equals("...") & !tem.equals("")) {
-            MostrarPreg(asig, tem, nivel, profesor);
-        } else {
-            JOptionPane.showMessageDialog(this, "No ha seleccionado niguna asignatura", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_ComboNivPregPopupMenuWillBecomeInvisible
-
     private void TablaPregEditKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaPregEditKeyReleased
-        String[] h = new String[3];
+        String[] h = new String[4];
 
         for (int i = 0; i < 4; i++) {
             if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i) != null) {
@@ -3538,16 +3893,24 @@ public class Principal extends javax.swing.JFrame {
         }
         ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
         EstadPreg.setText(h[2]);
-        String dateValue = h[3];
-        System.out.println(h[3]);
+        if (h[2].equals("Disponible")) {
+            DesButto.setBackground(Color.GREEN);
+        } else {
+            DesButto.setBackground(Color.RED);
+        }
+        String[] dateValue = h[3].split("/");
         Date date = null;
-        try {
-            date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue);
-        } catch (ParseException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        if (dateValue.length == 1) {
+            date = null;
+        } else {
+            try {
+                date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[2] + "-" + dateValue[1] + "-" + dateValue[0]);
+            } catch (ParseException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         FechaPreg.setDate(date);
-        InfoPreg.setText(h[1]);   // TODO add your handling code here:
+        InfoPreg.setText(h[1]);
     }//GEN-LAST:event_TablaPregEditKeyReleased
 
     private void TablaPregEditMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPregEditMouseReleased
@@ -3562,18 +3925,291 @@ public class Principal extends javax.swing.JFrame {
         }
         ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
         EstadPreg.setText(h[2]);
+        if (h[2].equals("Disponible")) {
+            DesButto.setBackground(Color.GREEN);
+        } else {
+            DesButto.setBackground(Color.RED);
+        }
         String[] dateValue = h[3].split("/");
         Date date = null;
-        try {
-            date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[2] + "-" + dateValue[1] + "-" + dateValue[0]);
-        } catch (ParseException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        if (dateValue.length == 1) {
+            date = null;
+        } else {
+            try {
+                date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[2] + "-" + dateValue[1] + "-" + dateValue[0]);
+            } catch (ParseException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         FechaPreg.setDate(date);
         InfoPreg.setText(h[1]);
     }//GEN-LAST:event_TablaPregEditMouseReleased
 
+    private void ComboTemPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboTemPregActionPerformed
+        String TempTema = (String) ComboTemPreg.getSelectedItem();
+        if ("...".equals(TempTema)) {
+            ComboNivPreg.setEnabled(false);
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        } else {
+            ComboNivPreg.setEnabled(true);
+        }             // TODO add your handling code here:
+    }//GEN-LAST:event_ComboTemPregActionPerformed
+
+    private void DesButtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesButtoActionPerformed
+        String[] values = {"...", "Disponible", "No Disponible"};
+
+        Object selected = JOptionPane.showInputDialog(null, "Seleccione el nuevo estado para la pregunta:\r\nNota: Estos cambios solo se haran permanentes presionando Guardar.", "Nuevo Estado", JOptionPane.DEFAULT_OPTION, null, values, "0");
+        if (selected != null) {//null if the user cancels. 
+            String selectedString = selected.toString();
+            if (selectedString.equals("No Disponible")) {
+                JDateChooser jd = new JDateChooser();
+                String message = "Seleccione la nueva fecha de ultimo uso:\n";
+                Object[] params = {message, jd};
+                JOptionPane.showConfirmDialog(null, params, "Cambio Fecha", JOptionPane.PLAIN_MESSAGE);
+                EstadPreg.setText(selectedString);
+                FechaPreg.setDate(((JDateChooser) params[1]).getDate());
+                DesButto.setBackground(Color.RED);
+            } else {
+                if (selectedString.equals("...")) {
+                    JOptionPane.showMessageDialog(null, "Opcion no valida");
+                } else {
+                    EstadPreg.setText(selectedString);
+                    FechaPreg.setDate(null);
+                    DesButto.setBackground(Color.green);
+                }
+            }
+        }
+
+
+    }//GEN-LAST:event_DesButtoActionPerformed
+
+    private void ComboNivelAComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ComboNivelAComponentShown
+        /* if (ComboNivelA.getSelectedItem().equals("...")) {
+            JOptionPane.showInputDialog(this, "Opcion no valida", "error", JOptionPane.ERROR_MESSAGE);
+            GuarEditPreg.setEnabled(false);
+            ButtomEditPreg.setEnabled(false);
+        } else {
+            ButtomEditPreg.setEnabled(true);
+            GuarEditPreg.setEnabled(true);
+        }       */// TODO add your handling code here:
+    }//GEN-LAST:event_ComboNivelAComponentShown
+
+    private void ComboNivelAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNivelAActionPerformed
+        if (ComboNivelA.getSelectedItem().equals("...")) {
+            JOptionPane.showInputDialog(this, "Opcion no valida", "error", JOptionPane.ERROR_MESSAGE);
+            GuarEditPreg.setEnabled(false);
+            ButtomEditPreg.setEnabled(false);
+        } else {
+            ButtomEditPreg.setEnabled(true);
+            GuarEditPreg.setEnabled(true);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboNivelAActionPerformed
+
+    private void ComboAsigPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsigPregActionPerformed
+        String TempAsigna = (String) ComboAsigPreg.getSelectedItem();
+        if (!TempAsigna.equals("...")) {
+            ComboTemPreg.setEnabled(true);
+            Metodos met = new Metodos();
+            ComboTemPreg.removeAllItems();
+            ComboTemPreg.addItem("...");
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
+                if (h < 1) {
+                    JOptionPane.showMessageDialog(null, "La Asignatura que ha seleccionado no tiene temas.");
+                    ComboTemPreg.setEnabled(false);
+                    ComboNivPreg.setEnabled(false);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            ComboTemPreg.setEnabled(false);
+            ComboNivPreg.setEnabled(false);
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        }         // TODO add your handling code here:
+    }//GEN-LAST:event_ComboAsigPregActionPerformed
+
+    private void ComboNivPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNivPregActionPerformed
+        String asig = (String) ComboAsigPreg.getSelectedItem();
+        String tem = (String) ComboTemPreg.getSelectedItem();
+        String nivel = (String) ComboNivPreg.getSelectedItem();
+        if (!asig.equals("...") & !tem.equals("")) {
+            MostrarPreg(asig, tem, nivel, profesor);
+        } else {
+            JOptionPane.showMessageDialog(this, "No ha seleccionado niguna asignatura", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboNivPregActionPerformed
+
+    private void ValNuevaContraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValNuevaContraKeyReleased
+        if (this.NuevaContra.getText().equals(this.ValNuevaContra.getText())) {
+            this.jLabel27.setVisible(false);
+            BloqDesBoton(ButtonCambio, "");
+        } else {
+            this.jLabel27.setVisible(true);
+            BloqDesBoton(ButtonCambio, "...");
+        }
+    }//GEN-LAST:event_ValNuevaContraKeyReleased
+
+    private void ComboBoxTemasPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboBoxTemasPopupMenuWillBecomeInvisible
+        String TempAsigna = (String) ComboBoxTemas.getSelectedItem();
+        if (!TempAsigna.equals("...")) {
+            ComboNivel.setEnabled(true);
+            Preguntas.setEnabled(false);
+            AdTem.setVisible(false);
+        } else {
+            AdTem.setVisible(true);
+            ComboNivel.setEnabled(false);
+            Preguntas.setEnabled(false);
+        }
+        BloqDesBoton(ButtonAgregarPregunta, TempAsigna);
+    }//GEN-LAST:event_ComboBoxTemasPopupMenuWillBecomeInvisible
+
+    private void ComboNivelPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivelPopupMenuWillBecomeInvisible
+        String ComboN = (String) ComboNivel.getSelectedItem();
+        if (!ComboN.equals("...")) {
+            Preguntas.setEnabled(true);
+            AdDif.setVisible(false);
+        } else {
+            AdDif.setVisible(true);
+            Preguntas.setEnabled(false);
+        }
+        BloqDesBoton(ButtonAgregarPregunta, ComboN);
+    }//GEN-LAST:event_ComboNivelPopupMenuWillBecomeInvisible
+
+    private void nivelPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_nivelPopupMenuWillBecomeInvisible
+        String TempTema = (String) nivel.getSelectedItem();
+        if ("...".equals(TempTema)) {
+            AdAsig4.setVisible(true);
+            ButtonMostrarDER.setEnabled(false);
+        } else {
+            AdAsig4.setVisible(false);
+            ButtonMostrarDER.setEnabled(true);
+        }
+    }//GEN-LAST:event_nivelPopupMenuWillBecomeInvisible
+
+    private void ComboAsignaturaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsignaturaPopupMenuWillBecomeInvisible
+        String TempTema = (String) ComboAsignatura.getSelectedItem();
+        if ("...".equals(TempTema)) {
+            AdTema.setVisible(true);
+        } else {
+            AdTema.setVisible(false);
+        }
+        BloqDesBoton(ButtonAgregarTema, TempTema);
+    }//GEN-LAST:event_ComboAsignaturaPopupMenuWillBecomeInvisible
+
+    private void semePopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_semePopupMenuWillBecomeInvisible
+        String semestre = (String) seme.getSelectedItem();
+        if ("...".equals(semestre)) {
+            asigna.setEnabled(false);
+            fecha.setEnabled(false);
+            preg.setEnabled(false);
+            SeAd.setVisible(true);
+        } else {
+            asigna.setEnabled(true);
+            fecha.setEnabled(true);
+            preg.setEnabled(true);
+            SeAd.setVisible(false);
+        }
+        BloqDesBoton(ButtonAddPreg, semestre);
+    }//GEN-LAST:event_semePopupMenuWillBecomeInvisible
+
+    private void asignaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_asignaPopupMenuWillBecomeInvisible
+        String TemasNumero = String.valueOf(profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas());
+        System.out.println(TemasNumero);
+
+        String semestre = (String) asigna.getSelectedItem();
+        BloqDesBoton(ButtonAddPreg, semestre);
+        if ("...".equals(semestre)) {
+            fecha.setEnabled(false);
+            preg.setEnabled(false);
+            SeAd.setVisible(true);
+            SeAd.setText("*Opcion no valida");
+        } else {
+            Metodos met = new Metodos();
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + semestre + "/Temas.txt", this.tema, h);
+                if (h < 1) {
+                    SeAd.setVisible(true);
+                    SeAd.setText("*Asignatura sin Temas");
+                    fecha.setEnabled(false);
+                    preg.setEnabled(false);
+                    BloqDesBoton(ButtonAddPreg, "...");
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            fecha.setEnabled(true);
+            preg.setEnabled(true);
+            SeAd.setVisible(false);
+        }
+
+    }//GEN-LAST:event_asignaPopupMenuWillBecomeInvisible
+
+    private void Asig3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Asig3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Asig3ActionPerformed
+
+    private void temasPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_temasPopupMenuWillBecomeInvisible
+        String semestre = (String) temas.getSelectedItem();
+        if ("...".equals(semestre)) {
+            ndif.setEnabled(false);
+            TemAd.setVisible(true);
+            NivAd.setVisible(false);
+            ndif.setSelectedIndex(0);
+        } else {
+            ndif.setEnabled(true);
+            TemAd.setVisible(false);
+        }
+        BloqDesBoton(generarExamen, semestre);
+    }//GEN-LAST:event_temasPopupMenuWillBecomeInvisible
+
+    private void ndifPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ndifPopupMenuWillBecomeInvisible
+
+    }//GEN-LAST:event_ndifPopupMenuWillBecomeInvisible
+
     ///METODOS!!
+    public Integer TotalPregPorAsig(Asignatura asignatur) {// El total de preguntas que posee una asignatura
+        int tope = profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().size();
+        int total = 0;
+        for (int j = 0; j < tope + 1; j++) {
+            for (Tema tema1 : profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas()) {
+                for (int k = 1; k == 3; k++) {
+                    for (Pregunta pregunta : tema1.getPreguntas(k)) {
+                        if (pregunta.getEstado().equals("Disponible")) {
+                            total++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("Total");
+        return total;
+    }
+
+    public void BloqDesBoton(RSButtonMetro Boton, String Condicion) {// Pone los botones de color gris o azul dependiendo de la opcion de los JComboBox
+        if ("...".equals(Condicion)) {
+            Boton.setEnabled(false);
+            Boton.setColorNormal(Color.lightGray);
+            Boton.setColorPressed(Color.lightGray);
+            Boton.setColorHover(Color.lightGray);
+        } else {
+            Boton.setEnabled(true);
+            Boton.setColorHover(Color.decode("#01A5E4"));
+            Boton.setColorNormal(Color.decode("#0180B0"));
+            Boton.setColorPressed(Color.decode("#025F82"));
+        }
+    }
+
+    public void DesBoton(RSButtonMetro Boton) {
+        Boton.setEnabled(true);
+        Boton.setColorHover(Color.decode("#01A5E4"));
+        Boton.setColorNormal(Color.decode("#0180B0"));
+        Boton.setColorPressed(Color.decode("#025F82"));
+    }
+
     public void CambiarImagen(String Usuario, String Nombre, String Imagen) throws IOException {
         Metodos met = new Metodos();
         ArrayList<String[]> registros = met.LeerArchivoDaniel("Usuario.txt");
@@ -3658,7 +4294,7 @@ public class Principal extends javax.swing.JFrame {
         for (Tema t : asig.getTemas()) {
             nom = t.getNombre();
             des = t.getDescripcion();
-            if (!nom.equals("") && !des.equals("")) {
+            if (!nom.equals("")) {
                 modelo.addRow(new Object[]{nom, des});
             }
         }
@@ -3803,8 +4439,17 @@ public class Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AdAsig;
+    private javax.swing.JLabel AdAsig1;
+    private javax.swing.JLabel AdAsig2;
+    private javax.swing.JLabel AdAsig3;
+    private javax.swing.JLabel AdAsig4;
+    private javax.swing.JLabel AdDif;
+    private javax.swing.JLabel AdTem;
+    private javax.swing.JLabel AdTema;
     private javax.swing.JCheckBox AgregarDescripcion;
     private javax.swing.JCheckBox AgregarDescripcionTema;
+    private javax.swing.JLabel AsAd;
     private javax.swing.JComboBox<String> Asig2;
     private javax.swing.JComboBox<String> Asig3;
     private javax.swing.JPanel Asignatura;
@@ -3820,6 +4465,7 @@ public class Principal extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro BottonPreguntas;
     private rsbuttom.RSButtonMetro BottonTemas;
     private rsbuttom.RSButtonMetro BottonVerInfo;
+    private rsbuttom.RSButtonMetro ButtomEditPreg;
     private rsbuttom.RSButtonMetro ButtomEditTem;
     private rsbuttom.RSButtonMetro ButtonAddPreg;
     private rsbuttom.RSButtonMetro ButtonAgregarPregunta;
@@ -3841,6 +4487,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboNivel;
     private javax.swing.JComboBox<String> ComboNivelA;
     private javax.swing.JComboBox<String> ComboTemPreg;
+    private javax.swing.JButton DesButto;
     private javax.swing.JTextArea DesEditAsig;
     private javax.swing.JTextArea DesEditTem;
     private javax.swing.JTextArea Descripcion;
@@ -3851,6 +4498,7 @@ public class Principal extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro EditarAsignatura;
     private rsbuttom.RSButtonMetro EditarPreguntas;
     private rsbuttom.RSButtonMetro EditarTemas;
+    private rsbuttom.RSButtonMetro ElemEditPreg;
     private rsbuttom.RSButtonMetro ElimEditAsig;
     private rsbuttom.RSButtonMetro ElimEditTem;
     private javax.swing.JTextField EstadPreg;
@@ -3860,13 +4508,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel Foto2;
     private javax.swing.JPanel Generar;
     private rsbuttom.RSButtonMetro GuaEditAsig;
+    private rsbuttom.RSButtonMetro GuarEditPreg;
     private rsbuttom.RSButtonMetro GuardarTem;
     private javax.swing.JPanel Home;
     private javax.swing.JTextArea InfoPreg;
     private javax.swing.JLabel InfoTem;
-    private javax.swing.JPanel Info_Examen;
-    private javax.swing.JPanel InformeTablas;
     private javax.swing.JTabbedPane Menu;
+    private javax.swing.JLabel NivAd;
     private javax.swing.JLabel NivInfo;
     private javax.swing.JTextField NomEditAsig;
     private javax.swing.JTextField NomEditTem;
@@ -3878,26 +4526,24 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel Perfil;
     private javax.swing.JPanel Pregunta;
     private javax.swing.JTextArea Preguntas;
+    private javax.swing.JLabel SeAd;
     private javax.swing.JLabel Separador;
     private javax.swing.JTabbedPane SubMenu;
     private javax.swing.JTable TablaAsig;
     private javax.swing.JTable TablaPreg;
     private javax.swing.JTable TablaPregEdit;
     private javax.swing.JTable TablaTem;
+    private javax.swing.JLabel TemAd;
     private javax.swing.JPanel Tema;
     private javax.swing.JTextField Usuario1;
     private javax.swing.JPasswordField ValNuevaContra;
     private javax.swing.JPanel Ver;
     private rsbuttom.RSButtonMetro addAsig;
-    private rsbuttom.RSButtonMetro addAsig7;
-    private rsbuttom.RSButtonMetro addAsig8;
-    private rsbuttom.RSButtonMetro addAsig9;
     private javax.swing.JComboBox<String> asigna;
     private javax.swing.JTextField codMat;
     private javax.swing.JTextField evaluacion;
     private com.toedter.calendar.JDateChooser fecha;
     private rsbuttom.RSButtonMetro generarExamen;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3907,7 +4553,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -3918,6 +4563,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -3950,6 +4596,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -3958,9 +4605,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;

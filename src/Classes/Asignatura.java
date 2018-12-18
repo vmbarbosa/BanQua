@@ -112,10 +112,6 @@ public class Asignatura {
                 JOptionPane.showMessageDialog(null, "El nombre ya fue usado en otro tema.");
                 return true;
             }
-            if(tema1.getDescripcion().equals(Descripcion)){
-                JOptionPane.showMessageDialog(null, "La descripcion ya fue usada en otro tema.");
-                return true;
-            }
         }
         return false;
     }

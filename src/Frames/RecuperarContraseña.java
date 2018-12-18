@@ -19,9 +19,9 @@ import javax.swing.UnsupportedLookAndFeelException;
  *
  * @author danie
  */
-public class InicioSeccion extends javax.swing.JFrame {
+public class RecuperarContraseña extends javax.swing.JFrame {
 
-    public InicioSeccion() {
+    public RecuperarContraseña() {
         initComponents();
     }
 
@@ -34,16 +34,18 @@ public class InicioSeccion extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel2 = new javax.swing.JPanel();
+        Regresar = new javax.swing.JLabel();
         IconCerrar = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         rSButtonMetro1 = new rsbuttom.RSButtonMetro();
-        ButtonRecuperarContraseña = new rsbuttom.RSButtonMetro();
         jLabel2 = new javax.swing.JLabel();
         Usuario = new javax.swing.JTextField();
         Password = new javax.swing.JPasswordField();
-        BottonRegistro = new rsbuttom.RSButtonMetro();
-        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -61,6 +63,15 @@ public class InicioSeccion extends javax.swing.JFrame {
         });
         jPanel2.setLayout(new java.awt.BorderLayout());
 
+        Regresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e712(0)_42.png"))); // NOI18N
+        Regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegresarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(Regresar, java.awt.BorderLayout.LINE_START);
+
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cruz.png"))); // NOI18N
         IconCerrar.setToolTipText("");
         IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -68,14 +79,14 @@ public class InicioSeccion extends javax.swing.JFrame {
                 IconCerrarMouseClicked(evt);
             }
         });
-        jPanel2.add(IconCerrar, java.awt.BorderLayout.EAST);
+        jPanel2.add(IconCerrar, java.awt.BorderLayout.LINE_END);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setBackground(new java.awt.Color(0, 103, 142));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        rSButtonMetro1.setText("Ingresar");
+        rSButtonMetro1.setText("Enviar correo");
         rSButtonMetro1.setColorHover(new java.awt.Color(101, 203, 255));
         rSButtonMetro1.setColorNormal(new java.awt.Color(53, 188, 255));
         rSButtonMetro1.setColorPressed(new java.awt.Color(0, 159, 239));
@@ -89,58 +100,36 @@ public class InicioSeccion extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipadx = 97;
         gridBagConstraints.ipady = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(21, 30, 37, 0);
         jPanel1.add(rSButtonMetro1, gridBagConstraints);
-
-        ButtonRecuperarContraseña.setText(" Recuperar Contraseña");
-        ButtonRecuperarContraseña.setColorHover(new java.awt.Color(0, 121, 167));
-        ButtonRecuperarContraseña.setColorNormal(new java.awt.Color(0, 103, 142));
-        ButtonRecuperarContraseña.setColorPressed(new java.awt.Color(0, 94, 130));
-        ButtonRecuperarContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ButtonRecuperarContraseña.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ButtonRecuperarContraseña.setPreferredSize(new java.awt.Dimension(141, 17));
-        ButtonRecuperarContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonRecuperarContraseñaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.ipady = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 30, 42, 0);
-        jPanel1.add(ButtonRecuperarContraseña, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoUser.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = -2;
         gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(19, 30, 0, 0);
         jPanel1.add(jLabel2, gridBagConstraints);
 
         Usuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 314;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 25);
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 25);
         jPanel1.add(Usuario, gridBagConstraints);
 
         Password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -149,56 +138,80 @@ public class InicioSeccion extends javax.swing.JFrame {
         Password.setPreferredSize(new java.awt.Dimension(8, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 312;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 0, 0, 25);
+        gridBagConstraints.insets = new java.awt.Insets(11, 0, 0, 25);
         jPanel1.add(Password, gridBagConstraints);
-
-        BottonRegistro.setText("Registrar");
-        BottonRegistro.setColorHover(new java.awt.Color(101, 203, 255));
-        BottonRegistro.setColorNormal(new java.awt.Color(53, 188, 255));
-        BottonRegistro.setColorPressed(new java.awt.Color(0, 159, 239));
-        BottonRegistro.setPreferredSize(new java.awt.Dimension(63, 17));
-        BottonRegistro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonRegistroActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 97;
-        gridBagConstraints.ipady = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 25);
-        jPanel1.add(BottonRegistro, gridBagConstraints);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Prin.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipady = -36;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
-        jPanel1.add(jLabel4, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoContra.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoCorreo.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = -2;
         gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 30, 0, 0);
         jPanel1.add(jLabel3, gridBagConstraints);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("su correo, es recomendable cambiarla desde el menu de Perfil.");
+        jLabel1.setToolTipText("");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 8;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(40, 30, 0, 25);
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("*Ingresa el correo y nombre de usuario asociado a esta cuenta.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 30, 0, 25);
+        jPanel1.add(jLabel5, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Recuperación de la contraseña");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 111;
+        gridBagConstraints.ipady = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(30, 30, 0, 25);
+        jPanel1.add(jLabel6, gridBagConstraints);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Acontinuacion se le enviara una nueva contraseña provicional a");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 7;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 25);
+        jPanel1.add(jLabel7, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -250,22 +263,6 @@ public class InicioSeccion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
-    private void BottonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonRegistroActionPerformed
-        Registrarse r = new Registrarse();
-        r.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BottonRegistroActionPerformed
-
-    private void ButtonRecuperarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRecuperarContraseñaActionPerformed
-        RecuperarContraseña RC = new RecuperarContraseña();
-        RC.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ButtonRecuperarContraseñaActionPerformed
-
-    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_IconCerrarMouseClicked
-
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
@@ -277,8 +274,21 @@ public class InicioSeccion extends javax.swing.JFrame {
         mouseY = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
 
-    public static void main(String[] args) {
+    private void RegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegresarMouseClicked
+        this.setVisible(false);
         InicioSeccion ini = new InicioSeccion();
+        ini.setVisible(true);
+    }//GEN-LAST:event_RegresarMouseClicked
+
+    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
+        dispose();
+        this.setVisible(false);
+        InicioSeccion ini = new InicioSeccion();
+        ini.setVisible(true);
+    }//GEN-LAST:event_IconCerrarMouseClicked
+
+    public static void main(String[] args) {
+        RecuperarContraseña ini = new RecuperarContraseña();
         ini.setVisible(true);
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -294,14 +304,16 @@ public class InicioSeccion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private rsbuttom.RSButtonMetro BottonRegistro;
-    private rsbuttom.RSButtonMetro ButtonRecuperarContraseña;
     private javax.swing.JLabel IconCerrar;
     private javax.swing.JPasswordField Password;
+    private javax.swing.JLabel Regresar;
     private javax.swing.JTextField Usuario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private rsbuttom.RSButtonMetro rSButtonMetro1;

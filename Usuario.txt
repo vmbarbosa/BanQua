@@ -3,5 +3,8 @@ Daniel,12345678,Daniel,1234,$
 ybhb,6543456,ffsd,qwe,C:\Users\ESTU-5K\Downloads\httpstved-prod.adobecqms.netcontentdameditorialTelevisamexicomuyinteresantemxpreguntas-y-respuestas1406cielo-azul-1080x720.imgo_-770x513.jpg
 a,1,a,a,C:\Users\DORIS SALCEDO\Pictures\flower.jpg
 Victor Barbosa,4635636,Victor0851,1,C:\Users\Usuario\Videos\Heroes of the Storm\Heroes of the Storm Screenshot 2018.06.12 - 22.37.36.01.png
-Victor Barbosa,1140903523,victooor,vv,C:\Users\Usuario\Documents\7438d4db9a93c3bf5caf8148b6562337.png
+Victor Barbosa,1140903523,victooor,vv,C:\Users\Usuario\Documents\805656.jpg
 Victor Manuel,11412656,Victor0805,123,C:\Users\Usuario\Pictures\Mapa (2).jpg
+assfa,22132,safasf,2,C:\Users\Usuario\Downloads\17309993_1038787159599570_9174742756057042930_o.png
+C,1,C,1,$
+F,1,F,1,$
