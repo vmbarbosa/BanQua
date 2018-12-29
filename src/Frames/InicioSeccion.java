@@ -79,6 +79,7 @@ public class InicioSeccion extends javax.swing.JFrame {
         rSButtonMetro1.setColorHover(new java.awt.Color(101, 203, 255));
         rSButtonMetro1.setColorNormal(new java.awt.Color(53, 188, 255));
         rSButtonMetro1.setColorPressed(new java.awt.Color(0, 159, 239));
+        rSButtonMetro1.setFocusPainted(false);
         rSButtonMetro1.setMaximumSize(new java.awt.Dimension(63, 17));
         rSButtonMetro1.setMinimumSize(new java.awt.Dimension(63, 17));
         rSButtonMetro1.setPreferredSize(new java.awt.Dimension(63, 17));
@@ -101,6 +102,7 @@ public class InicioSeccion extends javax.swing.JFrame {
         ButtonRecuperarContraseña.setColorHover(new java.awt.Color(0, 121, 167));
         ButtonRecuperarContraseña.setColorNormal(new java.awt.Color(0, 103, 142));
         ButtonRecuperarContraseña.setColorPressed(new java.awt.Color(0, 94, 130));
+        ButtonRecuperarContraseña.setFocusable(false);
         ButtonRecuperarContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ButtonRecuperarContraseña.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ButtonRecuperarContraseña.setPreferredSize(new java.awt.Dimension(141, 17));
@@ -161,6 +163,7 @@ public class InicioSeccion extends javax.swing.JFrame {
         BottonRegistro.setColorHover(new java.awt.Color(101, 203, 255));
         BottonRegistro.setColorNormal(new java.awt.Color(53, 188, 255));
         BottonRegistro.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonRegistro.setFocusPainted(false);
         BottonRegistro.setPreferredSize(new java.awt.Dimension(63, 17));
         BottonRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

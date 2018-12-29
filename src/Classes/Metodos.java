@@ -83,6 +83,8 @@ public class Metodos {
             combo.addItem(item);
             line = br.readLine();
         }
+        fr.close();
+        br.close();
     }
 
     /*
@@ -461,6 +463,8 @@ public class Metodos {
             y.addItem(h);
             h2 = h2 + 1;
         }
+        fr.close();
+        br.close();
         return h2;
     }
 

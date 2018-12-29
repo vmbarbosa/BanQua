@@ -270,6 +270,7 @@ public class Registrarse extends javax.swing.JFrame {
         BottonRegistrar.setColorHover(new java.awt.Color(101, 203, 255));
         BottonRegistrar.setColorNormal(new java.awt.Color(53, 188, 255));
         BottonRegistrar.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonRegistrar.setFocusable(false);
         BottonRegistrar.setMaximumSize(new java.awt.Dimension(180, 30));
         BottonRegistrar.setMinimumSize(new java.awt.Dimension(180, 30));
         BottonRegistrar.setPreferredSize(new java.awt.Dimension(180, 30));
@@ -308,6 +309,7 @@ public class Registrarse extends javax.swing.JFrame {
         BottonIngresarFoto.setColorHover(new java.awt.Color(101, 203, 255));
         BottonIngresarFoto.setColorNormal(new java.awt.Color(53, 188, 255));
         BottonIngresarFoto.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonIngresarFoto.setFocusable(false);
         BottonIngresarFoto.setMaximumSize(new java.awt.Dimension(180, 31));
         BottonIngresarFoto.setMinimumSize(new java.awt.Dimension(180, 31));
         BottonIngresarFoto.setPreferredSize(new java.awt.Dimension(180, 30));

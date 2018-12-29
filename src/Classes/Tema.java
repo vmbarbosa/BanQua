@@ -124,6 +124,8 @@ public class Tema {
                 }
             }
         }
+        fr.close();
+        br.close();
     }
     
     public void EnviarPreguntas(int r,ArrayList<Pregunta> preguntascambio ){

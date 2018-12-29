@@ -52,12 +52,15 @@ public class Profesor {
             String linea = br.readLine();
             String Nombre, desc, cod;
             if (linea != null) {
-                Nombre = e.Desco(linea, 1, ";");
-                cod = e.Desco(linea, 2, ";");
-                desc = e.Desco(linea, 3, ";");   //ESTO LO HIZO VALERIA
+                String[] Desco = linea.split(";");
+                Nombre = Desco[0];
+                cod = Desco[1];
+                desc = Desco[2];   //ESTO LO HIZO VALERIA
                 AddAsignatura(new Asignatura(Nombre, desc, cod));
             }
         }
+        fr.close();
+        br.close();
     }
 
     public void AddAsignatura(Asignatura asigna) {

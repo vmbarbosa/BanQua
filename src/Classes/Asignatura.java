@@ -78,9 +78,10 @@ public class Asignatura {
         while (br.ready()) {
             String linea = br.readLine();
             String nombre, descripcion;
-            if (linea != null) {
-                nombre = e.Desco(linea, 1, ";");
-                descripcion = e.Desco(linea, 2, ";");  //ESTO LO HIZO VALERIA
+            if (linea != null && linea!="") {
+                String[] Desco = linea.split(";");
+                nombre = Desco[0];
+                descripcion = Desco[1];  //ESTO LO HIZO VALERIA
                 addTema(new Tema(nombre, descripcion, this));
             }
         }

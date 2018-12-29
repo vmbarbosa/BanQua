@@ -90,6 +90,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         rSButtonMetro1.setColorHover(new java.awt.Color(101, 203, 255));
         rSButtonMetro1.setColorNormal(new java.awt.Color(53, 188, 255));
         rSButtonMetro1.setColorPressed(new java.awt.Color(0, 159, 239));
+        rSButtonMetro1.setFocusable(false);
         rSButtonMetro1.setMaximumSize(new java.awt.Dimension(63, 17));
         rSButtonMetro1.setMinimumSize(new java.awt.Dimension(63, 17));
         rSButtonMetro1.setPreferredSize(new java.awt.Dimension(63, 17));

@@ -74,7 +74,7 @@ public class Principal extends javax.swing.JFrame {
     static XWPFDocument documento = new XWPFDocument();
     static int num;
     int pop;
-    static ArrayList<Pregunta> person = new ArrayList();
+    static ArrayList<String> person = new ArrayList();
     static int i = 0;
     static int jud;
     //Variables para mostrar asignatura, tema y preguntas.
@@ -144,7 +144,9 @@ public class Principal extends javax.swing.JFrame {
         ButtonCambio = new rsbuttom.RSButtonMetro();
         Nombre1 = new javax.swing.JTextField();
         Cedula1 = new javax.swing.JTextField();
+        Usuario2 = new javax.swing.JTextField();
         Usuario1 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -273,6 +275,7 @@ public class Principal extends javax.swing.JFrame {
         ButtomEditTem = new rsbuttom.RSButtonMetro();
         ElimEditTem = new rsbuttom.RSButtonMetro();
         GuardarTem = new rsbuttom.RSButtonMetro();
+        AdAsig5 = new javax.swing.JLabel();
         EditPreg = new javax.swing.JPanel();
         ComboAsigPreg = new javax.swing.JComboBox<>();
         jLabel52 = new javax.swing.JLabel();
@@ -296,6 +299,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         ComboNivPreg = new javax.swing.JComboBox<>();
         jLabel59 = new javax.swing.JLabel();
+        AdAsig6 = new javax.swing.JLabel();
+        AdAsig11 = new javax.swing.JLabel();
+        AdAsig12 = new javax.swing.JLabel();
+        AdAsig14 = new javax.swing.JLabel();
+        BottonGenrExam1 = new rsbuttom.RSButtonMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 87, 116));
@@ -370,7 +378,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelMenu.add(BottonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 183, 42));
 
-        BottonPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
+        BottonPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoPerfil.png"))); // NOI18N
         BottonPerfil.setText("Perfil");
         BottonPerfil.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonPerfil.setColorHover(new java.awt.Color(101, 203, 255));
@@ -457,6 +465,7 @@ public class Principal extends javax.swing.JFrame {
         BottonTemas.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonTemas.setColorPressed(new java.awt.Color(18, 143, 205));
         BottonTemas.setFocusPainted(false);
+        BottonTemas.setFocusable(false);
         BottonTemas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonTemas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonTemas.addActionListener(new java.awt.event.ActionListener() {
@@ -473,6 +482,7 @@ public class Principal extends javax.swing.JFrame {
         BottonPreguntas.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonPreguntas.setColorPressed(new java.awt.Color(18, 143, 205));
         BottonPreguntas.setFocusPainted(false);
+        BottonPreguntas.setFocusable(false);
         BottonPreguntas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonPreguntas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonPreguntas.addActionListener(new java.awt.event.ActionListener() {
@@ -489,6 +499,7 @@ public class Principal extends javax.swing.JFrame {
         BottonAsignatura.setColorNormal(new java.awt.Color(76, 185, 239));
         BottonAsignatura.setColorPressed(new java.awt.Color(18, 143, 205));
         BottonAsignatura.setFocusPainted(false);
+        BottonAsignatura.setFocusable(false);
         BottonAsignatura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         BottonAsignatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonAsignatura.addActionListener(new java.awt.event.ActionListener() {
@@ -524,6 +535,7 @@ public class Principal extends javax.swing.JFrame {
         EditarAsignatura.setColorNormal(new java.awt.Color(76, 185, 239));
         EditarAsignatura.setColorPressed(new java.awt.Color(18, 143, 205));
         EditarAsignatura.setFocusPainted(false);
+        EditarAsignatura.setFocusable(false);
         EditarAsignatura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditarAsignatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         EditarAsignatura.addActionListener(new java.awt.event.ActionListener() {
@@ -540,6 +552,7 @@ public class Principal extends javax.swing.JFrame {
         EditarTemas.setColorNormal(new java.awt.Color(76, 185, 239));
         EditarTemas.setColorPressed(new java.awt.Color(18, 143, 205));
         EditarTemas.setFocusPainted(false);
+        EditarTemas.setFocusable(false);
         EditarTemas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditarTemas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         EditarTemas.addActionListener(new java.awt.event.ActionListener() {
@@ -556,6 +569,7 @@ public class Principal extends javax.swing.JFrame {
         EditarPreguntas.setColorNormal(new java.awt.Color(76, 185, 239));
         EditarPreguntas.setColorPressed(new java.awt.Color(18, 143, 205));
         EditarPreguntas.setFocusPainted(false);
+        EditarPreguntas.setFocusable(false);
         EditarPreguntas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         EditarPreguntas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         EditarPreguntas.addActionListener(new java.awt.event.ActionListener() {
@@ -603,6 +617,7 @@ public class Principal extends javax.swing.JFrame {
         BottonCamContra.setColorHover(new java.awt.Color(1, 165, 228));
         BottonCamContra.setColorNormal(new java.awt.Color(1, 128, 176));
         BottonCamContra.setColorPressed(new java.awt.Color(2, 95, 130));
+        BottonCamContra.setFocusable(false);
         BottonCamContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonCamContraActionPerformed(evt);
@@ -644,6 +659,7 @@ public class Principal extends javax.swing.JFrame {
         ButtonCambio.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonCambio.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonCambio.setColorPressed(new java.awt.Color(2, 95, 130));
+        ButtonCambio.setFocusable(false);
         ButtonCambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonCambioActionPerformed(evt);
@@ -659,7 +675,7 @@ public class Principal extends javax.swing.JFrame {
         Nombre1.setMinimumSize(new java.awt.Dimension(7, 28));
         Nombre1.setOpaque(false);
         Nombre1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 360, 28));
+        Perfil.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 360, 25));
 
         Cedula1.setEditable(false);
         Cedula1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -669,7 +685,17 @@ public class Principal extends javax.swing.JFrame {
         Cedula1.setMinimumSize(new java.awt.Dimension(7, 28));
         Cedula1.setOpaque(false);
         Cedula1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 360, 28));
+        Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 360, 25));
+
+        Usuario2.setEditable(false);
+        Usuario2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Usuario2.setForeground(new java.awt.Color(51, 51, 51));
+        Usuario2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Usuario2.setMaximumSize(new java.awt.Dimension(7, 28));
+        Usuario2.setMinimumSize(new java.awt.Dimension(7, 28));
+        Usuario2.setOpaque(false);
+        Usuario2.setPreferredSize(new java.awt.Dimension(7, 28));
+        Perfil.add(Usuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 360, 25));
 
         Usuario1.setEditable(false);
         Usuario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -679,22 +705,27 @@ public class Principal extends javax.swing.JFrame {
         Usuario1.setMinimumSize(new java.awt.Dimension(7, 28));
         Usuario1.setOpaque(false);
         Usuario1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 360, 28));
+        Perfil.add(Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 360, 25));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 103, 142));
+        jLabel18.setText("Correo:");
+        Perfil.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 72, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 103, 142));
         jLabel3.setText("Nickname: ");
-        Perfil.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 72, -1));
+        Perfil.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 72, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 103, 142));
         jLabel2.setText("Cedula: ");
-        Perfil.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 70, -1));
+        Perfil.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 70, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 103, 142));
         jLabel1.setText("Nombre:");
-        Perfil.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 72, -1));
+        Perfil.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 72, -1));
 
         Foto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Foto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Perfil Azul.png"))); // NOI18N
@@ -705,6 +736,7 @@ public class Principal extends javax.swing.JFrame {
         BottonEditFoto.setColorHover(new java.awt.Color(1, 165, 228));
         BottonEditFoto.setColorNormal(new java.awt.Color(1, 128, 176));
         BottonEditFoto.setColorPressed(new java.awt.Color(2, 95, 130));
+        BottonEditFoto.setFocusable(false);
         BottonEditFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonEditFotoActionPerformed(evt);
@@ -716,6 +748,7 @@ public class Principal extends javax.swing.JFrame {
         ButtonGuardarFoto.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonGuardarFoto.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonGuardarFoto.setColorPressed(new java.awt.Color(2, 95, 130));
+        ButtonGuardarFoto.setFocusable(false);
         ButtonGuardarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonGuardarFotoActionPerformed(evt);
@@ -773,8 +806,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 177;
-        gridBagConstraints.ipady = 7;
+        gridBagConstraints.ipadx = 204;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 7, 0, 0);
         Asignatura.add(NombreDelaAsignatura, gridBagConstraints);
@@ -787,7 +820,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipady = 10;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
         Asignatura.add(jLabel13, gridBagConstraints);
@@ -801,23 +834,25 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Asignatura.add(jLabel5, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 177;
-        gridBagConstraints.ipady = 7;
+        gridBagConstraints.ipadx = 204;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 7, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 7, 0, 0);
         Asignatura.add(codMat, gridBagConstraints);
 
         AgregarDescripcion.setBackground(new java.awt.Color(255, 255, 255));
-        AgregarDescripcion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        AgregarDescripcion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AgregarDescripcion.setForeground(new java.awt.Color(0, 87, 116));
         AgregarDescripcion.setText("Agregar descripcion");
+        AgregarDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AgregarDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarDescripcionActionPerformed(evt);
@@ -828,19 +863,20 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Asignatura.add(AgregarDescripcion, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 87, 116));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel12.setText("Descripcion");
+        jLabel12.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipadx = 5;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Asignatura.add(jLabel12, gridBagConstraints);
 
         Descripcion.setEditable(false);
@@ -856,17 +892,18 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1397;
-        gridBagConstraints.ipady = 445;
+        gridBagConstraints.ipady = 477;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 24);
+        gridBagConstraints.insets = new java.awt.Insets(11, 20, 0, 24);
         Asignatura.add(jScrollPane1, gridBagConstraints);
 
         addAsig.setText("Agregar");
         addAsig.setColorHover(new java.awt.Color(1, 165, 228));
         addAsig.setColorNormal(new java.awt.Color(1, 128, 176));
         addAsig.setColorPressed(new java.awt.Color(2, 95, 130));
+        addAsig.setFocusable(false);
         addAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addAsig.setMaximumSize(new java.awt.Dimension(125, 17));
         addAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -880,10 +917,10 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 109;
+        gridBagConstraints.ipadx = 75;
         gridBagConstraints.ipady = 29;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 20, 44, 0);
+        gridBagConstraints.insets = new java.awt.Insets(30, 20, 44, 0);
         Asignatura.add(addAsig, gridBagConstraints);
 
         Menu.addTab("Asigantura", Asignatura);
@@ -899,9 +936,9 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 14;
-        gridBagConstraints.ipadx = 282;
-        gridBagConstraints.ipady = 23;
+        gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.ipadx = 268;
+        gridBagConstraints.ipady = 21;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
         Tema.add(jLabel17, gridBagConstraints);
@@ -917,11 +954,12 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
         Tema.add(jLabel14, gridBagConstraints);
 
         ComboAsignatura.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ComboAsignatura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+        ComboAsignatura.setFocusable(false);
         ComboAsignatura.setMaximumSize(new java.awt.Dimension(20, 204));
         ComboAsignatura.setMinimumSize(new java.awt.Dimension(20, 20));
         ComboAsignatura.setPreferredSize(new java.awt.Dimension(20, 20));
@@ -939,7 +977,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 147;
-        gridBagConstraints.ipady = 10;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         Tema.add(ComboAsignatura, gridBagConstraints);
@@ -953,12 +991,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 12;
         gridBagConstraints.ipadx = 234;
+        gridBagConstraints.ipady = -3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 30, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 0, 0, 0);
         Tema.add(NombreDelTema, gridBagConstraints);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -969,17 +1008,18 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 17;
-        gridBagConstraints.ipady = 13;
+        gridBagConstraints.ipadx = 7;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Tema.add(jLabel15, gridBagConstraints);
 
         AgregarDescripcionTema.setBackground(new java.awt.Color(255, 255, 255));
         AgregarDescripcionTema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         AgregarDescripcionTema.setForeground(new java.awt.Color(0, 87, 116));
         AgregarDescripcionTema.setText("Agregar descripcion");
+        AgregarDescripcionTema.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AgregarDescripcionTema.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         AgregarDescripcionTema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarDescripcionTemaActionPerformed(evt);
@@ -987,11 +1027,11 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Tema.add(AgregarDescripcionTema, gridBagConstraints);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1000,10 +1040,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel16.setText("Descripcion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(25, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Tema.add(jLabel16, gridBagConstraints);
 
         DescripcionTema.setColumns(20);
@@ -1014,21 +1054,22 @@ public class Principal extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 15;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 16;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1397;
-        gridBagConstraints.ipady = 404;
+        gridBagConstraints.ipady = 437;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 24);
+        gridBagConstraints.insets = new java.awt.Insets(17, 20, 0, 24);
         Tema.add(jScrollPane2, gridBagConstraints);
 
         ButtonAgregarTema.setText("Agregar");
         ButtonAgregarTema.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonAgregarTema.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonAgregarTema.setColorPressed(new java.awt.Color(2, 95, 130));
+        ButtonAgregarTema.setFocusable(false);
         ButtonAgregarTema.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ButtonAgregarTema.setMaximumSize(new java.awt.Dimension(125, 17));
         ButtonAgregarTema.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1040,12 +1081,12 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 119;
-        gridBagConstraints.ipady = 30;
+        gridBagConstraints.ipadx = 75;
+        gridBagConstraints.ipady = 29;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 20, 43, 0);
+        gridBagConstraints.insets = new java.awt.Insets(32, 20, 44, 0);
         Tema.add(ButtonAgregarTema, gridBagConstraints);
 
         AdTema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1057,7 +1098,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 11;
-        gridBagConstraints.ipady = 13;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(10, 13, 0, 0);
         Tema.add(AdTema, gridBagConstraints);
@@ -1065,10 +1106,12 @@ public class Principal extends javax.swing.JFrame {
         Menu.addTab("Tema", Tema);
 
         Pregunta.setBackground(new java.awt.Color(255, 255, 255));
+        Pregunta.setFocusable(false);
         Pregunta.setLayout(new java.awt.GridBagLayout());
 
         ComboAsignaturaS.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ComboAsignaturaS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+        ComboAsignaturaS.setFocusable(false);
         ComboAsignaturaS.setMaximumSize(new java.awt.Dimension(40, 20));
         ComboAsignaturaS.setMinimumSize(new java.awt.Dimension(40, 20));
         ComboAsignaturaS.setPreferredSize(new java.awt.Dimension(40, 20));
@@ -1084,16 +1127,16 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 143;
-        gridBagConstraints.ipady = 10;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
         Pregunta.add(ComboAsignaturaS, gridBagConstraints);
 
         ComboBoxTemas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ComboBoxTemas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+        ComboBoxTemas.setFocusable(false);
         ComboBoxTemas.setMaximumSize(new java.awt.Dimension(40, 20));
         ComboBoxTemas.setMinimumSize(new java.awt.Dimension(40, 20));
         ComboBoxTemas.setPreferredSize(new java.awt.Dimension(40, 20));
@@ -1108,13 +1151,12 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 143;
-        gridBagConstraints.ipady = 10;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
         Pregunta.add(ComboBoxTemas, gridBagConstraints);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1123,11 +1165,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel19.setText("Temas");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 20;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Pregunta.add(jLabel19, gridBagConstraints);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1136,16 +1178,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel21.setText("Dificultad");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipadx = 15;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Pregunta.add(jLabel21, gridBagConstraints);
 
         ComboNivel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ComboNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
+        ComboNivel.setFocusable(false);
         ComboNivel.setMaximumSize(new java.awt.Dimension(40, 20));
         ComboNivel.setMinimumSize(new java.awt.Dimension(40, 20));
         ComboNivel.setPreferredSize(new java.awt.Dimension(40, 20));
@@ -1160,13 +1203,12 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.ipadx = 143;
-        gridBagConstraints.ipady = 10;
+        gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
         Pregunta.add(ComboNivel, gridBagConstraints);
 
         jLabel10.setBackground(new java.awt.Color(255, 153, 51));
@@ -1176,12 +1218,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel10.setText("Contendio de la pregunta:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 17;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Pregunta.add(jLabel10, gridBagConstraints);
 
         Preguntas.setColumns(20);
@@ -1192,21 +1234,22 @@ public class Principal extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 15;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1389;
-        gridBagConstraints.ipady = 387;
+        gridBagConstraints.ipadx = 1397;
+        gridBagConstraints.ipady = 397;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(8, 20, 0, 32);
+        gridBagConstraints.insets = new java.awt.Insets(3, 20, 0, 24);
         Pregunta.add(jScrollPane3, gridBagConstraints);
 
-        ButtonAgregarPregunta.setText("Agregar Pregunta");
+        ButtonAgregarPregunta.setText("Agregar ");
         ButtonAgregarPregunta.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonAgregarPregunta.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonAgregarPregunta.setColorPressed(new java.awt.Color(2, 95, 130));
+        ButtonAgregarPregunta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ButtonAgregarPregunta.setPreferredSize(new java.awt.Dimension(125, 17));
         ButtonAgregarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1215,12 +1258,12 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 55;
-        gridBagConstraints.ipady = 36;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 133;
+        gridBagConstraints.ipady = 23;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 20, 43, 0);
+        gridBagConstraints.insets = new java.awt.Insets(22, 20, 50, 0);
         Pregunta.add(ButtonAgregarPregunta, gridBagConstraints);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -1232,7 +1275,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 240;
+        gridBagConstraints.ipadx = 242;
         gridBagConstraints.ipady = 21;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
@@ -1247,7 +1290,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipadx = 6;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
         Pregunta.add(jLabel28, gridBagConstraints);
@@ -1258,11 +1301,12 @@ public class Principal extends javax.swing.JFrame {
         AdTem.setText("*Opcion no valida");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipadx = 21;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 17, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 14, 0, 0);
         Pregunta.add(AdTem, gridBagConstraints);
 
         AdDif.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1271,12 +1315,12 @@ public class Principal extends javax.swing.JFrame {
         AdDif.setText("*Opcion no valida");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.ipadx = 51;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 17, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 14, 0, 0);
         Pregunta.add(AdDif, gridBagConstraints);
 
         AdAsig.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1286,11 +1330,10 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 51;
-        gridBagConstraints.ipady = 3;
+        gridBagConstraints.ipadx = 11;
+        gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 17, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 14, 0, 0);
         Pregunta.add(AdAsig, gridBagConstraints);
 
         Menu.addTab("Pregunta", Pregunta);
@@ -1308,6 +1351,8 @@ public class Principal extends javax.swing.JFrame {
         ButtonMostrarIZQ.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonMostrarIZQ.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonMostrarIZQ.setColorPressed(new java.awt.Color(2, 95, 130));
+        ButtonMostrarIZQ.setFocusPainted(false);
+        ButtonMostrarIZQ.setFocusable(false);
         ButtonMostrarIZQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarIZQActionPerformed(evt);
@@ -1334,6 +1379,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Asig3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+        Asig3.setFocusable(false);
         Asig3.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
@@ -1351,6 +1397,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel18.add(Asig3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, -1));
 
         tema.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+        tema.setFocusable(false);
         tema.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
@@ -1363,6 +1410,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel18.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 150, -1));
 
         nivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+        nivel.setFocusable(false);
         nivel.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
@@ -1376,10 +1424,12 @@ public class Principal extends javax.swing.JFrame {
 
         ButtonMostrarDER.setBackground(new java.awt.Color(1, 128, 176));
         ButtonMostrarDER.setText("Mostar");
-        ButtonMostrarDER.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        ButtonMostrarDER.setColorBorde(null);
         ButtonMostrarDER.setColorHover(new java.awt.Color(1, 165, 228));
         ButtonMostrarDER.setColorNormal(new java.awt.Color(1, 128, 176));
         ButtonMostrarDER.setColorPressed(new java.awt.Color(2, 95, 130));
+        ButtonMostrarDER.setFocusPainted(false);
+        ButtonMostrarDER.setFocusable(false);
         ButtonMostrarDER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMostrarDERActionPerformed(evt);
@@ -1469,6 +1519,7 @@ public class Principal extends javax.swing.JFrame {
     jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
     Asig2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    Asig2.setFocusable(false);
     Asig2.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
         public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
         }
@@ -1482,10 +1533,12 @@ public class Principal extends javax.swing.JFrame {
 
     ButtonMostrarCENT.setBackground(new java.awt.Color(1, 128, 176));
     ButtonMostrarCENT.setText("Mostrar");
-    ButtonMostrarCENT.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+    ButtonMostrarCENT.setColorBorde(null);
     ButtonMostrarCENT.setColorHover(new java.awt.Color(1, 165, 228));
     ButtonMostrarCENT.setColorNormal(new java.awt.Color(1, 128, 176));
     ButtonMostrarCENT.setColorPressed(new java.awt.Color(2, 95, 130));
+    ButtonMostrarCENT.setFocusPainted(false);
+    ButtonMostrarCENT.setFocusable(false);
     ButtonMostrarCENT.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             ButtonMostrarCENTActionPerformed(evt);
@@ -1519,13 +1572,14 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(30, 30, 0, 0);
     Ver.add(jPanel16, gridBagConstraints);
 
-    ButtonGenerarInforme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
+    ButtonGenerarInforme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoInforme.png"))); // NOI18N
     ButtonGenerarInforme.setText("Informe");
     ButtonGenerarInforme.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
     ButtonGenerarInforme.setColorHover(new java.awt.Color(1, 165, 228));
     ButtonGenerarInforme.setColorNormal(new java.awt.Color(1, 128, 176));
     ButtonGenerarInforme.setColorPressed(new java.awt.Color(2, 95, 130));
     ButtonGenerarInforme.setFocusPainted(false);
+    ButtonGenerarInforme.setFocusable(false);
     ButtonGenerarInforme.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ButtonGenerarInforme.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     ButtonGenerarInforme.setMaximumSize(new java.awt.Dimension(150, 35));
@@ -1555,7 +1609,7 @@ public class Principal extends javax.swing.JFrame {
     jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel23.setText(" Informacion Examen");
     jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
-    Generar.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 300, 36));
+    Generar.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 420, 36));
 
     jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel25.setForeground(new java.awt.Color(0, 87, 116));
@@ -1587,6 +1641,7 @@ public class Principal extends javax.swing.JFrame {
 
     seme.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
     seme.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Primero", "Segundo" }));
+    seme.setFocusable(false);
     seme.setMaximumSize(new java.awt.Dimension(7, 20));
     seme.setMinimumSize(new java.awt.Dimension(7, 20));
     seme.setPreferredSize(new java.awt.Dimension(7, 20));
@@ -1603,6 +1658,7 @@ public class Principal extends javax.swing.JFrame {
 
     asigna.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
     asigna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    asigna.setFocusable(false);
     asigna.setMaximumSize(new java.awt.Dimension(7, 20));
     asigna.setMinimumSize(new java.awt.Dimension(7, 20));
     asigna.setPreferredSize(new java.awt.Dimension(7, 20));
@@ -1660,6 +1716,7 @@ public class Principal extends javax.swing.JFrame {
     ButtonAddPreg.setColorHover(new java.awt.Color(1, 165, 228));
     ButtonAddPreg.setColorNormal(new java.awt.Color(1, 128, 176));
     ButtonAddPreg.setColorPressed(new java.awt.Color(2, 95, 130));
+    ButtonAddPreg.setFocusable(false);
     ButtonAddPreg.setMaximumSize(new java.awt.Dimension(125, 17));
     ButtonAddPreg.setMinimumSize(new java.awt.Dimension(125, 17));
     ButtonAddPreg.setPreferredSize(new java.awt.Dimension(125, 17));
@@ -1676,6 +1733,7 @@ public class Principal extends javax.swing.JFrame {
     Generar.add(InfoTem, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
     temas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    temas.setFocusable(false);
     temas.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
         public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
         }
@@ -1693,6 +1751,7 @@ public class Principal extends javax.swing.JFrame {
     Generar.add(NivInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
 
     ndif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ndif.setFocusable(false);
     ndif.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
         public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
         }
@@ -1708,6 +1767,7 @@ public class Principal extends javax.swing.JFrame {
     generarExamen.setColorHover(new java.awt.Color(1, 165, 228));
     generarExamen.setColorNormal(new java.awt.Color(1, 128, 176));
     generarExamen.setColorPressed(new java.awt.Color(128, 140, 207));
+    generarExamen.setFocusable(false);
     generarExamen.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             generarExamenActionPerformed(evt);
@@ -1728,7 +1788,7 @@ public class Principal extends javax.swing.JFrame {
     NivAd.setForeground(new java.awt.Color(255, 0, 51));
     NivAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     NivAd.setText("*Opcion no valida");
-    Generar.add(NivAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 620, 130, 20));
+    Generar.add(NivAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 620, 380, 20));
 
     SeAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     SeAd.setForeground(new java.awt.Color(255, 0, 51));
@@ -1740,7 +1800,7 @@ public class Principal extends javax.swing.JFrame {
     TemAd.setForeground(new java.awt.Color(255, 0, 51));
     TemAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     TemAd.setText("*Opcion no valida");
-    Generar.add(TemAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 130, 20));
+    Generar.add(TemAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 370, 20));
 
     Menu.addTab("Generar", Generar);
 
@@ -1750,14 +1810,14 @@ public class Principal extends javax.swing.JFrame {
     jLabel40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
     jLabel40.setForeground(new java.awt.Color(0, 87, 116));
     jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    jLabel40.setText(" Editor de  Asignatura");
+    jLabel40.setText(" Editor Asignatura");
     jLabel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridwidth = 25;
-    gridBagConstraints.ipadx = 242;
-    gridBagConstraints.ipady = 21;
+    gridBagConstraints.gridwidth = 21;
+    gridBagConstraints.ipadx = 283;
+    gridBagConstraints.ipady = 19;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
     EditAsig.add(jLabel40, gridBagConstraints);
@@ -1768,9 +1828,9 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.gridy = 1;
     gridBagConstraints.gridwidth = 7;
     gridBagConstraints.ipadx = 174;
-    gridBagConstraints.ipady = 7;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(20, 7, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(22, 7, 0, 0);
     EditAsig.add(NomEditAsig, gridBagConstraints);
 
     jLabel45.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1781,9 +1841,9 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 1;
     gridBagConstraints.gridwidth = 5;
-    gridBagConstraints.ipady = 10;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(22, 20, 0, 0);
     EditAsig.add(jLabel45, gridBagConstraints);
 
     jLabel46.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1795,8 +1855,9 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.gridy = 2;
     gridBagConstraints.gridwidth = 3;
     gridBagConstraints.ipadx = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
     EditAsig.add(jLabel46, gridBagConstraints);
 
     CodEditAsig.setEditable(false);
@@ -1806,9 +1867,9 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.gridy = 2;
     gridBagConstraints.gridwidth = 7;
     gridBagConstraints.ipadx = 174;
-    gridBagConstraints.ipady = 7;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(13, 7, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(15, 7, 0, 0);
     EditAsig.add(CodEditAsig, gridBagConstraints);
 
     jLabel47.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1817,10 +1878,11 @@ public class Principal extends javax.swing.JFrame {
     jLabel47.setText("Descripcion");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridy = 3;
     gridBagConstraints.ipadx = 10;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(21, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 0);
     EditAsig.add(jLabel47, gridBagConstraints);
 
     jScrollPane5.setMaximumSize(new java.awt.Dimension(430, 470));
@@ -1839,13 +1901,13 @@ public class Principal extends javax.swing.JFrame {
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 5;
-    gridBagConstraints.gridwidth = 39;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridwidth = 21;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
     gridBagConstraints.ipadx = -20;
     gridBagConstraints.ipady = -10;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(13, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditAsig.add(jScrollPane5, gridBagConstraints);
 
     BottonEditAsig.setText("Editar");
@@ -1853,6 +1915,7 @@ public class Principal extends javax.swing.JFrame {
     BottonEditAsig.setColorHover(new java.awt.Color(255, 157, 61));
     BottonEditAsig.setColorNormal(new java.awt.Color(255, 127, 0));
     BottonEditAsig.setColorPressed(new java.awt.Color(244, 121, 0));
+    BottonEditAsig.setFocusable(false);
     BottonEditAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     BottonEditAsig.setMaximumSize(new java.awt.Dimension(125, 17));
     BottonEditAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1864,7 +1927,7 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridy = 5;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
@@ -1901,22 +1964,23 @@ public class Principal extends javax.swing.JFrame {
     jScrollPane6.setViewportView(TablaAsig);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 39;
+    gridBagConstraints.gridx = 21;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridheight = 8;
+    gridBagConstraints.gridheight = 7;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.ipadx = 917;
+    gridBagConstraints.ipadx = 947;
     gridBagConstraints.ipady = 753;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.weightx = 1.0;
     gridBagConstraints.weighty = 1.0;
-    gridBagConstraints.insets = new java.awt.Insets(20, 70, 56, 24);
+    gridBagConstraints.insets = new java.awt.Insets(20, 40, 56, 24);
     EditAsig.add(jScrollPane6, gridBagConstraints);
 
     GuaEditAsig.setText("Guardar");
     GuaEditAsig.setColorHover(new java.awt.Color(1, 165, 228));
     GuaEditAsig.setColorNormal(new java.awt.Color(1, 128, 176));
     GuaEditAsig.setColorPressed(new java.awt.Color(2, 95, 130));
+    GuaEditAsig.setFocusable(false);
     GuaEditAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     GuaEditAsig.setMaximumSize(new java.awt.Dimension(125, 17));
     GuaEditAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1928,8 +1992,8 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 13;
-    gridBagConstraints.gridy = 6;
-    gridBagConstraints.gridwidth = 26;
+    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridwidth = 8;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -1940,6 +2004,7 @@ public class Principal extends javax.swing.JFrame {
     ElimEditAsig.setColorHover(new java.awt.Color(255, 81, 81));
     ElimEditAsig.setColorNormal(new java.awt.Color(255, 0, 0));
     ElimEditAsig.setColorPressed(new java.awt.Color(219, 0, 0));
+    ElimEditAsig.setFocusable(false);
     ElimEditAsig.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ElimEditAsig.setMaximumSize(new java.awt.Dimension(125, 17));
     ElimEditAsig.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -1951,7 +2016,7 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 2;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridy = 5;
     gridBagConstraints.gridwidth = 6;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
@@ -1972,8 +2037,8 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridwidth = 23;
-    gridBagConstraints.ipadx = 300;
+    gridBagConstraints.gridwidth = 28;
+    gridBagConstraints.ipadx = 320;
     gridBagConstraints.ipady = 19;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
@@ -1986,15 +2051,16 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 9;
+    gridBagConstraints.gridwidth = 10;
     gridBagConstraints.ipadx = 4;
-    gridBagConstraints.ipady = 13;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
     EditTem.add(jLabel49, gridBagConstraints);
 
     ComboAsigEdit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     ComboAsigEdit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    ComboAsigEdit.setFocusable(false);
     ComboAsigEdit.setMaximumSize(new java.awt.Dimension(20, 204));
     ComboAsigEdit.setMinimumSize(new java.awt.Dimension(20, 20));
     ComboAsigEdit.setPreferredSize(new java.awt.Dimension(20, 20));
@@ -2007,14 +2073,19 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
+    ComboAsigEdit.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ComboAsigEditActionPerformed(evt);
+        }
+    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 2;
-    gridBagConstraints.gridwidth = 5;
+    gridBagConstraints.gridwidth = 3;
     gridBagConstraints.ipadx = 133;
-    gridBagConstraints.ipady = 8;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
     EditTem.add(ComboAsigEdit, gridBagConstraints);
 
     NomEditTem.setMaximumSize(new java.awt.Dimension(6, 28));
@@ -2023,11 +2094,11 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 15;
+    gridBagConstraints.gridwidth = 18;
     gridBagConstraints.ipadx = 250;
-    gridBagConstraints.ipady = -1;
+    gridBagConstraints.ipady = -3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(17, 30, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 0);
     EditTem.add(NomEditTem, gridBagConstraints);
 
     jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2038,11 +2109,10 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 3;
     gridBagConstraints.gridwidth = 2;
-    gridBagConstraints.gridheight = 2;
     gridBagConstraints.ipadx = 17;
-    gridBagConstraints.ipady = 13;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(17, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
     EditTem.add(jLabel50, gridBagConstraints);
 
     jLabel51.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2051,10 +2121,11 @@ public class Principal extends javax.swing.JFrame {
     jLabel51.setText("Descripcion");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridy = 4;
     gridBagConstraints.ipadx = 20;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(25, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(30, 20, 0, 0);
     EditTem.add(jLabel51, gridBagConstraints);
 
     DesEditTem.setColumns(20);
@@ -2065,13 +2136,14 @@ public class Principal extends javax.swing.JFrame {
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 7;
-    gridBagConstraints.gridwidth = 32;
+    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridwidth = 28;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
     gridBagConstraints.ipadx = 387;
     gridBagConstraints.ipady = 377;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(23, 20, 0, 0);
+    gridBagConstraints.weighty = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
     EditTem.add(jScrollPane7, gridBagConstraints);
 
     TablaTem.setModel(new javax.swing.table.DefaultTableModel(
@@ -2101,16 +2173,16 @@ public class Principal extends javax.swing.JFrame {
     jScrollPane8.setViewportView(TablaTem);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 32;
+    gridBagConstraints.gridx = 28;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridheight = 10;
+    gridBagConstraints.gridheight = 8;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.ipadx = 967;
-    gridBagConstraints.ipady = 743;
+    gridBagConstraints.ipadx = 947;
+    gridBagConstraints.ipady = 753;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.weightx = 1.0;
     gridBagConstraints.weighty = 1.0;
-    gridBagConstraints.insets = new java.awt.Insets(20, 20, 66, 24);
+    gridBagConstraints.insets = new java.awt.Insets(20, 40, 56, 24);
     EditTem.add(jScrollPane8, gridBagConstraints);
 
     ButtomEditTem.setText("Editar");
@@ -2118,6 +2190,7 @@ public class Principal extends javax.swing.JFrame {
     ButtomEditTem.setColorHover(new java.awt.Color(255, 157, 61));
     ButtomEditTem.setColorNormal(new java.awt.Color(255, 127, 0));
     ButtomEditTem.setColorPressed(new java.awt.Color(244, 121, 0));
+    ButtomEditTem.setFocusable(false);
     ButtomEditTem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ButtomEditTem.setMaximumSize(new java.awt.Dimension(125, 17));
     ButtomEditTem.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2129,11 +2202,12 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridy = 6;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.weighty = 1.0;
     gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
     EditTem.add(ButtomEditTem, gridBagConstraints);
 
@@ -2141,6 +2215,7 @@ public class Principal extends javax.swing.JFrame {
     ElimEditTem.setColorHover(new java.awt.Color(255, 81, 81));
     ElimEditTem.setColorNormal(new java.awt.Color(255, 0, 0));
     ElimEditTem.setColorPressed(new java.awt.Color(219, 0, 0));
+    ElimEditTem.setFocusable(false);
     ElimEditTem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ElimEditTem.setMaximumSize(new java.awt.Dimension(125, 17));
     ElimEditTem.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2152,11 +2227,12 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 2;
-    gridBagConstraints.gridy = 8;
-    gridBagConstraints.gridwidth = 6;
+    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridwidth = 4;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.weighty = 1.0;
     gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
     EditTem.add(ElimEditTem, gridBagConstraints);
 
@@ -2164,6 +2240,7 @@ public class Principal extends javax.swing.JFrame {
     GuardarTem.setColorHover(new java.awt.Color(1, 165, 228));
     GuardarTem.setColorNormal(new java.awt.Color(1, 128, 176));
     GuardarTem.setColorPressed(new java.awt.Color(2, 95, 130));
+    GuardarTem.setFocusable(false);
     GuardarTem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     GuardarTem.setMaximumSize(new java.awt.Dimension(125, 17));
     GuardarTem.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2174,39 +2251,63 @@ public class Principal extends javax.swing.JFrame {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 8;
-    gridBagConstraints.gridy = 8;
-    gridBagConstraints.gridwidth = 24;
+    gridBagConstraints.gridx = 9;
+    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridwidth = 19;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
     EditTem.add(GuardarTem, gridBagConstraints);
 
+    AdAsig5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AdAsig5.setForeground(new java.awt.Color(255, 0, 51));
+    AdAsig5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AdAsig5.setText("*Opcion no valida");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 5;
+    gridBagConstraints.gridy = 2;
+    gridBagConstraints.gridwidth = 5;
+    gridBagConstraints.ipadx = 51;
+    gridBagConstraints.ipady = 8;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(15, 7, 0, 0);
+    EditTem.add(AdAsig5, gridBagConstraints);
+
     Menu.addTab("Tema", EditTem);
 
     EditPreg.setBackground(new java.awt.Color(255, 255, 255));
-    EditPreg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
+    EditPreg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
     EditPreg.setLayout(new java.awt.GridBagLayout());
 
     ComboAsigPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     ComboAsigPreg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    ComboAsigPreg.setFocusable(false);
     ComboAsigPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboAsigPreg.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboAsigPreg.setPreferredSize(new java.awt.Dimension(40, 20));
+    ComboAsigPreg.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            ComboAsigPregPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     ComboAsigPreg.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             ComboAsigPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 6;
+    gridBagConstraints.gridwidth = 5;
     gridBagConstraints.ipadx = 120;
-    gridBagConstraints.ipady = 7;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 22, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(ComboAsigPreg, gridBagConstraints);
 
     jLabel52.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2214,33 +2315,43 @@ public class Principal extends javax.swing.JFrame {
     jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel52.setText("Contendio Pregunta");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 10;
-    gridBagConstraints.gridwidth = 4;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 12;
+    gridBagConstraints.gridwidth = 3;
     gridBagConstraints.ipadx = 3;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(jLabel52, gridBagConstraints);
 
     ComboTemPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     ComboTemPreg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
+    ComboTemPreg.setFocusable(false);
     ComboTemPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboTemPreg.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboTemPreg.setPreferredSize(new java.awt.Dimension(40, 20));
+    ComboTemPreg.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            ComboTemPregPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     ComboTemPreg.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             ComboTemPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 9;
+    gridBagConstraints.gridx = 7;
     gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 61;
+    gridBagConstraints.gridwidth = 54;
     gridBagConstraints.ipadx = 110;
-    gridBagConstraints.ipady = 7;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(ComboTemPreg, gridBagConstraints);
 
     jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2248,14 +2359,13 @@ public class Principal extends javax.swing.JFrame {
     jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel53.setText("Temas");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 9;
-    gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 11;
-    gridBagConstraints.gridheight = 2;
-    gridBagConstraints.ipadx = 40;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.gridx = 7;
+    gridBagConstraints.gridy = 2;
+    gridBagConstraints.gridwidth = 7;
+    gridBagConstraints.ipadx = 10;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(19, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
     EditPreg.add(jLabel53, gridBagConstraints);
 
     jLabel54.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2263,18 +2373,18 @@ public class Principal extends javax.swing.JFrame {
     jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel54.setText("Dificultad");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 105;
-    gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 107;
-    gridBagConstraints.gridheight = 2;
+    gridBagConstraints.gridx = 87;
+    gridBagConstraints.gridy = 2;
+    gridBagConstraints.gridwidth = 69;
     gridBagConstraints.ipadx = 5;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(19, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
     EditPreg.add(jLabel54, gridBagConstraints);
 
     ComboNivelA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     ComboNivelA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ComboNivelA.setFocusable(false);
     ComboNivelA.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setPreferredSize(new java.awt.Dimension(40, 20));
@@ -2289,12 +2399,12 @@ public class Principal extends javax.swing.JFrame {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 6;
     gridBagConstraints.ipadx = 20;
-    gridBagConstraints.ipady = 4;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 21, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(ComboNivelA, gridBagConstraints);
 
     InfoPreg.setColumns(20);
@@ -2304,14 +2414,14 @@ public class Principal extends javax.swing.JFrame {
     jScrollPane9.setViewportView(InfoPreg);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 11;
-    gridBagConstraints.gridwidth = 106;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 13;
+    gridBagConstraints.gridwidth = 155;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
     gridBagConstraints.ipadx = 387;
-    gridBagConstraints.ipady = 347;
+    gridBagConstraints.ipady = 337;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(11, 21, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(8, 20, 0, 0);
     EditPreg.add(jScrollPane9, gridBagConstraints);
 
     jLabel56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -2320,13 +2430,13 @@ public class Principal extends javax.swing.JFrame {
     jLabel56.setText(" Editar Pregunta");
     jLabel56.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 87, 116)));
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridwidth = 213;
-    gridBagConstraints.ipadx = 280;
-    gridBagConstraints.ipady = 21;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 1;
+    gridBagConstraints.gridwidth = 155;
+    gridBagConstraints.ipadx = 295;
+    gridBagConstraints.ipady = 19;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(23, 23, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 0);
     EditPreg.add(jLabel56, gridBagConstraints);
 
     TablaPregEdit.setModel(new javax.swing.table.DefaultTableModel(
@@ -2356,16 +2466,16 @@ public class Principal extends javax.swing.JFrame {
     jScrollPane10.setViewportView(TablaPregEdit);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 213;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.gridheight = 14;
+    gridBagConstraints.gridx = 156;
+    gridBagConstraints.gridy = 1;
+    gridBagConstraints.gridheight = 15;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.ipadx = 931;
-    gridBagConstraints.ipady = 747;
+    gridBagConstraints.ipadx = 947;
+    gridBagConstraints.ipady = 753;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.weightx = 1.0;
     gridBagConstraints.weighty = 1.0;
-    gridBagConstraints.insets = new java.awt.Insets(23, 42, 59, 35);
+    gridBagConstraints.insets = new java.awt.Insets(20, 40, 56, 24);
     EditPreg.add(jScrollPane10, gridBagConstraints);
 
     ButtomEditPreg.setText("Editar");
@@ -2373,6 +2483,7 @@ public class Principal extends javax.swing.JFrame {
     ButtomEditPreg.setColorHover(new java.awt.Color(255, 157, 61));
     ButtomEditPreg.setColorNormal(new java.awt.Color(255, 127, 0));
     ButtomEditPreg.setColorPressed(new java.awt.Color(244, 121, 0));
+    ButtomEditPreg.setFocusable(false);
     ButtomEditPreg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ButtomEditPreg.setMaximumSize(new java.awt.Dimension(125, 17));
     ButtomEditPreg.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2383,19 +2494,20 @@ public class Principal extends javax.swing.JFrame {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 12;
-    gridBagConstraints.gridwidth = 5;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 14;
+    gridBagConstraints.gridwidth = 4;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 21, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
     EditPreg.add(ButtomEditPreg, gridBagConstraints);
 
     ElemEditPreg.setText("Eliminar");
     ElemEditPreg.setColorHover(new java.awt.Color(255, 81, 81));
     ElemEditPreg.setColorNormal(new java.awt.Color(255, 0, 0));
     ElemEditPreg.setColorPressed(new java.awt.Color(219, 0, 0));
+    ElemEditPreg.setFocusable(false);
     ElemEditPreg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     ElemEditPreg.setMaximumSize(new java.awt.Dimension(125, 17));
     ElemEditPreg.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2407,8 +2519,8 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 5;
-    gridBagConstraints.gridy = 12;
-    gridBagConstraints.gridwidth = 25;
+    gridBagConstraints.gridy = 14;
+    gridBagConstraints.gridwidth = 16;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -2419,6 +2531,7 @@ public class Principal extends javax.swing.JFrame {
     GuarEditPreg.setColorHover(new java.awt.Color(1, 165, 228));
     GuarEditPreg.setColorNormal(new java.awt.Color(1, 128, 176));
     GuarEditPreg.setColorPressed(new java.awt.Color(2, 95, 130));
+    GuarEditPreg.setFocusable(false);
     GuarEditPreg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
     GuarEditPreg.setMaximumSize(new java.awt.Dimension(125, 17));
     GuarEditPreg.setMinimumSize(new java.awt.Dimension(125, 17));
@@ -2429,31 +2542,32 @@ public class Principal extends javax.swing.JFrame {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 44;
-    gridBagConstraints.gridy = 12;
-    gridBagConstraints.gridwidth = 62;
+    gridBagConstraints.gridx = 34;
+    gridBagConstraints.gridy = 14;
+    gridBagConstraints.gridwidth = 122;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
     EditPreg.add(GuarEditPreg, gridBagConstraints);
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 9;
-    gridBagConstraints.gridwidth = 10;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 11;
+    gridBagConstraints.gridwidth = 14;
     gridBagConstraints.ipadx = 223;
     gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(FechaPreg, gridBagConstraints);
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 7;
-    gridBagConstraints.gridwidth = 10;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridwidth = 14;
+    gridBagConstraints.gridheight = 2;
     gridBagConstraints.ipadx = 244;
-    gridBagConstraints.ipady = 4;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(EstadPreg, gridBagConstraints);
 
     DesButto.setBackground(new java.awt.Color(204, 204, 204));
@@ -2463,13 +2577,11 @@ public class Principal extends javax.swing.JFrame {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 19;
-    gridBagConstraints.gridy = 7;
-    gridBagConstraints.gridwidth = 26;
-    gridBagConstraints.ipadx = -25;
-    gridBagConstraints.ipady = -17;
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 0;
+    gridBagConstraints.ipadx = -33;
+    gridBagConstraints.ipady = -9;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
     EditPreg.add(DesButto, gridBagConstraints);
 
     jLabel55.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2477,13 +2589,13 @@ public class Principal extends javax.swing.JFrame {
     jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel55.setText("Asignatura");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 3;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 2;
+    gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 16;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(18, 21, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
     EditPreg.add(jLabel55, gridBagConstraints);
 
     jLabel57.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2491,13 +2603,13 @@ public class Principal extends javax.swing.JFrame {
     jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel57.setText("Nivel Actual");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 4;
-    gridBagConstraints.gridwidth = 3;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 11;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(12, 21, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(7, 20, 0, 0);
     EditPreg.add(jLabel57, gridBagConstraints);
 
     jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2505,33 +2617,43 @@ public class Principal extends javax.swing.JFrame {
     jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel58.setText("Estado");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 7;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 38;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(jLabel58, gridBagConstraints);
 
     ComboNivPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     ComboNivPreg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ComboNivPreg.setFocusable(false);
     ComboNivPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivPreg.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboNivPreg.setPreferredSize(new java.awt.Dimension(40, 20));
+    ComboNivPreg.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+        }
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            ComboNivPregPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+        }
+    });
     ComboNivPreg.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             ComboNivPregActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 105;
+    gridBagConstraints.gridx = 87;
     gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 107;
+    gridBagConstraints.gridwidth = 69;
     gridBagConstraints.ipadx = 20;
-    gridBagConstraints.ipady = 7;
+    gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(ComboNivPreg, gridBagConstraints);
 
     jLabel59.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2539,14 +2661,96 @@ public class Principal extends javax.swing.JFrame {
     jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel59.setText("Ultimo uso");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 10;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 16;
-    gridBagConstraints.ipady = 3;
+    gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(jLabel59, gridBagConstraints);
+
+    AdAsig6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AdAsig6.setForeground(new java.awt.Color(255, 0, 51));
+    AdAsig6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AdAsig6.setText("*Opcion no valida");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 2;
+    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridwidth = 6;
+    gridBagConstraints.ipadx = 11;
+    gridBagConstraints.ipady = 8;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(5, 12, 0, 0);
+    EditPreg.add(AdAsig6, gridBagConstraints);
+
+    AdAsig11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AdAsig11.setForeground(new java.awt.Color(255, 0, 51));
+    AdAsig11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AdAsig11.setText("*Opcion no valida");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridwidth = 5;
+    gridBagConstraints.ipadx = 51;
+    gridBagConstraints.ipady = 8;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    EditPreg.add(AdAsig11, gridBagConstraints);
+
+    AdAsig12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AdAsig12.setForeground(new java.awt.Color(255, 0, 51));
+    AdAsig12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AdAsig12.setText("*");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 87;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridwidth = 69;
+    gridBagConstraints.ipadx = 52;
+    gridBagConstraints.ipady = 8;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    EditPreg.add(AdAsig12, gridBagConstraints);
+
+    AdAsig14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AdAsig14.setForeground(new java.awt.Color(255, 0, 51));
+    AdAsig14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AdAsig14.setText("*Opcion no valida");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 7;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridwidth = 28;
+    gridBagConstraints.ipadx = 11;
+    gridBagConstraints.ipady = 8;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    EditPreg.add(AdAsig14, gridBagConstraints);
+
+    BottonGenrExam1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+    BottonGenrExam1.setText("(Des)Bloquear");
+    BottonGenrExam1.setColorBorde(javax.swing.BorderFactory.createEtchedBorder());
+    BottonGenrExam1.setColorHover(new java.awt.Color(1, 165, 228));
+    BottonGenrExam1.setColorNormal(new java.awt.Color(186, 186, 186));
+    BottonGenrExam1.setColorPressed(new java.awt.Color(2, 95, 130));
+    BottonGenrExam1.setFocusPainted(false);
+    BottonGenrExam1.setFocusable(false);
+    BottonGenrExam1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    BottonGenrExam1.setMaximumSize(new java.awt.Dimension(150, 35));
+    BottonGenrExam1.setMinimumSize(new java.awt.Dimension(150, 35));
+    BottonGenrExam1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            BottonGenrExam1ActionPerformed(evt);
+        }
+    });
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 20;
+    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridwidth = 68;
+    gridBagConstraints.ipadx = -10;
+    gridBagConstraints.ipady = -10;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(3, 8, 0, 0);
+    EditPreg.add(BottonGenrExam1, gridBagConstraints);
 
     Menu.addTab("Pregunta", EditPreg);
 
@@ -2691,9 +2895,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonHomeActionPerformed
 
     private void ButtonAddPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddPregActionPerformed
-        int TotalPreg = TotalPregPorAsig(profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1));
-        if (evaluacion.getText().equals("")) {
-            if (TotalPreg < Integer.parseInt(preg.getText())) {
+        int TotalPreg = TotalPregPorAsig();
+        Date date = fecha.getDate();
+        if (!evaluacion.getText().equals("") && date != null) {
+            if (TotalPreg >= Integer.parseInt(preg.getText())) {
                 String tem;
                 titulo = evaluacion.getText();
                 nom = "Profesor: " + nombre_profesor;
@@ -2709,7 +2914,7 @@ public class Principal extends javax.swing.JFrame {
                 mat = "Asignatura De " + asigna.getSelectedItem();
                 ev = "" + evaluacion.getText();
                 DateFormat FormaFecha = new SimpleDateFormat("dd-MM-yyyy");
-                fec = "" + FormaFecha.format(fecha.getDate());
+                fec = "" + FormaFecha.format(date);
                 num = Integer.parseInt(preg.getText());
                 Asignatura asig = null;
                 for (Asignatura a : profesor.getAsignaturas()) {
@@ -2736,7 +2941,7 @@ public class Principal extends javax.swing.JFrame {
                 fecha.setEnabled(false);
                 preg.setEditable(false);
             } else {
-                JOptionPane.showMessageDialog(this, "El numero de preguntas establecido es mayor del que posee la asigntura escogida /n se recomienda desbloquear preguntas o agregar nuevas.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "El numero de preguntas establecido es mayor del que\r\n posee la asigntura escogida.", "Advertencia", JOptionPane.ERROR_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Advertencia", JOptionPane.ERROR_MESSAGE);
@@ -2797,6 +3002,8 @@ public class Principal extends javax.swing.JFrame {
                         try {
                             temp = e.concatenar(x);
                             e.guardar(temp, x, total);
+                            Pregunta pregun = new Pregunta(InfoPregunta, jor, "Disponible", "--------");
+                            profesor.getAsignaturas().get(ComboAsignaturaS.getSelectedIndex() - 1).getTemas().get(ComboBoxTemas.getSelectedIndex() - 1).getPreguntas(jor).add(pregun);
                             JOptionPane.showMessageDialog(null, "Pregunta añadida exitosamente.");
                             Menu.setSelectedComponent(Home);
 
@@ -2814,7 +3021,7 @@ public class Principal extends javax.swing.JFrame {
         String r = (String) ComboAsignatura.getSelectedItem();
         if (!tema.equals("")) {
             if (!r.equals("...")) {
-                boolean verifexis = profesor.VerificarTema(tema, r, DescripcionTema.getText());
+                boolean verifexis = profesor.VerificarTema(tema, r, DesNoNull(DescripcionTema.getText()));
                 if (verifexis == false) {
 
                     Metodos met = new Metodos();
@@ -2822,7 +3029,7 @@ public class Principal extends javax.swing.JFrame {
                     String temp;
                     try {
                         temp = met.concatenar(x);
-                        met.guardar(temp, x, tema + ";" + DescripcionTema.getText() + ";");
+                        met.guardar(temp, x, tema + ";" + DesNoNull(DescripcionTema.getText()) + ";");
                         File carpeta = new File("Profesor/" + usuario + "/" + r + "/" + tema);
                         carpeta.mkdirs();
                         File fl = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_1.txt");
@@ -2835,7 +3042,7 @@ public class Principal extends javax.swing.JFrame {
                     } catch (IOException ex) {
                         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    profesor.AddTema(tema, r, DescripcionTema.getText());
+                    profesor.AddTema(tema, r, DesNoNull(DescripcionTema.getText()));
                     JOptionPane.showMessageDialog(null, "Tema añadido exitosamente.");
                     Menu.setSelectedComponent(Home);
                 }
@@ -2867,12 +3074,12 @@ public class Principal extends javax.swing.JFrame {
                     String temp;
 
                     temp = met.concatenar(x);
-                    met.guardar(temp, x, Asigna + ";" + codigo + ";" + Descripcion.getText() + ";");
+                    met.guardar(temp, x, Asigna + ";" + codigo + ";" + DesNoNull(Descripcion.getText()) + ";");
                     File carpeta = new File("Profesor/" + usuario + "/" + Asigna);
                     carpeta.mkdirs();
                     File fichero = new File("Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
                     fichero.createNewFile();
-                    Asignatura a = new Asignatura(Asigna, this.Descripcion.getText(), codigo);
+                    Asignatura a = new Asignatura(Asigna, DesNoNull(Descripcion.getText()), codigo);
                     profesor.AddAsignatura(a);
                     JOptionPane.showMessageDialog(null, "Asignatura creada satisfactoriamente.");
                     Menu.setSelectedComponent(Home);
@@ -2886,6 +3093,15 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addAsigActionPerformed
 
+    //Metodo Express 3
+    //Descripcion null o "" volverla " " esto con el fin de que no interfiera con el split
+    String DesNoNull(String s) {
+        if (s.equals("") || s == null) {
+            s = " ";
+        }
+        return s;
+    }
+
     public void recursiveDelete(File file) {
         //to end the recursive loop
         if (!file.exists()) {
@@ -2897,7 +3113,6 @@ public class Principal extends javax.swing.JFrame {
             for (File f : file.listFiles()) {
                 //call recursively
                 recursiveDelete(f);
-                f.delete();
             }
         }
         file.delete();
@@ -2926,7 +3141,7 @@ public class Principal extends javax.swing.JFrame {
     private void generarExamenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarExamenActionPerformed
 
         if (jud == num) {
-            Pregunta preguntatemp = Aleatorio();
+            String preguntatemp = Aleatorio();
             if (preguntatemp != null) {
                 person.add(preguntatemp);
                 XWPFDocument documento = new XWPFDocument();
@@ -2984,7 +3199,8 @@ public class Principal extends javax.swing.JFrame {
                 ri.addBreak();
                 int i = 0;
                 while (i < person.size()) {
-                    String preg = "" + person.get(i).getContenido();
+                    String[] SoloCont = person.get(i).split("/@/");
+                    String preg = "" + SoloCont[0];
                     XWPFRun r7 = parrafo.createRun();
                     r7.setText((i + 1) + ".  " + preg);
                     r7.setFontSize(12);
@@ -2993,7 +3209,11 @@ public class Principal extends javax.swing.JFrame {
                     i++;
 
                 }
-
+                try {
+                    SobreEscribir(person);
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 JFileChooser f = new JFileChooser();
                 f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 f.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
@@ -3026,7 +3246,7 @@ public class Principal extends javax.swing.JFrame {
             }
 
         } else {
-            Pregunta preguntatemp = Aleatorio();
+            String preguntatemp = Aleatorio();
             if (preguntatemp != null) {
                 person.add(preguntatemp);
                 jud++;
@@ -3090,6 +3310,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void Asig3PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_Asig3PopupMenuWillBecomeInvisible
         String TempAsigna = (String) Asig3.getSelectedItem();
+        tema.setEnabled(false);
+        tema.setSelectedIndex(0);
+        nivel.setEnabled(false);
+        nivel.setSelectedIndex(0);
+        AdAsig3.setVisible(false);
+        AdAsig4.setVisible(false);
         if (!TempAsigna.equals("...")) {
             tema.setEnabled(true);
             Metodos met = new Metodos();
@@ -3101,8 +3327,10 @@ public class Principal extends javax.swing.JFrame {
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
                 if (h < 1) {
                     AdAsig2.setVisible(true);
+
                     AdAsig2.setText("*Asignatura sin Temas");
                     tema.setEnabled(false);
+                    tema.setSelectedIndex(0);
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -3110,25 +3338,22 @@ public class Principal extends javax.swing.JFrame {
         } else {
             AdAsig2.setVisible(true);
             AdAsig2.setText("*Opcion no valida");
-            tema.setEnabled(false);
         }
         BloqDesBoton(ButtonMostrarDER, "...");
-        nivel.setEnabled(false);
     }//GEN-LAST:event_Asig3PopupMenuWillBecomeInvisible
 
     private void temaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_temaPopupMenuWillBecomeInvisible
         String TempTema = (String) tema.getSelectedItem();
+        nivel.setSelectedItem(0);
+        AdAsig4.setVisible(false);
         if ("...".equals(TempTema)) {
             AdAsig3.setVisible(true);
             nivel.setEnabled(false);
-            ButtonMostrarDER.setEnabled(false);
         } else {
             AdAsig3.setVisible(false);
             nivel.setEnabled(true);
-            ButtonMostrarDER.setEnabled(false);
-            this.nivel.setSelectedIndex(0);
         }
-        BloqDesBoton(ButtonMostrarDER, (String) Asig2.getSelectedItem());
+        BloqDesBoton(ButtonMostrarDER, "...");
     }//GEN-LAST:event_temaPopupMenuWillBecomeInvisible
 
     private void ComboAsignaturaSPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
@@ -3306,6 +3531,8 @@ public class Principal extends javax.swing.JFrame {
         ButtonCambio.setVisible(true);
         NuevaContra.setVisible(true);
         ValNuevaContra.setVisible(true);
+        NuevaContra.setText("");
+        ValNuevaContra.setText("");
     }//GEN-LAST:event_BottonCamContraActionPerformed
 
     private void ButtonGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGenerarInformeActionPerformed
@@ -3405,7 +3632,7 @@ public class Principal extends javax.swing.JFrame {
         NomEditAsig.setEditable(true);
         CodEditAsig.setEditable(true);
         DesEditAsig.setEditable(true);
-        GuaEditAsig.setEnabled(true);
+        BloqDesBoton(GuaEditAsig, "");
     }//GEN-LAST:event_BottonEditAsigActionPerformed
 
     private void EditarAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarAsignaturaActionPerformed
@@ -3425,32 +3652,43 @@ public class Principal extends javax.swing.JFrame {
         NomEditAsig.setEditable(false);
         CodEditAsig.setEditable(false);
         DesEditAsig.setEditable(false);
-        GuaEditAsig.setEnabled(false);
+        BloqDesBoton(GuaEditAsig, "...");
+        BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
         MostrarAsig(profesor);
     }//GEN-LAST:event_EditarAsignaturaActionPerformed
 
     private void EditarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTemasActionPerformed
         Metodos met = new Metodos();
-        if (Menu.getSelectedComponent() != EditTem) {
-            modelo = (DefaultTableModel) TablaTem.getModel();
-            modelo.setColumnCount(0);
-            modelo.setRowCount(0);
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
-            int h = 0;
-            ComboAsigEdit.removeAllItems();
-            ComboAsigEdit.addItem("...");
-            try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            NomEditTem.setEditable(false);
-            DesEditTem.setEditable(false);
-            GuardarTem.setEnabled(false);
-            Menu.setSelectedComponent(EditTem);
+        modelo = (DefaultTableModel) TablaTem.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
+        int h = 0;
+        Menu.setSelectedComponent(EditTem);
+        ComboAsigEdit.removeAllItems();
+        ComboAsigEdit.addItem("...");
+        BloqDesBoton(GuardarTem, "...");
+        try {
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        NomEditTem.setEditable(false);
+        NomEditTem.setText("");
+        DesEditTem.setEditable(false);
+        DesEditTem.setText("");
+        GuardarTem.setEnabled(false);
+
+        AdAsig5.setVisible(false);
+        BloqDesBoton(GuardarTem, "...");
+        BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+
     }//GEN-LAST:event_EditarTemasActionPerformed
 
     private void EditarPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPreguntasActionPerformed
@@ -3483,6 +3721,7 @@ public class Principal extends javax.swing.JFrame {
             DesButto.setEnabled(false);
             ButtomEditPreg.setEnabled(true);
             DesButto.setBackground(Color.GRAY);
+            AdAsig5.setVisible(false);
         }
     }//GEN-LAST:event_EditarPreguntasActionPerformed
 
@@ -3496,6 +3735,8 @@ public class Principal extends javax.swing.JFrame {
                 h[i] = "";
             }
         }
+        BloqDesBoton(GuaEditAsig, "...");
+        BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "");
         NomEditAsig.setText(h[0]);
         CodEditAsig.setText(h[1]);
         DesEditAsig.setText(h[2]);        // TODO add your handling code here:
@@ -3506,7 +3747,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaAsigMouseClicked
 
     private void GuaEditAsigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuaEditAsigActionPerformed
-        if (!NomEditAsig.equals("") && !CodEditAsig.equals("") && !DesEditAsig.equals("")) {
+        if (!NomEditAsig.equals("") && !CodEditAsig.equals("")) {
             Metodos met = new Metodos();
             int i = 0;
             String Total = "";
@@ -3515,8 +3756,8 @@ public class Principal extends javax.swing.JFrame {
                     File Viejo = new File("Profesor/" + usuario + "/" + asignatura.getNombre());
                     profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
                     profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
-                    profesor.getAsignaturas().get(i).setDescripcion(DesEditAsig.getText());
-                    Total = Total + NomEditAsig.getText() + ";" + CodEditAsig.getText() + ";" + DesEditAsig.getText() + ";" + "\r\n";
+                    profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
+                    Total = Total + NomEditAsig.getText() + ";" + CodEditAsig.getText() + ";" + DesNoNull(DesEditAsig.getText()) + ";" + "\r\n";
                     File Nuevo = new File("Profesor/" + usuario + "/" + NomEditAsig.getText());
                     Nuevo.mkdirs();
                     move(Nuevo, Viejo);
@@ -3539,6 +3780,12 @@ public class Principal extends javax.swing.JFrame {
                 NomEditAsig.setText("");
                 CodEditAsig.setText("");
                 DesEditAsig.setText("");
+                BloqDesBoton(GuaEditAsig, "...");
+                BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
+                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                NomEditAsig.setEditable(false);
+                CodEditAsig.setEditable(false);
+                DesEditAsig.setEditable(false);
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -3582,6 +3829,9 @@ public class Principal extends javax.swing.JFrame {
             File fle = new File("Profesor" + File.separator + usuario + File.separator + nombreasig);
             System.out.println(fle);
             recursiveDelete(fle);
+            BloqDesBoton(GuaEditAsig, "...");
+            BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
+            JOptionPane.showMessageDialog(null, "   La Asignatura ha sido eliminada.");
         }
 
     }//GEN-LAST:event_ElimEditAsigActionPerformed
@@ -3590,35 +3840,25 @@ public class Principal extends javax.swing.JFrame {
     private void ButtomEditTemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomEditTemActionPerformed
         NomEditTem.setEditable(true);
         DesEditTem.setEditable(true);
-        GuardarTem.setEnabled(true);
+        BloqDesBoton(GuardarTem, "");
     }//GEN-LAST:event_ButtomEditTemActionPerformed
 
     private void ElimEditTemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElimEditTemActionPerformed
         int x = JOptionPane.showConfirmDialog(null, "Desea eliminar el Tema seleccionado?", "Advertencia", JOptionPane.OK_CANCEL_OPTION, JOptionPane.CANCEL_OPTION);
         if (x == 0) {
             Metodos met = new Metodos();
-            String nombretema = "";
             String Total = "";
-            int cont = 0, i = 0;
-            Tema tem = null;
-            for (Asignatura asignatura : profesor.getAsignaturas()) {
-                for (Tema tema : asignatura.getTemas()) {
-                    if (asignatura.getNombre().equals(ComboAsigEdit.getSelectedItem())) {
-                        if (tema.getNombre().equals(TablaTem.getModel().getValueAt(TablaTem.getSelectedRow(), 0).toString())) {
-                            tem = tema;
-                            nombretema = tema.getNombre();
-                            cont = i;
-                        } else {
-                            Total = Total + tema.getNombre() + ";" + tema.getDescripcion() + ";" + "\r\n";
-                        }
-                    }
-
+            Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigEdit.getSelectedIndex() - 1);
+            Tema temactual = asignatura.getTemas().get(TablaTem.getSelectedRow());
+            for (Tema tema : asignatura.getTemas()) {
+                if (tema.getNombre().equals(TablaTem.getModel().getValueAt(TablaTem.getSelectedRow(), 0).toString())) {
+                } else {
+                    Total = Total + tema.getNombre() + ";" + tema.getDescripcion() + ";" + "\r\n";
                 }
-                i++;
+
             }
 
-            profesor.getAsignaturas().get(cont).getTemas().remove(tem);
-            tem = null;
+            asignatura.getTemas().remove(temactual);
             try {
 
                 File file = new File("Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
@@ -3631,41 +3871,43 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            File fle = new File("Profesor" + File.separator + usuario + File.separator + ComboAsigEdit.getSelectedItem() + File.separator + nombretema);
+            File fle = new File("Profesor" + File.separator + usuario + File.separator + ComboAsigEdit.getSelectedItem() + File.separator + temactual.getNombre());
             recursiveDelete(fle);
             NomEditTem.setText("");
+            NomEditTem.setEditable(false);
             DesEditTem.setText("");
+            DesEditTem.setEditable(false);
             ComboAsigEdit.setSelectedIndex(0);
+            JOptionPane.showMessageDialog(null, "El Tema ha sido eliminado.");
+            BloqDesBoton(GuardarTem, "...");
+            BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+            modelo.setColumnCount(0);
+            modelo.setRowCount(0);
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
         }
     }//GEN-LAST:event_ElimEditTemActionPerformed
 
     private void GuardarTemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarTemActionPerformed
-        if (!NomEditTem.equals("") && !DesEditTem.equals("")) {
+        if (!NomEditTem.equals("")) {
             Metodos met = new Metodos();
-            String nombretema = "";
             String Total = "";
-            int cont = 0, i = 0;
-            Tema tem = null;
-            for (Asignatura asignatura : profesor.getAsignaturas()) {
-                for (Tema tema : asignatura.getTemas()) {
-                    if (asignatura.getNombre().equals(ComboAsigEdit.getSelectedItem())) {
-                        if (tema.getNombre().equals(TablaTem.getModel().getValueAt(TablaTem.getSelectedRow(), 0).toString())) {
-                            File Viejo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + tem.getNombre());
-                            profesor.getAsignaturas().get(i).getTemas().get(cont).setNombre(NomEditTem.getText());
-                            profesor.getAsignaturas().get(i).getTemas().get(cont).setDescripcion(DesEditTem.getText());
-                            Total = Total + NomEditTem.getText() + ";" + DesEditTem.getText() + ";" + "\r\n";
-                            File Nuevo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());;
-                            Nuevo.mkdirs();
-                            move(Nuevo, Viejo);
-                            recursiveDelete(Viejo);
-                            cont = i;
-                        } else {
-                            Total = Total + tema.getNombre() + ";" + tema.getDescripcion() + ";" + "\r\n";
-                        }
-                    }
-
+            Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigEdit.getSelectedIndex() - 1);
+            Tema temactual = asignatura.getTemas().get(TablaTem.getSelectedRow());
+            for (Tema tema : asignatura.getTemas()) {
+                if (tema.getNombre().equals(temactual.getNombre())) {
+                    File Viejo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
+                    temactual.setNombre(NomEditTem.getText());
+                    temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
+                    Total = Total + NomEditTem.getText() + ";" + DesNoNull(DesEditTem.getText()) + ";" + "\r\n";
+                    File Nuevo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());;
+                    Nuevo.mkdirs();
+                    move(Nuevo, Viejo);
+                    recursiveDelete(Viejo);
+                } else {
+                    Total = Total + tema.getNombre() + ";" + tema.getDescripcion() + ";" + "\r\n";
                 }
-                i++;
             }
             File file = new File("Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
             FileWriter fw;
@@ -3677,10 +3919,20 @@ public class Principal extends javax.swing.JFrame {
                 fw.close();
                 MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
                 NomEditTem.setText("");
+                NomEditTem.setEditable(false);
                 DesEditTem.setText("");
+                DesEditTem.setEditable(false);
+                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
+            BloqDesBoton(GuardarTem, "...");
+            BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+            modelo.setColumnCount(0);
+            modelo.setRowCount(0);
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
         }
     }//GEN-LAST:event_GuardarTemActionPerformed
 
@@ -3829,11 +4081,35 @@ public class Principal extends javax.swing.JFrame {
 
     private void ComboAsigEditPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsigEditPopupMenuWillBecomeInvisible
         String asig = (String) ComboAsigEdit.getSelectedItem();
+        NomEditTem.setEditable(false);
+        NomEditTem.setText("");
+        DesEditTem.setEditable(false);
+        DesEditTem.setText("");
+        BloqDesBoton(GuardarTem, "...");
+        BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
         if (!asig.equals("...")) {
-            this.MostrarTem(asig, profesor);
-            MostrarTem(asig, profesor);
+            Metodos met = new Metodos();
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + asig + "/Temas.txt", this.tema, h);
+                if (h < 1) {
+                    AdAsig5.setVisible(true);
+                    AdAsig5.setText("*Asignatura sin Temas");
+                } else {
+                    MostrarTem(asig, profesor);
+                    AdAsig5.setVisible(false);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "No ha seleccionado niguna asignatura", "ERROR", JOptionPane.ERROR_MESSAGE);
+            AdAsig5.setVisible(true);
+            AdAsig5.setText("*Opcion no valida");
         }
 
     }//GEN-LAST:event_ComboAsigEditPopupMenuWillBecomeInvisible
@@ -3848,6 +4124,8 @@ public class Principal extends javax.swing.JFrame {
                 h[i] = "";
             }
         }
+        BloqDesBoton(GuaEditAsig, "...");
+        BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "");
         NomEditAsig.setText(h[0]);
         CodEditAsig.setText(h[1]);
         DesEditAsig.setText(h[2]);             // TODO add your handling code here:
@@ -3865,6 +4143,8 @@ public class Principal extends javax.swing.JFrame {
         }
         NomEditTem.setText(h[0]);
         DesEditTem.setText(h[1]);
+        BloqDesBoton(GuardarTem, "...");
+        BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "");
     }//GEN-LAST:event_TablaTemKeyReleased
 
     private void TablaTemMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaTemMouseReleased
@@ -3878,7 +4158,9 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         NomEditTem.setText(h[0]);
-        DesEditTem.setText(h[1]);        // TODO add your handling code here:
+        DesEditTem.setText(h[1]);
+        BloqDesBoton(GuardarTem, "...");
+        BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "");
     }//GEN-LAST:event_TablaTemMouseReleased
 
     private void TablaPregEditKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaPregEditKeyReleased
@@ -3946,13 +4228,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaPregEditMouseReleased
 
     private void ComboTemPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboTemPregActionPerformed
-        String TempTema = (String) ComboTemPreg.getSelectedItem();
-        if ("...".equals(TempTema)) {
-            ComboNivPreg.setEnabled(false);
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        } else {
-            ComboNivPreg.setEnabled(true);
-        }             // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_ComboTemPregActionPerformed
 
     private void DesButtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesButtoActionPerformed
@@ -4006,28 +4282,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNivelAActionPerformed
 
     private void ComboAsigPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsigPregActionPerformed
-        String TempAsigna = (String) ComboAsigPreg.getSelectedItem();
-        if (!TempAsigna.equals("...")) {
-            ComboTemPreg.setEnabled(true);
-            Metodos met = new Metodos();
-            ComboTemPreg.removeAllItems();
-            ComboTemPreg.addItem("...");
-            int h = 0;
-            try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
-                if (h < 1) {
-                    JOptionPane.showMessageDialog(null, "La Asignatura que ha seleccionado no tiene temas.");
-                    ComboTemPreg.setEnabled(false);
-                    ComboNivPreg.setEnabled(false);
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            ComboTemPreg.setEnabled(false);
-            ComboNivPreg.setEnabled(false);
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
-        }         // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_ComboAsigPregActionPerformed
 
     private void ComboNivPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNivPregActionPerformed
@@ -4079,12 +4334,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void nivelPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_nivelPopupMenuWillBecomeInvisible
         String TempTema = (String) nivel.getSelectedItem();
+        BloqDesBoton(ButtonMostrarDER, TempTema);
         if ("...".equals(TempTema)) {
             AdAsig4.setVisible(true);
-            ButtonMostrarDER.setEnabled(false);
+
         } else {
             AdAsig4.setVisible(false);
-            ButtonMostrarDER.setEnabled(true);
         }
     }//GEN-LAST:event_nivelPopupMenuWillBecomeInvisible
 
@@ -4115,9 +4370,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_semePopupMenuWillBecomeInvisible
 
     private void asignaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_asignaPopupMenuWillBecomeInvisible
-        String TemasNumero = String.valueOf(profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas());
-        System.out.println(TemasNumero);
-
         String semestre = (String) asigna.getSelectedItem();
         BloqDesBoton(ButtonAddPreg, semestre);
         if ("...".equals(semestre)) {
@@ -4154,33 +4406,136 @@ public class Principal extends javax.swing.JFrame {
 
     private void temasPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_temasPopupMenuWillBecomeInvisible
         String semestre = (String) temas.getSelectedItem();
+        ndif.setSelectedIndex(0);
+        NivAd.setVisible(false);
+        BloqDesBoton(generarExamen, semestre);
         if ("...".equals(semestre)) {
             ndif.setEnabled(false);
             TemAd.setVisible(true);
-            NivAd.setVisible(false);
+            TemAd.setText("*Opcion no valida");
             ndif.setSelectedIndex(0);
         } else {
             ndif.setEnabled(true);
             TemAd.setVisible(false);
+            PregDisTem();
         }
-        BloqDesBoton(generarExamen, semestre);
+
     }//GEN-LAST:event_temasPopupMenuWillBecomeInvisible
 
-    private void ndifPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ndifPopupMenuWillBecomeInvisible
+    //METODO Express (Solo se usara aqui)
+    //Si un Tema posee preguntas Disponible
+    void PregDisTem() {
+        int cont = 0, cont2 = 0;
+        for (int j = 1; j < 4; j++) {
+            for (Pregunta preg : profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(temas.getSelectedIndex() - 1).getPreguntas(j)) {
+                if (preg.getEstado().equals("Disponible")) {
+                    cont++;
+                }
+                cont2++;
+            }
+        }
+        if (cont == 0) {
+            TemAd.setText("*Tema sin preguntas Disponibles");
+        }
+        if (cont2 == 0) {
+            TemAd.setText("*Temas sin preguntas");
+        }
+        if (cont2 == 0 || cont == 0) {
+            ndif.setEnabled(false);
+            TemAd.setVisible(true);
+            BloqDesBoton(generarExamen, "...");
+        }
+    }
 
+    private void ndifPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ndifPopupMenuWillBecomeInvisible
+        String semestre = (String) ndif.getSelectedItem();
+        BloqDesBoton(generarExamen, semestre);
+        if ("...".equals(semestre)) {
+            NivAd.setVisible(true);
+            NivAd.setText("*Opcion no valida");
+        } else {
+            PregDisNdif(ndif.getSelectedIndex());
+        }
     }//GEN-LAST:event_ndifPopupMenuWillBecomeInvisible
 
+    //METODO Express 2 (Solo se usara aqui)
+    //Si un Nivel de dificultad posee preguntas Disponible
+    void PregDisNdif(int Ndif) {
+        int cont = 0, cont2 = profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(temas.getSelectedIndex() - 1).getPreguntas(Ndif).size();
+        for (Pregunta preg : profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(temas.getSelectedIndex() - 1).getPreguntas(Ndif)) {
+            if (preg.getEstado().equals("Disponible")) {
+                cont++;
+            }
+        }
+        if (cont == 0) {
+            NivAd.setText("*Nivel sin preguntas Disponibles");
+        }
+        if (cont2 == 0) {
+            NivAd.setText("*Nivel sin preguntas");
+        }
+        if (cont2 == 0 || cont == 0) {
+            NivAd.setVisible(true);
+            BloqDesBoton(generarExamen, "...");
+        } else {
+            NivAd.setVisible(false);
+        }
+    }
+
+    private void ComboAsigPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsigPregPopupMenuWillBecomeInvisible
+        String TempAsigna = (String) ComboAsigPreg.getSelectedItem();
+        if (!TempAsigna.equals("...")) {
+            ComboTemPreg.setEnabled(true);
+            Metodos met = new Metodos();
+            ComboTemPreg.removeAllItems();
+            ComboTemPreg.addItem("...");
+            int h = 0;
+            try {
+                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
+                if (h < 1) {
+                    JOptionPane.showMessageDialog(null, "La Asignatura que ha seleccionado no tiene temas.");
+                    ComboTemPreg.setEnabled(false);
+                    ComboNivPreg.setEnabled(false);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            ComboTemPreg.setEnabled(false);
+            ComboNivPreg.setEnabled(false);
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_ComboAsigPregPopupMenuWillBecomeInvisible
+
+    private void ComboTemPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboTemPregPopupMenuWillBecomeInvisible
+        String TempTema = (String) ComboTemPreg.getSelectedItem();
+        if ("...".equals(TempTema)) {
+            ComboNivPreg.setEnabled(false);
+            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+        } else {
+            ComboNivPreg.setEnabled(true);
+        }
+    }//GEN-LAST:event_ComboTemPregPopupMenuWillBecomeInvisible
+
+    private void ComboNivPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivPregPopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboNivPregPopupMenuWillBecomeInvisible
+
+    private void BottonGenrExam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExam1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonGenrExam1ActionPerformed
+
+    private void ComboAsigEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsigEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboAsigEditActionPerformed
+
     ///METODOS!!
-    public Integer TotalPregPorAsig(Asignatura asignatur) {// El total de preguntas que posee una asignatura
-        int tope = profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().size();
+    public Integer TotalPregPorAsig() {// El total de preguntas que posee una asignatura
         int total = 0;
-        for (int j = 0; j < tope + 1; j++) {
-            for (Tema tema1 : profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas()) {
-                for (int k = 1; k == 3; k++) {
-                    for (Pregunta pregunta : tema1.getPreguntas(k)) {
-                        if (pregunta.getEstado().equals("Disponible")) {
-                            total++;
-                        }
+        for (Tema tema1 : profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas()) {
+            for (int k = 1; k < 4; k++) {
+                for (Pregunta pregunta : tema1.getPreguntas(k)) {
+                    if (pregunta.getEstado().equals("Disponible")) {
+                        total++;
                     }
                 }
             }
@@ -4200,6 +4555,22 @@ public class Principal extends javax.swing.JFrame {
             Boton.setColorHover(Color.decode("#01A5E4"));
             Boton.setColorNormal(Color.decode("#0180B0"));
             Boton.setColorPressed(Color.decode("#025F82"));
+        }
+    }
+
+    public void BloqDesBotonEdit(RSButtonMetro BotonE, RSButtonMetro BotonEd, String Condicion) {// Pone los botones de color gris o azul dependiendo de la opcion de los JComboBox
+        if ("...".equals(Condicion)) {
+            BloqDesBoton(BotonE, "...");
+            BloqDesBoton(BotonEd, "...");
+        } else {
+            BotonE.setEnabled(true);
+            BotonE.setColorHover(Color.decode("#FF5151"));
+            BotonE.setColorNormal(Color.decode("#FF0000"));
+            BotonE.setColorPressed(Color.decode("#DB0000"));
+            BotonEd.setEnabled(true);
+            BotonEd.setColorHover(Color.decode("#FF9D3D"));
+            BotonEd.setColorNormal(Color.decode("#FF7F00"));
+            BotonEd.setColorPressed(Color.decode("#F47900"));
         }
     }
 
@@ -4344,7 +4715,7 @@ public class Principal extends javax.swing.JFrame {
         sw2 = true;
     }
 
-    private Pregunta Aleatorio() {
+    private String Aleatorio() {
         ArrayList<Pregunta> preguntas = new ArrayList();
         Profesor pro = new Profesor();
         for (Asignatura asig : pro.getAsignaturas()) {
@@ -4360,7 +4731,10 @@ public class Principal extends javax.swing.JFrame {
 
     }
 
-    private Pregunta Aleatorio2(ArrayList<Pregunta> p) {
+    private String Aleatorio2(ArrayList<Pregunta> p) {
+        String a = (String) asigna.getSelectedItem();
+        String b = String.valueOf(temas.getSelectedIndex());
+        String c = (String) ndif.getSelectedItem();
         int tope = p.size();
         if (tope != 0) {
             ArrayList<Pregunta> pregDispo = new ArrayList();
@@ -4375,21 +4749,10 @@ public class Principal extends javax.swing.JFrame {
 
                 while (sw == 2) {
                     int aleatorio = ThreadLocalRandom.current().nextInt(1, tope + 1);
-                    Pregunta po = p.get(aleatorio - 1);
+                    Pregunta po = pregDispo.get(aleatorio - 1);
                     if (po.getEstado().equals("Disponible")) {
-                        p.get(aleatorio - 1).setEstado("No Disponible");
-                        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-                        Date date = new Date();
-                        p.get(aleatorio - 1).setFecha(dateFormat.format(date));
-
-                        try {
-                            SobreEscribir(p);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-
                         JOptionPane.showMessageDialog(null, "La pregunta ha sido añadida con exito.");
-                        return po;
+                        return po.getContenido() + "/@/" + a + "/@/" + b + "/@/" + c + "/@/";
                     }
                 }
             } else {
@@ -4403,23 +4766,32 @@ public class Principal extends javax.swing.JFrame {
 
     }
 
-    private void SobreEscribir(ArrayList<Pregunta> p) throws IOException {
-        String a = (String) asigna.getSelectedItem();
-        String b = (String) temas.getSelectedItem();
-        String c = (String) ndif.getSelectedItem();
-        String L = "";
-        for (Pregunta pregunta : p) {
-            String info = pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";";
-            L = L + info + "\r\n";
+    private void SobreEscribir(ArrayList<String> p) throws IOException {
+        for (String inform : p) {
+            String[] Contenido = inform.split("/@/");
+            String L = "";
+            String a = Contenido[1];
+            int b = Integer.parseInt(Contenido[2]) - 1;
+            int c = Integer.parseInt(Contenido[3]);
+            String info = "";
+            for (Pregunta preg : profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(b).getPreguntas(c)) {
+                if (Contenido[0].equals(preg.getContenido())) {
+                    preg.setEstado("No Disponible");
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    preg.setFecha(dateFormat.format(date));
+                }
+                info = preg.getNivel() + ";" + preg.getContenido() + ";" + preg.getEstado() + ";" + preg.getFecha() + ";";
+                L = L + info + "\r\n";
+            }
+            File f = new File("Profesor/" + usuario + "/" + a + "/" + profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(b).getNombre() + "/Preguntas_" + c + ".txt");
+            System.out.println(f);
+            try (FileWriter fw = new FileWriter(f)) {
+                PrintWriter pw = new PrintWriter(fw);
+                pw.write(L);
+                pw.close();
+            }
         }
-        File f = new File("Profesor/" + usuario + "/" + a + "/" + b + "/Preguntas_" + c + ".txt");
-        FileWriter fw = new FileWriter(f);
-        PrintWriter pw = new PrintWriter(fw);
-
-        pw.write(L);
-
-        pw.close();
-        fw.close();
     }
 
     private void LlenarCombo(JComboBox<String> asignatura) {
@@ -4441,9 +4813,14 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdAsig;
     private javax.swing.JLabel AdAsig1;
+    private javax.swing.JLabel AdAsig11;
+    private javax.swing.JLabel AdAsig12;
+    private javax.swing.JLabel AdAsig14;
     private javax.swing.JLabel AdAsig2;
     private javax.swing.JLabel AdAsig3;
     private javax.swing.JLabel AdAsig4;
+    private javax.swing.JLabel AdAsig5;
+    private javax.swing.JLabel AdAsig6;
     private javax.swing.JLabel AdDif;
     private javax.swing.JLabel AdTem;
     private javax.swing.JLabel AdTema;
@@ -4460,6 +4837,7 @@ public class Principal extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro BottonEditFoto;
     private rsbuttom.RSButtonMetro BottonEditInfo;
     private rsbuttom.RSButtonMetro BottonGenrExam;
+    private rsbuttom.RSButtonMetro BottonGenrExam1;
     private rsbuttom.RSButtonMetro BottonHome;
     private rsbuttom.RSButtonMetro BottonPerfil;
     private rsbuttom.RSButtonMetro BottonPreguntas;
@@ -4536,6 +4914,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel TemAd;
     private javax.swing.JPanel Tema;
     private javax.swing.JTextField Usuario1;
+    private javax.swing.JTextField Usuario2;
     private javax.swing.JPasswordField ValNuevaContra;
     private javax.swing.JPanel Ver;
     private rsbuttom.RSButtonMetro addAsig;
@@ -4553,6 +4932,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
