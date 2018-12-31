@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Classes.Metodos;
+import static Frames.InicioSeccion.usuario;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
@@ -20,6 +21,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -56,7 +58,8 @@ public class Registrarse extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         IconCerrar = new javax.swing.JLabel();
-        Regresar = new javax.swing.JLabel();
+        IconCerrar1 = new javax.swing.JLabel();
+        IconMin = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -74,6 +77,9 @@ public class Registrarse extends javax.swing.JFrame {
         BottonIngresarFoto = new rsbuttom.RSButtonMetro();
         jPanel3 = new javax.swing.JPanel();
         Foto1 = new javax.swing.JLabel();
+        Correo = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -111,25 +117,43 @@ public class Registrarse extends javax.swing.JFrame {
                 jPanel2MousePressed(evt);
             }
         });
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cruz.png"))); // NOI18N
         IconCerrar.setToolTipText("");
-        IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                IconCerrarMouseClicked(evt);
-            }
-        });
-        jPanel2.add(IconCerrar, java.awt.BorderLayout.LINE_END);
+        IconCerrar.setPreferredSize(new java.awt.Dimension(42, 35));
+        jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, -1, -1));
 
-        Regresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e712(0)_42.png"))); // NOI18N
-        Regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+        IconCerrar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconCerrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarBlanco.png"))); // NOI18N
+        IconCerrar1.setToolTipText("");
+        IconCerrar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegresarMouseClicked(evt);
+                IconCerrar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                IconCerrar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                IconCerrar1MouseExited(evt);
             }
         });
-        jPanel2.add(Regresar, java.awt.BorderLayout.LINE_START);
+        jPanel2.add(IconCerrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 31, 33));
+
+        IconMin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconMin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MinBlanco.png"))); // NOI18N
+        IconMin.setToolTipText("");
+        IconMin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IconMinMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                IconMinMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                IconMinMouseExited(evt);
+            }
+        });
+        jPanel2.add(IconMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 30, 33));
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
@@ -142,7 +166,7 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(19, 40, 0, 0);
         jPanel1.add(jLabel1, gridBagConstraints);
@@ -152,9 +176,10 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel2.setText("Cedula: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(1, 40, 0, 0);
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -163,9 +188,9 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(22, 40, 0, 0);
         jPanel1.add(jLabel3, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -173,10 +198,10 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel4.setText("Contraseña: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(43, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 40, 0, 0);
         jPanel1.add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -184,17 +209,17 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel5.setText("Verificar contraseña: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 40, 0, 0);
         jPanel1.add(jLabel5, gridBagConstraints);
 
         Nombre1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 19;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -208,35 +233,35 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 19;
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 2, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(1, 2, 0, 31);
         jPanel1.add(Cedula1, gridBagConstraints);
 
         Usuario1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 19;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 2, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(22, 2, 0, 31);
         jPanel1.add(Usuario1, gridBagConstraints);
 
         Contra.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 19;
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(43, 2, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(18, 2, 0, 31);
         jPanel1.add(Contra, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -244,26 +269,25 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Las contraseñas no son iguales.");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 18;
-        gridBagConstraints.gridheight = 4;
-        gridBagConstraints.ipadx = 108;
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 40, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(9, 2, 0, 31);
         jPanel1.add(jLabel7, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 204, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("El campo de la cedula es un campo de solo numeros.");
+        jLabel8.setText("La Cedula es solo numerica.");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 29;
-        gridBagConstraints.ipadx = 7;
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 32;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 40, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 31);
         jPanel1.add(jLabel8, gridBagConstraints);
 
         BottonRegistrar.setText("Registrar");
@@ -280,13 +304,13 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridwidth = 10;
         gridBagConstraints.ipadx = -10;
         gridBagConstraints.ipady = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(33, 2, 43, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 2, 20, 0);
         jPanel1.add(BottonRegistrar, gridBagConstraints);
 
         VerificarContra1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -296,13 +320,13 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 19;
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 194;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 2, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(5, 2, 0, 31);
         jPanel1.add(VerificarContra1, gridBagConstraints);
 
         BottonIngresarFoto.setText("Ingresar foto de perfil");
@@ -320,11 +344,10 @@ public class Registrarse extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 11;
         gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipady = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(22, 10, 0, 0);
         jPanel1.add(BottonIngresarFoto, gridBagConstraints);
 
         jPanel3.setBackground(new java.awt.Color(23, 158, 224));
@@ -338,10 +361,49 @@ public class Registrarse extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 10;
+        gridBagConstraints.gridheight = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(12, 10, 0, 0);
         jPanel1.add(jPanel3, gridBagConstraints);
+
+        Correo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Correo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CorreoKeyReleased(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 194;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 2, 0, 31);
+        jPanel1.add(Correo, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Correo:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 40, 0, 0);
+        jPanel1.add(jLabel6, gridBagConstraints);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 204, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setText("Correo debe tener un \"@\".");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.ipadx = 35;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(1, 2, 0, 31);
+        jPanel1.add(jLabel9, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -349,34 +411,22 @@ public class Registrarse extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
-        dispose();
-        this.setVisible(false);
-        InicioSeccion ini = new InicioSeccion();
-        ini.setVisible(true);
-    }//GEN-LAST:event_IconCerrarMouseClicked
-
-    private void RegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegresarMouseClicked
-        this.setVisible(false);
-        InicioSeccion ini = new InicioSeccion();
-        ini.setVisible(true);
-    }//GEN-LAST:event_RegresarMouseClicked
-
     private void BottonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonRegistrarActionPerformed
         if (met.confNum(this.Cedula1.getText())) {
             if (Contra.getText().equals(VerificarContra1.getText())) {
-                Object foto2 = "";
+                String foto2 = "";
                 if (!this.rutaImagen.equals("")) {
                     foto2 = this.rutaImagen;
                 } else {
                     foto2 = "$";
                 }
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                //DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 String Nombre2 = this.Nombre1.getText();
-                int Cedula2 = Integer.parseInt(this.Cedula1.getText());
+                String Cedula2 = this.Cedula1.getText();
                 String NickName2 = this.Usuario1.getText();
-                Object Pasword2 = this.Contra.getText();
-                model.addRow(new Object[]{Nombre2, Cedula2, NickName2, Pasword2, foto2});
+                String Pasword2 = this.Contra.getText();
+                String Correo2 = this.Correo.getText();
+                /*model.addRow(new Object[]{Nombre2, Cedula2, NickName2, Pasword2, foto2, Correo2});
 
                 try (BufferedWriter bw = new BufferedWriter(new FileWriter("Usuario.txt", true))) {
                     int filas = jTable1.getRowCount();
@@ -386,10 +436,23 @@ public class Registrarse extends javax.swing.JFrame {
                         Object NickName = model.getValueAt(i, 2);
                         Object Pasword = model.getValueAt(i, 3);
                         Object Foto = model.getValueAt(i, 4);
-                        bw.write(Nombre + "," + Cedula + "," + NickName + "," + Pasword + "," + Foto);
+                        Object Correo = model.getValueAt(i, 5);
+                        bw.write(Nombre + "," + Cedula + "," + NickName + "," + Pasword + "," + Foto + "," + Correo);
                         bw.newLine();
                     }
+                    bw.close();
                 } catch (Exception e) {
+                */
+                Metodos met = new Metodos();
+                String x = "Usuario.txt";
+                String temp;
+
+                try {
+                    temp = met.concatenar(x);
+
+                    met.guardar(temp,x,Nombre2 + "," + Cedula2 + "," + NickName2 + "," + Pasword2 + "," + foto2 + "," + Correo2);
+                } catch (IOException ex) {
+                    Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 this.setVisible(false);
                 Nombre1.setText("");
@@ -397,6 +460,7 @@ public class Registrarse extends javax.swing.JFrame {
                 Usuario1.setText("");
                 Contra.setText("");
                 VerificarContra1.setText("");
+                Correo.setText("");
                 JOptionPane.showMessageDialog(this, "Registro Exitoso.", "Notificacion.", JOptionPane.INFORMATION_MESSAGE);
                 inicio.setVisible(true);
                 File Pro = new File("Profesor");
@@ -428,8 +492,10 @@ public class Registrarse extends javax.swing.JFrame {
 
     private void BottonIngresarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonIngresarFotoActionPerformed
         JFileChooser archivo = new JFileChooser();
-        archivo.addChoosableFileFilter(null);
-        archivo.setDialogTitle("Abrir archivo");
+        archivo.setFileSelectionMode(0);
+        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("JPG,PNG", "jpg", "png");
+        archivo.setFileFilter(filtroImagen);
+        archivo.setDialogTitle("Buscar Imagen");
         File ruta = new File("C:\\Users\\elspo\\Downloads");
         archivo.setCurrentDirectory(ruta);
         int ventana = archivo.showOpenDialog(null);
@@ -469,15 +535,61 @@ public class Registrarse extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_Cedula1KeyReleased
 
+    private void IconCerrar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseClicked
+        dispose();
+        this.setVisible(false);
+        InicioSeccion ini = new InicioSeccion();
+        ini.setVisible(true);
+    }//GEN-LAST:event_IconCerrar1MouseClicked
+
+    private void IconCerrar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseEntered
+        File file = new File("src\\Imagenes\\y.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconCerrar1.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconCerrar1MouseEntered
+
+    private void IconCerrar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseExited
+        File file = new File("src\\Imagenes\\CerrarBlanco.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconCerrar1.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconCerrar1MouseExited
+
+    private void IconMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_IconMinMouseClicked
+
+    private void IconMinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseEntered
+        File file = new File("src\\Imagenes\\z.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconMin.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconMinMouseEntered
+
+    private void IconMinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseExited
+        File file = new File("src\\Imagenes\\MinBlanco.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconMin.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconMinMouseExited
+
+    private void CorreoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorreoKeyReleased
+        String[] x = Correo.getText().split("@");
+        if (x.length != 1) {
+            this.jLabel9.setForeground(Color.decode("#00678e"));
+        } else {
+            this.jLabel9.setForeground(Color.decode("#FFCC00"));
+        }
+    }//GEN-LAST:event_CorreoKeyReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro BottonIngresarFoto;
     private rsbuttom.RSButtonMetro BottonRegistrar;
     private javax.swing.JTextField Cedula1;
     private javax.swing.JPasswordField Contra;
+    private javax.swing.JTextField Correo;
     private javax.swing.JLabel Foto1;
     private javax.swing.JLabel IconCerrar;
+    private javax.swing.JLabel IconCerrar1;
+    private javax.swing.JLabel IconMin;
     private javax.swing.JTextField Nombre1;
-    private javax.swing.JLabel Regresar;
     private javax.swing.JTextField Usuario1;
     private javax.swing.JPasswordField VerificarContra1;
     private javax.swing.JFrame jFrame1;
@@ -486,8 +598,10 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

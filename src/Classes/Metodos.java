@@ -149,7 +149,20 @@ public class Metodos {
         }
         return nombre;
     }
-
+    
+    public String EncontrarCorreo(String NombreArchivo, String Usuario) {
+        ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
+        String nombre = "";
+        for (int i = 0; i < registros.size(); i++) {
+            nombre = registros.get(i)[2];
+            if (nombre.equals(Usuario)) {
+                nombre = registros.get(i)[5];
+                break;
+            }
+        }
+        return nombre;
+    }
+    
     public String EncontrarCedula(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";

@@ -100,16 +100,16 @@ public class Tema {
         File f = new File("Profesor/"+usuario+"/" + asignatura.Nombre + "/" + Nombre + "/Preguntas_" + r + ".txt");
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
-        Metodos e = new Metodos();
         int h = 0;
 
         while (br.ready()) {
             String contenido = br.readLine();
             if (contenido != null && !contenido.equals("")) {
-                String info = e.Desco(contenido, 2, ";");
-                String estado = e.Desco(contenido, 3, ";");
-                String fecha = e.Desco(contenido, 4, ";");
-                int Dificultad = Integer.parseInt(e.Desco(contenido, 1, ";"));
+                String[] Pregunta = contenido.split(";");
+                String info = Pregunta[1];
+                String estado = Pregunta[2];
+                String fecha = Pregunta[3];
+                int Dificultad = Integer.parseInt(Pregunta[0]);
                 
                 switch (Dificultad) {
                     case 1:

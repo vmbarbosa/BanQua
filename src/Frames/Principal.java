@@ -14,6 +14,7 @@ import Classes.Metodos;
 import Classes.Pregunta;
 import Classes.Profesor;
 import Classes.Tema;
+import static Frames.InicioSeccion.Correo;
 import static Frames.InicioSeccion.nombre_profesor;
 import static Frames.InicioSeccion.usuario;
 import com.toedter.calendar.JDateChooser;
@@ -35,8 +36,10 @@ import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -144,7 +147,7 @@ public class Principal extends javax.swing.JFrame {
         ButtonCambio = new rsbuttom.RSButtonMetro();
         Nombre1 = new javax.swing.JTextField();
         Cedula1 = new javax.swing.JTextField();
-        Usuario2 = new javax.swing.JTextField();
+        CorreoPerfil = new javax.swing.JTextField();
         Usuario1 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -303,7 +306,8 @@ public class Principal extends javax.swing.JFrame {
         AdAsig11 = new javax.swing.JLabel();
         AdAsig12 = new javax.swing.JLabel();
         AdAsig14 = new javax.swing.JLabel();
-        BottonGenrExam1 = new rsbuttom.RSButtonMetro();
+        BotonDesBloqueo = new rsbuttom.RSButtonMetro();
+        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 87, 116));
@@ -687,15 +691,20 @@ public class Principal extends javax.swing.JFrame {
         Cedula1.setPreferredSize(new java.awt.Dimension(7, 28));
         Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 360, 25));
 
-        Usuario2.setEditable(false);
-        Usuario2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usuario2.setForeground(new java.awt.Color(51, 51, 51));
-        Usuario2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Usuario2.setMaximumSize(new java.awt.Dimension(7, 28));
-        Usuario2.setMinimumSize(new java.awt.Dimension(7, 28));
-        Usuario2.setOpaque(false);
-        Usuario2.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Usuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 360, 25));
+        CorreoPerfil.setEditable(false);
+        CorreoPerfil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        CorreoPerfil.setForeground(new java.awt.Color(51, 51, 51));
+        CorreoPerfil.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        CorreoPerfil.setMaximumSize(new java.awt.Dimension(7, 28));
+        CorreoPerfil.setMinimumSize(new java.awt.Dimension(7, 28));
+        CorreoPerfil.setOpaque(false);
+        CorreoPerfil.setPreferredSize(new java.awt.Dimension(7, 28));
+        CorreoPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CorreoPerfilActionPerformed(evt);
+            }
+        });
+        Perfil.add(CorreoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 360, 25));
 
         Usuario1.setEditable(false);
         Usuario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1046,6 +1055,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
         Tema.add(jLabel16, gridBagConstraints);
 
+        DescripcionTema.setEditable(false);
         DescripcionTema.setColumns(20);
         DescripcionTema.setLineWrap(true);
         DescripcionTema.setRows(5);
@@ -1409,7 +1419,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel18.add(tema, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 150, -1));
 
-        nivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+        nivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
         nivel.setFocusable(false);
         nivel.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
@@ -1750,7 +1760,7 @@ public class Principal extends javax.swing.JFrame {
     NivInfo.setText("Nivel de dificultad");
     Generar.add(NivInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
 
-    ndif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ndif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
     ndif.setFocusable(false);
     ndif.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
         public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
@@ -2295,11 +2305,6 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
-    ComboAsigPreg.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            ComboAsigPregActionPerformed(evt);
-        }
-    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 3;
@@ -2316,7 +2321,7 @@ public class Principal extends javax.swing.JFrame {
     jLabel52.setText("Contendio Pregunta");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 12;
+    gridBagConstraints.gridy = 13;
     gridBagConstraints.gridwidth = 3;
     gridBagConstraints.ipadx = 3;
     gridBagConstraints.ipady = 8;
@@ -2339,19 +2344,14 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
-    ComboTemPreg.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            ComboTemPregActionPerformed(evt);
-        }
-    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 7;
     gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 54;
+    gridBagConstraints.gridwidth = 33;
     gridBagConstraints.ipadx = 110;
     gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 22, 0, 0);
     EditPreg.add(ComboTemPreg, gridBagConstraints);
 
     jLabel53.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2365,7 +2365,7 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.ipadx = 10;
     gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(12, 22, 0, 0);
     EditPreg.add(jLabel53, gridBagConstraints);
 
     jLabel54.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2373,13 +2373,12 @@ public class Principal extends javax.swing.JFrame {
     jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabel54.setText("Dificultad");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 87;
+    gridBagConstraints.gridx = 56;
     gridBagConstraints.gridy = 2;
-    gridBagConstraints.gridwidth = 69;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(12, 18, 0, 0);
     EditPreg.add(jLabel54, gridBagConstraints);
 
     ComboNivelA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2388,19 +2387,18 @@ public class Principal extends javax.swing.JFrame {
     ComboNivelA.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setMinimumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setPreferredSize(new java.awt.Dimension(40, 20));
-    ComboNivelA.addComponentListener(new java.awt.event.ComponentAdapter() {
-        public void componentShown(java.awt.event.ComponentEvent evt) {
-            ComboNivelAComponentShown(evt);
+    ComboNivelA.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
         }
-    });
-    ComboNivelA.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            ComboNivelAActionPerformed(evt);
+        public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            ComboNivelAPopupMenuWillBecomeInvisible(evt);
+        }
+        public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridy = 7;
     gridBagConstraints.ipadx = 20;
     gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -2415,13 +2413,13 @@ public class Principal extends javax.swing.JFrame {
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 13;
-    gridBagConstraints.gridwidth = 155;
+    gridBagConstraints.gridy = 14;
+    gridBagConstraints.gridwidth = 56;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
     gridBagConstraints.ipadx = 387;
-    gridBagConstraints.ipady = 337;
+    gridBagConstraints.ipady = 347;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(8, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(4, 20, 0, 0);
     EditPreg.add(jScrollPane9, gridBagConstraints);
 
     jLabel56.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -2432,7 +2430,7 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridwidth = 155;
+    gridBagConstraints.gridwidth = 56;
     gridBagConstraints.ipadx = 295;
     gridBagConstraints.ipady = 19;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -2466,16 +2464,16 @@ public class Principal extends javax.swing.JFrame {
     jScrollPane10.setViewportView(TablaPregEdit);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 156;
+    gridBagConstraints.gridx = 114;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridheight = 15;
+    gridBagConstraints.gridheight = 16;
     gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-    gridBagConstraints.ipadx = 947;
-    gridBagConstraints.ipady = 753;
+    gridBagConstraints.ipadx = 943;
+    gridBagConstraints.ipady = 749;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.weightx = 1.0;
     gridBagConstraints.weighty = 1.0;
-    gridBagConstraints.insets = new java.awt.Insets(20, 40, 56, 24);
+    gridBagConstraints.insets = new java.awt.Insets(20, 38, 60, 26);
     EditPreg.add(jScrollPane10, gridBagConstraints);
 
     ButtomEditPreg.setText("Editar");
@@ -2495,12 +2493,12 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 14;
+    gridBagConstraints.gridy = 15;
     gridBagConstraints.gridwidth = 4;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(8, 20, 0, 0);
     EditPreg.add(ButtomEditPreg, gridBagConstraints);
 
     ElemEditPreg.setText("Eliminar");
@@ -2519,12 +2517,12 @@ public class Principal extends javax.swing.JFrame {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 5;
-    gridBagConstraints.gridy = 14;
+    gridBagConstraints.gridy = 15;
     gridBagConstraints.gridwidth = 16;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
     EditPreg.add(ElemEditPreg, gridBagConstraints);
 
     GuarEditPreg.setText("Guardar");
@@ -2542,17 +2540,17 @@ public class Principal extends javax.swing.JFrame {
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 34;
-    gridBagConstraints.gridy = 14;
-    gridBagConstraints.gridwidth = 122;
+    gridBagConstraints.gridx = 23;
+    gridBagConstraints.gridy = 15;
+    gridBagConstraints.gridwidth = 34;
     gridBagConstraints.ipadx = 5;
     gridBagConstraints.ipady = 29;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
     EditPreg.add(GuarEditPreg, gridBagConstraints);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 11;
+    gridBagConstraints.gridy = 12;
     gridBagConstraints.gridwidth = 14;
     gridBagConstraints.ipadx = 223;
     gridBagConstraints.ipady = 5;
@@ -2561,13 +2559,12 @@ public class Principal extends javax.swing.JFrame {
     EditPreg.add(FechaPreg, gridBagConstraints);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridy = 9;
     gridBagConstraints.gridwidth = 14;
-    gridBagConstraints.gridheight = 2;
     gridBagConstraints.ipadx = 244;
     gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(3, 20, 0, 0);
     EditPreg.add(EstadPreg, gridBagConstraints);
 
     DesButto.setBackground(new java.awt.Color(204, 204, 204));
@@ -2604,12 +2601,12 @@ public class Principal extends javax.swing.JFrame {
     jLabel57.setText("Nivel Actual");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridy = 6;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 11;
     gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(7, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(1, 20, 0, 0);
     EditPreg.add(jLabel57, gridBagConstraints);
 
     jLabel58.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2618,7 +2615,7 @@ public class Principal extends javax.swing.JFrame {
     jLabel58.setText("Estado");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 7;
+    gridBagConstraints.gridy = 8;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 38;
     gridBagConstraints.ipady = 8;
@@ -2641,19 +2638,13 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
-    ComboNivPreg.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            ComboNivPregActionPerformed(evt);
-        }
-    });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 87;
+    gridBagConstraints.gridx = 56;
     gridBagConstraints.gridy = 3;
-    gridBagConstraints.gridwidth = 69;
     gridBagConstraints.ipadx = 20;
     gridBagConstraints.ipady = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 18, 0, 0);
     EditPreg.add(ComboNivPreg, gridBagConstraints);
 
     jLabel59.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2662,12 +2653,12 @@ public class Principal extends javax.swing.JFrame {
     jLabel59.setText("Ultimo uso");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 10;
+    gridBagConstraints.gridy = 11;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.ipadx = 16;
     gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 0);
     EditPreg.add(jLabel59, gridBagConstraints);
 
     AdAsig6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2676,12 +2667,12 @@ public class Principal extends javax.swing.JFrame {
     AdAsig6.setText("*Opcion no valida");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 2;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridy = 7;
     gridBagConstraints.gridwidth = 6;
     gridBagConstraints.ipadx = 11;
     gridBagConstraints.ipady = 8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 12, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 14, 0, 0);
     EditPreg.add(AdAsig6, gridBagConstraints);
 
     AdAsig11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -2693,7 +2684,7 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints.gridy = 4;
     gridBagConstraints.gridwidth = 5;
     gridBagConstraints.ipadx = 51;
-    gridBagConstraints.ipady = 8;
+    gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(AdAsig11, gridBagConstraints);
@@ -2703,11 +2694,11 @@ public class Principal extends javax.swing.JFrame {
     AdAsig12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     AdAsig12.setText("*");
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 87;
+    gridBagConstraints.gridx = 56;
     gridBagConstraints.gridy = 4;
-    gridBagConstraints.gridwidth = 69;
+    gridBagConstraints.gridwidth = 57;
     gridBagConstraints.ipadx = 52;
-    gridBagConstraints.ipady = 8;
+    gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
     EditPreg.add(AdAsig12, gridBagConstraints);
@@ -2719,38 +2710,51 @@ public class Principal extends javax.swing.JFrame {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 7;
     gridBagConstraints.gridy = 4;
-    gridBagConstraints.gridwidth = 28;
+    gridBagConstraints.gridwidth = 17;
     gridBagConstraints.ipadx = 11;
-    gridBagConstraints.ipady = 8;
+    gridBagConstraints.ipady = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(5, 20, 0, 0);
+    gridBagConstraints.insets = new java.awt.Insets(5, 22, 0, 0);
     EditPreg.add(AdAsig14, gridBagConstraints);
 
-    BottonGenrExam1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-    BottonGenrExam1.setText("(Des)Bloquear");
-    BottonGenrExam1.setColorBorde(javax.swing.BorderFactory.createEtchedBorder());
-    BottonGenrExam1.setColorHover(new java.awt.Color(1, 165, 228));
-    BottonGenrExam1.setColorNormal(new java.awt.Color(186, 186, 186));
-    BottonGenrExam1.setColorPressed(new java.awt.Color(2, 95, 130));
-    BottonGenrExam1.setFocusPainted(false);
-    BottonGenrExam1.setFocusable(false);
-    BottonGenrExam1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    BottonGenrExam1.setMaximumSize(new java.awt.Dimension(150, 35));
-    BottonGenrExam1.setMinimumSize(new java.awt.Dimension(150, 35));
-    BottonGenrExam1.addActionListener(new java.awt.event.ActionListener() {
+    BotonDesBloqueo.setBackground(new java.awt.Color(204, 204, 204));
+    BotonDesBloqueo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+    BotonDesBloqueo.setColorBorde(javax.swing.BorderFactory.createEtchedBorder());
+    BotonDesBloqueo.setColorHover(new java.awt.Color(204, 204, 204));
+    BotonDesBloqueo.setColorNormal(new java.awt.Color(204, 204, 204));
+    BotonDesBloqueo.setColorPressed(new java.awt.Color(204, 204, 204));
+    BotonDesBloqueo.setFocusPainted(false);
+    BotonDesBloqueo.setFocusable(false);
+    BotonDesBloqueo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    BotonDesBloqueo.setMaximumSize(new java.awt.Dimension(150, 35));
+    BotonDesBloqueo.setMinimumSize(new java.awt.Dimension(150, 35));
+    BotonDesBloqueo.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            BottonGenrExam1ActionPerformed(evt);
+            BotonDesBloqueoActionPerformed(evt);
         }
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 20;
-    gridBagConstraints.gridy = 8;
-    gridBagConstraints.gridwidth = 68;
+    gridBagConstraints.gridx = 23;
+    gridBagConstraints.gridy = 9;
+    gridBagConstraints.gridwidth = 34;
+    gridBagConstraints.gridheight = 2;
     gridBagConstraints.ipadx = -10;
-    gridBagConstraints.ipady = -10;
+    gridBagConstraints.ipady = -8;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(3, 8, 0, 0);
-    EditPreg.add(BottonGenrExam1, gridBagConstraints);
+    gridBagConstraints.insets = new java.awt.Insets(2, 0, 0, 0);
+    EditPreg.add(BotonDesBloqueo, gridBagConstraints);
+
+    jLabel29.setForeground(new java.awt.Color(0, 87, 116));
+    jLabel29.setText("___________________________________________________________________");
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 1;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridwidth = 113;
+    gridBagConstraints.gridheight = 2;
+    gridBagConstraints.ipadx = 8;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+    gridBagConstraints.insets = new java.awt.Insets(20, 24, 0, 0);
+    EditPreg.add(jLabel29, gridBagConstraints);
 
     Menu.addTab("Pregunta", EditPreg);
 
@@ -2834,6 +2838,7 @@ public class Principal extends javax.swing.JFrame {
         fecha.setCalendar(null);
         AvisoNumeros.setVisible(false);
         SubMenu.setSelectedIndex(0);
+        BloqDesBoton(ButtonAddPreg, "...");
         Menu.setSelectedComponent(Generar);
     }//GEN-LAST:event_BottonGenrExamActionPerformed
 
@@ -2860,8 +2865,8 @@ public class Principal extends javax.swing.JFrame {
             AdAsig2.setVisible(false);
             AdAsig3.setVisible(false);
             AdAsig4.setVisible(false);
-            ButtonMostrarCENT.setEnabled(false);
-            ButtonMostrarDER.setEnabled(false);
+            BloqDesBoton(ButtonMostrarDER, "...");
+            BloqDesBoton(ButtonMostrarCENT, "...");
             h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
             met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
             Menu.setSelectedComponent(Ver);
@@ -2886,6 +2891,7 @@ public class Principal extends javax.swing.JFrame {
         DesBoton(ButtonCambio);
         ButtonCambio.setVisible(false);
         NuevaContra.setVisible(false);
+        CorreoPerfil.setText(Correo);
         ValNuevaContra.setVisible(false);
     }//GEN-LAST:event_BottonPerfilActionPerformed
 
@@ -2895,9 +2901,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonHomeActionPerformed
 
     private void ButtonAddPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddPregActionPerformed
-        int TotalPreg = TotalPregPorAsig();
+
         Date date = fecha.getDate();
-        if (!evaluacion.getText().equals("") && date != null) {
+        if (!evaluacion.getText().equals("") && date != null && !preg.getText().equals("")) {
+            int TotalPreg = TotalPregPorAsig();
             if (TotalPreg >= Integer.parseInt(preg.getText())) {
                 String tem;
                 titulo = evaluacion.getText();
@@ -2967,53 +2974,31 @@ public class Principal extends javax.swing.JFrame {
         String tema = (String) ComboBoxTemas.getSelectedItem();
         Metodos e = new Metodos();
         String InfoPregunta = "";
-        int jor = 0;
+        int jor = ComboNivel.getSelectedIndex();
         InfoPregunta = Preguntas.getText();
-        String opcNiv = (String) ComboNivel.getSelectedItem();
-        if (opcNiv.equals("Facil")) {
-            jor = 1;
-        } else {
-            if (opcNiv.equals("Medio")) {
-                jor = 2;
-            } else {
-                if (opcNiv.equals("Dificil")) {
-                    jor = 3;
-                }
-            }
-        }
         String total = Integer.toString(jor) + ";" + InfoPregunta + ";" + "Disponible;--------;";
         String temp;
         Asignatura a = getAsignatura(Asignatura2);
         Tema t = getTema(tema, a);
         String x = "Profesor/" + usuario + "/" + Asignatura2 + "/" + tema + "/Preguntas_" + jor + ".txt";
 
-        if (Asignatura2.equals("...")) {
-            JOptionPane.showMessageDialog(null, "No ha Selccionado ninguna Asignatura.");
+        if (InfoPregunta.equals("")) {
+            JOptionPane.showMessageDialog(null, "No ha escrito ninguna pregunta.");
         } else {
-            if (tema.equals("...")) {
-                JOptionPane.showMessageDialog(null, "No ha Selccionado ningun Tema.");
-            } else {
-                if (opcNiv.equals("...")) {
-                    JOptionPane.showMessageDialog(null, "No ha Selccionado ninguna Dificultad.");
-                } else {
-                    if (InfoPregunta.equals("")) {
-                        JOptionPane.showMessageDialog(null, "No ha escrito ninguna pregunta.");
-                    } else {
-                        try {
-                            temp = e.concatenar(x);
-                            e.guardar(temp, x, total);
-                            Pregunta pregun = new Pregunta(InfoPregunta, jor, "Disponible", "--------");
-                            profesor.getAsignaturas().get(ComboAsignaturaS.getSelectedIndex() - 1).getTemas().get(ComboBoxTemas.getSelectedIndex() - 1).getPreguntas(jor).add(pregun);
-                            JOptionPane.showMessageDialog(null, "Pregunta añadida exitosamente.");
-                            Menu.setSelectedComponent(Home);
+            try {
+                temp = e.concatenar(x);
+                e.guardar(temp, x, total);
+                Pregunta pregun = new Pregunta(InfoPregunta, jor, "Disponible", "--------");
+                profesor.getAsignaturas().get(ComboAsignaturaS.getSelectedIndex() - 1).getTemas().get(ComboBoxTemas.getSelectedIndex() - 1).getPreguntas(jor).add(pregun);
+                JOptionPane.showMessageDialog(null, "Pregunta añadida exitosamente.");
+                BottonPreguntas.doClick();
 
-                        } catch (IOException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                }
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
+
     }//GEN-LAST:event_ButtonAgregarPreguntaActionPerformed
 
     private void ButtonAgregarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregarTemaActionPerformed
@@ -3044,7 +3029,7 @@ public class Principal extends javax.swing.JFrame {
                     }
                     profesor.AddTema(tema, r, DesNoNull(DescripcionTema.getText()));
                     JOptionPane.showMessageDialog(null, "Tema añadido exitosamente.");
-                    Menu.setSelectedComponent(Home);
+                    BottonTemas.doClick();
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna Asignatura.");
@@ -3082,7 +3067,7 @@ public class Principal extends javax.swing.JFrame {
                     Asignatura a = new Asignatura(Asigna, DesNoNull(Descripcion.getText()), codigo);
                     profesor.AddAsignatura(a);
                     JOptionPane.showMessageDialog(null, "Asignatura creada satisfactoriamente.");
-                    Menu.setSelectedComponent(Home);
+                    BottonAsignatura.doClick();
                 } catch (IOException ex) {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -3209,40 +3194,57 @@ public class Principal extends javax.swing.JFrame {
                     i++;
 
                 }
-                try {
-                    SobreEscribir(person);
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
+
                 JFileChooser f = new JFileChooser();
+                FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("Documento de Word", "docx");
+                f.setFileFilter(filtroImagen);
+                f.setDialogTitle("Guadar Examen");
                 f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 f.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
                 int opcion = f.showSaveDialog(this);
-                File guarda = f.getSelectedFile();
-                System.out.println("" + guarda + " Preuba " + guarda.getName().substring(0, 1));
-                if (opcion == JFileChooser.APPROVE_OPTION) {
-                    System.out.println(guarda.getAbsolutePath());
-
-                    FileOutputStream word = null;
+                if (opcion != 1) {
                     try {
-                        word = new FileOutputStream(guarda + ".docx");
-                        documento.write(word);
-                        word.close();
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        SobreEscribir(person);
                     } catch (IOException ex) {
                         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                    File guarda = f.getSelectedFile();
+                    System.out.println("" + guarda + " Preuba " + guarda.getName().substring(0, 1));
+                    if (opcion == JFileChooser.APPROVE_OPTION) {
+                        System.out.println(guarda.getAbsolutePath());
+
+                        FileOutputStream word = null;
+                        try {
+                            word = new FileOutputStream(guarda + ".docx");
+                            documento.write(word);
+                            word.close();
+                        } catch (FileNotFoundException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        JOptionPane.showMessageDialog(null,
+                                "El examen se ha generado exitosamente.",
+                                "Información", JOptionPane.INFORMATION_MESSAGE);
+                    }
+
+                } else {
                     JOptionPane.showMessageDialog(null,
-                            "El examen se ha generado exitosamente",
+                            "El examen No se ha generado.",
                             "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
-                evaluacion.setEditable(true);
+
+                /*evaluacion.setEditable(true);
+                evaluacion.setText("");
                 seme.setEnabled(true);
+                seme.setSelectedIndex(0);
                 asigna.setEnabled(true);
+                asigna.setSelectedIndex(0);
                 fecha.setEnabled(true);
+                fecha.setDate(null);
                 preg.setEditable(true);
-                Menu.setSelectedComponent(Home);
+                preg.setText("");*/
+                BottonGenrExam.doClick();
             }
 
         } else {
@@ -3265,7 +3267,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String x = (String) this.Asig3.getSelectedItem();
         String y = (String) this.tema.getSelectedItem();
-        String z = (String) this.nivel.getSelectedItem();
+        String z = String.valueOf(this.nivel.getSelectedIndex());
         this.MostrarPreg(x, y, z, profesor);
     }//GEN-LAST:event_ButtonMostrarDERActionPerformed
 
@@ -3385,7 +3387,7 @@ public class Principal extends javax.swing.JFrame {
             Preguntas.setEnabled(false);
             ButtonAgregarPregunta.setEnabled(false);
         }
-        BloqDesBoton(ButtonAgregarPregunta, TempAsigna);
+        BloqDesBoton(ButtonAgregarPregunta, "...");
     }//GEN-LAST:event_ComboAsignaturaSPopupMenuWillBecomeInvisible
 
     private void BottonTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonTemasActionPerformed
@@ -3398,10 +3400,11 @@ public class Principal extends javax.swing.JFrame {
         }
         Metodos met = new Metodos();
         met.ReincioJTextField(NombreDelTema);
-        met.ReincioTextArea(DescripcionTema);
-        DesBoton(ButtonAgregarTema);
+        this.DescripcionTema.setEditable(false);
+        DescripcionTema.setText("");
         AgregarDescripcionTema.setSelected(false);
         AdTema.setVisible(false);
+        BloqDesBoton(ButtonAgregarTema, "...");
         Menu.setSelectedComponent(Tema);        // TODO add your handling code here:
     }//GEN-LAST:event_BottonTemasActionPerformed
 
@@ -3454,10 +3457,10 @@ public class Principal extends javax.swing.JFrame {
                     nombre = registros.get(i)[2];
                     if (nombre.equals(Usuario1.getText())) {
                         if ((registros.get(i)[0]).equals(Nombre1.getText())) {
-                            Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + NuevaContra.getText() + "," + registros.get(i)[4] + "\r\n";
+                            Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + NuevaContra.getText() + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
                         }
                     } else {
-                        Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "\r\n";
+                        Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
                     }
                 }
                 File file = new File("Usuario.txt");
@@ -3597,25 +3600,42 @@ public class Principal extends javax.swing.JFrame {
         }
 
         JFileChooser f = new JFileChooser();
+        FileNameExtensionFilter filtroImagen = new FileNameExtensionFilter("Documento de Excel", "xls");
+        f.setFileFilter(filtroImagen);
+        f.setDialogTitle("Guardar Informe");
         if (!f.equals(null)) {
             f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             f.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
             int opcion = f.showSaveDialog(this);
             File guarda = f.getSelectedFile();
-            if (opcion == JFileChooser.APPROVE_OPTION) {
-                FileOutputStream excel = null;
-                try {
-                    excel = new FileOutputStream(guarda + ".xls");
-                    informe.write(excel);
-                    excel.close();
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            File guardar = new File(f.getSelectedFile().getAbsolutePath() + ".xls");
+            System.out.println(guardar.getAbsolutePath());
+            boolean Sobre = false;  //Esto se hace con el fin de saber si se desea sobreescribir un informe ya creado
+            while (Sobre == false) {
+                if (guardar.exists() == false) {
+                    if (opcion == JFileChooser.APPROVE_OPTION) {
+                        FileOutputStream excel = null;
+                        try {
+                            excel = new FileOutputStream(guarda + ".xls");
+                            informe.write(excel);
+                            excel.close();
+                        } catch (FileNotFoundException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        JOptionPane.showMessageDialog(null,
+                                "El informe se ha generado exitosamente");
+                        Sobre = true;
+                    }
+                } else {
+                    int n = JOptionPane.showConfirmDialog(null, "Ya se encuentra un informe con el mismo nombre.\r\n Desea Sobreescribirlo?", "Información", JOptionPane.YES_NO_OPTION);
+                    if (n == JOptionPane.NO_OPTION) {
+                        Sobre = true;
+                    } else {
+                        guardar.delete();
+                    }
                 }
-                JOptionPane.showMessageDialog(null,
-                        "El informe se ha generado exitosamente",
-                        "Información", JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }//GEN-LAST:event_ButtonGenerarInformeActionPerformed
@@ -3693,36 +3713,42 @@ public class Principal extends javax.swing.JFrame {
 
     private void EditarPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPreguntasActionPerformed
         Metodos met = new Metodos();
-        if (Menu.getSelectedComponent() != EditPreg) {
-            modelo = (DefaultTableModel) TablaPregEdit.getModel();
-            modelo.setColumnCount(0);
-            modelo.setRowCount(0);
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
-            ComboAsigPreg.removeAllItems();
-            ComboAsigPreg.addItem("...");
-            ComboTemPreg.removeAllItems();
-            ComboTemPreg.addItem("...");
-            int h = 0;
-            try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            ComboTemPreg.setEnabled(false);
-            ComboNivPreg.setEnabled(false);
-            ComboNivelA.setEnabled(false);
-            EstadPreg.setEditable(false);
-            FechaPreg.setEnabled(false);
-            InfoPreg.setEditable(false);
-            GuarEditPreg.setEnabled(false);
-            Menu.setSelectedComponent(EditPreg);
-            DesButto.setEnabled(false);
-            ButtomEditPreg.setEnabled(true);
-            DesButto.setBackground(Color.GRAY);
-            AdAsig5.setVisible(false);
+        modelo = (DefaultTableModel) TablaPregEdit.getModel();
+        EstadPreg.setText("");
+        InfoPreg.setText("");
+        ComboNivelA.setSelectedIndex(0);
+        FechaPreg.setDate(null);
+        BloqDesBoton(GuarEditPreg, "...");
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
+        ComboAsigPreg.removeAllItems();
+        ComboAsigPreg.addItem("...");
+        ComboTemPreg.removeAllItems();
+        ComboTemPreg.addItem("...");
+        int h = 0;
+        try {
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
+        AdAsig11.setVisible(false);
+        AdAsig14.setVisible(false);
+        AdAsig12.setVisible(false);
+        AdAsig6.setVisible(false);
+        ComboTemPreg.setEnabled(false);
+        ComboNivPreg.setEnabled(false);
+        ComboNivelA.setEnabled(false);
+        EstadPreg.setEditable(false);
+        FechaPreg.setEnabled(false);
+        InfoPreg.setEditable(false);
+        BotonDesBloqueo.setText("");
+        BotonDesBloqueo.setIcon(null);
+        BloqDesBoton(BotonDesBloqueo, "...");
+        Menu.setSelectedComponent(EditPreg);
     }//GEN-LAST:event_EditarPreguntasActionPerformed
 
     private void TablaAsigKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaAsigKeyReleased
@@ -3939,62 +3965,76 @@ public class Principal extends javax.swing.JFrame {
     private void ButtomEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomEditPregActionPerformed
         ComboNivelA.setEnabled(true);
         InfoPreg.setEditable(true);
-        GuarEditPreg.setEnabled(true);
-        DesButto.setEnabled(true);
+        BloqDesBoton(GuarEditPreg, "");
     }//GEN-LAST:event_ButtomEditPregActionPerformed
 
     private void ElemEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElemEditPregActionPerformed
+        int x = JOptionPane.showConfirmDialog(null, "Desea eliminar la Pregunta seleccionada?", "Advertencia", JOptionPane.OK_CANCEL_OPTION, JOptionPane.CANCEL_OPTION);
+        if (x == 0) {
+            Metodos met = new Metodos();
+            String ContendioPregunta = "";
+            String Total = "";
+            int cont = 0, i = 0;
+            Tema tem = null;
+            ArrayList<Pregunta> PregTemporal = new ArrayList();
+            for (Asignatura asignatura : profesor.getAsignaturas()) {
+                for (Tema tema : asignatura.getTemas()) {
+                    if (asignatura.getNombre().equals(ComboAsigPreg.getSelectedItem())) {
+                        if (tema.getNombre().equals(ComboTemPreg.getSelectedItem())) {
+                            for (Pregunta pregunta : tema.getPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()))) {
+                                if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
 
-        Metodos met = new Metodos();
-        String ContendioPregunta = "";
-        String Total = "";
-        int cont = 0, i = 0;
-        Tema tem = null;
-        ArrayList<Pregunta> PregTemporal = new ArrayList();
-        for (Asignatura asignatura : profesor.getAsignaturas()) {
-            for (Tema tema : asignatura.getTemas()) {
-                if (asignatura.getNombre().equals(ComboAsigPreg.getSelectedItem())) {
-                    if (tema.getNombre().equals(ComboTemPreg.getSelectedItem())) {
-                        for (Pregunta pregunta : tema.getPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()))) {
-                            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
-
-                            } else {
-                                PregTemporal.add(pregunta);
-                                Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
+                                } else {
+                                    PregTemporal.add(pregunta);
+                                    Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
+                                }
                             }
+
+                            profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()), PregTemporal);
+                            cont = i;
+                        } else {
                         }
-
-                        profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()), PregTemporal);
-                        cont = i;
-                    } else {
                     }
+
                 }
-
+                i++;
             }
-            i++;
-        }
-        File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
-        FileWriter fw;
-        try {
-            fw = new FileWriter(file);
-            ComboNivelA.setSelectedIndex(0);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Total);
-            bw.close();
-            fw.close();
-            ComboNivelA.setSelectedIndex(0);
-            InfoPreg.setText("");
-            EstadPreg.setText("");
-            FechaPreg.setDate(null);
-            String asig = (String) ComboAsigPreg.getSelectedItem();
-            String tema = (String) ComboTemPreg.getSelectedItem();
-            String nivel = (String) ComboNivPreg.getSelectedItem();
-            MostrarPreg(asig, tema, nivel, profesor);
-            DesButto.setBackground(Color.GRAY);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
+            FileWriter fw;
+            try {
+                fw = new FileWriter(file);
+                ComboNivelA.setSelectedIndex(0);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(Total);
+                bw.close();
+                fw.close();
+                EstadPreg.setEditable(false);
+                EstadPreg.setText("");
+                InfoPreg.setEditable(false);
+                InfoPreg.setText("");
+                ComboNivelA.setEnabled(false);
+                ComboNivelA.setSelectedIndex(0);
+                FechaPreg.setDate(null);
+                BloqDesBoton(GuarEditPreg, "...");
+                BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+                modelo.setColumnCount(0);
+                modelo.setRowCount(0);
+                sw1 = true;
+                sw2 = true;
+                sw3 = true;
+                String asig = (String) ComboAsigPreg.getSelectedItem();
+                String tema = (String) ComboTemPreg.getSelectedItem();
+                String nivel = (String) ComboNivPreg.getSelectedItem();
+                MostrarPreg(asig, tema, nivel, profesor);
+                BotonDesBloqueo.setText("");
+                BotonDesBloqueo.setIcon(null);
+                BloqDesBoton(BotonDesBloqueo, "...");
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JOptionPane.showMessageDialog(null, "La pregunta ha sido eliminada.");
 
+        }
     }//GEN-LAST:event_ElemEditPregActionPerformed
 
     private void GuarEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuarEditPregActionPerformed
@@ -4005,56 +4045,54 @@ public class Principal extends javax.swing.JFrame {
         int cont = 0, i = 0;
         Tema tem = null;
         ArrayList<Pregunta> PregTemporal = new ArrayList();
-        for (Asignatura asignatura : profesor.getAsignaturas()) {
-            for (Tema tema : asignatura.getTemas()) {
-                if (asignatura.getNombre().equals(ComboAsigPreg.getSelectedItem())) {
-                    if (tema.getNombre().equals(ComboTemPreg.getSelectedItem())) {
-                        for (Pregunta pregunta : tema.getPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()))) {
-                            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
-                                Date ka = FechaPreg.getDate();
-                                String fecha = "";
-                                if (ka == null) {
-                                    fecha = "--------";
-                                } else {
-                                    DateFormat FormaFecha = new SimpleDateFormat("yyyy/MM/dd");
-                                    fecha = FormaFecha.format(FechaPreg.getDate());
-                                }
-                                if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 0).toString().equals(ComboNivelA.getSelectedItem())) {
-                                    PregTemporal.add(new Pregunta(InfoPreg.getText(), Integer.parseInt((String) ComboNivelA.getSelectedItem()), EstadPreg.getText(), fecha));
-                                    Total = Total + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fecha + ";" + "\r\n";
-                                } else {
-                                    String TotalAuxiliar = "";
-                                    for (Pregunta pregunt : tema.getPreguntas(Integer.parseInt((String) ComboNivelA.getSelectedItem()))) {
-                                        TotalAuxiliar = TotalAuxiliar + +pregunt.getNivel() + ";" + pregunt.getContenido() + ";" + pregunt.getEstado() + ";" + pregunt.getFecha() + ";" + "\r\n";
-                                    }
-                                    TotalAuxiliar = TotalAuxiliar + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fecha + ";" + "\r\n";
-                                    profesor.getAsignaturas().get(i).getTemas().get(cont).getPreguntas(Integer.parseInt((String) ComboNivelA.getSelectedItem())).add(new Pregunta(InfoPreg.getText(), Integer.parseInt((String) ComboNivelA.getSelectedItem()), EstadPreg.getText(), fecha));
-                                    File fileA = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedItem() + ".txt");
-                                    FileWriter fwA;
-                                    try {
-                                        fwA = new FileWriter(fileA);
-                                        BufferedWriter bwA = new BufferedWriter(fwA);
-                                        bwA.write(TotalAuxiliar);
-                                        bwA.close();
-                                        fwA.close();
-                                    } catch (IOException ex) {
-                                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                                    }
-
-                                    Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
-                                }
-                            }
-                            Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
-                        }
-                        profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()), PregTemporal);
-                        cont = i;
-                    } else {
+        Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigPreg.getSelectedIndex() - 1);
+        Tema tematica = asignatura.getTemas().get(ComboTemPreg.getSelectedIndex() - 1);
+        for (Pregunta pregunta : tematica.getPreguntas(ComboNivPreg.getSelectedIndex())) {
+            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
+                //Entra la informacion de la pregunta coincide
+                Date ka = FechaPreg.getDate();
+                String fech;
+                if (ka == null) {
+                    fech = "--------";
+                } else {
+                    DateFormat FormaFecha = new SimpleDateFormat("yyyy/MM/dd");
+                    fech = FormaFecha.format(FechaPreg.getDate());
+                }
+                //Se prueba si la pregunta se le modifica la dificultad
+                if (ComboNivPreg.getSelectedItem().equals(ComboNivelA.getSelectedItem())) {
+                    //Si no es asi solo se agregan los cambios que se hicieron
+                    PregTemporal.add(new Pregunta(InfoPreg.getText(), Integer.parseInt((String) ComboNivelA.getSelectedItem()), EstadPreg.getText(), fech));
+                    Total = Total + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fech + ";" + "\r\n";
+                } else {
+                    //Si la pregunta cambio de dificultad es necesario agregarla al txt de preguntas de la nueva dificultad
+                    String TotalAuxiliar = "";
+                    for (Pregunta pregunt : tematica.getPreguntas(ComboNivelA.getSelectedIndex())) {
+                        TotalAuxiliar = TotalAuxiliar + +pregunt.getNivel() + ";" + pregunt.getContenido() + ";" + pregunt.getEstado() + ";" + pregunt.getFecha() + ";" + "\r\n";
+                    }
+                    TotalAuxiliar = TotalAuxiliar + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fech + ";" + "\r\n";
+                    //Se agregan los cambios a la variable statica Profesor
+                    tematica.getPreguntas(ComboNivelA.getSelectedIndex()).add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
+                    //Se escribe la pregunta en su nueva dificultad
+                    File fileA = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedItem() + ".txt");
+                    FileWriter fwA;
+                    try {
+                        fwA = new FileWriter(fileA);
+                        BufferedWriter bwA = new BufferedWriter(fwA);
+                        bwA.write(TotalAuxiliar);
+                        bwA.close();
+                        fwA.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-
+            } else {
+                PregTemporal.add(pregunta);
+                Total = Total + pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";" + "\r\n";
             }
-            i++;
+
         }
+        tematica.EnviarPreguntas(ComboNivPreg.getSelectedIndex(), PregTemporal);
+
         File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
         FileWriter fw;
         try {
@@ -4064,16 +4102,26 @@ public class Principal extends javax.swing.JFrame {
             bw.write(Total);
             bw.close();
             fw.close();
-            ComboNivelA.setSelectedIndex(0);
-            InfoPreg.setText("");
+            EstadPreg.setEditable(false);
             EstadPreg.setText("");
-            FechaPreg.setDate(null);
-            String asig = (String) ComboAsigPreg.getSelectedItem();
-            String tema = (String) ComboTemPreg.getSelectedItem();
-            String nivel = (String) ComboNivPreg.getSelectedItem();
-            MostrarPreg(asig, tema, nivel, profesor);
-            DesButto.setBackground(Color.GRAY);
+            InfoPreg.setEditable(false);
+            InfoPreg.setText("");
             ComboNivelA.setEnabled(false);
+            ComboNivelA.setSelectedIndex(0);
+            FechaPreg.setDate(null);
+            BotonDesBloqueo.setText("");
+            BotonDesBloqueo.setIcon(null);
+            BloqDesBoton(BotonDesBloqueo, "...");
+            BloqDesBoton(GuarEditPreg, "...");
+            BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
+            String asig = (String) ComboAsigPreg.getSelectedItem();
+            String temap = (String) ComboTemPreg.getSelectedItem();
+            String nivel = (String) ComboNivPreg.getSelectedItem();
+            MostrarPreg(asig, temap, nivel, profesor);
+            JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -4165,7 +4213,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void TablaPregEditKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaPregEditKeyReleased
         String[] h = new String[4];
-
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "");
         for (int i = 0; i < 4; i++) {
             if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i) != null) {
                 h[i] = TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i).toString();
@@ -4173,12 +4221,28 @@ public class Principal extends javax.swing.JFrame {
                 h[i] = "";
             }
         }
+
         ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
         EstadPreg.setText(h[2]);
+        File file;
+        Image foto;
+        BotonDesBloqueo.setEnabled(true);
         if (h[2].equals("Disponible")) {
-            DesButto.setBackground(Color.GREEN);
+            BotonDesBloqueo.setText("Bloquear");
+            file = new File("src\\Imagenes\\Bloq.png");
+            foto = getToolkit().getImage(String.valueOf(file));
+            BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
         } else {
-            DesButto.setBackground(Color.RED);
+            file = new File("src\\Imagenes\\Des.png");
+            BotonDesBloqueo.setText("Desbloquear");
+            foto = getToolkit().getImage(String.valueOf(file));
+            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
         }
         String[] dateValue = h[3].split("/");
         Date date = null;
@@ -4197,13 +4261,33 @@ public class Principal extends javax.swing.JFrame {
 
     private void TablaPregEditMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPregEditMouseReleased
         String[] h = new String[4];
-
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "");
         for (int i = 0; i < 4; i++) {
             if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i) != null) {
                 h[i] = TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i).toString();
             } else {
                 h[i] = "";
             }
+        }
+        File file;
+        Image foto;
+        BotonDesBloqueo.setEnabled(true);
+        if (h[2].equals("Disponible")) {
+            file = new File("src\\Imagenes\\Des.png");
+            BotonDesBloqueo.setText("Desbloquear");
+            foto = getToolkit().getImage(String.valueOf(file));
+            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
+        } else {
+            BotonDesBloqueo.setText("Bloquear");
+            file = new File("src\\Imagenes\\Bloq.png");
+            foto = getToolkit().getImage(String.valueOf(file));
+            BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
         }
         ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
         EstadPreg.setText(h[2]);
@@ -4226,10 +4310,6 @@ public class Principal extends javax.swing.JFrame {
         FechaPreg.setDate(date);
         InfoPreg.setText(h[1]);
     }//GEN-LAST:event_TablaPregEditMouseReleased
-
-    private void ComboTemPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboTemPregActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboTemPregActionPerformed
 
     private void DesButtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesButtoActionPerformed
         String[] values = {"...", "Disponible", "No Disponible"};
@@ -4259,43 +4339,6 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_DesButtoActionPerformed
 
-    private void ComboNivelAComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ComboNivelAComponentShown
-        /* if (ComboNivelA.getSelectedItem().equals("...")) {
-            JOptionPane.showInputDialog(this, "Opcion no valida", "error", JOptionPane.ERROR_MESSAGE);
-            GuarEditPreg.setEnabled(false);
-            ButtomEditPreg.setEnabled(false);
-        } else {
-            ButtomEditPreg.setEnabled(true);
-            GuarEditPreg.setEnabled(true);
-        }       */// TODO add your handling code here:
-    }//GEN-LAST:event_ComboNivelAComponentShown
-
-    private void ComboNivelAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNivelAActionPerformed
-        if (ComboNivelA.getSelectedItem().equals("...")) {
-            JOptionPane.showInputDialog(this, "Opcion no valida", "error", JOptionPane.ERROR_MESSAGE);
-            GuarEditPreg.setEnabled(false);
-            ButtomEditPreg.setEnabled(false);
-        } else {
-            ButtomEditPreg.setEnabled(true);
-            GuarEditPreg.setEnabled(true);
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboNivelAActionPerformed
-
-    private void ComboAsigPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsigPregActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboAsigPregActionPerformed
-
-    private void ComboNivPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNivPregActionPerformed
-        String asig = (String) ComboAsigPreg.getSelectedItem();
-        String tem = (String) ComboTemPreg.getSelectedItem();
-        String nivel = (String) ComboNivPreg.getSelectedItem();
-        if (!asig.equals("...") & !tem.equals("")) {
-            MostrarPreg(asig, tem, nivel, profesor);
-        } else {
-            JOptionPane.showMessageDialog(this, "No ha seleccionado niguna asignatura", "ERROR", JOptionPane.ERROR_MESSAGE);
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboNivPregActionPerformed
-
     private void ValNuevaContraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ValNuevaContraKeyReleased
         if (this.NuevaContra.getText().equals(this.ValNuevaContra.getText())) {
             this.jLabel27.setVisible(false);
@@ -4317,7 +4360,7 @@ public class Principal extends javax.swing.JFrame {
             ComboNivel.setEnabled(false);
             Preguntas.setEnabled(false);
         }
-        BloqDesBoton(ButtonAgregarPregunta, TempAsigna);
+        BloqDesBoton(ButtonAgregarPregunta, "...");
     }//GEN-LAST:event_ComboBoxTemasPopupMenuWillBecomeInvisible
 
     private void ComboNivelPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivelPopupMenuWillBecomeInvisible
@@ -4366,25 +4409,35 @@ public class Principal extends javax.swing.JFrame {
             preg.setEnabled(true);
             SeAd.setVisible(false);
         }
-        BloqDesBoton(ButtonAddPreg, semestre);
+        if (asigna.getSelectedItem().equals("...")) {
+            BloqDesBoton(ButtonAddPreg, "...");
+        } else {
+            BloqDesBoton(ButtonAddPreg, "");
+            BloqDesBoton(ButtonAddPreg, semestre);
+        }
     }//GEN-LAST:event_semePopupMenuWillBecomeInvisible
 
     private void asignaPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_asignaPopupMenuWillBecomeInvisible
         String semestre = (String) asigna.getSelectedItem();
-        BloqDesBoton(ButtonAddPreg, semestre);
+        if (seme.getSelectedItem().equals("...")) {
+            BloqDesBoton(ButtonAddPreg, "...");
+        } else {
+            BloqDesBoton(ButtonAddPreg, "");
+            BloqDesBoton(ButtonAddPreg, semestre);
+        }
         if ("...".equals(semestre)) {
             fecha.setEnabled(false);
             preg.setEnabled(false);
-            SeAd.setVisible(true);
-            SeAd.setText("*Opcion no valida");
+            AsAd.setVisible(true);
+            AsAd.setText("*Opcion no valida");
         } else {
             Metodos met = new Metodos();
             int h = 0;
             try {
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + semestre + "/Temas.txt", this.tema, h);
                 if (h < 1) {
-                    SeAd.setVisible(true);
-                    SeAd.setText("*Asignatura sin Temas");
+                    AsAd.setVisible(true);
+                    AsAd.setText("*Asignatura sin Temas");
                     fecha.setEnabled(false);
                     preg.setEnabled(false);
                     BloqDesBoton(ButtonAddPreg, "...");
@@ -4395,7 +4448,7 @@ public class Principal extends javax.swing.JFrame {
 
             fecha.setEnabled(true);
             preg.setEnabled(true);
-            SeAd.setVisible(false);
+            AsAd.setVisible(false);
         }
 
     }//GEN-LAST:event_asignaPopupMenuWillBecomeInvisible
@@ -4483,50 +4536,172 @@ public class Principal extends javax.swing.JFrame {
 
     private void ComboAsigPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboAsigPregPopupMenuWillBecomeInvisible
         String TempAsigna = (String) ComboAsigPreg.getSelectedItem();
+        EstadPreg.setEditable(false);
+        EstadPreg.setText("");
+        InfoPreg.setEditable(false);
+        InfoPreg.setText("");
+        ComboNivelA.setEnabled(false);
+        ComboNivelA.setSelectedIndex(0);
+        FechaPreg.setDate(null);
+        BotonDesBloqueo.setText("");
+        BotonDesBloqueo.setIcon(null);
+        BloqDesBoton(BotonDesBloqueo, "...");
+        BloqDesBoton(GuarEditPreg, "...");
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
+        ComboTemPreg.removeAllItems();
+        ComboTemPreg.addItem("...");
+        ComboNivPreg.setEnabled(false);
+        ComboNivPreg.setSelectedIndex(0);
         if (!TempAsigna.equals("...")) {
             ComboTemPreg.setEnabled(true);
             Metodos met = new Metodos();
-            ComboTemPreg.removeAllItems();
-            ComboTemPreg.addItem("...");
+
             int h = 0;
             try {
                 h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
                 if (h < 1) {
-                    JOptionPane.showMessageDialog(null, "La Asignatura que ha seleccionado no tiene temas.");
+                    AdAsig11.setVisible(true);
+                    AdAsig11.setText("*Sin Temas");
                     ComboTemPreg.setEnabled(false);
-                    ComboNivPreg.setEnabled(false);
+                } else {
+                    AdAsig11.setVisible(false);
+                    ComboTemPreg.setEnabled(true);
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             ComboTemPreg.setEnabled(false);
-            ComboNivPreg.setEnabled(false);
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            AdAsig11.setVisible(true);
+            AdAsig11.setText("*Opcion no valida");
         }
     }//GEN-LAST:event_ComboAsigPregPopupMenuWillBecomeInvisible
 
     private void ComboTemPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboTemPregPopupMenuWillBecomeInvisible
         String TempTema = (String) ComboTemPreg.getSelectedItem();
+        EstadPreg.setEditable(false);
+        EstadPreg.setText("");
+        InfoPreg.setEditable(false);
+        InfoPreg.setText("");
+        ComboNivelA.setEnabled(false);
+        ComboNivelA.setSelectedIndex(0);
+        FechaPreg.setDate(null);
+        BotonDesBloqueo.setText("");
+        BotonDesBloqueo.setIcon(null);
+        BloqDesBoton(BotonDesBloqueo, "...");
+        BloqDesBoton(GuarEditPreg, "...");
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
         if ("...".equals(TempTema)) {
             ComboNivPreg.setEnabled(false);
-            JOptionPane.showMessageDialog(this, "Seleccione una opcion que no sea la por defecto.", "Advertencia", JOptionPane.ERROR_MESSAGE);
+            AdAsig14.setVisible(true);
         } else {
+            AdAsig14.setVisible(false);
             ComboNivPreg.setEnabled(true);
         }
     }//GEN-LAST:event_ComboTemPregPopupMenuWillBecomeInvisible
 
     private void ComboNivPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivPregPopupMenuWillBecomeInvisible
-        // TODO add your handling code here:
+        String asig = (String) ComboAsigPreg.getSelectedItem();
+        String tem = (String) ComboTemPreg.getSelectedItem();
+        String nivel = (String) ComboNivPreg.getSelectedItem();
+        EstadPreg.setEditable(false);
+        EstadPreg.setText("");
+        InfoPreg.setEditable(false);
+        InfoPreg.setText("");
+        BotonDesBloqueo.setText("");
+        BotonDesBloqueo.setIcon(null);
+        BloqDesBoton(BotonDesBloqueo, "...");
+        ComboNivelA.setEnabled(false);
+        ComboNivelA.setSelectedIndex(0);
+        FechaPreg.setDate(null);
+        BloqDesBoton(GuarEditPreg, "...");
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
+        if (!asig.equals("...") && !tem.equals("...") && !nivel.equals("...")) {
+
+            MostrarPreg(asig, tem, nivel, profesor);
+            AdAsig12.setVisible(false);
+        } else {
+            AdAsig12.setVisible(true);
+        }
     }//GEN-LAST:event_ComboNivPregPopupMenuWillBecomeInvisible
 
-    private void BottonGenrExam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExam1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BottonGenrExam1ActionPerformed
+    private void BotonDesBloqueoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDesBloqueoActionPerformed
+        if (BotonDesBloqueo.getText().equals("Desbloquear")) {
+            int n = JOptionPane.showConfirmDialog(null, "Desea Bloquear esta pregunta?", "Información", JOptionPane.YES_NO_OPTION);
+            if (n == JOptionPane.YES_OPTION) {
+                JDateChooser jd = new JDateChooser();
+                String message = "Seleccione la nueva fecha de ultimo uso:\n";
+                Object[] params = {message, jd};
+                JOptionPane.showConfirmDialog(null, params, "Fecha", JOptionPane.PLAIN_MESSAGE);
+                if (((JDateChooser) params[1]).getDate() != null) {
+                    String s = "";
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                    s = sdf.format(((JDateChooser) params[1]).getDate());
+                    FechaPreg.setDate(((JDateChooser) params[1]).getDate());
+                    EstadPreg.setText("No Disponible");
+                    JOptionPane.showMessageDialog(null, "Si desea mantener los cambios, presione Editar>>Guardar.", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        } else {
+            int n = JOptionPane.showConfirmDialog(null, "Si desea mantener los cambios, presione Editar>>Guardar.", "Información", JOptionPane.YES_NO_OPTION);
+            if (n == JOptionPane.YES_OPTION) {
+                FechaPreg.setDate(null);
+                EstadPreg.setText("Disponible");
+            }
+        }
+        File file;
+        Image foto;
+        BotonDesBloqueo.setEnabled(true);
+        if (EstadPreg.equals("Disponible")) {
+            file = new File("src\\Imagenes\\Des.png");
+            BotonDesBloqueo.setText("Desbloquear");
+            foto = getToolkit().getImage(String.valueOf(file));
+            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
+        } else {
+            BotonDesBloqueo.setText("Bloquear");
+            file = new File("src\\Imagenes\\Bloq.png");
+            foto = getToolkit().getImage(String.valueOf(file));
+            BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
+        }
+    }//GEN-LAST:event_BotonDesBloqueoActionPerformed
 
     private void ComboAsigEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsigEditActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboAsigEditActionPerformed
+
+    private void ComboNivelAPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivelAPopupMenuWillBecomeInvisible
+        if (ComboNivelA.getSelectedItem().equals("...")) {
+            JOptionPane.showInputDialog(this, "Opcion no valida", "error", JOptionPane.ERROR_MESSAGE);
+            GuarEditPreg.setEnabled(false);
+            ButtomEditPreg.setEnabled(false);
+        } else {
+            ButtomEditPreg.setEnabled(true);
+            GuarEditPreg.setEnabled(true);
+        }            // TODO add your handling code here:
+    }//GEN-LAST:event_ComboNivelAPopupMenuWillBecomeInvisible
+
+    private void CorreoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoPerfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CorreoPerfilActionPerformed
 
     ///METODOS!!
     public Integer TotalPregPorAsig() {// El total de preguntas que posee una asignatura
@@ -4590,10 +4765,10 @@ public class Principal extends javax.swing.JFrame {
             nombre = registros.get(i)[2];
             if (nombre.equals(Usuario)) {
                 if ((registros.get(i)[0]).equals(Nombre)) {
-                    Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + Imagen + "\r\n";
+                    Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + Imagen + "," + registros.get(i)[5] + "\r\n";
                 }
             } else {
-                Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "\r\n";
+                Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
             }
         }
         File file = new File("Usuario.txt");
@@ -4722,7 +4897,7 @@ public class Principal extends javax.swing.JFrame {
             if (asig.getNombre().equals(asigna.getSelectedItem())) {
                 for (Tema tema : asig.getTemas()) {
                     if (tema.getNombre().equals(temas.getSelectedItem())) {
-                        return Aleatorio2(tema.getPreguntas(Integer.parseInt((String) ndif.getSelectedItem())));
+                        return Aleatorio2(tema.getPreguntas(ndif.getSelectedIndex()));
                     }
                 }
             }
@@ -4734,7 +4909,7 @@ public class Principal extends javax.swing.JFrame {
     private String Aleatorio2(ArrayList<Pregunta> p) {
         String a = (String) asigna.getSelectedItem();
         String b = String.valueOf(temas.getSelectedIndex());
-        String c = (String) ndif.getSelectedItem();
+        String c = String.valueOf(ndif.getSelectedIndex());
         int tope = p.size();
         if (tope != 0) {
             ArrayList<Pregunta> pregDispo = new ArrayList();
@@ -4743,12 +4918,17 @@ public class Principal extends javax.swing.JFrame {
                     pregDispo.add(pregunta);
                 }
             }
-            System.out.println("" + tope);
+            System.out.println("Tamaño disponible " + pregDispo.size());
             int sw = 2;
             if (!pregDispo.isEmpty()) {
 
                 while (sw == 2) {
-                    int aleatorio = ThreadLocalRandom.current().nextInt(1, tope + 1);
+                    int aleatorio=0;
+                    if (pregDispo.size() > 1) {
+                        aleatorio = ThreadLocalRandom.current().nextInt(1, pregDispo.size());
+                    } else {
+                        aleatorio = 1;
+                    }
                     Pregunta po = pregDispo.get(aleatorio - 1);
                     if (po.getEstado().equals("Disponible")) {
                         JOptionPane.showMessageDialog(null, "La pregunta ha sido añadida con exito.");
@@ -4756,10 +4936,10 @@ public class Principal extends javax.swing.JFrame {
                     }
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "El Banco de preguntas seleccionado todas las preguntas ya han sido usadas anteriormente.");
+                JOptionPane.showMessageDialog(null, "El Banco de preguntas seleccionado todas las preguntas /n/r ya han sido usadas anteriormente.");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "El Banco de preguntas seleccionado se encuentra vacio, por favor llenar este banco previamente si desea utilizarlo.");
+            JOptionPane.showMessageDialog(null, "El Banco de preguntas seleccionado se encuentra vacio,/n/r por favor llenar este banco previamente si desea utilizarlo.");
         }
 
         return null;
@@ -4831,13 +5011,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Asig3;
     private javax.swing.JPanel Asignatura;
     private javax.swing.JLabel AvisoNumeros;
+    private rsbuttom.RSButtonMetro BotonDesBloqueo;
     private rsbuttom.RSButtonMetro BottonAsignatura;
     private rsbuttom.RSButtonMetro BottonCamContra;
     private rsbuttom.RSButtonMetro BottonEditAsig;
     private rsbuttom.RSButtonMetro BottonEditFoto;
     private rsbuttom.RSButtonMetro BottonEditInfo;
     private rsbuttom.RSButtonMetro BottonGenrExam;
-    private rsbuttom.RSButtonMetro BottonGenrExam1;
     private rsbuttom.RSButtonMetro BottonHome;
     private rsbuttom.RSButtonMetro BottonPerfil;
     private rsbuttom.RSButtonMetro BottonPreguntas;
@@ -4865,6 +5045,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboNivel;
     private javax.swing.JComboBox<String> ComboNivelA;
     private javax.swing.JComboBox<String> ComboTemPreg;
+    private javax.swing.JTextField CorreoPerfil;
     private javax.swing.JButton DesButto;
     private javax.swing.JTextArea DesEditAsig;
     private javax.swing.JTextArea DesEditTem;
@@ -4914,7 +5095,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel TemAd;
     private javax.swing.JPanel Tema;
     private javax.swing.JTextField Usuario1;
-    private javax.swing.JTextField Usuario2;
     private javax.swing.JPasswordField ValNuevaContra;
     private javax.swing.JPanel Ver;
     private rsbuttom.RSButtonMetro addAsig;
@@ -4944,6 +5124,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;

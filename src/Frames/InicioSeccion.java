@@ -8,9 +8,13 @@ package Frames;
 import Classes.Controlador;
 import Classes.Correo;
 import Classes.Metodos;
+import java.awt.Color;
+import java.awt.Image;
+import java.io.File;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -27,6 +31,7 @@ public class InicioSeccion extends javax.swing.JFrame {
 
     public static String usuario = "";
     public static String nombre_profesor = "";
+    public static String Correo = "";
     int mouseX;
     int mouseY;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -35,6 +40,8 @@ public class InicioSeccion extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         IconCerrar = new javax.swing.JLabel();
+        IconMin = new javax.swing.JLabel();
+        IconCerrar1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         rSButtonMetro1 = new rsbuttom.RSButtonMetro();
         ButtonRecuperarContraseña = new rsbuttom.RSButtonMetro();
@@ -59,16 +66,42 @@ public class InicioSeccion extends javax.swing.JFrame {
                 jPanel2MousePressed(evt);
             }
         });
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Cruz.png"))); // NOI18N
         IconCerrar.setToolTipText("");
-        IconCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, 35));
+
+        IconMin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconMin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MinBlanco.png"))); // NOI18N
+        IconMin.setToolTipText("");
+        IconMin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                IconCerrarMouseClicked(evt);
+                IconMinMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                IconMinMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                IconMinMouseExited(evt);
             }
         });
-        jPanel2.add(IconCerrar, java.awt.BorderLayout.EAST);
+        jPanel2.add(IconMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 0, 30, 33));
+
+        IconCerrar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconCerrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarBlanco.png"))); // NOI18N
+        IconCerrar1.setToolTipText("");
+        IconCerrar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IconCerrar1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                IconCerrar1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                IconCerrar1MouseExited(evt);
+            }
+        });
+        jPanel2.add(IconCerrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 0, 31, 33));
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
@@ -245,6 +278,7 @@ public class InicioSeccion extends javax.swing.JFrame {
             rSButtonMetro1.setEnabled(false);
             usuario = Usuario.getText();
             nombre_profesor = met.EncontrarNombre(direUsu, usuario);
+            Correo = met.EncontrarCorreo(direUsu, usuario);
             Principal prin = new Principal();
             prin.setVisible(true);
             this.setVisible(false);
@@ -256,18 +290,17 @@ public class InicioSeccion extends javax.swing.JFrame {
     private void BottonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonRegistroActionPerformed
         Registrarse r = new Registrarse();
         r.setVisible(true);
+        r.jLabel9.setForeground(Color.decode("#00678e"));
         this.setVisible(false);
     }//GEN-LAST:event_BottonRegistroActionPerformed
 
     private void ButtonRecuperarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRecuperarContraseñaActionPerformed
         RecuperarContraseña RC = new RecuperarContraseña();
+        RC.BloqDesBoton(RC.EC, "...");
+        RC.BloqDesBoton(RC.CC, "...");
         RC.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ButtonRecuperarContraseñaActionPerformed
-
-    private void IconCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_IconCerrarMouseClicked
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         int x = evt.getXOnScreen();
@@ -279,6 +312,38 @@ public class InicioSeccion extends javax.swing.JFrame {
         mouseX = evt.getX();
         mouseY = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
+
+    private void IconMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_IconMinMouseClicked
+
+    private void IconMinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseEntered
+        File file = new File("src\\Imagenes\\z.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconMin.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconMinMouseEntered
+
+    private void IconMinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseExited
+        File file = new File("src\\Imagenes\\MinBlanco.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconMin.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconMinMouseExited
+
+    private void IconCerrar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_IconCerrar1MouseClicked
+
+    private void IconCerrar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseEntered
+        File file = new File("src\\Imagenes\\y.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconCerrar1.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconCerrar1MouseEntered
+
+    private void IconCerrar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseExited
+        File file = new File("src\\Imagenes\\CerrarBlanco.png");
+        Image foto = getToolkit().getImage(String.valueOf(file));
+        IconCerrar1.setIcon(new ImageIcon(foto));
+    }//GEN-LAST:event_IconCerrar1MouseExited
 
     public static void main(String[] args) {
         InicioSeccion ini = new InicioSeccion();
@@ -300,6 +365,8 @@ public class InicioSeccion extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro BottonRegistro;
     private rsbuttom.RSButtonMetro ButtonRecuperarContraseña;
     private javax.swing.JLabel IconCerrar;
+    private javax.swing.JLabel IconCerrar1;
+    private javax.swing.JLabel IconMin;
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField Usuario;
     private javax.swing.JLabel jLabel2;
