@@ -22,12 +22,14 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Frame;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -313,6 +315,11 @@ public class Principal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 87, 116));
         setMinimumSize(new java.awt.Dimension(1050, 800));
         setSize(new java.awt.Dimension(1017, 1093));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
         PanelMenu.setMaximumSize(new java.awt.Dimension(217, 830));
@@ -3485,10 +3492,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void ButtonGuardarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGuardarFotoActionPerformed
 
-        File file = new File("src\\Imagenes\\Perfil Azul.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
-        File file2 = new File("src\\Imagenes\\Perfil Blanco.png");
-        Image foto2 = getToolkit().getImage(String.valueOf(file2));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/Perfil Azul.png");
+        ClassLoader classLoader2 = Thread.currentThread().getContextClassLoader();
+        URL foto2 = classLoader.getResource("Imagenes/Perfil Blanco.png");
         Foto1.setIcon(new ImageIcon(foto));
         Foto2.setIcon(new ImageIcon(foto2));
         try {
@@ -4225,20 +4232,19 @@ public class Principal extends javax.swing.JFrame {
         ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
         EstadPreg.setText(h[2]);
         File file;
-        Image foto;
         BotonDesBloqueo.setEnabled(true);
         if (h[2].equals("Disponible")) {
             BotonDesBloqueo.setText("Bloquear");
-            file = new File("src\\Imagenes\\Bloq.png");
-            foto = getToolkit().getImage(String.valueOf(file));
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Bloq.png");
             BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
             BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
             BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
             BotonDesBloqueo.setIcon(new ImageIcon(foto));
         } else {
-            file = new File("src\\Imagenes\\Des.png");
             BotonDesBloqueo.setText("Desbloquear");
-            foto = getToolkit().getImage(String.valueOf(file));
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Des.png");
             BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
             BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
             BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
@@ -4270,23 +4276,22 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         File file;
-        Image foto;
         BotonDesBloqueo.setEnabled(true);
         if (h[2].equals("Disponible")) {
-            file = new File("src\\Imagenes\\Des.png");
-            BotonDesBloqueo.setText("Desbloquear");
-            foto = getToolkit().getImage(String.valueOf(file));
-            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
-            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
-            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
-            BotonDesBloqueo.setIcon(new ImageIcon(foto));
-        } else {
             BotonDesBloqueo.setText("Bloquear");
-            file = new File("src\\Imagenes\\Bloq.png");
-            foto = getToolkit().getImage(String.valueOf(file));
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Bloq.png");
             BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
             BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
             BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
+        } else {
+            BotonDesBloqueo.setText("Desbloquear");
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Des.png");
+            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
             BotonDesBloqueo.setIcon(new ImageIcon(foto));
         }
         ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
@@ -4663,23 +4668,22 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         File file;
-        Image foto;
         BotonDesBloqueo.setEnabled(true);
         if (EstadPreg.equals("Disponible")) {
-            file = new File("src\\Imagenes\\Des.png");
-            BotonDesBloqueo.setText("Desbloquear");
-            foto = getToolkit().getImage(String.valueOf(file));
-            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
-            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
-            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
-            BotonDesBloqueo.setIcon(new ImageIcon(foto));
-        } else {
             BotonDesBloqueo.setText("Bloquear");
-            file = new File("src\\Imagenes\\Bloq.png");
-            foto = getToolkit().getImage(String.valueOf(file));
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Bloq.png");
             BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
             BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
             BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
+            BotonDesBloqueo.setIcon(new ImageIcon(foto));
+        } else {
+            BotonDesBloqueo.setText("Desbloquear");
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Des.png");
+            BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
+            BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
+            BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
             BotonDesBloqueo.setIcon(new ImageIcon(foto));
         }
     }//GEN-LAST:event_BotonDesBloqueoActionPerformed
@@ -4702,6 +4706,12 @@ public class Principal extends javax.swing.JFrame {
     private void CorreoPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoPerfilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CorreoPerfilActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+ ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/Libro.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(foto));       // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     ///METODOS!!
     public Integer TotalPregPorAsig() {// El total de preguntas que posee una asignatura
@@ -4923,7 +4933,7 @@ public class Principal extends javax.swing.JFrame {
             if (!pregDispo.isEmpty()) {
 
                 while (sw == 2) {
-                    int aleatorio=0;
+                    int aleatorio = 0;
                     if (pregDispo.size() > 1) {
                         aleatorio = ThreadLocalRandom.current().nextInt(1, pregDispo.size());
                     } else {

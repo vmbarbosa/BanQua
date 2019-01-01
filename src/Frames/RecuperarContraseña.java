@@ -10,10 +10,12 @@ import Classes.Correo;
 import Classes.Metodos;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
@@ -32,6 +34,10 @@ public class RecuperarContraseña extends javax.swing.JFrame {
 
     public RecuperarContraseña() {
         initComponents();
+        UsuarioCo.setText("");
+        CorreoCampo.setText("");
+        UsuarioCe.setText("");
+        Cedu.setText("");
     }
 
     public static String usuario = "";
@@ -68,6 +74,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 87, 116));
         jPanel2.setPreferredSize(new java.awt.Dimension(405, 35));
@@ -522,7 +533,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                     nombre = registros.get(i)[2];
                     if (nombre.equals(UsuarioCe.getText())) {
                         if ((registros.get(i)[1]).equals(Cedu.getText())) {
-                            Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + codigo + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
+                            Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + Contraseña + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
                         }
                     } else {
                         Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
@@ -536,9 +547,14 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                     bw.write(Total);
                     bw.close();
                     fw.close();
+                    JOptionPane.showMessageDialog(this, "Contraseña ha sido cambiada.", "Informacion", JOptionPane.INFORMATION_MESSAGE);
                 } catch (IOException ex) {
                     Logger.getLogger(RecuperarContraseña.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                dispose();
+                this.setVisible(false);
+                InicioSeccion ini = new InicioSeccion();
+                ini.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "No ha escrito una nueva contraseña.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -557,26 +573,26 @@ public class RecuperarContraseña extends javax.swing.JFrame {
     }//GEN-LAST:event_IconMinMouseClicked
 
     private void IconCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseExited
-        File file = new File("src\\Imagenes\\CerrarBlanco.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/CerrarBlanco.png");
         IconCerrar.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconCerrarMouseExited
 
     private void IconMinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseEntered
-        File file = new File("src\\Imagenes\\z.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
-        IconMin.setIcon(new ImageIcon(foto));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL resource = classLoader.getResource("Imagenes/z.png");
+        IconMin.setIcon(new ImageIcon(resource));
     }//GEN-LAST:event_IconMinMouseEntered
 
     private void IconMinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseExited
-        File file = new File("src\\Imagenes\\MinBlanco.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/MinBlanco.png");
         IconMin.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconMinMouseExited
 
     private void IconCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrarMouseEntered
-        File file = new File("src\\Imagenes\\y.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/y.png");
         IconCerrar.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconCerrarMouseEntered
 
@@ -615,6 +631,12 @@ public class RecuperarContraseña extends javax.swing.JFrame {
             BloqDesBoton(EC, "");
         }
     }//GEN-LAST:event_CorreoCampoKeyReleased
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/Libro.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(foto));        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     //Metodo de Principal
     public void BloqDesBoton(RSButtonMetro Boton, String Condicion) {// Pone los botones de color gris o azul dependiendo de la opcion de los JComboBox

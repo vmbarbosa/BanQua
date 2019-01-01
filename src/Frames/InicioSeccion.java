@@ -10,7 +10,9 @@ import Classes.Correo;
 import Classes.Metodos;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
+import java.net.URL;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,6 +56,11 @@ public class InicioSeccion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 87, 116));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -272,6 +279,8 @@ public class InicioSeccion extends javax.swing.JFrame {
     }
 
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
+        File f = new File("Usuario.txt");
+        if(f.exists()){
         Metodos met = new Metodos();
         String direUsu = "Usuario.txt";
         if (met.EncontrarUsuario(direUsu, Usuario.getText(), Password.getText(), 2)) {
@@ -284,6 +293,8 @@ public class InicioSeccion extends javax.swing.JFrame {
             this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "Ingreso Erroneo", "Verificar contraseña y usuario.", JOptionPane.ERROR_MESSAGE);
+        }}else{
+             JOptionPane.showMessageDialog(this, "Ingreso Erroneo", "No se ha registrado ningun usuario.", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
@@ -318,14 +329,14 @@ public class InicioSeccion extends javax.swing.JFrame {
     }//GEN-LAST:event_IconMinMouseClicked
 
     private void IconMinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseEntered
-        File file = new File("src\\Imagenes\\z.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/z.png");
         IconMin.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconMinMouseEntered
 
     private void IconMinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseExited
-        File file = new File("src\\Imagenes\\MinBlanco.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/MinBlanco.png");
         IconMin.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconMinMouseExited
 
@@ -334,16 +345,22 @@ public class InicioSeccion extends javax.swing.JFrame {
     }//GEN-LAST:event_IconCerrar1MouseClicked
 
     private void IconCerrar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseEntered
-        File file = new File("src\\Imagenes\\y.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
-        IconCerrar1.setIcon(new ImageIcon(foto));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL resource = classLoader.getResource("Imagenes/y.png");
+        IconCerrar1.setIcon(new ImageIcon(resource));
     }//GEN-LAST:event_IconCerrar1MouseEntered
 
     private void IconCerrar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseExited
-        File file = new File("src\\Imagenes\\CerrarBlanco.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/CerrarBlanco.png");
         IconCerrar1.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconCerrar1MouseExited
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/Libro.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(foto));
+    }//GEN-LAST:event_formWindowActivated
 
     public static void main(String[] args) {
         InicioSeccion ini = new InicioSeccion();

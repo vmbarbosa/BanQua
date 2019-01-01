@@ -13,8 +13,10 @@ import Classes.Metodos;
 import static Frames.InicioSeccion.usuario;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -105,6 +107,11 @@ public class Registrarse extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(0, 87, 116));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -412,6 +419,7 @@ public class Registrarse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BottonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonRegistrarActionPerformed
+
         if (met.confNum(this.Cedula1.getText())) {
             if (Contra.getText().equals(VerificarContra1.getText())) {
                 String foto2 = "";
@@ -442,7 +450,15 @@ public class Registrarse extends javax.swing.JFrame {
                     }
                     bw.close();
                 } catch (Exception e) {
-                */
+                 */
+                File Usu = new File("Usuario.txt");
+                if (!Usu.exists()) {
+                    try {
+                        Usu.createNewFile();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                 Metodos met = new Metodos();
                 String x = "Usuario.txt";
                 String temp;
@@ -450,7 +466,7 @@ public class Registrarse extends javax.swing.JFrame {
                 try {
                     temp = met.concatenar(x);
 
-                    met.guardar(temp,x,Nombre2 + "," + Cedula2 + "," + NickName2 + "," + Pasword2 + "," + foto2 + "," + Correo2);
+                    met.guardar(temp, x, Nombre2 + "," + Cedula2 + "," + NickName2 + "," + Pasword2 + "," + foto2 + "," + Correo2);
                 } catch (IOException ex) {
                     Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -543,14 +559,14 @@ public class Registrarse extends javax.swing.JFrame {
     }//GEN-LAST:event_IconCerrar1MouseClicked
 
     private void IconCerrar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseEntered
-        File file = new File("src\\Imagenes\\y.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
-        IconCerrar1.setIcon(new ImageIcon(foto));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL resource = classLoader.getResource("Imagenes/y.png");
+        IconCerrar1.setIcon(new ImageIcon(resource));
     }//GEN-LAST:event_IconCerrar1MouseEntered
 
     private void IconCerrar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconCerrar1MouseExited
-        File file = new File("src\\Imagenes\\CerrarBlanco.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/CerrarBlanco.png");
         IconCerrar1.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconCerrar1MouseExited
 
@@ -559,14 +575,14 @@ public class Registrarse extends javax.swing.JFrame {
     }//GEN-LAST:event_IconMinMouseClicked
 
     private void IconMinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseEntered
-        File file = new File("src\\Imagenes\\z.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/z.png");
         IconMin.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconMinMouseEntered
 
     private void IconMinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconMinMouseExited
-        File file = new File("src\\Imagenes\\MinBlanco.png");
-        Image foto = getToolkit().getImage(String.valueOf(file));
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/MinBlanco.png");
         IconMin.setIcon(new ImageIcon(foto));
     }//GEN-LAST:event_IconMinMouseExited
 
@@ -578,6 +594,12 @@ public class Registrarse extends javax.swing.JFrame {
             this.jLabel9.setForeground(Color.decode("#FFCC00"));
         }
     }//GEN-LAST:event_CorreoKeyReleased
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        URL foto = classLoader.getResource("Imagenes/Libro.png");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(foto));        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro BottonIngresarFoto;
