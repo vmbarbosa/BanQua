@@ -2389,7 +2389,7 @@ public class Principal extends javax.swing.JFrame {
     EditPreg.add(jLabel54, gridBagConstraints);
 
     ComboNivelA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    ComboNivelA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ComboNivelA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
     ComboNivelA.setFocusable(false);
     ComboNivelA.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivelA.setMinimumSize(new java.awt.Dimension(40, 20));
@@ -2631,7 +2631,7 @@ public class Principal extends javax.swing.JFrame {
     EditPreg.add(jLabel58, gridBagConstraints);
 
     ComboNivPreg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-    ComboNivPreg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1", "2", "3" }));
+    ComboNivPreg.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
     ComboNivPreg.setFocusable(false);
     ComboNivPreg.setMaximumSize(new java.awt.Dimension(40, 20));
     ComboNivPreg.setMinimumSize(new java.awt.Dimension(40, 20));
@@ -2798,10 +2798,10 @@ public class Principal extends javax.swing.JFrame {
     public void FotoDefault() {
         Metodos met = new Metodos();
         if (met.EncontrarFoto("Usuario.txt", usuario).equals("$")) {
-            File file = new File("src\\Imagenes\\Perfil Azul.png");
-            Image foto = getToolkit().getImage(String.valueOf(file));
-            File file2 = new File("src\\Imagenes\\Perfil Blanco.png");
-            Image foto2 = getToolkit().getImage(String.valueOf(file2));
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            URL foto = classLoader.getResource("Imagenes/Perfil Azul.png");
+            ClassLoader classLoader2 = Thread.currentThread().getContextClassLoader();
+            URL foto2 = classLoader.getResource("Imagenes/Perfil Blanco.png");
             Foto1.setIcon(new ImageIcon(foto));
             Foto2.setIcon(new ImageIcon(foto2));
         } else {
@@ -3988,8 +3988,8 @@ public class Principal extends javax.swing.JFrame {
                 for (Tema tema : asignatura.getTemas()) {
                     if (asignatura.getNombre().equals(ComboAsigPreg.getSelectedItem())) {
                         if (tema.getNombre().equals(ComboTemPreg.getSelectedItem())) {
-                            for (Pregunta pregunta : tema.getPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()))) {
-                                if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
+                            for (Pregunta pregunta : tema.getPreguntas(ComboNivPreg.getSelectedIndex())) {
+                                if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 0).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString())) {
 
                                 } else {
                                     PregTemporal.add(pregunta);
@@ -3997,7 +3997,7 @@ public class Principal extends javax.swing.JFrame {
                                 }
                             }
 
-                            profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(Integer.parseInt((String) ComboNivPreg.getSelectedItem()), PregTemporal);
+                            profesor.getAsignaturas().get(i).getTemas().get(cont).EnviarPreguntas(ComboNivPreg.getSelectedIndex(), PregTemporal);
                             cont = i;
                         } else {
                         }
@@ -4006,7 +4006,7 @@ public class Principal extends javax.swing.JFrame {
                 }
                 i++;
             }
-            File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
+            File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
             FileWriter fw;
             try {
                 fw = new FileWriter(file);
@@ -4031,7 +4031,7 @@ public class Principal extends javax.swing.JFrame {
                 sw3 = true;
                 String asig = (String) ComboAsigPreg.getSelectedItem();
                 String tema = (String) ComboTemPreg.getSelectedItem();
-                String nivel = (String) ComboNivPreg.getSelectedItem();
+                String nivel = String.valueOf(ComboNivPreg.getSelectedIndex());
                 MostrarPreg(asig, tema, nivel, profesor);
                 BotonDesBloqueo.setText("");
                 BotonDesBloqueo.setIcon(null);
@@ -4055,7 +4055,7 @@ public class Principal extends javax.swing.JFrame {
         Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigPreg.getSelectedIndex() - 1);
         Tema tematica = asignatura.getTemas().get(ComboTemPreg.getSelectedIndex() - 1);
         for (Pregunta pregunta : tematica.getPreguntas(ComboNivPreg.getSelectedIndex())) {
-            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 2).toString())) {
+            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 0).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString())) {
                 //Entra la informacion de la pregunta coincide
                 Date ka = FechaPreg.getDate();
                 String fech;
@@ -4066,21 +4066,21 @@ public class Principal extends javax.swing.JFrame {
                     fech = FormaFecha.format(FechaPreg.getDate());
                 }
                 //Se prueba si la pregunta se le modifica la dificultad
-                if (ComboNivPreg.getSelectedItem().equals(ComboNivelA.getSelectedItem())) {
+                if (String.valueOf(ComboNivPreg.getSelectedIndex()).equals(String.valueOf(ComboNivelA.getSelectedIndex()))) {
                     //Si no es asi solo se agregan los cambios que se hicieron
-                    PregTemporal.add(new Pregunta(InfoPreg.getText(), Integer.parseInt((String) ComboNivelA.getSelectedItem()), EstadPreg.getText(), fech));
-                    Total = Total + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fech + ";" + "\r\n";
+                    PregTemporal.add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
+                    Total = Total + ComboNivelA.getSelectedIndex() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fech + ";" + "\r\n";
                 } else {
                     //Si la pregunta cambio de dificultad es necesario agregarla al txt de preguntas de la nueva dificultad
                     String TotalAuxiliar = "";
                     for (Pregunta pregunt : tematica.getPreguntas(ComboNivelA.getSelectedIndex())) {
                         TotalAuxiliar = TotalAuxiliar + +pregunt.getNivel() + ";" + pregunt.getContenido() + ";" + pregunt.getEstado() + ";" + pregunt.getFecha() + ";" + "\r\n";
                     }
-                    TotalAuxiliar = TotalAuxiliar + ComboNivelA.getSelectedItem() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fech + ";" + "\r\n";
+                    TotalAuxiliar = TotalAuxiliar + ComboNivelA.getSelectedIndex() + ";" + InfoPreg.getText() + ";" + EstadPreg.getText() + ";" + fech + ";" + "\r\n";
                     //Se agregan los cambios a la variable statica Profesor
                     tematica.getPreguntas(ComboNivelA.getSelectedIndex()).add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
                     //Se escribe la pregunta en su nueva dificultad
-                    File fileA = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedItem() + ".txt");
+                    File fileA = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedIndex() + ".txt");
                     FileWriter fwA;
                     try {
                         fwA = new FileWriter(fileA);
@@ -4100,7 +4100,7 @@ public class Principal extends javax.swing.JFrame {
         }
         tematica.EnviarPreguntas(ComboNivPreg.getSelectedIndex(), PregTemporal);
 
-        File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedItem() + ".txt");
+        File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
         FileWriter fw;
         try {
             fw = new FileWriter(file);
@@ -4126,7 +4126,7 @@ public class Principal extends javax.swing.JFrame {
             sw3 = true;
             String asig = (String) ComboAsigPreg.getSelectedItem();
             String temap = (String) ComboTemPreg.getSelectedItem();
-            String nivel = (String) ComboNivPreg.getSelectedItem();
+            String nivel = String.valueOf(ComboNivPreg.getSelectedIndex());
             MostrarPreg(asig, temap, nivel, profesor);
             JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
@@ -4219,9 +4219,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaTemMouseReleased
 
     private void TablaPregEditKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaPregEditKeyReleased
-        String[] h = new String[4];
+        String[] h = new String[3];
         BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "");
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i) != null) {
                 h[i] = TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i).toString();
             } else {
@@ -4229,11 +4229,11 @@ public class Principal extends javax.swing.JFrame {
             }
         }
 
-        ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
-        EstadPreg.setText(h[2]);
+        ComboNivelA.setSelectedIndex(ComboNivPreg.getSelectedIndex());
+        EstadPreg.setText(h[1]);
         File file;
         BotonDesBloqueo.setEnabled(true);
-        if (h[2].equals("Disponible")) {
+        if (h[1].equals("Disponible")) {
             BotonDesBloqueo.setText("Bloquear");
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             URL foto = classLoader.getResource("Imagenes/Bloq.png");
@@ -4250,7 +4250,7 @@ public class Principal extends javax.swing.JFrame {
             BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
             BotonDesBloqueo.setIcon(new ImageIcon(foto));
         }
-        String[] dateValue = h[3].split("/");
+        String[] dateValue = h[2].split("/");
         Date date = null;
         if (dateValue.length == 1) {
             date = null;
@@ -4262,22 +4262,25 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         FechaPreg.setDate(date);
-        InfoPreg.setText(h[1]);
+        InfoPreg.setText(h[0]);
     }//GEN-LAST:event_TablaPregEditKeyReleased
 
     private void TablaPregEditMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPregEditMouseReleased
-        String[] h = new String[4];
+        String[] h = new String[3];
         BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "");
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             if (TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i) != null) {
                 h[i] = TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), i).toString();
             } else {
                 h[i] = "";
             }
         }
+
+        ComboNivelA.setSelectedIndex(ComboNivPreg.getSelectedIndex());
+        EstadPreg.setText(h[1]);
         File file;
         BotonDesBloqueo.setEnabled(true);
-        if (h[2].equals("Disponible")) {
+        if (h[1].equals("Disponible")) {
             BotonDesBloqueo.setText("Bloquear");
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             URL foto = classLoader.getResource("Imagenes/Bloq.png");
@@ -4294,14 +4297,7 @@ public class Principal extends javax.swing.JFrame {
             BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
             BotonDesBloqueo.setIcon(new ImageIcon(foto));
         }
-        ComboNivelA.setSelectedIndex(Integer.parseInt(h[0]));
-        EstadPreg.setText(h[2]);
-        if (h[2].equals("Disponible")) {
-            DesButto.setBackground(Color.GREEN);
-        } else {
-            DesButto.setBackground(Color.RED);
-        }
-        String[] dateValue = h[3].split("/");
+        String[] dateValue = h[2].split("/");
         Date date = null;
         if (dateValue.length == 1) {
             date = null;
@@ -4313,7 +4309,7 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         FechaPreg.setDate(date);
-        InfoPreg.setText(h[1]);
+        InfoPreg.setText(h[0]);
     }//GEN-LAST:event_TablaPregEditMouseReleased
 
     private void DesButtoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesButtoActionPerformed
@@ -4618,7 +4614,7 @@ public class Principal extends javax.swing.JFrame {
     private void ComboNivPregPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_ComboNivPregPopupMenuWillBecomeInvisible
         String asig = (String) ComboAsigPreg.getSelectedItem();
         String tem = (String) ComboTemPreg.getSelectedItem();
-        String nivel = (String) ComboNivPreg.getSelectedItem();
+        String nivel = String.valueOf(ComboNivPreg.getSelectedIndex());
         EstadPreg.setEditable(false);
         EstadPreg.setText("");
         InfoPreg.setEditable(false);
@@ -4644,7 +4640,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboNivPregPopupMenuWillBecomeInvisible
 
     private void BotonDesBloqueoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDesBloqueoActionPerformed
-        if (BotonDesBloqueo.getText().equals("Desbloquear")) {
+        if (BotonDesBloqueo.getText().equals("Bloquear")) {
             int n = JOptionPane.showConfirmDialog(null, "Desea Bloquear esta pregunta?", "Información", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
                 JDateChooser jd = new JDateChooser();
@@ -4658,13 +4654,26 @@ public class Principal extends javax.swing.JFrame {
                     FechaPreg.setDate(((JDateChooser) params[1]).getDate());
                     EstadPreg.setText("No Disponible");
                     JOptionPane.showMessageDialog(null, "Si desea mantener los cambios, presione Editar>>Guardar.", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                    ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+                    URL foto = classLoader.getResource("Imagenes/Des.png");
+                    BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
+                    BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
+                    BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
+                    BotonDesBloqueo.setIcon(new ImageIcon(foto));
                 }
             }
         } else {
-            int n = JOptionPane.showConfirmDialog(null, "Si desea mantener los cambios, presione Editar>>Guardar.", "Información", JOptionPane.YES_NO_OPTION);
+            int n = JOptionPane.showConfirmDialog(null, "Desea Desbloquear esta pregunta?.", "Información", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
                 FechaPreg.setDate(null);
                 EstadPreg.setText("Disponible");
+                BotonDesBloqueo.setText("Bloquear");
+                ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+                URL foto = classLoader.getResource("Imagenes/Bloq.png");
+                BotonDesBloqueo.setColorHover(Color.decode("#FF6B6B"));
+                BotonDesBloqueo.setColorNormal(Color.decode("#FF3333"));
+                BotonDesBloqueo.setColorPressed(Color.decode("#FF3333"));
+                BotonDesBloqueo.setIcon(new ImageIcon(foto));
             }
         }
         File file;
@@ -4708,7 +4717,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_CorreoPerfilActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
- ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         URL foto = classLoader.getResource("Imagenes/Libro.png");
         setIconImage(Toolkit.getDefaultToolkit().getImage(foto));       // TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
@@ -4876,24 +4885,21 @@ public class Principal extends javax.swing.JFrame {
         }
         if (sw3 == true) {
             modelo.setColumnCount(0);
-            modelo.addColumn("Nivel");
             modelo.addColumn("Pregunta");
             modelo.addColumn("Estado");
             modelo.addColumn("Ultima vez");
             sw3 = false;
         }
-        String niv = "";
         String pre = "";
         String est = "";
         String fec = "";
         temp = tem.getPreguntas(lvl);
         for (Pregunta pr : temp) {
-            niv = z;
             pre = pr.getContenido();
             est = pr.getEstado();
             fec = pr.getFecha();
-            if (!niv.equals("") && !pre.equals("") && !est.equals("") && !fec.equals("")) {
-                modelo.addRow(new Object[]{niv, pre, est, fec});
+            if (!pre.equals("") && !est.equals("") && !fec.equals("")) {
+                modelo.addRow(new Object[]{pre, est, fec});
             }
         }
         sw1 = true;

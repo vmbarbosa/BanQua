@@ -3813,9 +3813,9 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
                         <StringItem index="0" value="..."/>
-                        <StringItem index="1" value="1"/>
-                        <StringItem index="2" value="2"/>
-                        <StringItem index="3" value="3"/>
+                        <StringItem index="1" value="Facil"/>
+                        <StringItem index="2" value="Medio"/>
+                        <StringItem index="3" value="Dificil"/>
                       </StringArray>
                     </Property>
                     <Property name="focusable" type="boolean" value="false"/>
@@ -4116,9 +4116,9 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
                         <StringItem index="0" value="..."/>
-                        <StringItem index="1" value="1"/>
-                        <StringItem index="2" value="2"/>
-                        <StringItem index="3" value="3"/>
+                        <StringItem index="1" value="Facil"/>
+                        <StringItem index="2" value="Medio"/>
+                        <StringItem index="3" value="Dificil"/>
                       </StringArray>
                     </Property>
                     <Property name="focusable" type="boolean" value="false"/>
