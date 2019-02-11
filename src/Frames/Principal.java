@@ -114,27 +114,31 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jScrollPane11 = new javax.swing.JScrollPane();
         PanelMenu = new javax.swing.JPanel();
         Foto2 = new javax.swing.JLabel();
         BottonEditInfo = new rsbuttom.RSButtonMetro();
-        BottonGenrExam = new rsbuttom.RSButtonMetro();
         BottonHome = new rsbuttom.RSButtonMetro();
         BottonPerfil = new rsbuttom.RSButtonMetro();
         jPanel21 = new javax.swing.JPanel();
-        BottonVerInfo = new rsbuttom.RSButtonMetro();
         jPanel22 = new javax.swing.JPanel();
         SubMenu = new javax.swing.JTabbedPane();
         jPanel10 = new javax.swing.JPanel();
+        BottonVerInfo3 = new rsbuttom.RSButtonMetro();
+        BottonGenrExam2 = new rsbuttom.RSButtonMetro();
         jPanel23 = new javax.swing.JPanel();
         BottonTemas = new rsbuttom.RSButtonMetro();
         BottonPreguntas = new rsbuttom.RSButtonMetro();
         BottonAsignatura = new rsbuttom.RSButtonMetro();
-        jLabel37 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel38 = new javax.swing.JLabel();
-        EditarAsignatura = new rsbuttom.RSButtonMetro();
-        EditarTemas = new rsbuttom.RSButtonMetro();
-        EditarPreguntas = new rsbuttom.RSButtonMetro();
+        BottonVerInfo = new rsbuttom.RSButtonMetro();
+        BottonGenrExam = new rsbuttom.RSButtonMetro();
+        jPanel2 = new javax.swing.JPanel();
+        EditarAsignatura1 = new rsbuttom.RSButtonMetro();
+        EditarTemas1 = new rsbuttom.RSButtonMetro();
+        EditarPreguntas1 = new rsbuttom.RSButtonMetro();
+        BottonVerInfo2 = new rsbuttom.RSButtonMetro();
+        BottonGenrExam1 = new rsbuttom.RSButtonMetro();
+        BottonVerInfo1 = new rsbuttom.RSButtonMetro();
         Fondo = new javax.swing.JPanel();
         Menu = new javax.swing.JTabbedPane();
         Home = new javax.swing.JPanel();
@@ -322,8 +326,9 @@ public class Principal extends javax.swing.JFrame {
         });
 
         PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
-        PanelMenu.setMaximumSize(new java.awt.Dimension(217, 830));
-        PanelMenu.setPreferredSize(new java.awt.Dimension(217, 830));
+        PanelMenu.setMaximumSize(new java.awt.Dimension(217, 750));
+        PanelMenu.setPreferredSize(new java.awt.Dimension(217, 750));
+        PanelMenu.setRequestFocusEnabled(false);
         PanelMenu.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 PanelMenuComponentResized(evt);
@@ -353,25 +358,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonEditInfoActionPerformed(evt);
             }
         });
-        PanelMenu.add(BottonEditInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
-
-        BottonGenrExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
-        BottonGenrExam.setText("Crear Examen");
-        BottonGenrExam.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonGenrExam.setColorHover(new java.awt.Color(101, 203, 255));
-        BottonGenrExam.setColorNormal(new java.awt.Color(53, 188, 255));
-        BottonGenrExam.setColorPressed(new java.awt.Color(0, 159, 239));
-        BottonGenrExam.setFocusPainted(false);
-        BottonGenrExam.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        BottonGenrExam.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BottonGenrExam.setMaximumSize(new java.awt.Dimension(150, 35));
-        BottonGenrExam.setMinimumSize(new java.awt.Dimension(150, 35));
-        BottonGenrExam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonGenrExamActionPerformed(evt);
-            }
-        });
-        PanelMenu.add(BottonGenrExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 183, 42));
+        PanelMenu.add(BottonEditInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 183, 42));
 
         BottonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2302(0)_48.png"))); // NOI18N
         BottonHome.setText("Home             ");
@@ -415,26 +402,10 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        PanelMenu.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 220, 30));
-
-        BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
-        BottonVerInfo.setText("Ver - Editar");
-        BottonVerInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        BottonVerInfo.setColorHover(new java.awt.Color(101, 203, 255));
-        BottonVerInfo.setColorNormal(new java.awt.Color(53, 188, 255));
-        BottonVerInfo.setColorPressed(new java.awt.Color(0, 159, 239));
-        BottonVerInfo.setFocusPainted(false);
-        BottonVerInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        BottonVerInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BottonVerInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonVerInfoActionPerformed(evt);
-            }
-        });
-        PanelMenu.add(BottonVerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 183, 42));
+        PanelMenu.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 220, 40));
 
         jPanel22.setBackground(new java.awt.Color(0, 103, 142));
 
@@ -442,27 +413,51 @@ public class Principal extends javax.swing.JFrame {
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 220, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+            .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        PanelMenu.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 220, 20));
+        PanelMenu.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, -1, 30));
 
         jPanel10.setBackground(new java.awt.Color(0, 103, 142));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 225, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 182, Short.MAX_VALUE)
-        );
+        BottonVerInfo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo3.setText("Editar");
+        BottonVerInfo3.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonVerInfo3.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonVerInfo3.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonVerInfo3.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonVerInfo3.setFocusPainted(false);
+        BottonVerInfo3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonVerInfo3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonVerInfo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonVerInfo3ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(BottonVerInfo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 15, 183, 42));
+
+        BottonGenrExam2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
+        BottonGenrExam2.setText("Crear Examen");
+        BottonGenrExam2.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonGenrExam2.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonGenrExam2.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonGenrExam2.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonGenrExam2.setFocusPainted(false);
+        BottonGenrExam2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonGenrExam2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonGenrExam2.setMaximumSize(new java.awt.Dimension(150, 35));
+        BottonGenrExam2.setMinimumSize(new java.awt.Dimension(150, 35));
+        BottonGenrExam2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonGenrExam2ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(BottonGenrExam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 75, 183, 42));
 
         SubMenu.addTab("tab1", jPanel10);
 
@@ -484,7 +479,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonTemasActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 169, 42));
+        jPanel23.add(BottonTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 169, 42));
 
         BottonPreguntas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonPreguntas.setText("Preguntas");
@@ -501,7 +496,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonPreguntasActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 169, 42));
+        jPanel23.add(BottonPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 169, 42));
 
         BottonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonAsignatura.setText("Asignaturas");
@@ -518,83 +513,155 @@ public class Principal extends javax.swing.JFrame {
                 BottonAsignaturaActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 169, 42));
+        jPanel23.add(BottonAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 169, 42));
 
-        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("--------------------------");
-        jLabel37.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel23.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, -1, 20));
+        BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo.setText("Editar");
+        BottonVerInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonVerInfo.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonVerInfo.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonVerInfo.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonVerInfo.setFocusPainted(false);
+        BottonVerInfo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonVerInfo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonVerInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonVerInfoActionPerformed(evt);
+            }
+        });
+        jPanel23.add(BottonVerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 183, 42));
+
+        BottonGenrExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
+        BottonGenrExam.setText("Crear Examen");
+        BottonGenrExam.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonGenrExam.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonGenrExam.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonGenrExam.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonGenrExam.setFocusPainted(false);
+        BottonGenrExam.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonGenrExam.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonGenrExam.setMaximumSize(new java.awt.Dimension(150, 35));
+        BottonGenrExam.setMinimumSize(new java.awt.Dimension(150, 35));
+        BottonGenrExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonGenrExamActionPerformed(evt);
+            }
+        });
+        jPanel23.add(BottonGenrExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 183, 42));
 
         SubMenu.addTab("tab2", jPanel23);
 
-        jPanel1.setBackground(new java.awt.Color(0, 103, 142));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(0, 103, 142));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setText("--------------------------");
-        jLabel38.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, -1, 20));
-
-        EditarAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
-        EditarAsignatura.setText("Asignaturas");
-        EditarAsignatura.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        EditarAsignatura.setColorHover(new java.awt.Color(133, 207, 244));
-        EditarAsignatura.setColorNormal(new java.awt.Color(76, 185, 239));
-        EditarAsignatura.setColorPressed(new java.awt.Color(18, 143, 205));
-        EditarAsignatura.setFocusPainted(false);
-        EditarAsignatura.setFocusable(false);
-        EditarAsignatura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        EditarAsignatura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        EditarAsignatura.addActionListener(new java.awt.event.ActionListener() {
+        EditarAsignatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
+        EditarAsignatura1.setText("Asignaturas");
+        EditarAsignatura1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        EditarAsignatura1.setColorHover(new java.awt.Color(133, 207, 244));
+        EditarAsignatura1.setColorNormal(new java.awt.Color(76, 185, 239));
+        EditarAsignatura1.setColorPressed(new java.awt.Color(18, 143, 205));
+        EditarAsignatura1.setFocusPainted(false);
+        EditarAsignatura1.setFocusable(false);
+        EditarAsignatura1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        EditarAsignatura1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        EditarAsignatura1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarAsignaturaActionPerformed(evt);
+                EditarAsignatura1ActionPerformed(evt);
             }
         });
-        jPanel1.add(EditarAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 169, 42));
+        jPanel2.add(EditarAsignatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 169, 42));
 
-        EditarTemas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
-        EditarTemas.setText("Temas");
-        EditarTemas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        EditarTemas.setColorHover(new java.awt.Color(133, 207, 244));
-        EditarTemas.setColorNormal(new java.awt.Color(76, 185, 239));
-        EditarTemas.setColorPressed(new java.awt.Color(18, 143, 205));
-        EditarTemas.setFocusPainted(false);
-        EditarTemas.setFocusable(false);
-        EditarTemas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        EditarTemas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        EditarTemas.addActionListener(new java.awt.event.ActionListener() {
+        EditarTemas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
+        EditarTemas1.setText("Temas");
+        EditarTemas1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        EditarTemas1.setColorHover(new java.awt.Color(133, 207, 244));
+        EditarTemas1.setColorNormal(new java.awt.Color(76, 185, 239));
+        EditarTemas1.setColorPressed(new java.awt.Color(18, 143, 205));
+        EditarTemas1.setFocusPainted(false);
+        EditarTemas1.setFocusable(false);
+        EditarTemas1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        EditarTemas1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        EditarTemas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarTemasActionPerformed(evt);
+                EditarTemas1ActionPerformed(evt);
             }
         });
-        jPanel1.add(EditarTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 169, 42));
+        jPanel2.add(EditarTemas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 169, 42));
 
-        EditarPreguntas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
-        EditarPreguntas.setText("Preguntas");
-        EditarPreguntas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        EditarPreguntas.setColorHover(new java.awt.Color(133, 207, 244));
-        EditarPreguntas.setColorNormal(new java.awt.Color(76, 185, 239));
-        EditarPreguntas.setColorPressed(new java.awt.Color(18, 143, 205));
-        EditarPreguntas.setFocusPainted(false);
-        EditarPreguntas.setFocusable(false);
-        EditarPreguntas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        EditarPreguntas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        EditarPreguntas.addActionListener(new java.awt.event.ActionListener() {
+        EditarPreguntas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
+        EditarPreguntas1.setText("Preguntas");
+        EditarPreguntas1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        EditarPreguntas1.setColorHover(new java.awt.Color(133, 207, 244));
+        EditarPreguntas1.setColorNormal(new java.awt.Color(76, 185, 239));
+        EditarPreguntas1.setColorPressed(new java.awt.Color(18, 143, 205));
+        EditarPreguntas1.setFocusPainted(false);
+        EditarPreguntas1.setFocusable(false);
+        EditarPreguntas1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        EditarPreguntas1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        EditarPreguntas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarPreguntasActionPerformed(evt);
+                EditarPreguntas1ActionPerformed(evt);
             }
         });
-        jPanel1.add(EditarPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 169, 42));
+        jPanel2.add(EditarPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 169, 42));
 
-        SubMenu.addTab("tab3", jPanel1);
+        BottonVerInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo2.setText("Editar");
+        BottonVerInfo2.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonVerInfo2.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonVerInfo2.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonVerInfo2.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonVerInfo2.setFocusPainted(false);
+        BottonVerInfo2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonVerInfo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonVerInfo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonVerInfo2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BottonVerInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 15, 183, 42));
 
-        PanelMenu.add(SubMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 510, 230, 210));
+        BottonGenrExam1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
+        BottonGenrExam1.setText("Crear Examen");
+        BottonGenrExam1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonGenrExam1.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonGenrExam1.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonGenrExam1.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonGenrExam1.setFocusPainted(false);
+        BottonGenrExam1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonGenrExam1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonGenrExam1.setMaximumSize(new java.awt.Dimension(150, 35));
+        BottonGenrExam1.setMinimumSize(new java.awt.Dimension(150, 35));
+        BottonGenrExam1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonGenrExam1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(BottonGenrExam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 230, 183, 42));
 
-        getContentPane().add(PanelMenu, java.awt.BorderLayout.LINE_START);
+        SubMenu.addTab("tab3", jPanel2);
+
+        PanelMenu.add(SubMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 230, 330));
+
+        BottonVerInfo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo1.setText("Consultar");
+        BottonVerInfo1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        BottonVerInfo1.setColorHover(new java.awt.Color(101, 203, 255));
+        BottonVerInfo1.setColorNormal(new java.awt.Color(53, 188, 255));
+        BottonVerInfo1.setColorPressed(new java.awt.Color(0, 159, 239));
+        BottonVerInfo1.setFocusPainted(false);
+        BottonVerInfo1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonVerInfo1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BottonVerInfo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonVerInfo1ActionPerformed(evt);
+            }
+        });
+        PanelMenu.add(BottonVerInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
+
+        jScrollPane11.setViewportView(PanelMenu);
+
+        getContentPane().add(jScrollPane11, java.awt.BorderLayout.WEST);
 
         Fondo.setBackground(new java.awt.Color(0, 87, 116));
         Fondo.setMaximumSize(new java.awt.Dimension(1000, 830));
@@ -3662,102 +3729,6 @@ public class Principal extends javax.swing.JFrame {
         BloqDesBoton(GuaEditAsig, "");
     }//GEN-LAST:event_BottonEditAsigActionPerformed
 
-    private void EditarAsignaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarAsignaturaActionPerformed
-        Metodos met = new Metodos();
-        if (Menu.getSelectedComponent() != EditAsig) {
-            modelo = (DefaultTableModel) TablaAsig.getModel();
-            modelo.setColumnCount(0);
-            modelo.setRowCount(0);
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
-            Menu.setSelectedComponent(EditAsig);
-        }
-        NomEditAsig.setText("");
-        CodEditAsig.setText("");
-        DesEditAsig.setText("");
-        NomEditAsig.setEditable(false);
-        CodEditAsig.setEditable(false);
-        DesEditAsig.setEditable(false);
-        BloqDesBoton(GuaEditAsig, "...");
-        BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
-        MostrarAsig(profesor);
-    }//GEN-LAST:event_EditarAsignaturaActionPerformed
-
-    private void EditarTemasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTemasActionPerformed
-        Metodos met = new Metodos();
-        modelo = (DefaultTableModel) TablaTem.getModel();
-        modelo.setColumnCount(0);
-        modelo.setRowCount(0);
-        sw1 = true;
-        sw2 = true;
-        sw3 = true;
-        int h = 0;
-        Menu.setSelectedComponent(EditTem);
-        ComboAsigEdit.removeAllItems();
-        ComboAsigEdit.addItem("...");
-        BloqDesBoton(GuardarTem, "...");
-        try {
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        NomEditTem.setEditable(false);
-        NomEditTem.setText("");
-        DesEditTem.setEditable(false);
-        DesEditTem.setText("");
-        GuardarTem.setEnabled(false);
-
-        AdAsig5.setVisible(false);
-        BloqDesBoton(GuardarTem, "...");
-        BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
-
-        modelo.setColumnCount(0);
-        modelo.setRowCount(0);
-
-    }//GEN-LAST:event_EditarTemasActionPerformed
-
-    private void EditarPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPreguntasActionPerformed
-        Metodos met = new Metodos();
-        modelo = (DefaultTableModel) TablaPregEdit.getModel();
-        EstadPreg.setText("");
-        InfoPreg.setText("");
-        ComboNivelA.setSelectedIndex(0);
-        FechaPreg.setDate(null);
-        BloqDesBoton(GuarEditPreg, "...");
-        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
-        modelo.setColumnCount(0);
-        modelo.setRowCount(0);
-        sw1 = true;
-        sw2 = true;
-        sw3 = true;
-        ComboAsigPreg.removeAllItems();
-        ComboAsigPreg.addItem("...");
-        ComboTemPreg.removeAllItems();
-        ComboTemPreg.addItem("...");
-        int h = 0;
-        try {
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        AdAsig11.setVisible(false);
-        AdAsig14.setVisible(false);
-        AdAsig12.setVisible(false);
-        AdAsig6.setVisible(false);
-        ComboTemPreg.setEnabled(false);
-        ComboNivPreg.setEnabled(false);
-        ComboNivelA.setEnabled(false);
-        EstadPreg.setEditable(false);
-        FechaPreg.setEnabled(false);
-        InfoPreg.setEditable(false);
-        BotonDesBloqueo.setText("");
-        BotonDesBloqueo.setIcon(null);
-        BloqDesBoton(BotonDesBloqueo, "...");
-        Menu.setSelectedComponent(EditPreg);
-    }//GEN-LAST:event_EditarPreguntasActionPerformed
-
     private void TablaAsigKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TablaAsigKeyReleased
         String[] h = new String[3];
 
@@ -4722,6 +4693,38 @@ public class Principal extends javax.swing.JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(foto));       // TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
 
+    private void BottonVerInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonVerInfo1ActionPerformed
+
+    private void EditarPreguntas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPreguntas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditarPreguntas1ActionPerformed
+
+    private void EditarTemas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTemas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditarTemas1ActionPerformed
+
+    private void EditarAsignatura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarAsignatura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditarAsignatura1ActionPerformed
+
+    private void BottonVerInfo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonVerInfo2ActionPerformed
+
+    private void BottonGenrExam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExam1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonGenrExam1ActionPerformed
+
+    private void BottonVerInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonVerInfo3ActionPerformed
+
+    private void BottonGenrExam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExam2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BottonGenrExam2ActionPerformed
+
     ///METODOS!!
     public Integer TotalPregPorAsig() {// El total de preguntas que posee una asignatura
         int total = 0;
@@ -5034,11 +5037,16 @@ public class Principal extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro BottonEditFoto;
     private rsbuttom.RSButtonMetro BottonEditInfo;
     private rsbuttom.RSButtonMetro BottonGenrExam;
+    private rsbuttom.RSButtonMetro BottonGenrExam1;
+    private rsbuttom.RSButtonMetro BottonGenrExam2;
     private rsbuttom.RSButtonMetro BottonHome;
     private rsbuttom.RSButtonMetro BottonPerfil;
     private rsbuttom.RSButtonMetro BottonPreguntas;
     private rsbuttom.RSButtonMetro BottonTemas;
     private rsbuttom.RSButtonMetro BottonVerInfo;
+    private rsbuttom.RSButtonMetro BottonVerInfo1;
+    private rsbuttom.RSButtonMetro BottonVerInfo2;
+    private rsbuttom.RSButtonMetro BottonVerInfo3;
     private rsbuttom.RSButtonMetro ButtomEditPreg;
     private rsbuttom.RSButtonMetro ButtomEditTem;
     private rsbuttom.RSButtonMetro ButtonAddPreg;
@@ -5070,9 +5078,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel EditAsig;
     private javax.swing.JPanel EditPreg;
     private javax.swing.JPanel EditTem;
-    private rsbuttom.RSButtonMetro EditarAsignatura;
-    private rsbuttom.RSButtonMetro EditarPreguntas;
-    private rsbuttom.RSButtonMetro EditarTemas;
+    private rsbuttom.RSButtonMetro EditarAsignatura1;
+    private rsbuttom.RSButtonMetro EditarPreguntas1;
+    private rsbuttom.RSButtonMetro EditarTemas1;
     private rsbuttom.RSButtonMetro ElemEditPreg;
     private rsbuttom.RSButtonMetro ElimEditAsig;
     private rsbuttom.RSButtonMetro ElimEditTem;
@@ -5149,8 +5157,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -5178,16 +5184,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;

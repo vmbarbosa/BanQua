@@ -77,11 +77,13 @@ public class Asignatura {
         int h = 0;
         while (br.ready()) {
             String linea = br.readLine();
-            String nombre, descripcion;
-            if (linea != null && linea!="") {
+            String nombre, descripcion="";
+            if (linea != null && linea != "") {
                 String[] Desco = linea.split(";");
                 nombre = Desco[0];
-                descripcion = Desco[1];  //ESTO LO HIZO VALERIA
+                if (Desco.length > 1) {
+                    descripcion = Desco[1];
+                }//ESTO LO HIZO VALERIA
                 addTema(new Tema(nombre, descripcion, this));
             }
         }
