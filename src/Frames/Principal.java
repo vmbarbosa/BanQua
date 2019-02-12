@@ -324,6 +324,11 @@ public class Principal extends javax.swing.JFrame {
                 formWindowActivated(evt);
             }
         });
+        getContentPane().setLayout(new java.awt.BorderLayout());
+
+        jScrollPane11.setBackground(new java.awt.Color(204, 204, 204));
+        jScrollPane11.setAlignmentX(0.3F);
+        jScrollPane11.setAlignmentY(0.3F);
 
         PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
         PanelMenu.setMaximumSize(new java.awt.Dimension(217, 750));
@@ -425,7 +430,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(0, 103, 142));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BottonVerInfo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         BottonVerInfo3.setText("Editar");
         BottonVerInfo3.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonVerInfo3.setColorHover(new java.awt.Color(101, 203, 255));
@@ -464,6 +469,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel23.setBackground(new java.awt.Color(0, 103, 142));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        BottonTemas.setBackground(new java.awt.Color(55, 133, 173));
         BottonTemas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonTemas.setText("Temas");
         BottonTemas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -481,6 +487,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel23.add(BottonTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 169, 42));
 
+        BottonPreguntas.setBackground(new java.awt.Color(55, 133, 173));
         BottonPreguntas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonPreguntas.setText("Preguntas");
         BottonPreguntas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -498,6 +505,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel23.add(BottonPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 169, 42));
 
+        BottonAsignatura.setBackground(new java.awt.Color(55, 133, 173));
         BottonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonAsignatura.setText("Asignaturas");
         BottonAsignatura.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -515,7 +523,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel23.add(BottonAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 169, 42));
 
-        BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         BottonVerInfo.setText("Editar");
         BottonVerInfo.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonVerInfo.setColorHover(new java.awt.Color(101, 203, 255));
@@ -554,6 +562,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 103, 142));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        EditarAsignatura1.setBackground(new java.awt.Color(55, 133, 173));
         EditarAsignatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarAsignatura1.setText("Asignaturas");
         EditarAsignatura1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -571,6 +580,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel2.add(EditarAsignatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 169, 42));
 
+        EditarTemas1.setBackground(new java.awt.Color(55, 133, 173));
         EditarTemas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarTemas1.setText("Temas");
         EditarTemas1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -588,6 +598,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel2.add(EditarTemas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 169, 42));
 
+        EditarPreguntas1.setBackground(new java.awt.Color(55, 133, 173));
         EditarPreguntas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarPreguntas1.setText("Preguntas");
         EditarPreguntas1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -605,7 +616,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jPanel2.add(EditarPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 169, 42));
 
-        BottonVerInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_e70a(1)_48.png"))); // NOI18N
+        BottonVerInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         BottonVerInfo2.setText("Editar");
         BottonVerInfo2.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonVerInfo2.setColorHover(new java.awt.Color(101, 203, 255));
@@ -2917,37 +2928,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BottonGenrExamActionPerformed
 
     private void BottonVerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfoActionPerformed
-        Metodos met = new Metodos();
-
-        met.ReincioComboBox(Asig2, Asig3, tema, nivel);
+      
         SubMenu.setSelectedIndex(2);
-        try {
-            modelo = (DefaultTableModel) TablaPreg.getModel();
-            modelo.setColumnCount(0);
-            modelo.setRowCount(0);
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
-            int h = 0;
-            Asig2.removeAllItems();
-            Asig3.removeAllItems();
-            Asig2.addItem("...");
-            Asig3.addItem("...");
-            tema.setEnabled(false);
-            nivel.setEnabled(false);
-            AdAsig1.setVisible(false);
-            AdAsig2.setVisible(false);
-            AdAsig3.setVisible(false);
-            AdAsig4.setVisible(false);
-            BloqDesBoton(ButtonMostrarDER, "...");
-            BloqDesBoton(ButtonMostrarCENT, "...");
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
-            met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
-            Menu.setSelectedComponent(Ver);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        Menu.setSelectedComponent(Home);
     }//GEN-LAST:event_BottonVerInfoActionPerformed
 
     private void BottonEditInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonEditInfoActionPerformed
@@ -4694,35 +4677,214 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void BottonVerInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo1ActionPerformed
-        // TODO add your handling code here:
+Metodos met = new Metodos();
+
+        met.ReincioComboBox(Asig2, Asig3, tema, nivel);
+        SubMenu.setSelectedIndex(0);
+        try {
+            modelo = (DefaultTableModel) TablaPreg.getModel();
+            modelo.setColumnCount(0);
+            modelo.setRowCount(0);
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
+            int h = 0;
+            Asig2.removeAllItems();
+            Asig3.removeAllItems();
+            Asig2.addItem("...");
+            Asig3.addItem("...");
+            tema.setEnabled(false);
+            nivel.setEnabled(false);
+            AdAsig1.setVisible(false);
+            AdAsig2.setVisible(false);
+            AdAsig3.setVisible(false);
+            AdAsig4.setVisible(false);
+            BloqDesBoton(ButtonMostrarDER, "...");
+            BloqDesBoton(ButtonMostrarCENT, "...");
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
+            met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
+            Menu.setSelectedComponent(Ver);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_BottonVerInfo1ActionPerformed
 
     private void EditarPreguntas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPreguntas1ActionPerformed
-        // TODO add your handling code here:
+Metodos met = new Metodos();
+        modelo = (DefaultTableModel) TablaPregEdit.getModel();
+        EstadPreg.setText("");
+        InfoPreg.setText("");
+        ComboNivelA.setSelectedIndex(0);
+        FechaPreg.setDate(null);
+        BloqDesBoton(GuarEditPreg, "...");
+        BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
+        ComboAsigPreg.removeAllItems();
+        ComboAsigPreg.addItem("...");
+        ComboTemPreg.removeAllItems();
+        ComboTemPreg.addItem("...");
+        int h = 0;
+        try {
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        AdAsig11.setVisible(false);
+        AdAsig14.setVisible(false);
+        AdAsig12.setVisible(false);
+        AdAsig6.setVisible(false);
+        ComboTemPreg.setEnabled(false);
+        ComboNivPreg.setEnabled(false);
+        ComboNivelA.setEnabled(false);
+        EstadPreg.setEditable(false);
+        FechaPreg.setEnabled(false);
+        InfoPreg.setEditable(false);
+        BotonDesBloqueo.setText("");
+        BotonDesBloqueo.setIcon(null);
+        BloqDesBoton(BotonDesBloqueo, "...");
+        Menu.setSelectedComponent(EditPreg);        // TODO add your handling code here:
     }//GEN-LAST:event_EditarPreguntas1ActionPerformed
 
     private void EditarTemas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarTemas1ActionPerformed
+Metodos met = new Metodos();
+        modelo = (DefaultTableModel) TablaTem.getModel();
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
+        sw1 = true;
+        sw2 = true;
+        sw3 = true;
+        int h = 0;
+        Menu.setSelectedComponent(EditTem);
+        ComboAsigEdit.removeAllItems();
+        ComboAsigEdit.addItem("...");
+        BloqDesBoton(GuardarTem, "...");
+        try {
+            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        NomEditTem.setEditable(false);
+        NomEditTem.setText("");
+        DesEditTem.setEditable(false);
+        DesEditTem.setText("");
+        GuardarTem.setEnabled(false);
+
+        AdAsig5.setVisible(false);
+        BloqDesBoton(GuardarTem, "...");
+        BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+
+        modelo.setColumnCount(0);
+        modelo.setRowCount(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_EditarTemas1ActionPerformed
 
     private void EditarAsignatura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarAsignatura1ActionPerformed
-        // TODO add your handling code here:
+         Metodos met = new Metodos();
+        if (Menu.getSelectedComponent() != EditAsig) {
+            modelo = (DefaultTableModel) TablaAsig.getModel();
+            modelo.setColumnCount(0);
+            modelo.setRowCount(0);
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
+            Menu.setSelectedComponent(EditAsig);
+        }
+        NomEditAsig.setText("");
+        CodEditAsig.setText("");
+        DesEditAsig.setText("");
+        NomEditAsig.setEditable(false);
+        CodEditAsig.setEditable(false);
+        DesEditAsig.setEditable(false);
+        BloqDesBoton(GuaEditAsig, "...");
+        BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
+        MostrarAsig(profesor);
     }//GEN-LAST:event_EditarAsignatura1ActionPerformed
 
     private void BottonVerInfo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo2ActionPerformed
-        // TODO add your handling code here:
+SubMenu.setSelectedIndex(2);
+        Menu.setSelectedComponent(Home);        // TODO add your handling code here:
     }//GEN-LAST:event_BottonVerInfo2ActionPerformed
 
     private void BottonGenrExam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExam1ActionPerformed
-        // TODO add your handling code here:
+ String item;
+        Separador.setVisible(false);
+        NivInfo.setVisible(false);
+        temas.setVisible(false);
+        TemAd.setVisible(false);
+        NivAd.setVisible(false);
+        ndif.setVisible(false);
+        InfoTem.setVisible(false);
+        SeAd.setVisible(false);
+        AsAd.setVisible(false);
+        generarExamen.setVisible(false);
+        asigna.removeAllItems();
+        asigna.addItem("...");
+        seme.setSelectedIndex(0);
+        for (Asignatura a : profesor.getAsignaturas()) {
+            item = a.getNombre();
+            asigna.addItem(item);
+        }
+        evaluacion.setEditable(true);
+        seme.setEnabled(true);
+        asigna.setEnabled(true);
+        fecha.setEnabled(true);
+        preg.setEditable(true);
+        nombre.setText(nombre_profesor);
+        Metodos met = new Metodos();
+        met.ReincioComboBox(seme);
+        met.ReincioJTextField(evaluacion, preg);
+        fecha.setCalendar(null);
+        AvisoNumeros.setVisible(false);
+        SubMenu.setSelectedIndex(0);
+        BloqDesBoton(ButtonAddPreg, "...");
+        Menu.setSelectedComponent(Generar);        // TODO add your handling code here:
     }//GEN-LAST:event_BottonGenrExam1ActionPerformed
 
     private void BottonVerInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo3ActionPerformed
-        // TODO add your handling code here:
+
+        SubMenu.setSelectedIndex(2);
+        Menu.setSelectedComponent(Home);
     }//GEN-LAST:event_BottonVerInfo3ActionPerformed
 
     private void BottonGenrExam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonGenrExam2ActionPerformed
-        // TODO add your handling code here:
+ String item;
+        Separador.setVisible(false);
+        NivInfo.setVisible(false);
+        temas.setVisible(false);
+        TemAd.setVisible(false);
+        NivAd.setVisible(false);
+        ndif.setVisible(false);
+        InfoTem.setVisible(false);
+        SeAd.setVisible(false);
+        AsAd.setVisible(false);
+        generarExamen.setVisible(false);
+        asigna.removeAllItems();
+        asigna.addItem("...");
+        seme.setSelectedIndex(0);
+        for (Asignatura a : profesor.getAsignaturas()) {
+            item = a.getNombre();
+            asigna.addItem(item);
+        }
+        evaluacion.setEditable(true);
+        seme.setEnabled(true);
+        asigna.setEnabled(true);
+        fecha.setEnabled(true);
+        preg.setEditable(true);
+        nombre.setText(nombre_profesor);
+        Metodos met = new Metodos();
+        met.ReincioComboBox(seme);
+        met.ReincioJTextField(evaluacion, preg);
+        fecha.setCalendar(null);
+        AvisoNumeros.setVisible(false);
+        SubMenu.setSelectedIndex(0);
+        BloqDesBoton(ButtonAddPreg, "...");
+        Menu.setSelectedComponent(Generar);        // TODO add your handling code here:
     }//GEN-LAST:event_BottonGenrExam2ActionPerformed
 
     ///METODOS!!
