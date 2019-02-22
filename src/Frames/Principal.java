@@ -167,6 +167,8 @@ public class Principal extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
+        ButtomEditPreg1 = new rsbuttom.RSButtonMetro();
+        GuarEditPreg1 = new rsbuttom.RSButtonMetro();
         Asignatura = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         NombreDelaAsignatura = new javax.swing.JTextField();
@@ -347,7 +349,7 @@ public class Principal extends javax.swing.JFrame {
         Foto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Foto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Perfil Blanco.png"))); // NOI18N
         Foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 4));
-        PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 180, 200));
+        PanelMenu.add(Foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 180, 200));
 
         BottonEditInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Portafolio.png"))); // NOI18N
         BottonEditInfo.setText("Añadir        ");
@@ -363,7 +365,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonEditInfoActionPerformed(evt);
             }
         });
-        PanelMenu.add(BottonEditInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 183, 42));
+        PanelMenu.add(BottonEditInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 183, 42));
 
         BottonHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2302(0)_48.png"))); // NOI18N
         BottonHome.setText("Home             ");
@@ -379,7 +381,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonHomeActionPerformed(evt);
             }
         });
-        PanelMenu.add(BottonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 183, 42));
+        PanelMenu.add(BottonHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 183, 42));
 
         BottonPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoPerfil.png"))); // NOI18N
         BottonPerfil.setText("Perfil");
@@ -395,7 +397,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonPerfilActionPerformed(evt);
             }
         });
-        PanelMenu.add(BottonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 183, 42));
+        PanelMenu.add(BottonPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 183, 42));
 
         jPanel21.setBackground(new java.awt.Color(0, 103, 142));
 
@@ -444,7 +446,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonVerInfo3ActionPerformed(evt);
             }
         });
-        jPanel10.add(BottonVerInfo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 15, 183, 42));
+        jPanel10.add(BottonVerInfo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 15, 183, 42));
 
         BottonGenrExam2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonGenrExam2.setText("Crear Examen");
@@ -462,14 +464,13 @@ public class Principal extends javax.swing.JFrame {
                 BottonGenrExam2ActionPerformed(evt);
             }
         });
-        jPanel10.add(BottonGenrExam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 75, 183, 42));
+        jPanel10.add(BottonGenrExam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 75, 183, 42));
 
         SubMenu.addTab("tab1", jPanel10);
 
         jPanel23.setBackground(new java.awt.Color(0, 103, 142));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BottonTemas.setBackground(new java.awt.Color(55, 133, 173));
         BottonTemas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonTemas.setText("Temas");
         BottonTemas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -485,9 +486,8 @@ public class Principal extends javax.swing.JFrame {
                 BottonTemasActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 169, 42));
+        jPanel23.add(BottonTemas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 169, 42));
 
-        BottonPreguntas.setBackground(new java.awt.Color(55, 133, 173));
         BottonPreguntas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonPreguntas.setText("Preguntas");
         BottonPreguntas.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -503,9 +503,8 @@ public class Principal extends javax.swing.JFrame {
                 BottonPreguntasActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 169, 42));
+        jPanel23.add(BottonPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 169, 42));
 
-        BottonAsignatura.setBackground(new java.awt.Color(55, 133, 173));
         BottonAsignatura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(2)_48.png"))); // NOI18N
         BottonAsignatura.setText("Asignaturas");
         BottonAsignatura.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -521,7 +520,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonAsignaturaActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 169, 42));
+        jPanel23.add(BottonAsignatura, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 169, 42));
 
         BottonVerInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         BottonVerInfo.setText("Editar");
@@ -537,7 +536,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonVerInfoActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonVerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 183, 42));
+        jPanel23.add(BottonVerInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 183, 42));
 
         BottonGenrExam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonGenrExam.setText("Crear Examen");
@@ -555,14 +554,13 @@ public class Principal extends javax.swing.JFrame {
                 BottonGenrExamActionPerformed(evt);
             }
         });
-        jPanel23.add(BottonGenrExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 183, 42));
+        jPanel23.add(BottonGenrExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 183, 42));
 
         SubMenu.addTab("tab2", jPanel23);
 
         jPanel2.setBackground(new java.awt.Color(0, 103, 142));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        EditarAsignatura1.setBackground(new java.awt.Color(55, 133, 173));
         EditarAsignatura1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarAsignatura1.setText("Asignaturas");
         EditarAsignatura1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -578,9 +576,8 @@ public class Principal extends javax.swing.JFrame {
                 EditarAsignatura1ActionPerformed(evt);
             }
         });
-        jPanel2.add(EditarAsignatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 169, 42));
+        jPanel2.add(EditarAsignatura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 169, 42));
 
-        EditarTemas1.setBackground(new java.awt.Color(55, 133, 173));
         EditarTemas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarTemas1.setText("Temas");
         EditarTemas1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -596,9 +593,8 @@ public class Principal extends javax.swing.JFrame {
                 EditarTemas1ActionPerformed(evt);
             }
         });
-        jPanel2.add(EditarTemas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 169, 42));
+        jPanel2.add(EditarTemas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 169, 42));
 
-        EditarPreguntas1.setBackground(new java.awt.Color(55, 133, 173));
         EditarPreguntas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         EditarPreguntas1.setText("Preguntas");
         EditarPreguntas1.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -614,7 +610,7 @@ public class Principal extends javax.swing.JFrame {
                 EditarPreguntas1ActionPerformed(evt);
             }
         });
-        jPanel2.add(EditarPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 169, 42));
+        jPanel2.add(EditarPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 169, 42));
 
         BottonVerInfo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EditarIcono.png"))); // NOI18N
         BottonVerInfo2.setText("Editar");
@@ -630,7 +626,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonVerInfo2ActionPerformed(evt);
             }
         });
-        jPanel2.add(BottonVerInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 15, 183, 42));
+        jPanel2.add(BottonVerInfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 15, 183, 42));
 
         BottonGenrExam1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_d83d(0)_48.png"))); // NOI18N
         BottonGenrExam1.setText("Crear Examen");
@@ -648,7 +644,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonGenrExam1ActionPerformed(evt);
             }
         });
-        jPanel2.add(BottonGenrExam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 230, 183, 42));
+        jPanel2.add(BottonGenrExam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 230, 183, 42));
 
         SubMenu.addTab("tab3", jPanel2);
 
@@ -668,7 +664,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonVerInfo1ActionPerformed(evt);
             }
         });
-        PanelMenu.add(BottonVerInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 183, 42));
+        PanelMenu.add(BottonVerInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 183, 42));
 
         jScrollPane11.setViewportView(PanelMenu);
 
@@ -702,17 +698,22 @@ public class Principal extends javax.swing.JFrame {
         jLabel7.setText("Validar contraseña:");
         Perfil.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 700, 120, 20));
 
-        BottonCamContra.setText("Cambiar contraseña");
-        BottonCamContra.setColorHover(new java.awt.Color(1, 165, 228));
-        BottonCamContra.setColorNormal(new java.awt.Color(1, 128, 176));
-        BottonCamContra.setColorPressed(new java.awt.Color(2, 95, 130));
+        BottonCamContra.setBackground(new java.awt.Color(255, 255, 255));
+        BottonCamContra.setText("Cambiar contraseña?");
+        BottonCamContra.setColorHover(new java.awt.Color(239, 239, 239));
+        BottonCamContra.setColorNormal(new java.awt.Color(255, 255, 255));
+        BottonCamContra.setColorPressed(new java.awt.Color(239, 239, 239));
+        BottonCamContra.setColorTextHover(new java.awt.Color(0, 75, 104));
+        BottonCamContra.setColorTextNormal(new java.awt.Color(0, 103, 142));
+        BottonCamContra.setColorTextPressed(new java.awt.Color(0, 75, 104));
         BottonCamContra.setFocusable(false);
+        BottonCamContra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonCamContra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BottonCamContraActionPerformed(evt);
             }
         });
-        Perfil.add(BottonCamContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 160, 40));
+        Perfil.add(BottonCamContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 160, 20));
 
         NuevaContra.setMaximumSize(new java.awt.Dimension(7, 20));
         NuevaContra.setMinimumSize(new java.awt.Dimension(7, 20));
@@ -876,6 +877,39 @@ public class Principal extends javax.swing.JFrame {
         jLabel44.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
         jLabel44.setToolTipText("");
         Perfil.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1780, -1));
+
+        ButtomEditPreg1.setText("Editar");
+        ButtomEditPreg1.setColorBorde(null);
+        ButtomEditPreg1.setColorHover(new java.awt.Color(255, 157, 61));
+        ButtomEditPreg1.setColorNormal(new java.awt.Color(255, 127, 0));
+        ButtomEditPreg1.setColorPressed(new java.awt.Color(244, 121, 0));
+        ButtomEditPreg1.setFocusable(false);
+        ButtomEditPreg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ButtomEditPreg1.setMaximumSize(new java.awt.Dimension(125, 17));
+        ButtomEditPreg1.setMinimumSize(new java.awt.Dimension(125, 17));
+        ButtomEditPreg1.setPreferredSize(new java.awt.Dimension(125, 17));
+        ButtomEditPreg1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtomEditPreg1ActionPerformed(evt);
+            }
+        });
+        Perfil.add(ButtomEditPreg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 140, 40));
+
+        GuarEditPreg1.setText("Guardar");
+        GuarEditPreg1.setColorHover(new java.awt.Color(1, 165, 228));
+        GuarEditPreg1.setColorNormal(new java.awt.Color(1, 128, 176));
+        GuarEditPreg1.setColorPressed(new java.awt.Color(2, 95, 130));
+        GuarEditPreg1.setFocusable(false);
+        GuarEditPreg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        GuarEditPreg1.setMaximumSize(new java.awt.Dimension(125, 17));
+        GuarEditPreg1.setMinimumSize(new java.awt.Dimension(125, 17));
+        GuarEditPreg1.setPreferredSize(new java.awt.Dimension(125, 17));
+        GuarEditPreg1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuarEditPreg1ActionPerformed(evt);
+            }
+        });
+        Perfil.add(GuarEditPreg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 150, 40));
 
         Menu.addTab("Perfil", Perfil);
 
@@ -2950,6 +2984,9 @@ public class Principal extends javax.swing.JFrame {
         NuevaContra.setVisible(false);
         CorreoPerfil.setText(Correo);
         ValNuevaContra.setVisible(false);
+        Nombre1.setEditable(false);
+        Cedula1.setEditable(false);
+        CorreoPerfil.setEditable(false);
     }//GEN-LAST:event_BottonPerfilActionPerformed
 
     private void BottonHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonHomeActionPerformed
@@ -3593,6 +3630,9 @@ public class Principal extends javax.swing.JFrame {
         ValNuevaContra.setVisible(true);
         NuevaContra.setText("");
         ValNuevaContra.setText("");
+        Nombre1.setEditable(false);
+        Cedula1.setEditable(false);
+        CorreoPerfil.setEditable(false);
     }//GEN-LAST:event_BottonCamContraActionPerformed
 
     private void ButtonGenerarInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGenerarInformeActionPerformed
@@ -4887,6 +4927,16 @@ SubMenu.setSelectedIndex(2);
         Menu.setSelectedComponent(Generar);        // TODO add your handling code here:
     }//GEN-LAST:event_BottonGenrExam2ActionPerformed
 
+    private void ButtomEditPreg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomEditPreg1ActionPerformed
+        Nombre1.setEditable(true);
+        Cedula1.setEditable(true);
+        CorreoPerfil.setEditable(true);
+    }//GEN-LAST:event_ButtomEditPreg1ActionPerformed
+
+    private void GuarEditPreg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuarEditPreg1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GuarEditPreg1ActionPerformed
+
     ///METODOS!!
     public Integer TotalPregPorAsig() {// El total de preguntas que posee una asignatura
         int total = 0;
@@ -5210,6 +5260,7 @@ SubMenu.setSelectedIndex(2);
     private rsbuttom.RSButtonMetro BottonVerInfo2;
     private rsbuttom.RSButtonMetro BottonVerInfo3;
     private rsbuttom.RSButtonMetro ButtomEditPreg;
+    private rsbuttom.RSButtonMetro ButtomEditPreg1;
     private rsbuttom.RSButtonMetro ButtomEditTem;
     private rsbuttom.RSButtonMetro ButtonAddPreg;
     private rsbuttom.RSButtonMetro ButtonAgregarPregunta;
@@ -5254,6 +5305,7 @@ SubMenu.setSelectedIndex(2);
     private javax.swing.JPanel Generar;
     private rsbuttom.RSButtonMetro GuaEditAsig;
     private rsbuttom.RSButtonMetro GuarEditPreg;
+    private rsbuttom.RSButtonMetro GuarEditPreg1;
     private rsbuttom.RSButtonMetro GuardarTem;
     private javax.swing.JPanel Home;
     private javax.swing.JTextArea InfoPreg;
