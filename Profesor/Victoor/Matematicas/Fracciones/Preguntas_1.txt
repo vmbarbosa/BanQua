@@ -1,0 +1,16 @@
+1%%%%%Una fracción irreducible es una fracción que no se puede seguir reduciendo.
+A) Falso
+B) No se puede saber
+C) Verdadero%%%%%Disponible%%%%%--------%%%%%
+1%%%%%33/11 es una fracción irreducible.
+A) Verdadero
+B) Falso
+C) No se puede saber%%%%%Disponible%%%%%--------%%%%%
+1%%%%%Si un número es divisible de 2 y 3, entonces es divisible dentro de 6.
+A) Verdadero
+B) No se puede saber
+C) Falso%%%%%Disponible%%%%%--------%%%%%
+1%%%%%-18/4 está entre -3 y -4
+A) Verdadero
+B) No se puede saber
+C) Falso%%%%%Disponible%%%%%--------%%%%%

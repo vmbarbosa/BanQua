@@ -459,10 +459,10 @@ public class RecuperarContraseña extends javax.swing.JFrame {
             nombre = registros.get(i)[2];
             if (nombre.equals(UsuarioCo.getText())) {
                 if ((registros.get(i)[5]).equals(CorreoCampo.getText())) {
-                    Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + codigo + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
+                    Total = Total + registros.get(i)[0] + "%%%%%"+ registros.get(i)[1] + "%%%%%"+ registros.get(i)[2] +"%%%%%" + codigo + "%%%%%"+ registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
                 }
             } else {
-                Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
+                Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] +"%%%%%" + registros.get(i)[3] +"%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
             }
         }
         File file = new File("Usuario.txt");
@@ -498,7 +498,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "No se pudo validar la identida, vuelva a interlo", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "El campo de correo debe tenr como minimo un \"@\".", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de correo debe tener como minimo un \"@\".", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_ECActionPerformed
 
@@ -533,10 +533,10 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                     nombre = registros.get(i)[2];
                     if (nombre.equals(UsuarioCe.getText())) {
                         if ((registros.get(i)[1]).equals(Cedu.getText())) {
-                            Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + Contraseña + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
+                            Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + Contraseña + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
                         }
                     } else {
-                        Total = Total + registros.get(i)[0] + "," + registros.get(i)[1] + "," + registros.get(i)[2] + "," + registros.get(i)[3] + "," + registros.get(i)[4] + "," + registros.get(i)[5] + "\r\n";
+                        Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
                     }
                 }
                 File file = new File("Usuario.txt");

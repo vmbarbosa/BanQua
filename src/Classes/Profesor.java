@@ -51,8 +51,8 @@ public class Profesor {
         while (br.ready()) {
             String linea = br.readLine();
             String Nombre, desc, cod;
-            if (linea != null) {
-                String[] Desco = linea.split(";");
+            if (linea != null && !linea.equals("") && !linea.isEmpty()) {
+                String[] Desco = linea.split("%%%%%");
                 Nombre = Desco[0];
                 cod = Desco[1];
                 desc = Desco[2];   //ESTO LO HIZO VALERIA
@@ -66,11 +66,11 @@ public class Profesor {
     public void AddAsignatura(Asignatura asigna) {
         Asignaturas.add(asigna);
     }
-    
-    public void AddPreguntas(String Asig, int Nivel, String Tema, String Pregunta){
-        
+
+    public void AddPreguntas(String Asig, int Nivel, String Tema, String Pregunta) {
+
     }
-    
+
     public void AddTema(String Tema, String asig, String Descripcion) {
         for (Asignatura Asignatura1 : Asignaturas) {
             if (Asignatura1.getNombre().equals(asig)) {
@@ -141,7 +141,7 @@ public class Profesor {
     private void SobreEscribir(ArrayList<Pregunta> p, String a, String b, int c) throws IOException {
         String L = "";
         for (Pregunta pregunta : p) {
-            String info = pregunta.getNivel() + ";" + pregunta.getContenido() + ";" + pregunta.getEstado() + ";" + pregunta.getFecha() + ";";
+            String info = pregunta.getNivel() + "%%%%%" + pregunta.getContenido() + "%%%%%" + pregunta.getEstado() + "%%%%%" + pregunta.getFecha() + "%%%%%";
             L = L + info + "\r\n";
         }
         File f = new File("Profesor/" + usuario + "/" + a + "/" + b + "/Preguntas_" + c + ".txt");
@@ -153,19 +153,19 @@ public class Profesor {
         pw.close();
         fw.close();
     }
-    
-    
+
     public boolean Desbloqueador(String x) {
         Metodos e = new Metodos();
         int Dia = Integer.parseInt(e.Desco(x, 3, "/"));
         int Mes = Integer.parseInt(e.Desco(x, 2, "/"));
         int Año = Integer.parseInt(e.Desco(x, 1, "/"));
-        int MesOpen = (18 + Mes) % 12;
-        int AñoOpen = ((18 + Mes) / 12) + Año;
+        int MesOpen = Mes;
+        int AñoOpen = 1 + Año;
+        /*int MesOpen = (18 + Mes) % 12;
+        int AñoOpen = ((6 + Mes) / 12) + Año;
         if (MesOpen == 0) {
-            MesOpen = 1;
-            AñoOpen -= 1;
-        }
+            MesOpen = 12;
+        }*/
         Date date = new Date();
         DateFormat DFY = new SimpleDateFormat("yyyy");
         DateFormat DFM = new SimpleDateFormat("MM");
@@ -190,4 +190,5 @@ public class Profesor {
         }
         return false;
     }
+
 }

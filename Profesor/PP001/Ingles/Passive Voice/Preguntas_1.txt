@@ -1,0 +1,16 @@
+1%%%%%Pregunta de prueba 1
+A)Primer 
+B)Segunda
+C)Tercera%%%%%Disponible%%%%%--------%%%%%
+1%%%%%Pregunta de prueba 2
+A)Primer 
+B)Segunda
+C)Tercera%%%%%Disponible%%%%%--------%%%%%
+1%%%%%Pregunta de prueba 3
+A)Primer 
+B)Segunda
+C)Tercera%%%%%Disponible%%%%%--------%%%%%
+1%%%%%Pregunta de prueba 4
+A)Primer 
+B)Segunda
+C)Tercera%%%%%Disponible%%%%%--------%%%%%

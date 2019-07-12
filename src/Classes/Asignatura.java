@@ -68,27 +68,36 @@ public class Asignatura {
         this.preguntas = preguntas;
     }
 
-    public void setTemas() throws FileNotFoundException, IOException {
+    public void setTemas() throws IOException {
 
-        File f = new File("Profesor\\" + usuario + "\\" + Nombre + "\\Temas.txt");
-        FileReader fr = new FileReader(f);
-        BufferedReader br = new BufferedReader(fr);
-        Metodos e = new Metodos();
-        int h = 0;
-        while (br.ready()) {
-            String linea = br.readLine();
-            String nombre, descripcion="";
-            if (linea != null && linea != "") {
-                String[] Desco = linea.split(";");
-                nombre = Desco[0];
-                if (Desco.length > 1) {
-                    descripcion = Desco[1];
-                }//ESTO LO HIZO VALERIA
-                addTema(new Tema(nombre, descripcion, this));
+        FileReader fr = null;
+        try {
+            File f = new File("Profesor\\" + usuario + "\\" + Nombre + "\\Temas.txt");
+            fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            Metodos e = new Metodos();
+            int h = 0;
+            while (br.ready()) {
+                String linea = br.readLine();
+                String nombre, descripcion = "";
+                if (linea != null && linea != "") {
+                    String[] Desco = linea.split("%%%%%");
+                    nombre = Desco[0];
+                    if (Desco.length > 1) {
+                        descripcion = Desco[1];
+                    }//ESTO LO HIZO VALERIA
+                    addTema(new Tema(nombre, descripcion, this));
+                }
+            }   br.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Asignatura.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Asignatura.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        fr.close();
-        br.close();
     }
 
     /**

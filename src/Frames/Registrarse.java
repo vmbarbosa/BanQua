@@ -426,31 +426,13 @@ public class Registrarse extends javax.swing.JFrame {
                 if (!this.rutaImagen.equals("")) {
                     foto2 = this.rutaImagen;
                 } else {
-                    foto2 = "$";
+                    foto2 = "|¬¬|";
                 }
-                //DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 String Nombre2 = this.Nombre1.getText();
                 String Cedula2 = this.Cedula1.getText();
                 String NickName2 = this.Usuario1.getText();
                 String Pasword2 = this.Contra.getText();
                 String Correo2 = this.Correo.getText();
-                /*model.addRow(new Object[]{Nombre2, Cedula2, NickName2, Pasword2, foto2, Correo2});
-
-                try (BufferedWriter bw = new BufferedWriter(new FileWriter("Usuario.txt", true))) {
-                    int filas = jTable1.getRowCount();
-                    for (int i = 0; i < filas; i++) {
-                        Object Nombre = model.getValueAt(i, 0);
-                        Object Cedula = model.getValueAt(i, 1);
-                        Object NickName = model.getValueAt(i, 2);
-                        Object Pasword = model.getValueAt(i, 3);
-                        Object Foto = model.getValueAt(i, 4);
-                        Object Correo = model.getValueAt(i, 5);
-                        bw.write(Nombre + "," + Cedula + "," + NickName + "," + Pasword + "," + Foto + "," + Correo);
-                        bw.newLine();
-                    }
-                    bw.close();
-                } catch (Exception e) {
-                 */
                 File Usu = new File("Usuario.txt");
                 if (!Usu.exists()) {
                     try {
@@ -466,7 +448,7 @@ public class Registrarse extends javax.swing.JFrame {
                 try {
                     temp = met.concatenar(x);
 
-                    met.guardar(temp, x, Nombre2 + "," + Cedula2 + "," + NickName2 + "," + Pasword2 + "," + foto2 + "," + Correo2);
+                    met.guardar(temp, x, Nombre2 + "%%%%%" + Cedula2 + "%%%%%" + NickName2 + "%%%%%" + Pasword2 + "%%%%%" + foto2 + "%%%%%" + Correo2);
                 } catch (IOException ex) {
                     Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -501,7 +483,7 @@ public class Registrarse extends javax.swing.JFrame {
             }
         } else {
             Cedula1.setText("");
-            JOptionPane.showMessageDialog(this, "Campo de cedula numerico.", "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Campo de cedula es numerico.", "Error!", JOptionPane.ERROR_MESSAGE);
 
         }
     }//GEN-LAST:event_BottonRegistrarActionPerformed

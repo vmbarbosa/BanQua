@@ -1,0 +1,5 @@
+guerras mundiales;trata de guerras que ocurrieron en el mundo;
+epoca victoriana;sucedio cuando la reina victoria reino;
+epoca isabelina;sucedio cuando la reina isabel reino;
+Alemania Nazi;Los rojos perdieron;
+Faraones del viejo Egipto;Reyes imperialistas llenos de oro;

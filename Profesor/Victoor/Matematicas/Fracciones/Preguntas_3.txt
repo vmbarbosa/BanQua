@@ -1,0 +1,4 @@
+3%%%%%Para que un número sea divisible dentro de 3, se deben sumar sus cifras y dar un múltiplo de 5.
+A) No se puede saber
+B) Verdadero
+C) Falso%%%%%No Disponible%%%%%2019/06/16%%%%%

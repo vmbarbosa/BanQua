@@ -28,9 +28,9 @@ public class Tema {
     String Nombre;
     String descripcion;  //ESTO LO HIZO VALERIA
     Asignatura asignatura;
-    ArrayList<Pregunta> preguntas_1 ;
-    ArrayList<Pregunta> preguntas_2 ;
-    ArrayList<Pregunta> preguntas_3 ;
+    ArrayList<Pregunta> preguntas_1;
+    ArrayList<Pregunta> preguntas_2;
+    ArrayList<Pregunta> preguntas_3;
 
     public Tema(String titulo, String desc, Asignatura asig) {
         this.Nombre = titulo;
@@ -97,20 +97,41 @@ public class Tema {
      * @throws IOException
      */
     public void setPreguntas(int r) throws FileNotFoundException, IOException {
-        File f = new File("Profesor/"+usuario+"/" + asignatura.Nombre + "/" + Nombre + "/Preguntas_" + r + ".txt");
+        File f = new File("Profesor/" + usuario + "/" + asignatura.Nombre + "/" + Nombre + "/Preguntas_" + r + ".txt");
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         int h = 0;
-
+        String Scontenido = "";
+        String Precontenido = "";//Esto se hace con el fin de que cuando la pregunta tenga espacios se conseve con los espacios al momento de escribirla
+        String[] Pregunta = null;
+        boolean sw=true;
         while (br.ready()) {
             String contenido = br.readLine();
-            if (contenido != null && !contenido.equals("")) {
-                String[] Pregunta = contenido.split(";");
-                String info = Pregunta[1];
+            Scontenido = Scontenido + contenido;
+            Pregunta = Scontenido.split("%%%%%");
+            if (Pregunta != null && sw==true) {
+                if (Pregunta.length == 2) {
+                    if (Precontenido.equals("")) {
+                    
+                    Precontenido = Pregunta[1];
+                    } else {
+                        
+                    Precontenido = Precontenido + "\n" + contenido;
+                    }
+                }
+                if(Pregunta.length==4){
+                    Precontenido=Precontenido+"\n"+contenido.split("%%%%%")[0];
+                    sw=false;
+                }
+            }
+            if (contenido != null && !Scontenido.equals("") && Pregunta.length == 4) {
+                String info = Precontenido;
                 String estado = Pregunta[2];
                 String fecha = Pregunta[3];
                 int Dificultad = Integer.parseInt(Pregunta[0]);
-                
+                Scontenido = "";
+                Precontenido = "";
+                sw=true;
                 switch (Dificultad) {
                     case 1:
                         addPregunta_1(new Pregunta(info, 1, estado, fecha));
@@ -127,21 +148,21 @@ public class Tema {
         fr.close();
         br.close();
     }
-    
-    public void EnviarPreguntas(int r,ArrayList<Pregunta> preguntascambio ){
+
+    public void EnviarPreguntas(int r, ArrayList<Pregunta> preguntascambio) {
         switch (r) {
-                    case 1:
-                        preguntas_1 = preguntascambio ;
-                        break;
-                    case 2:
-                        preguntas_2 = preguntascambio ;
-                        break;
-                    case 3:
-                        preguntas_3 = preguntascambio ;
-                        break;
-                }
+            case 1:
+                preguntas_1 = preguntascambio;
+                break;
+            case 2:
+                preguntas_2 = preguntascambio;
+                break;
+            case 3:
+                preguntas_3 = preguntascambio;
+                break;
+        }
     }
-    
+
     public void addAsignatura(Asignatura asig) {
         asignatura = asig;
     }
@@ -176,32 +197,9 @@ public class Tema {
         }
         return null;
     }
-    
-    
-
-    /*public ArrayList<Pregunta> getPreguntas2() {
-        return this.preguntas_2;
-    }
-
-    public ArrayList<Pregunta> getPreguntas3() {
-        return this.preguntas_3;
-    }*/
-
-    /*public String getPregunta1(int i) {
-        return this.preguntas_1.get(i).getContenido();
-    }
-
-    public String getPregunta2(int i) {
-        return this.preguntas_2.get(i).getContenido();
-    }
-
-    public String getPregunta3(int i) {
-        return this.preguntas_3.get(i).getContenido();
-    }*/
 
     public String getDescripcion() {  //ESTO LO HIZO VALERIA
-        return descripcion; 
+        return descripcion;
     }
-
 
 }

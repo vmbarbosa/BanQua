@@ -9,7 +9,6 @@ import Classes.Controlador;
 import Classes.Correo;
 import Classes.Metodos;
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import java.net.URL;

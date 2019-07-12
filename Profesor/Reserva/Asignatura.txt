@@ -1,8 +1,0 @@
-Frances;LFR8246;Lengua rumanse del oriente medio;
-Procesos;PRO7824;Llevar acabo los conocimientos previos en materiales;
-Historia2;HI2S123;es2 acerca del pasado;
-Historia;HIS123;es acerca del pasado;
-matematicas;MAT145;tiene numeros pero tambien letras;
-espanol;ESP849;trata de un idioma romance;
-Ingles;ING456;Lo hablan los gringos;
-Antropologia;4654;Antro del pologo;

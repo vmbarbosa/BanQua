@@ -12,7 +12,6 @@ import java.io.FileReader;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -78,7 +77,7 @@ public class Metodos {
         String n;
         String line = br.readLine();
         while (line != null) {
-            String[] parts = line.split(";");
+            String[] parts = line.split("%%%%%");
             String item = parts[0];
             combo.addItem(item);
             line = br.readLine();
@@ -101,9 +100,10 @@ public class Metodos {
             ArrayList<String[]> registros;
             try (BufferedReader bw = new BufferedReader(fw)) {
                 registros = new ArrayList();
-                String x;
+                String x ;
                 while ((x = bw.readLine()) != null) {
-                    registros.add(x.split(","));
+                    String[] R =x.split("%%%%%");
+                    registros.add(R);
                 }
             }
             fw.close();
@@ -127,7 +127,8 @@ public class Metodos {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre;
         for (int i = 0; i < registros.size(); i++) {
-            nombre = registros.get(i)[j];
+            String[] R=registros.get(i);
+            nombre = R[j];
             if (nombre.equals(Usuario)) {
                 if ((registros.get(i)[j + 1]).equals(pasword)) {
                     return true;
@@ -242,16 +243,16 @@ public class Metodos {
         while ((line = br.readLine()) != null) {
             if (line.contains(cod)) {
                 linea = line;
-                StringTokenizer st = new StringTokenizer(linea, ";");
+                StringTokenizer st = new StringTokenizer(linea, "%%%%%");
 
                 while (var < 3) {
-                    temp = temp + st.nextToken() + ";";
+                    temp = temp + st.nextToken() + "%%%%%";
                     var++;
                 }
-                temp = temp + con + ";";
+                temp = temp + con + "%%%%%";
                 while (st.hasMoreTokens()) {
                     if (st.nextToken().equals(cod)) {
-                        temp = temp + cod + ";";
+                        temp = temp + cod + "%%%%%";
                     }
                 }
                 line = line.replace(line, temp);
@@ -328,13 +329,13 @@ public class Metodos {
         while ((line = br.readLine()) != null) {
             if (line.contains(indice)) {
                 linea = line;
-                StringTokenizer st = new StringTokenizer(linea, ";");
+                StringTokenizer st = new StringTokenizer(linea,"%%%%%");
                 while (st.hasMoreTokens()) {
                     String token = st.nextToken();
                     if (!token.equals(datoAnterior)) {
-                        temp = temp + token + ";";
+                        temp = temp + token +"%%%%%";
                     } else {
-                        temp = temp + datoNuevo + ";";
+                        temp = temp + datoNuevo +"%%%%%";
                     }
                 }
                 line = line.replace(line, temp);
@@ -387,7 +388,7 @@ public class Metodos {
         while (sw == false && br.ready()/*&& /*cont<v*/) {
             y = br.readLine();
             for (int i = 0; i < y.length(); i++) {
-                if (y.substring(i, i + 1).equals(";")) {
+                if (y.substring(i, i + 1).equals("%%%%%")) {
                     if (ty.equals(po)) {
                         sw = true;
 
@@ -413,7 +414,7 @@ public class Metodos {
         String po = f;
 
         for (int i = 0; i < x.length(); i++) {
-            if (x.substring(i, i + 1).equals(";")) {
+            if (x.substring(i, i + 1).equals("%%%%%")) {
                 if (ty.equals(po)) {
                     j = true;
 
@@ -472,8 +473,9 @@ public class Metodos {
         while (br.ready()) {
             g = br.readLine();
             Metodos p = new Metodos();
-            String h = p.Desco(g, 1, ";");
-            y.addItem(h);
+            String kp=g.split("%%%%%")[0];
+           // String h = p.Desco(g, 1, "%%%%%");
+            y.addItem(kp);
             h2 = h2 + 1;
         }
         fr.close();
