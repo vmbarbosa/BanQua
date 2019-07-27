@@ -3371,7 +3371,16 @@ public class Principal extends javax.swing.JFrame {
                 Direc.mkdirs();
                 move(Direc, file);
             } else {
-                file.renameTo(new File(toDir, file.getName()));
+                File Nuevo = new File(toDir, file.getName());
+                //file.renameTo(Nuevo);
+                Metodos met = new Metodos();
+                try {
+                    String Informacion = met.LeerArchivo(file.getPath());
+                    met.guardar(Informacion, Nuevo.getPath(), "");
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         }
     }
@@ -3978,25 +3987,26 @@ public class Principal extends javax.swing.JFrame {
             for (Asignatura asignatura : profesor.getAsignaturas()) {
                 if (asignatura.getNombre().equals(TablaAsig.getModel().getValueAt(TablaAsig.getSelectedRow(), 0).toString())) {
                     File Viejo = new File("Profesor/" + usuario + "/" + asignatura.getNombre());
-                    profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
+                    File Nuevo = new File("Profesor/" + usuario + "/" + NomEditAsig.getText());
                     profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
                     profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
+                    profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
                     Total = Total + NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%" + "\r\n";
-                    File Nuevo = new File("Profesor/" + usuario + "/" + NomEditAsig.getText());
-
-//                    move(Nuevo, Viejo);
-                    try {
+                    if (!Viejo.equals(Nuevo)) {
+                        move(Nuevo, Viejo);
                         recursiveDelete(Viejo);
-                        Nuevo.mkdirs();
-                        File text = new File("Profesor/" + usuario + "/" + NomEditAsig.getText() + "/Temas.txt");
-                        text.createNewFile();
-                    } catch (IOException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        /*try {
+                            recursiveDelete(Viejo);
+                            Nuevo.mkdirs();
+                            File text = new File("Profesor/" + usuario + "/" + NomEditAsig.getText() + "/Temas.txt");
+                            text.createNewFile();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }*/
                     }
                 } else {
                     Total = Total + asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%" + "\r\n";
                 }
-
                 i++;
             }
             File file = new File("Profesor/" + usuario + "/Asignatura.txt");
@@ -4020,6 +4030,9 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
+            profesor = new Profesor();
+        } else {
+            JOptionPane.showMessageDialog(null, "El nombre de la Asignatura y el codigo son obligatorios.", "Alerta", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_GuaEditAsigActionPerformed
 
@@ -4133,9 +4146,11 @@ public class Principal extends javax.swing.JFrame {
                     temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
                     Total = Total + NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%" + "\r\n";
                     File Nuevo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
-
-//                    move(Nuevo, Viejo);
-                    try {
+                    if (!Viejo.equals(Nuevo)) {
+                        Nuevo.mkdirs();
+                        move(Nuevo, Viejo);
+                        recursiveDelete(Viejo);
+                        /*try {
                         recursiveDelete(Viejo);
                         Nuevo.mkdirs();
                         File p1 = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText() + "/Preguntas_1");
@@ -4146,8 +4161,8 @@ public class Principal extends javax.swing.JFrame {
                         p3.createNewFile();
                     } catch (IOException ex) {
                         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }*/
                     }
-
                 } else {
                     Total = Total + tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%" + "\r\n";
                 }
@@ -4169,6 +4184,7 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
+            profesor = new Profesor();
             BloqDesBoton(GuardarTem, "...");
             BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
             modelo.setColumnCount(0);
@@ -5487,7 +5503,15 @@ public class Principal extends javax.swing.JFrame {
             ArrayList<Pregunta> pregDispo = new ArrayList();
             for (Pregunta pregunta : p) {
                 if (pregunta.getEstado().equals("Disponible")) {
-                    pregDispo.add(pregunta);
+                    boolean sw = false;
+                    for (String Preguntaselecionada : person) {
+                        if (pregunta.getContenido().equals(Preguntaselecionada.split("/@/")[0])) {
+                            sw = true;
+                        }
+                    }
+                    if (sw == false) {
+                        pregDispo.add(pregunta);
+                    }
                 }
             }
             int sw = 2;
