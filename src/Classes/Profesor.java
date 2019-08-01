@@ -43,7 +43,7 @@ public class Profesor {
 
     public void setAsignaturas() throws FileNotFoundException, IOException {
 
-        File f = new File("Profesor/" + usuario + "/Asignatura.txt");
+        File f = new File("C:\\ProgramData\\BanQua\\Profesor\\" + usuario + "\\Asignatura.txt");
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         Metodos e = new Metodos();
@@ -144,7 +144,7 @@ public class Profesor {
             String info = pregunta.getNivel() + "%%%%%" + pregunta.getContenido() + "%%%%%" + pregunta.getEstado() + "%%%%%" + pregunta.getFecha() + "%%%%%";
             L = L + info + "\r\n";
         }
-        File f = new File("Profesor/" + usuario + "/" + a + "/" + b + "/Preguntas_" + c + ".txt");
+        File f = new File("C:\\ProgramData\\BanQua\\Profesor\\" + usuario + "/" + a + "/" + b + "/Preguntas_" + c + ".txt");
         FileWriter fw = new FileWriter(f);
         PrintWriter pw = new PrintWriter(fw);
 

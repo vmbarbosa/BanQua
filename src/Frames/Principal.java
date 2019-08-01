@@ -90,7 +90,7 @@ public class Principal extends javax.swing.JFrame {
         Metodos met = new Metodos();
         profesor.ActualizarDatos();
         this.Nombre1.setText(InicioSeccion.nombre_profesor);
-        this.Cedula1.setText(met.EncontrarCedula("Usuario.txt", InicioSeccion.usuario));
+        this.Cedula1.setText(met.EncontrarCedula("C:\\ProgramData\\BanQua\\Usuario.txt", InicioSeccion.usuario));
         this.Usuario1.setText(usuario);
         SubMenu.setSelectedIndex(0);
         FotoDefault();
@@ -138,12 +138,9 @@ public class Principal extends javax.swing.JFrame {
         Home = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        BottonCambiarDeUsuario = new rsbuttom.RSButtonMetro();
         jPanel3 = new javax.swing.JPanel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        BottonCambiarDeUsuario = new rsbuttom.RSButtonMetro();
         Perfil = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -699,10 +696,30 @@ public class Principal extends javax.swing.JFrame {
         Home.add(jLabel61, java.awt.BorderLayout.CENTER);
 
         jPanel1.setBackground(new java.awt.Color(0, 87, 116));
-        jPanel1.setMinimumSize(new java.awt.Dimension(300, 300));
+        jPanel1.setMaximumSize(new java.awt.Dimension(100000, 1000000));
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setName(""); // NOI18N
-        jPanel1.setPreferredSize(new java.awt.Dimension(250, 300));
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        jPanel1.setPreferredSize(new java.awt.Dimension(250, 1000));
+
+        jPanel3.setMinimumSize(new java.awt.Dimension(0, 240));
+        jPanel3.setPreferredSize(new java.awt.Dimension(0, 240));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(0, 87, 116));
+        jPanel4.setMaximumSize(new java.awt.Dimension(2147483647, 150));
+        jPanel4.setMinimumSize(new java.awt.Dimension(250, 150));
+        jPanel4.setPreferredSize(new java.awt.Dimension(250, 150));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BottonCambiarDeUsuario.setText(" Cerrar Sesion");
         BottonCambiarDeUsuario.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -718,75 +735,26 @@ public class Principal extends javax.swing.JFrame {
                 BottonCambiarDeUsuarioActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 33;
-        gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(20, 30, 0, 0);
-        jPanel1.add(BottonCambiarDeUsuario, gridBagConstraints);
+        jPanel4.add(BottonCambiarDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 183, 42));
 
-        jPanel3.setBackground(new java.awt.Color(0, 87, 116));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jPanel3.setPreferredSize(new java.awt.Dimension(180, 200));
-
-        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel62.setText("-Valeria Osorio");
-
-        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("{ Desarrolladores }");
-
-        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel64.setText("-Daniel Valencia");
-
-        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel65.setText("-Victor Barbosa");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(78, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap(53, Short.MAX_VALUE)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(37, 37, 37)))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
-                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(23, 23, 23)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(127, Short.MAX_VALUE)))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(620, 620, 620))
         );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 41;
-        gridBagConstraints.ipady = 65;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(548, 13, 44, 17);
-        jPanel1.add(jPanel3, gridBagConstraints);
 
         Home.add(jPanel1, java.awt.BorderLayout.LINE_END);
 
@@ -1975,6 +1943,11 @@ public class Principal extends javax.swing.JFrame {
     preg.setMaximumSize(new java.awt.Dimension(7, 20));
     preg.setMinimumSize(new java.awt.Dimension(7, 20));
     preg.setPreferredSize(new java.awt.Dimension(7, 20));
+    preg.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            pregActionPerformed(evt);
+        }
+    });
     preg.addKeyListener(new java.awt.event.KeyAdapter() {
         public void keyReleased(java.awt.event.KeyEvent evt) {
             pregKeyReleased(evt);
@@ -1991,7 +1964,7 @@ public class Principal extends javax.swing.JFrame {
     AvisoNumeros.setForeground(new java.awt.Color(255, 102, 51));
     AvisoNumeros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     AvisoNumeros.setText("*El numero de preguntas es solo numerico.");
-    Generar.add(AvisoNumeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 270, -1));
+    Generar.add(AvisoNumeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 270, -1));
 
     ButtonAddPreg.setText("Generar");
     ButtonAddPreg.setColorHover(new java.awt.Color(1, 165, 228));
@@ -2006,12 +1979,12 @@ public class Principal extends javax.swing.JFrame {
             ButtonAddPregActionPerformed(evt);
         }
     });
-    Generar.add(ButtonAddPreg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 180, 43));
+    Generar.add(ButtonAddPreg, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 180, 43));
 
     InfoTem.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     InfoTem.setForeground(new java.awt.Color(0, 87, 116));
     InfoTem.setText("Tema");
-    Generar.add(InfoTem, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
+    Generar.add(InfoTem, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
 
     temas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "..." }));
     temas.setFocusable(false);
@@ -2024,12 +1997,12 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
-    Generar.add(temas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 250, 25));
+    Generar.add(temas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 250, 25));
 
     NivInfo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     NivInfo.setForeground(new java.awt.Color(0, 87, 116));
     NivInfo.setText("Nivel de dificultad");
-    Generar.add(NivInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 620, -1, -1));
+    Generar.add(NivInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, -1, -1));
 
     ndif.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Facil", "Medio", "Dificil" }));
     ndif.setFocusable(false);
@@ -2042,7 +2015,7 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
-    Generar.add(ndif, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 250, 25));
+    Generar.add(ndif, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 250, 25));
 
     generarExamen.setText("Añadir Pregunta");
     generarExamen.setColorHover(new java.awt.Color(1, 165, 228));
@@ -2054,10 +2027,10 @@ public class Principal extends javax.swing.JFrame {
             generarExamenActionPerformed(evt);
         }
     });
-    Generar.add(generarExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 700, 180, 43));
+    Generar.add(generarExamen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 710, 180, 43));
 
     Separador.setText("__________________________________________________________________________________________________________");
-    Generar.add(Separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 700, -1));
+    Generar.add(Separador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 700, -1));
 
     AsAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     AsAd.setForeground(new java.awt.Color(255, 0, 51));
@@ -2069,7 +2042,7 @@ public class Principal extends javax.swing.JFrame {
     NivAd.setForeground(new java.awt.Color(255, 0, 51));
     NivAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     NivAd.setText("*Opcion no valida");
-    Generar.add(NivAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 650, 380, 20));
+    Generar.add(NivAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 380, 20));
 
     SeAd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     SeAd.setForeground(new java.awt.Color(255, 0, 51));
@@ -2081,12 +2054,12 @@ public class Principal extends javax.swing.JFrame {
     TemAd.setForeground(new java.awt.Color(255, 0, 51));
     TemAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     TemAd.setText("*Opcion no valida");
-    Generar.add(TemAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 370, 20));
+    Generar.add(TemAd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 590, 370, 20));
 
     PregActual.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
     PregActual.setForeground(new java.awt.Color(0, 87, 116));
     PregActual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    Generar.add(PregActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 120, 20));
+    Generar.add(PregActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 120, 20));
 
     Menu.addTab("Generar", Generar);
 
@@ -3066,7 +3039,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void FotoDefault() {
         Metodos met = new Metodos();
-        if (met.EncontrarFoto("Usuario.txt", usuario).equals("|¬¬|")) {
+        if (met.EncontrarFoto("C:\\ProgramData\\BanQua\\Usuario.txt", usuario).equals("|¬¬|")) {
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             URL foto = classLoader.getResource("Imagenes/Perfil Azul.png");
             ClassLoader classLoader2 = Thread.currentThread().getContextClassLoader();
@@ -3074,7 +3047,7 @@ public class Principal extends javax.swing.JFrame {
             Foto1.setIcon(new ImageIcon(foto));
             Foto2.setIcon(new ImageIcon(foto2));
         } else {
-            String fo = met.EncontrarFoto("Usuario.txt", usuario);
+            String fo = met.EncontrarFoto("C:\\ProgramData\\BanQua\\Usuario.txt", usuario);
             File file = new File(fo);
             Image foto = getToolkit().getImage(String.valueOf(file));
             foto = foto.getScaledInstance(Foto1.getWidth(), Foto1.getHeight(), Image.SCALE_DEFAULT);
@@ -3241,7 +3214,7 @@ public class Principal extends javax.swing.JFrame {
         String temp;
         Asignatura a = getAsignatura(Asignatura2);
         Tema t = getTema(tema, a);
-        String x = "Profesor/" + usuario + "/" + Asignatura2 + "/" + tema + "/Preguntas_" + jor + ".txt";
+        String x = "C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asignatura2 + "/" + tema + "/Preguntas_" + jor + ".txt";
 
         if (InfoPregunta.equals("")) {
             JOptionPane.showMessageDialog(null, "No ha escrito ninguna pregunta.");
@@ -3271,18 +3244,18 @@ public class Principal extends javax.swing.JFrame {
                 if (verifexis == false) {
 
                     Metodos met = new Metodos();
-                    String x = "Profesor/" + usuario + "/" + r + "/Temas.txt";
+                    String x = "C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + r + "/Temas.txt";
                     String temp;
                     try {
                         temp = met.concatenar(x);
                         met.guardar(temp, x, tema + "%%%%%" + DesNoNull(DescripcionTema.getText()) + "%%%%%");
-                        File carpeta = new File("Profesor/" + usuario + "/" + r + "/" + tema);
+                        File carpeta = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + r + "/" + tema);
                         carpeta.mkdirs();
-                        File fl = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_1.txt");
+                        File fl = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_1.txt");
                         fl.createNewFile();
-                        File f2 = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_2.txt");
+                        File f2 = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_2.txt");
                         f2.createNewFile();
-                        File f3 = new File("Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_3.txt");
+                        File f3 = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + r + "/" + tema + "/Preguntas_3.txt");
                         f3.createNewFile();
 
                     } catch (IOException ex) {
@@ -3316,14 +3289,14 @@ public class Principal extends javax.swing.JFrame {
             if (!Asigna.equals("") && !codigo.equals("")) {
                 try {
                     Metodos met = new Metodos();
-                    String x = "Profesor/" + usuario + "/Asignatura.txt";
+                    String x = "C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt";
                     String temp;
 
                     temp = met.concatenar(x);
                     met.guardar(temp, x, Asigna + "%%%%%" + codigo + "%%%%%" + DesNoNull(Descripcion.getText()) + "%%%%%");
-                    File carpeta = new File("Profesor/" + usuario + "/" + Asigna);
+                    File carpeta = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna);
                     carpeta.mkdirs();
-                    File fichero = new File("Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
+                    File fichero = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
                     fichero.createNewFile();
                     Asignatura a = new Asignatura(Asigna, DesNoNull(Descripcion.getText()), codigo);
                     profesor.AddAsignatura(a);
@@ -3574,7 +3547,7 @@ public class Principal extends javax.swing.JFrame {
             Metodos met = new Metodos();
             int h = 0;
             try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
+                h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
                 if (h < 1) {
                     AdAsig1.setVisible(true);
                     AdAsig1.setText("*Asignatura sin Temas");
@@ -3606,7 +3579,7 @@ public class Principal extends javax.swing.JFrame {
             AdAsig2.setVisible(false);
             int h = 0;
             try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
+                h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.tema, h);
                 if (h < 1) {
                     AdAsig2.setVisible(true);
 
@@ -3730,7 +3703,7 @@ public class Principal extends javax.swing.JFrame {
             FileWriter fw = null;
             try {
                 Metodos met = new Metodos();
-                ArrayList<String[]> registros = met.LeerArchivoDaniel("Usuario.txt");
+                ArrayList<String[]> registros = met.LeerArchivoDaniel("C:\\ProgramData\\BanQua\\Usuario.txt");
                 String nombre;
                 String Total = "";
                 for (int i = 0; i < registros.size(); i++) {
@@ -3743,7 +3716,7 @@ public class Principal extends javax.swing.JFrame {
                         Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
                     }
                 }
-                File file = new File("Usuario.txt");
+                File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
                 bw.write(Total);
@@ -3986,8 +3959,8 @@ public class Principal extends javax.swing.JFrame {
             String Total = "";
             for (Asignatura asignatura : profesor.getAsignaturas()) {
                 if (asignatura.getNombre().equals(TablaAsig.getModel().getValueAt(TablaAsig.getSelectedRow(), 0).toString())) {
-                    File Viejo = new File("Profesor/" + usuario + "/" + asignatura.getNombre());
-                    File Nuevo = new File("Profesor/" + usuario + "/" + NomEditAsig.getText());
+                    File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre());
+                    File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + NomEditAsig.getText());
                     profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
                     profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
                     profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
@@ -4009,7 +3982,7 @@ public class Principal extends javax.swing.JFrame {
                 }
                 i++;
             }
-            File file = new File("Profesor/" + usuario + "/Asignatura.txt");
+            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
             FileWriter fw;
             try {
                 fw = new FileWriter(file);
@@ -4060,7 +4033,7 @@ public class Principal extends javax.swing.JFrame {
             asign = null;
             try {
 
-                File file = new File("Profesor/" + usuario + "/Asignatura.txt");
+                File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
                 FileWriter fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
                 bw.write(Total);
@@ -4070,7 +4043,7 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            File fle = new File("Profesor" + File.separator + usuario + File.separator + nombreasig);
+            File fle = new File("C:\\ProgramData\\BanQua\\Profesor" + File.separator + usuario + File.separator + nombreasig);
             System.out.println(fle);
             recursiveDelete(fle);
             BloqDesBoton(GuaEditAsig, "...");
@@ -4105,7 +4078,7 @@ public class Principal extends javax.swing.JFrame {
             asignatura.getTemas().remove(temactual);
             try {
 
-                File file = new File("Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
+                File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
                 FileWriter fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
                 bw.write(Total);
@@ -4115,7 +4088,7 @@ public class Principal extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }
-            File fle = new File("Profesor" + File.separator + usuario + File.separator + ComboAsigEdit.getSelectedItem() + File.separator + temactual.getNombre());
+            File fle = new File("C:\\ProgramData\\BanQua\\Profesor" + File.separator + usuario + File.separator + ComboAsigEdit.getSelectedItem() + File.separator + temactual.getNombre());
             recursiveDelete(fle);
             NomEditTem.setText("");
             NomEditTem.setEditable(false);
@@ -4141,11 +4114,11 @@ public class Principal extends javax.swing.JFrame {
             Tema temactual = asignatura.getTemas().get(TablaTem.getSelectedRow());
             for (Tema tema : asignatura.getTemas()) {
                 if (tema.getNombre().equals(temactual.getNombre())) {
-                    File Viejo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
+                    File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
                     temactual.setNombre(NomEditTem.getText());
                     temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
                     Total = Total + NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%" + "\r\n";
-                    File Nuevo = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
+                    File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
                     if (!Viejo.equals(Nuevo)) {
                         Nuevo.mkdirs();
                         move(Nuevo, Viejo);
@@ -4167,7 +4140,7 @@ public class Principal extends javax.swing.JFrame {
                     Total = Total + tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%" + "\r\n";
                 }
             }
-            File file = new File("Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
+            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
             FileWriter fw;
             try {
                 fw = new FileWriter(file);
@@ -4258,7 +4231,7 @@ public class Principal extends javax.swing.JFrame {
                 }
                 i++;
             }
-            File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
+            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
             FileWriter fw;
             try {
                 fw = new FileWriter(file);
@@ -4333,7 +4306,7 @@ public class Principal extends javax.swing.JFrame {
                     //Se agregan los cambios a la variable statica Profesor
                     tematica.getPreguntas(ComboNivelA.getSelectedIndex()).add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
                     //Se escribe la pregunta en su nueva dificultad
-                    File fileA = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedIndex() + ".txt");
+                    File fileA = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedIndex() + ".txt");
                     FileWriter fwA;
                     try {
                         fwA = new FileWriter(fileA);
@@ -4353,7 +4326,7 @@ public class Principal extends javax.swing.JFrame {
         }
         tematica.EnviarPreguntas(ComboNivPreg.getSelectedIndex(), PregTemporal);
 
-        File file = new File("Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
+        File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
         FileWriter fw;
         try {
             fw = new FileWriter(file);
@@ -4405,7 +4378,7 @@ public class Principal extends javax.swing.JFrame {
             Metodos met = new Metodos();
             int h = 0;
             try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + asig + "/Temas.txt", this.tema, h);
+                h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asig + "/Temas.txt", this.tema, h);
                 if (h < 1) {
                     AdAsig5.setVisible(true);
                     AdAsig5.setText("*Asignatura sin Temas");
@@ -4691,7 +4664,7 @@ public class Principal extends javax.swing.JFrame {
             Metodos met = new Metodos();
             int h = 0;
             try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + semestre + "/Temas.txt", this.tema, h);
+                h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + semestre + "/Temas.txt", this.tema, h);
                 if (h < 1) {
                     AsAd.setVisible(true);
                     AsAd.setText("*Asignatura sin Temas");
@@ -4820,7 +4793,7 @@ public class Principal extends javax.swing.JFrame {
 
             int h = 0;
             try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
+                h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", ComboTemPreg, h);
                 if (h < 1) {
                     AdAsig11.setVisible(true);
                     AdAsig11.setText("*Sin Temas");
@@ -5003,8 +4976,8 @@ public class Principal extends javax.swing.JFrame {
             AdAsig4.setVisible(false);
             BloqDesBoton(ButtonMostrarDER, "...");
             BloqDesBoton(ButtonMostrarCENT, "...");
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
-            met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
+            h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", Asig2, h);
+            met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
             Menu.setSelectedComponent(Ver);
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
@@ -5033,7 +5006,7 @@ public class Principal extends javax.swing.JFrame {
         ComboNivPreg.setSelectedIndex(0);
         int h = 0;
         try {
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
+            h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -5068,7 +5041,7 @@ public class Principal extends javax.swing.JFrame {
         ComboAsigEdit.addItem("...");
         BloqDesBoton(GuardarTem, "...");
         try {
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
+            h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -5202,7 +5175,7 @@ public class Principal extends javax.swing.JFrame {
         FileWriter fw = null;
         try {
             Metodos met = new Metodos();
-            ArrayList<String[]> registros = met.LeerArchivoDaniel("Usuario.txt");
+            ArrayList<String[]> registros = met.LeerArchivoDaniel("C:\\ProgramData\\BanQua\\Usuario.txt");
             String nombre;
             String Total = "";
             for (int i = 0; i < registros.size(); i++) {
@@ -5215,7 +5188,7 @@ public class Principal extends javax.swing.JFrame {
                     Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
                 }
             }
-            File file = new File("Usuario.txt");
+            File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
             fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(Total);
@@ -5274,14 +5247,17 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Nombre1KeyReleased
 
+    private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
+    }//GEN-LAST:event_jLabel61MouseClicked
+
+    private void pregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pregActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pregActionPerformed
+
     private void BottonCambiarDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonCambiarDeUsuarioActionPerformed
         // TODO add your handling code here:
         this.CambiarDeCuenta();
-
     }//GEN-LAST:event_BottonCambiarDeUsuarioActionPerformed
-
-    private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
-    }//GEN-LAST:event_jLabel61MouseClicked
 
     ///METODOS!!
     public void CambiarDeCuenta() {
@@ -5348,7 +5324,7 @@ public class Principal extends javax.swing.JFrame {
 
     public void CambiarImagen(String Usuario, String Nombre, String Imagen) throws IOException {
         Metodos met = new Metodos();
-        ArrayList<String[]> registros = met.LeerArchivoDaniel("Usuario.txt");
+        ArrayList<String[]> registros = met.LeerArchivoDaniel("C:\\ProgramData\\BanQua\\Usuario.txt");
         String nombre;
         String Total = "";
         for (int i = 0; i < registros.size(); i++) {
@@ -5361,7 +5337,7 @@ public class Principal extends javax.swing.JFrame {
                 Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
             }
         }
-        File file = new File("Usuario.txt");
+        File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         FileWriter fw = new FileWriter(file);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(Total);
@@ -5559,7 +5535,7 @@ public class Principal extends javax.swing.JFrame {
                 info = preg.getNivel() + "%%%%%" + preg.getContenido() + "%%%%%" + preg.getEstado() + "%%%%%" + preg.getFecha() + "%%%%%";
                 L = L + info + "\r\n";
             }
-            File f = new File("Profesor/" + usuario + "/" + a + "/" + profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(b).getNombre() + "/Preguntas_" + c + ".txt");
+            File f = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + a + "/" + profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(b).getNombre() + "/Preguntas_" + c + ".txt");
             System.out.println(f);
             try (FileWriter fw = new FileWriter(f)) {
                 PrintWriter pw = new PrintWriter(fw);
@@ -5575,13 +5551,25 @@ public class Principal extends javax.swing.JFrame {
         asignatura.removeAllItems();
         asignatura.addItem("...");
         try {
-            h = e.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", asignatura, h);
+            h = e.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", asignatura, h);
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (h < 1) {
             JOptionPane.showMessageDialog(null, "No hay Asignaturas, deberia agregar alguna.");
         }
+    }
+    
+    private String FechaDef(String Fecha) {
+        String[] elementos = Fecha.split("/");
+        String Semestre="";
+        int mes = (Integer.parseInt(elementos[1])+Integer.parseInt(Semestre))%12;
+        int año = (Integer.parseInt(elementos[1])+Integer.parseInt(Semestre))/12;
+        if(año>0){
+        elementos[2]=String.valueOf(Integer.parseInt(elementos[2])+año);
+        }
+        elementos[1]=String.valueOf(mes);
+        return elementos[0]+"/"+elementos[1]+"/"+elementos[2];
     }
 
 
@@ -5765,10 +5753,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -5782,6 +5766,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;

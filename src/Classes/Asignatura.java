@@ -72,7 +72,7 @@ public class Asignatura {
 
         FileReader fr = null;
         try {
-            File f = new File("Profesor\\" + usuario + "\\" + Nombre + "\\Temas.txt");
+            File f = new File("C:\\ProgramData\\BanQua\\Profesor\\" + usuario + "\\" + Nombre + "\\Temas.txt");
             fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             Metodos e = new Metodos();

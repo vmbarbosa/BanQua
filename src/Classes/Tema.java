@@ -97,7 +97,7 @@ public class Tema {
      * @throws IOException
      */
     public void setPreguntas(int r) throws FileNotFoundException, IOException {
-        File f = new File("Profesor/" + usuario + "/" + asignatura.Nombre + "/" + Nombre + "/Preguntas_" + r + ".txt");
+        File f = new File("C:\\ProgramData\\BanQua\\Profesor\\" + usuario + "/" + asignatura.Nombre + "/" + Nombre + "/Preguntas_" + r + ".txt");
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         int h = 0;

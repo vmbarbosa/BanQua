@@ -278,10 +278,10 @@ public class InicioSeccion extends javax.swing.JFrame {
     }
 
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
-        File f = new File("Usuario.txt");
+        File f = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         if(f.exists()){
         Metodos met = new Metodos();
-        String direUsu = "Usuario.txt";
+        String direUsu = "C:\\ProgramData\\BanQua\\Usuario.txt";
         if (met.EncontrarUsuario(direUsu, Usuario.getText(), Password.getText(), 2)) {
             rSButtonMetro1.setEnabled(false);
             usuario = Usuario.getText();
@@ -362,6 +362,7 @@ public class InicioSeccion extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     public static void main(String[] args) {
+        CarpetaInicio();
         InicioSeccion ini = new InicioSeccion();
         ini.setVisible(true);
         try {
@@ -376,7 +377,12 @@ public class InicioSeccion extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public static void CarpetaInicio(){
+       File BanQua = new File("C:\\ProgramData\\BanQua");
+       if(!BanQua.exists()){
+            BanQua.mkdir();
+       }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro BottonRegistro;
     private rsbuttom.RSButtonMetro ButtonRecuperarContraseña;

@@ -229,10 +229,10 @@ public class Metodos {
     }
 
     public void modificar_contraseña(String cod, String con) throws FileNotFoundException, IOException {
-        File originalFile = new File("Usuario.txt");
+        File originalFile = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
 
-        File temporal = new File("temporal.txt");
+        File temporal = new File("C:\\ProgramData\\BanQua\\temporal.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(temporal));
 
         String line = null;
@@ -266,9 +266,9 @@ public class Metodos {
         br.close();
 
         Metodos p = new Metodos();
-        String pancreas = p.LeerArchivo("temporal.txt");
-        p.Sobreescribir("Usuario.txt", pancreas);
-        p.Sobreescribir("temporal.txt", "");
+        String pancreas = p.LeerArchivo("C:\\ProgramData\\BanQua\\temporal.txt");
+        p.Sobreescribir("C:\\ProgramData\\BanQua\\Usuario.txt", pancreas);
+        p.Sobreescribir("C:\\ProgramData\\BanQua\\temporal.txt", "");
 
     }
 
@@ -291,7 +291,7 @@ public class Metodos {
         File originalFile = new File(archivo);
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
 
-        File temporal = new File("temporal.txt");
+        File temporal = new File("C:\\ProgramData\\BanQua\\temporal.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(temporal));
 
         String line = null;
@@ -307,9 +307,9 @@ public class Metodos {
         br.close();
 
         Metodos p = new Metodos();
-        String nuevo = p.LeerArchivo("temporal.txt");
+        String nuevo = p.LeerArchivo("C:\\ProgramData\\BanQua\\temporal.txt");
         p.Sobreescribir(archivo, nuevo);
-        p.Sobreescribir("temporal.txt", "");
+        p.Sobreescribir("C:\\ProgramData\\BanQua\\temporal.txt", "");
     }
 
     public void modificar(String indice, String archivo) throws FileNotFoundException, IOException {
@@ -319,7 +319,7 @@ public class Metodos {
         File originalFile = new File(archivo);
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
 
-        File temporal = new File("temporal.txt");
+        File temporal = new File("C:\\ProgramData\\BanQua\\temporal.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(temporal));
 
         String line = null;
@@ -348,9 +348,9 @@ public class Metodos {
         br.close();
 
         Metodos p = new Metodos();
-        String nuevo = p.LeerArchivo("temporal.txt");
+        String nuevo = p.LeerArchivo("C:\\ProgramData\\BanQua\\temporal.txt");
         p.Sobreescribir(archivo, nuevo);
-        p.Sobreescribir("temporal.txt", "");
+        p.Sobreescribir("C:\\ProgramData\\BanQua\\temporal.txt", "");
     }
 
     public int indice(String archivo) throws FileNotFoundException, IOException {

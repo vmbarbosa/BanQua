@@ -81,7 +81,9 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         });
 
         jPanel2.setBackground(new java.awt.Color(0, 87, 116));
-        jPanel2.setPreferredSize(new java.awt.Dimension(405, 35));
+        jPanel2.setMaximumSize(new java.awt.Dimension(385, 35));
+        jPanel2.setMinimumSize(new java.awt.Dimension(385, 35));
+        jPanel2.setPreferredSize(new java.awt.Dimension(385, 35));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
@@ -108,7 +110,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                 IconMinMouseExited(evt);
             }
         });
-        jPanel2.add(IconMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 0, 30, 33));
+        jPanel2.add(IconMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 30, 33));
 
         IconCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         IconCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarBlanco.png"))); // NOI18N
@@ -124,12 +126,15 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                 IconCerrarMouseExited(evt);
             }
         });
-        jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(374, 0, 31, 33));
+        jPanel2.add(IconCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 31, 33));
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 4, -1, 35));
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setBackground(new java.awt.Color(0, 103, 142));
+        jPanel1.setMaximumSize(new java.awt.Dimension(380, 516));
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setPreferredSize(new java.awt.Dimension(350, 516));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -139,10 +144,10 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 295;
+        gridBagConstraints.ipadx = 272;
         gridBagConstraints.ipady = 13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(4, 10, 0, 0);
         jPanel1.add(jLabel9, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -151,11 +156,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 2;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         jPanel1.add(jLabel11, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -168,7 +173,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.ipadx = -2;
         gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(8, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(8, 10, 0, 0);
         jPanel1.add(jLabel12, gridBagConstraints);
 
         Cedu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -180,11 +185,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 15;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 314;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 0);
         jPanel1.add(Cedu, gridBagConstraints);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -197,7 +202,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.ipadx = -2;
         gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         jPanel1.add(jLabel13, gridBagConstraints);
 
         CC.setText("Cambiar Contraseña");
@@ -216,11 +221,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 17;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 97;
         gridBagConstraints.ipady = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 20, 12, 0);
+        gridBagConstraints.insets = new java.awt.Insets(12, 10, 15, 0);
         jPanel1.add(CC, gridBagConstraints);
 
         EC.setText("Enviar Correo");
@@ -240,10 +245,10 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 97;
+        gridBagConstraints.ipadx = 74;
         gridBagConstraints.ipady = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(12, 10, 0, 0);
         jPanel1.add(EC, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -256,7 +261,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.ipadx = -2;
         gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 10, 0, 0);
         jPanel1.add(jLabel2, gridBagConstraints);
 
         CorreoCampo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -268,11 +273,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 314;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(12, 0, 0, 0);
         jPanel1.add(CorreoCampo, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -285,7 +290,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.ipadx = -2;
         gridBagConstraints.ipady = -2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         jPanel1.add(jLabel3, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -295,10 +300,10 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 295;
+        gridBagConstraints.ipadx = 272;
         gridBagConstraints.ipady = 13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         jPanel1.add(jLabel8, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -308,12 +313,12 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 8;
+        gridBagConstraints.ipadx = 28;
         gridBagConstraints.ipady = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
         jPanel1.add(jLabel1, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -322,24 +327,25 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 2;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 0, 0);
         jPanel1.add(jLabel5, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Recuperación de la contraseña");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 111;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.ipadx = 88;
         gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         jPanel1.add(jLabel6, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -348,22 +354,22 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipadx = 7;
         gridBagConstraints.ipady = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
         jPanel1.add(jLabel7, gridBagConstraints);
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("------------------------------------------ o -----------------------------------------");
+        jLabel4.setText("---------------------------------- o --------------------------------");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.ipadx = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 20, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(9, 10, 0, 0);
         jPanel1.add(jLabel4, gridBagConstraints);
 
         UsuarioCo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -380,11 +386,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 314;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
         jPanel1.add(UsuarioCo, gridBagConstraints);
 
         UsuarioCe.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -396,11 +402,11 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 13;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 314;
         gridBagConstraints.ipady = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 35);
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         jPanel1.add(UsuarioCe, gridBagConstraints);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -424,8 +430,8 @@ public class RecuperarContraseña extends javax.swing.JFrame {
 
     public boolean VerificarIdentidad() {
         String nombre2 = UsuarioCo.getText();
-        if (!met.EncontrarNombre("Usuario.txt", nombre2).equals("")) {
-            if (met.EncontrarCorreo("Usuario.txt", nombre2).equals(CorreoCampo.getText())) {
+        if (!met.EncontrarNombre("C:\\ProgramData\\BanQua\\Usuario.txt", nombre2).equals("")) {
+            if (met.EncontrarCorreo("C:\\ProgramData\\BanQua\\Usuario.txt", nombre2).equals(CorreoCampo.getText())) {
                 return true;
             } else {
                 JOptionPane.showMessageDialog(null, "Correo no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
@@ -465,7 +471,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                 Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] +"%%%%%" + registros.get(i)[3] +"%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
             }
         }
-        File file = new File("Usuario.txt");
+        File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         FileWriter fw = null;
         try {
             fw = new FileWriter(file);
@@ -526,7 +532,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
             String Contraseña = JOptionPane.showInputDialog(this, "Digite la nueva contraseña", "Cambio Contraseña", JOptionPane.INFORMATION_MESSAGE);
             if (Contraseña != null && !Contraseña.equals("")) {
                 Metodos met = new Metodos();
-                ArrayList<String[]> registros = met.LeerArchivoDaniel("Usuario.txt");
+                ArrayList<String[]> registros = met.LeerArchivoDaniel("C:\\ProgramData\\BanQua\\Usuario.txt");
                 String nombre;
                 String Total = "";
                 for (int i = 0; i < registros.size(); i++) {
@@ -539,7 +545,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                         Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
                     }
                 }
-                File file = new File("Usuario.txt");
+                File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
                 FileWriter fw = null;
                 try {
                     fw = new FileWriter(file);

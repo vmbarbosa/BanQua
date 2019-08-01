@@ -433,7 +433,7 @@ public class Registrarse extends javax.swing.JFrame {
                 String NickName2 = this.Usuario1.getText();
                 String Pasword2 = this.Contra.getText();
                 String Correo2 = this.Correo.getText();
-                File Usu = new File("Usuario.txt");
+                File Usu = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
                 if (!Usu.exists()) {
                     try {
                         Usu.createNewFile();
@@ -442,7 +442,7 @@ public class Registrarse extends javax.swing.JFrame {
                     }
                 }
                 Metodos met = new Metodos();
-                String x = "Usuario.txt";
+                String x = "C:\\ProgramData\\BanQua\\Usuario.txt";
                 String temp;
 
                 try {
@@ -461,13 +461,13 @@ public class Registrarse extends javax.swing.JFrame {
                 Correo.setText("");
                 JOptionPane.showMessageDialog(this, "Registro Exitoso.", "Notificacion.", JOptionPane.INFORMATION_MESSAGE);
                 inicio.setVisible(true);
-                File Pro = new File("Profesor");
+                File Pro = new File("C:\\ProgramData\\BanQua\\Profesor");
                 if (!Pro.exists()) {
                     Pro.mkdirs();
                 }
-                File f = new File("Profesor/" + NickName2);
+                File f = new File("C:\\ProgramData\\BanQua\\Profesor/" + NickName2);
                 f.mkdir();
-                File F = new File("Profesor/" + NickName2 + "/Asignatura.txt");
+                File F = new File("C:\\ProgramData\\BanQua\\Profesor/" + NickName2 + "/Asignatura.txt");
                 try {
                     F.createNewFile();
                 } catch (IOException ex) {
