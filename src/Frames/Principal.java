@@ -5,6 +5,7 @@
  */
 package Frames;
 
+import Classes.AES;
 import Classes.Asignatura;
 import java.awt.Image;
 import java.io.File;
@@ -3293,13 +3294,13 @@ public class Principal extends javax.swing.JFrame {
                     String temp;
 
                     temp = met.concatenar(x);
-                    met.guardar(temp, x, Asigna + "%%%%%" + codigo + "%%%%%" + DesNoNull(Descripcion.getText()) + "%%%%%");
                     File carpeta = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna);
                     carpeta.mkdirs();
                     File fichero = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
                     fichero.createNewFile();
                     Asignatura a = new Asignatura(Asigna, DesNoNull(Descripcion.getText()), codigo);
                     profesor.AddAsignatura(a);
+                    met.guardar(temp, x, Asigna + "%%%%%" + codigo + "%%%%%" + DesNoNull(Descripcion.getText()) + "%%%%%");
                     JOptionPane.showMessageDialog(null, "Asignatura creada satisfactoriamente.");
                     BottonAsignatura.doClick();
                 } catch (IOException ex) {
@@ -3719,7 +3720,7 @@ public class Principal extends javax.swing.JFrame {
                 File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
+                bw.write(AES.encrypt(Total, "BanQuaAES"));
                 bw.close();
                 fw.close();
                 JOptionPane.showMessageDialog(this, "Cambio Exitoso", "Cambio Contraseña", JOptionPane.INFORMATION_MESSAGE);
@@ -3987,7 +3988,7 @@ public class Principal extends javax.swing.JFrame {
             try {
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
+                bw.write(AES.encrypt(Total, "BanQuaAES"));
                 bw.close();
                 fw.close();
                 MostrarAsig(profesor);
@@ -4036,7 +4037,7 @@ public class Principal extends javax.swing.JFrame {
                 File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
                 FileWriter fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
+                bw.write(AES.encrypt(Total, "BanQuaAES"));
                 bw.close();
                 fw.close();
                 MostrarAsig(profesor);
@@ -4081,7 +4082,7 @@ public class Principal extends javax.swing.JFrame {
                 File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
                 FileWriter fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
+                bw.write(AES.encrypt(Total, "BanQuaAES"));
                 bw.close();
                 fw.close();
                 MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
@@ -4145,7 +4146,7 @@ public class Principal extends javax.swing.JFrame {
             try {
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
+                bw.write(AES.encrypt(Total, "BanQuaAES"));
                 bw.close();
                 fw.close();
                 MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
@@ -4237,7 +4238,7 @@ public class Principal extends javax.swing.JFrame {
                 fw = new FileWriter(file);
                 ComboNivelA.setSelectedIndex(0);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
+                bw.write(AES.encrypt(Total, "BanQuaAES"));
                 bw.close();
                 fw.close();
                 EstadPreg.setEditable(false);
@@ -4311,7 +4312,7 @@ public class Principal extends javax.swing.JFrame {
                     try {
                         fwA = new FileWriter(fileA);
                         BufferedWriter bwA = new BufferedWriter(fwA);
-                        bwA.write(TotalAuxiliar);
+                        bwA.write(AES.encrypt(TotalAuxiliar, "BanQuaAES"));
                         bwA.close();
                         fwA.close();
                     } catch (IOException ex) {
@@ -4332,7 +4333,7 @@ public class Principal extends javax.swing.JFrame {
             fw = new FileWriter(file);
             ComboNivelA.setSelectedIndex(0);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Total);
+            bw.write(AES.encrypt(Total, "BanQuaAES"));
             bw.close();
             fw.close();
             EstadPreg.setEditable(false);
@@ -4458,7 +4459,6 @@ public class Principal extends javax.swing.JFrame {
 
         ComboNivelA.setSelectedIndex(ComboNivPreg.getSelectedIndex());
         EstadPreg.setText(h[1]);
-        File file;
         if (BotonDesBloqueo.isEnabled() == true) {
             if (h[1].equals("Disponible")) {
                 BotonDesBloqueo.setText("Bloquear");
@@ -4506,7 +4506,6 @@ public class Principal extends javax.swing.JFrame {
 
         ComboNivelA.setSelectedIndex(ComboNivPreg.getSelectedIndex());
         EstadPreg.setText(h[1]);
-        File file;
         if (BotonDesBloqueo.isEnabled() == true) {
             if (h[1].equals("Disponible")) {
                 BotonDesBloqueo.setText("Bloquear");
@@ -4905,7 +4904,6 @@ public class Principal extends javax.swing.JFrame {
                 BotonDesBloqueo.setIcon(new ImageIcon(foto));
             }
         }
-        File file;
         BotonDesBloqueo.setEnabled(true);
         if (EstadPreg.equals("Disponible")) {
             BotonDesBloqueo.setText("Bloquear");
@@ -5191,7 +5189,7 @@ public class Principal extends javax.swing.JFrame {
             File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
             fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Total);
+            bw.write(AES.encrypt(Total, "BanQuaAES"));
             bw.close();
             fw.close();
             JOptionPane.showMessageDialog(this, "Los cambios se han realizado con exito.", "Modificacion Perfil", JOptionPane.INFORMATION_MESSAGE);
@@ -5340,7 +5338,7 @@ public class Principal extends javax.swing.JFrame {
         File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         FileWriter fw = new FileWriter(file);
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(Total);
+        bw.write(AES.encrypt(Total, "BanQuaAES"));
         bw.close();
         fw.close();
     }
@@ -5539,7 +5537,7 @@ public class Principal extends javax.swing.JFrame {
             System.out.println(f);
             try (FileWriter fw = new FileWriter(f)) {
                 PrintWriter pw = new PrintWriter(fw);
-                pw.write(L);
+                pw.write(AES.encrypt(L, "BanQuaAES"));
                 pw.close();
             }
         }

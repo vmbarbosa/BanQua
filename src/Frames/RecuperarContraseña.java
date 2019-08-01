@@ -5,6 +5,7 @@
  */
 package Frames;
 
+import Classes.AES;
 import Classes.Controlador;
 import Classes.Correo;
 import Classes.Metodos;
@@ -476,7 +477,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
         try {
             fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Total);
+            bw.write(AES.encrypt(Total, "BanQuaAES"));
             bw.close();
             fw.close();
         } catch (IOException ex) {
@@ -550,7 +551,7 @@ public class RecuperarContraseña extends javax.swing.JFrame {
                 try {
                     fw = new FileWriter(file);
                     BufferedWriter bw = new BufferedWriter(fw);
-                    bw.write(Total);
+                    bw.write(AES.encrypt(Total, "BanQuaAES"));
                     bw.close();
                     fw.close();
                     JOptionPane.showMessageDialog(this, "Contraseña ha sido cambiada.", "Informacion", JOptionPane.INFORMATION_MESSAGE);

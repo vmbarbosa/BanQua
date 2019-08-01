@@ -42,7 +42,7 @@ public class Metodos {
             } else {
                 es = x;
             }
-            x = bw.readLine();
+            x = AES.decrypt(bw.readLine(), "BanQuaAES");;
             if (x != null && !x.equals("")) {
                 es = x + "r";
 
@@ -61,9 +61,7 @@ public class Metodos {
         FileWriter fw = new FileWriter(F);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(fw);
-
-        pw.write(temp);
-        pw.append(info);
+        pw.write(AES.encrypt(temp+"\n"+info, "BanQuaAES"));
 
         pw.close();
         bw.close();
@@ -75,12 +73,12 @@ public class Metodos {
         FileReader fr = new FileReader(F);
         BufferedReader br = new BufferedReader(fr);
         String n;
-        String line = br.readLine();
+        String line = AES.decrypt(br.readLine(), "BanQuaAES");
         while (line != null) {
             String[] parts = line.split("%%%%%");
             String item = parts[0];
             combo.addItem(item);
-            line = br.readLine();
+            line = AES.decrypt(br.readLine(), "BanQuaAES");
         }
         fr.close();
         br.close();
@@ -101,11 +99,12 @@ public class Metodos {
             try (BufferedReader bw = new BufferedReader(fw)) {
                 registros = new ArrayList();
                 String x ;
-                while ((x = bw.readLine()) != null) {
+                while ((x = AES.decrypt(bw.readLine(), "BanQuaAES")) != null) {
                     String[] R =x.split("%%%%%");
                     registros.add(R);
                 }
             }
+            
             fw.close();
             return registros;
         } catch (IOException o) {
@@ -218,7 +217,7 @@ public class Metodos {
         String L = "";
         String x = "";
         while (x != null) {
-            x = bw.readLine();
+            x = AES.decrypt(bw.readLine(), "BanQuaAES");
             if(x!=null){
             L = L + x + "\r\n";
             }
@@ -240,7 +239,7 @@ public class Metodos {
         int var = 0;
         String temp = "";
 
-        while ((line = br.readLine()) != null) {
+        while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (line.contains(cod)) {
                 linea = line;
                 StringTokenizer st = new StringTokenizer(linea, "%%%%%");
@@ -257,7 +256,7 @@ public class Metodos {
                 }
                 line = line.replace(line, temp);
             }
-            pw.println(line);
+            pw.println(AES.encrypt(line, "BanQuaAES"));
             pw.flush();
 
         }
@@ -280,7 +279,7 @@ public class Metodos {
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(fw);
 
-        pw.write(contenido);
+        pw.write(AES.encrypt(contenido, "BanQuaAES"));
 
         pw.close();
         bw.close();
@@ -296,9 +295,9 @@ public class Metodos {
 
         String line = null;
 
-        while ((line = br.readLine()) != null) {
+        while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (!line.contains(indice)) {
-                pw.println(line);
+                pw.println(AES.encrypt(line, "BanQuaAES"));
                 pw.flush();
             }
         }
@@ -326,7 +325,7 @@ public class Metodos {
         String linea = null;
         String temp = "";
 
-        while ((line = br.readLine()) != null) {
+        while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (line.contains(indice)) {
                 linea = line;
                 StringTokenizer st = new StringTokenizer(linea,"%%%%%");
@@ -340,7 +339,7 @@ public class Metodos {
                 }
                 line = line.replace(line, temp);
             }
-            pw.println(line);
+            pw.println(AES.encrypt(line, "BanQuaAES"));
             pw.flush();
         }
 
@@ -361,7 +360,7 @@ public class Metodos {
         int cont = 0;
         do {
             cont++;
-        } while ((line = br.readLine()) != null);
+        } while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null);
         br.close();
         return cont;
     }
@@ -386,7 +385,7 @@ public class Metodos {
         FileReader fr = new FileReader(F);
         BufferedReader br = new BufferedReader(fr);
         while (sw == false && br.ready()/*&& /*cont<v*/) {
-            y = br.readLine();
+            y = AES.decrypt(br.readLine(), "BanQuaAES");
             for (int i = 0; i < y.length(); i++) {
                 if (y.substring(i, i + 1).equals("%%%%%")) {
                     if (ty.equals(po)) {
@@ -471,7 +470,7 @@ public class Metodos {
         BufferedReader br = new BufferedReader(fr);
         String g;
         while (br.ready()) {
-            g = br.readLine();
+            g = AES.decrypt(br.readLine(), "BanQuaAES");
             Metodos p = new Metodos();
             String kp=g.split("%%%%%")[0];
            // String h = p.Desco(g, 1, "%%%%%");

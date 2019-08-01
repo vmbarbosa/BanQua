@@ -77,8 +77,9 @@ public class Asignatura {
             BufferedReader br = new BufferedReader(fr);
             Metodos e = new Metodos();
             int h = 0;
+            
             while (br.ready()) {
-                String linea = br.readLine();
+                String linea = AES.decrypt(br.readLine(), "BanQuaAES");
                 String nombre, descripcion = "";
                 if (linea != null && linea != "") {
                     String[] Desco = linea.split("%%%%%");

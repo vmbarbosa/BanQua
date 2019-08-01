@@ -106,7 +106,7 @@ public class Tema {
         String[] Pregunta = null;
         boolean sw=true;
         while (br.ready()) {
-            String contenido = br.readLine();
+            String contenido = AES.decrypt(br.readLine(), "BanQuaAES");
             Scontenido = Scontenido + contenido;
             Pregunta = Scontenido.split("%%%%%");
             if (Pregunta != null && sw==true) {

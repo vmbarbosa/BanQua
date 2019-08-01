@@ -49,7 +49,7 @@ public class Profesor {
         Metodos e = new Metodos();
         int h = 0;
         while (br.ready()) {
-            String linea = br.readLine();
+            String linea = AES.decrypt(br.readLine(), "BanQuaAES");
             String Nombre, desc, cod;
             if (linea != null && !linea.equals("") && !linea.isEmpty()) {
                 String[] Desco = linea.split("%%%%%");
@@ -148,7 +148,7 @@ public class Profesor {
         FileWriter fw = new FileWriter(f);
         PrintWriter pw = new PrintWriter(fw);
 
-        pw.write(L);
+        pw.write(AES.encrypt(L, "BanQuaAES"));
 
         pw.close();
         fw.close();
