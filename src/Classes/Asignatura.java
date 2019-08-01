@@ -73,11 +73,13 @@ public class Asignatura {
         FileReader fr = null;
         try {
             File f = new File("C:\\ProgramData\\BanQua\\Profesor\\" + usuario + "\\" + Nombre + "\\Temas.txt");
+            System.out.println("e" + Nombre + "e");
+            System.out.println(f);
             fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             Metodos e = new Metodos();
             int h = 0;
-            
+
             while (br.ready()) {
                 String linea = AES.decrypt(br.readLine(), "BanQuaAES");
                 String nombre, descripcion = "";
@@ -89,7 +91,8 @@ public class Asignatura {
                     }//ESTO LO HIZO VALERIA
                     addTema(new Tema(nombre, descripcion, this));
                 }
-            }   br.close();
+            }
+            br.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Asignatura.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

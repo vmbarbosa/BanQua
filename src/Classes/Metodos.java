@@ -61,8 +61,11 @@ public class Metodos {
         FileWriter fw = new FileWriter(F);
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(fw);
-        pw.write(AES.encrypt(temp+"\n"+info, "BanQuaAES"));
-
+        if (temp.equals("")) {
+            pw.write(AES.encrypt(temp + info, "BanQuaAES"));
+        } else {
+            pw.write(AES.encrypt(temp + "\n" + info, "BanQuaAES"));
+        }
         pw.close();
         bw.close();
         fw.close();
@@ -98,13 +101,13 @@ public class Metodos {
             ArrayList<String[]> registros;
             try (BufferedReader bw = new BufferedReader(fw)) {
                 registros = new ArrayList();
-                String x ;
+                String x;
                 while ((x = AES.decrypt(bw.readLine(), "BanQuaAES")) != null) {
-                    String[] R =x.split("%%%%%");
+                    String[] R = x.split("%%%%%");
                     registros.add(R);
                 }
             }
-            
+
             fw.close();
             return registros;
         } catch (IOException o) {
@@ -126,7 +129,7 @@ public class Metodos {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre;
         for (int i = 0; i < registros.size(); i++) {
-            String[] R=registros.get(i);
+            String[] R = registros.get(i);
             nombre = R[j];
             if (nombre.equals(Usuario)) {
                 if ((registros.get(i)[j + 1]).equals(pasword)) {
@@ -149,7 +152,7 @@ public class Metodos {
         }
         return nombre;
     }
-    
+
     public String EncontrarCorreo(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
@@ -162,7 +165,7 @@ public class Metodos {
         }
         return nombre;
     }
-    
+
     public String EncontrarCedula(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
@@ -218,8 +221,9 @@ public class Metodos {
         String x = "";
         while (x != null) {
             x = AES.decrypt(bw.readLine(), "BanQuaAES");
-            if(x!=null){
-            L = L + x + "\r\n";
+            System.out.println("Desencriotado" + x + "aqui");
+            if (x != null && !x.equals("")) {
+                L = L + x + "\r\n";
             }
         }
         bw.close();
@@ -328,13 +332,13 @@ public class Metodos {
         while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (line.contains(indice)) {
                 linea = line;
-                StringTokenizer st = new StringTokenizer(linea,"%%%%%");
+                StringTokenizer st = new StringTokenizer(linea, "%%%%%");
                 while (st.hasMoreTokens()) {
                     String token = st.nextToken();
                     if (!token.equals(datoAnterior)) {
-                        temp = temp + token +"%%%%%";
+                        temp = temp + token + "%%%%%";
                     } else {
-                        temp = temp + datoNuevo +"%%%%%";
+                        temp = temp + datoNuevo + "%%%%%";
                     }
                 }
                 line = line.replace(line, temp);
@@ -367,7 +371,7 @@ public class Metodos {
 
     public String concatenar(String nombre) throws IOException {
         String temp = this.LeerArchivo(nombre);
-        if ("null".equals(temp)) {
+        if ("null".equals(temp) || "".equals(temp)) {
             temp = "";
         } else {
             temp = this.LeerArchivo(nombre);
@@ -472,8 +476,8 @@ public class Metodos {
         while (br.ready()) {
             g = AES.decrypt(br.readLine(), "BanQuaAES");
             Metodos p = new Metodos();
-            String kp=g.split("%%%%%")[0];
-           // String h = p.Desco(g, 1, "%%%%%");
+            String kp = g.split("%%%%%")[0];
+            // String h = p.Desco(g, 1, "%%%%%");
             y.addItem(kp);
             h2 = h2 + 1;
         }

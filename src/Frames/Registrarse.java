@@ -444,10 +444,8 @@ public class Registrarse extends javax.swing.JFrame {
                 Metodos met = new Metodos();
                 String x = "C:\\ProgramData\\BanQua\\Usuario.txt";
                 String temp;
-
                 try {
                     temp = met.concatenar(x);
-
                     met.guardar(temp, x, Nombre2 + "%%%%%" + Cedula2 + "%%%%%" + NickName2 + "%%%%%" + Pasword2 + "%%%%%" + foto2 + "%%%%%" + Correo2);
                 } catch (IOException ex) {
                     Logger.getLogger(Registrarse.class.getName()).log(Level.SEVERE, null, ex);

@@ -47,7 +47,7 @@ public class AES {
     }
 
     public static String decrypt(String strToDecrypt, String secret) {
-        if (strToDecrypt != null) {
+        if (strToDecrypt != null && !strToDecrypt.equals("")) {
             try {
                 setKey(secret);
                 Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
@@ -57,6 +57,10 @@ public class AES {
                 System.out.println("Error de descifrado: " + e.toString());
             }
         }
-        return null;
+        if (strToDecrypt == null) {
+            return null;
+        } else {
+            return "";
+        }
     }
 }

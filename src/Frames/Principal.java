@@ -3292,8 +3292,8 @@ public class Principal extends javax.swing.JFrame {
                     Metodos met = new Metodos();
                     String x = "C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt";
                     String temp;
-
                     temp = met.concatenar(x);
+                    System.out.println("M"+temp+"M");
                     File carpeta = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna);
                     carpeta.mkdirs();
                     File fichero = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna + "/Temas.txt");

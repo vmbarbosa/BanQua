@@ -49,6 +49,7 @@ public class Profesor {
         Metodos e = new Metodos();
         int h = 0;
         while (br.ready()) {
+            
             String linea = AES.decrypt(br.readLine(), "BanQuaAES");
             String Nombre, desc, cod;
             if (linea != null && !linea.equals("") && !linea.isEmpty()) {
