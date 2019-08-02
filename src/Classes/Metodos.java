@@ -64,7 +64,9 @@ public class Metodos {
         if (temp.equals("")) {
             pw.write(AES.encrypt(temp + info, "BanQuaAES"));
         } else {
-            pw.write(AES.encrypt(temp + "\n" + info, "BanQuaAES"));
+            temp=AES.encrypt(temp, "BanQuaAES");
+            info=AES.encrypt(info, "BanQuaAES");
+            pw.write(temp+"\r\n"+info);
         }
         pw.close();
         bw.close();

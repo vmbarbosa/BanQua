@@ -142,6 +142,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         BottonCambiarDeUsuario = new rsbuttom.RSButtonMetro();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
         Perfil = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -683,10 +685,11 @@ public class Principal extends javax.swing.JFrame {
         Menu.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
 
         Home.setBackground(new java.awt.Color(0, 87, 116));
+        Home.setPreferredSize(new java.awt.Dimension(250, 600));
         Home.setLayout(new java.awt.BorderLayout());
 
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo.PNG"))); // NOI18N
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo2.png"))); // NOI18N
         jLabel61.setMinimumSize(new java.awt.Dimension(0, 0));
         jLabel61.setPreferredSize(new java.awt.Dimension(0, 0));
         jLabel61.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -700,7 +703,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(100000, 1000000));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setName(""); // NOI18N
-        jPanel1.setPreferredSize(new java.awt.Dimension(250, 1000));
+        jPanel1.setPreferredSize(new java.awt.Dimension(250, 600));
 
         jPanel3.setMinimumSize(new java.awt.Dimension(0, 240));
         jPanel3.setPreferredSize(new java.awt.Dimension(0, 240));
@@ -758,6 +761,29 @@ public class Principal extends javax.swing.JFrame {
         );
 
         Home.add(jPanel1, java.awt.BorderLayout.LINE_END);
+
+        jPanel5.setBackground(new java.awt.Color(0, 87, 116));
+
+        jLabel62.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\BanQua\\src\\Imagenes\\copy.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel62)
+                .addContainerGap(881, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jLabel62)
+                .addGap(26, 26, 26))
+        );
+
+        Home.add(jPanel5, java.awt.BorderLayout.PAGE_END);
 
         Menu.addTab("Home", Home);
 
@@ -3624,7 +3650,7 @@ public class Principal extends javax.swing.JFrame {
             this.ComboBoxTemas.addItem("...");
             int h = 0;
             try {
-                h = met.Generador_de_Combobox("Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.ComboBoxTemas, h);
+                h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + TempAsigna + "/Temas.txt", this.ComboBoxTemas, h);
                 if (h < 1) {
                     AdAsig.setVisible(true);
                     AdAsig.setText("*Asignatura sin Temas");
@@ -3668,7 +3694,7 @@ public class Principal extends javax.swing.JFrame {
         ComboAsignaturaS.addItem("...");
         Metodos met = new Metodos();
         try {
-            h = met.Generador_de_Combobox("Profesor/" + usuario + "/Asignatura.txt", ComboAsignaturaS, h);
+            h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", ComboAsignaturaS, h);
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3969,14 +3995,6 @@ public class Principal extends javax.swing.JFrame {
                     if (!Viejo.equals(Nuevo)) {
                         move(Nuevo, Viejo);
                         recursiveDelete(Viejo);
-                        /*try {
-                            recursiveDelete(Viejo);
-                            Nuevo.mkdirs();
-                            File text = new File("Profesor/" + usuario + "/" + NomEditAsig.getText() + "/Temas.txt");
-                            text.createNewFile();
-                        } catch (IOException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                        }*/
                     }
                 } else {
                     Total = Total + asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%" + "\r\n";
@@ -5245,9 +5263,6 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Nombre1KeyReleased
 
-    private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
-    }//GEN-LAST:event_jLabel61MouseClicked
-
     private void pregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pregActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pregActionPerformed
@@ -5256,6 +5271,10 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.CambiarDeCuenta();
     }//GEN-LAST:event_BottonCambiarDeUsuarioActionPerformed
+
+    private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
+
+    }//GEN-LAST:event_jLabel61MouseClicked
 
     ///METODOS!!
     public void CambiarDeCuenta() {
@@ -5751,6 +5770,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -5765,6 +5785,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
