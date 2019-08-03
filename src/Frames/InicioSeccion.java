@@ -16,6 +16,7 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -279,21 +280,23 @@ public class InicioSeccion extends javax.swing.JFrame {
 
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
         File f = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
-        if(f.exists()){
-        Metodos met = new Metodos();
-        String direUsu = "C:\\ProgramData\\BanQua\\Usuario.txt";
-        if (met.EncontrarUsuario(direUsu, Usuario.getText(), Password.getText(), 2)) {
-            rSButtonMetro1.setEnabled(false);
-            usuario = Usuario.getText();
-            nombre_profesor = met.EncontrarNombre(direUsu, usuario);
-            Correo = met.EncontrarCorreo(direUsu, usuario);
-            Principal prin = new Principal();
-            prin.setVisible(true);
-            this.setVisible(false);
+        if (f.exists()) {
+            Metodos met = new Metodos();
+            String direUsu = "C:\\ProgramData\\BanQua\\Usuario.txt";
+            if (met.EncontrarUsuario(direUsu, Usuario.getText(), Password.getText(), 2)) {
+                rSButtonMetro1.setEnabled(false);
+                usuario = Usuario.getText();
+                nombre_profesor = met.EncontrarNombre(direUsu, usuario);
+                Correo = met.EncontrarCorreo(direUsu, usuario);
+                Principal prin = new Principal();
+                prin.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                prin.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "Ingreso Erroneo", "Verificar contraseña y usuario.", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "Ingreso Erroneo", "Verificar contraseña y usuario.", JOptionPane.ERROR_MESSAGE);
-        }}else{
-             JOptionPane.showMessageDialog(this, "Ingreso Erroneo", "No se ha registrado ningun usuario.", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Ingreso Erroneo", "No se ha registrado ningun usuario.", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
@@ -377,11 +380,12 @@ public class InicioSeccion extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static void CarpetaInicio(){
-       File BanQua = new File("C:\\ProgramData\\BanQua");
-       if(!BanQua.exists()){
+
+    public static void CarpetaInicio() {
+        File BanQua = new File("C:\\ProgramData\\BanQua");
+        if (!BanQua.exists()) {
             BanQua.mkdir();
-       }
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro BottonRegistro;

@@ -83,8 +83,9 @@ public class Principal extends javax.swing.JFrame {
     static boolean sw3 = true; //boolean para preguntas
     Profesor profesor = new Profesor();
     DefaultTableModel modelo;
-
+    
     public Principal() {
+        
         initComponents();
         BarraCorrediza();
         this.getContentPane().setBackground(Color.BLACK);;
@@ -338,8 +339,9 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane11.setAlignmentY(0.3F);
 
         PanelMenu.setBackground(new java.awt.Color(0, 103, 142));
-        PanelMenu.setMaximumSize(new java.awt.Dimension(217, 750));
-        PanelMenu.setPreferredSize(new java.awt.Dimension(217, 750));
+        PanelMenu.setMaximumSize(new java.awt.Dimension(217, 700));
+        PanelMenu.setMinimumSize(new java.awt.Dimension(220, 700));
+        PanelMenu.setPreferredSize(new java.awt.Dimension(217, 700));
         PanelMenu.setRequestFocusEnabled(false);
         PanelMenu.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
@@ -703,7 +705,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(100000, 1000000));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setName(""); // NOI18N
-        jPanel1.setPreferredSize(new java.awt.Dimension(250, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(200, 600));
 
         jPanel3.setMinimumSize(new java.awt.Dimension(0, 240));
         jPanel3.setPreferredSize(new java.awt.Dimension(0, 240));
@@ -746,10 +748,10 @@ public class Principal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(206, 206, 206))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -764,7 +766,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(0, 87, 116));
 
-        jLabel62.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\BanQua\\src\\Imagenes\\copy.png")); // NOI18N
+        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/copy.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -773,12 +775,12 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel62)
-                .addContainerGap(881, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jLabel62)
                 .addGap(26, 26, 26))
         );
@@ -3375,7 +3377,7 @@ public class Principal extends javax.swing.JFrame {
                 //file.renameTo(Nuevo);
                 Metodos met = new Metodos();
                 try {
-                    String Informacion = met.LeerArchivo(file.getPath());
+                    String Informacion = met.LeerArchivo2(file.getPath());
                     met.guardar(Informacion, Nuevo.getPath(), "");
                 } catch (IOException ex) {
                     Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);

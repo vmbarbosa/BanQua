@@ -27,10 +27,10 @@ import javax.swing.JTextField;
  * @author Jose Sarmiento
  */
 public class Metodos {
-
+    
     public Metodos() {
     }
-
+    
     public String especifico(String Nombre) throws FileNotFoundException, IOException {
         File F = new File(Nombre);
         FileReader fw = new FileReader(F);
@@ -45,7 +45,7 @@ public class Metodos {
             x = AES.decrypt(bw.readLine(), "BanQuaAES");;
             if (x != null && !x.equals("")) {
                 es = x + "r";
-
+                
             } else {
                 break;
             }
@@ -55,7 +55,7 @@ public class Metodos {
         JOptionPane.showMessageDialog(null, es);
         return es;
     }
-
+    
     public void guardar(String temp, String x, String info) throws IOException {
         File F = new File(x);
         FileWriter fw = new FileWriter(F);
@@ -64,15 +64,15 @@ public class Metodos {
         if (temp.equals("")) {
             pw.write(AES.encrypt(temp + info, "BanQuaAES"));
         } else {
-            temp=AES.encrypt(temp, "BanQuaAES");
-            info=AES.encrypt(info, "BanQuaAES");
-            pw.write(temp+"\r\n"+info);
+            System.out.println("[" + temp + "]");
+            info = AES.encrypt(info, "BanQuaAES");
+            pw.write(temp + info);
         }
         pw.close();
         bw.close();
         fw.close();
     }
-
+    
     public void comboBox(String archivo, JComboBox combo) throws FileNotFoundException, IOException {
         File F = new File(archivo);
         FileReader fr = new FileReader(F);
@@ -109,7 +109,7 @@ public class Metodos {
                     registros.add(R);
                 }
             }
-
+            
             fw.close();
             return registros;
         } catch (IOException o) {
@@ -141,7 +141,7 @@ public class Metodos {
         }
         return false;
     }
-
+    
     public String EncontrarNombre(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
@@ -154,7 +154,7 @@ public class Metodos {
         }
         return nombre;
     }
-
+    
     public String EncontrarCorreo(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
@@ -167,7 +167,7 @@ public class Metodos {
         }
         return nombre;
     }
-
+    
     public String EncontrarCedula(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
@@ -180,7 +180,7 @@ public class Metodos {
         }
         return nombre;
     }
-
+    
     public String EncontrarFoto(String NombreArchivo, String Usuario) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String nombre = "";
@@ -193,7 +193,7 @@ public class Metodos {
         }
         return nombre;
     }
-
+    
     public boolean ValidarPregunta(String NombreArchivo, String PreguntaaValidar, int posicion) {
         ArrayList<String[]> registros = this.LeerArchivoDaniel(NombreArchivo);
         String Pregunta;
@@ -205,7 +205,7 @@ public class Metodos {
         }
         return true;
     }
-
+    
     public boolean confNum(String x) {
         try {
             Integer.parseInt(x);
@@ -214,8 +214,8 @@ public class Metodos {
             return false;
         }
     }
-
-    public String LeerArchivo(String Nombre) throws IOException {
+    
+    public String LeerArchivo2(String Nombre) throws IOException {
         File F = new File(Nombre);
         FileReader fw = new FileReader(F);
         BufferedReader bw = new BufferedReader(fw);
@@ -231,25 +231,44 @@ public class Metodos {
         bw.close();
         fw.close();
         return L;
+        
     }
 
+    /*public String LeerArchivo(String Nombre) throws IOException {
+        File F = new File(Nombre);
+        FileReader fw = new FileReader(F);
+        BufferedReader bw = new BufferedReader(fw);
+        String L = "";
+        String x = "";
+        while (x != null) {
+            x = AES.decrypt(bw.readLine(), "BanQuaAES");
+            System.out.println("Desencriotado" + x + "aqui");
+            if (x != null && !x.equals("")) {
+                L = L + x + "\r\n";
+            }
+        }
+        bw.close();
+        fw.close();
+        return L;
+    }*/
+    
     public void modificar_contraseña(String cod, String con) throws FileNotFoundException, IOException {
         File originalFile = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
-
+        
         File temporal = new File("C:\\ProgramData\\BanQua\\temporal.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(temporal));
-
+        
         String line = null;
         String linea = null;
         int var = 0;
         String temp = "";
-
+        
         while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (line.contains(cod)) {
                 linea = line;
                 StringTokenizer st = new StringTokenizer(linea, "%%%%%");
-
+                
                 while (var < 3) {
                     temp = temp + st.nextToken() + "%%%%%";
                     var++;
@@ -264,73 +283,73 @@ public class Metodos {
             }
             pw.println(AES.encrypt(line, "BanQuaAES"));
             pw.flush();
-
+            
         }
-
+        
         pw.close();
         br.close();
-
+        
         Metodos p = new Metodos();
-        String pancreas = p.LeerArchivo("C:\\ProgramData\\BanQua\\temporal.txt");
+        String pancreas = p.LeerArchivo2("C:\\ProgramData\\BanQua\\temporal.txt");
         p.Sobreescribir("C:\\ProgramData\\BanQua\\Usuario.txt", pancreas);
         p.Sobreescribir("C:\\ProgramData\\BanQua\\temporal.txt", "");
-
+        
     }
-
+    
     public void Sobreescribir(String direccion, String contenido) throws IOException {
-
+        
         File F = new File(direccion);
         FileWriter fw = new FileWriter(F);
-
+        
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(fw);
-
+        
         pw.write(AES.encrypt(contenido, "BanQuaAES"));
-
+        
         pw.close();
         bw.close();
         fw.close();
     }
-
+    
     public void Eliminar_Linea(String indice, String archivo) throws FileNotFoundException, IOException {
         File originalFile = new File(archivo);
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
-
+        
         File temporal = new File("C:\\ProgramData\\BanQua\\temporal.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(temporal));
-
+        
         String line = null;
-
+        
         while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (!line.contains(indice)) {
                 pw.println(AES.encrypt(line, "BanQuaAES"));
                 pw.flush();
             }
         }
-
+        
         pw.close();
         br.close();
-
+        
         Metodos p = new Metodos();
-        String nuevo = p.LeerArchivo("C:\\ProgramData\\BanQua\\temporal.txt");
+        String nuevo = p.LeerArchivo2("C:\\ProgramData\\BanQua\\temporal.txt");
         p.Sobreescribir(archivo, nuevo);
         p.Sobreescribir("C:\\ProgramData\\BanQua\\temporal.txt", "");
     }
-
+    
     public void modificar(String indice, String archivo) throws FileNotFoundException, IOException {
         String datoAnterior = (String) JOptionPane.showInputDialog(null, "Ingrese dato anterior");
         String datoNuevo = (String) JOptionPane.showInputDialog(null, "Ingrese dato nuevo");
-
+        
         File originalFile = new File(archivo);
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
-
+        
         File temporal = new File("C:\\ProgramData\\BanQua\\temporal.txt");
         PrintWriter pw = new PrintWriter(new FileWriter(temporal));
-
+        
         String line = null;
         String linea = null;
         String temp = "";
-
+        
         while ((line = AES.decrypt(br.readLine(), "BanQuaAES")) != null) {
             if (line.contains(indice)) {
                 linea = line;
@@ -348,20 +367,20 @@ public class Metodos {
             pw.println(AES.encrypt(line, "BanQuaAES"));
             pw.flush();
         }
-
+        
         pw.close();
         br.close();
-
+        
         Metodos p = new Metodos();
-        String nuevo = p.LeerArchivo("C:\\ProgramData\\BanQua\\temporal.txt");
+        String nuevo = p.LeerArchivo2("C:\\ProgramData\\BanQua\\temporal.txt");
         p.Sobreescribir(archivo, nuevo);
         p.Sobreescribir("C:\\ProgramData\\BanQua\\temporal.txt", "");
     }
-
+    
     public int indice(String archivo) throws FileNotFoundException, IOException {
         File originalFile = new File(archivo);
         BufferedReader br = new BufferedReader(new FileReader(originalFile));
-
+        
         String line = null;
         int cont = 0;
         do {
@@ -370,17 +389,15 @@ public class Metodos {
         br.close();
         return cont;
     }
-
+    
     public String concatenar(String nombre) throws IOException {
-        String temp = this.LeerArchivo(nombre);
+        String temp = this.LeerArchivo2(nombre);
         if ("null".equals(temp) || "".equals(temp)) {
             temp = "";
-        } else {
-            temp = this.LeerArchivo(nombre);
         }
         return temp;
     }
-
+    
     public String buscar(String x, String f) throws FileNotFoundException, IOException {
         String y = null;
         String ty = "";
@@ -396,7 +413,7 @@ public class Metodos {
                 if (y.substring(i, i + 1).equals("%%%%%")) {
                     if (ty.equals(po)) {
                         sw = true;
-
+                        
                     } else {
                         ty = "";
                         /*cont=cont+1;*/
@@ -408,21 +425,21 @@ public class Metodos {
         }
         fr.close();
         br.close();
-
+        
         return ty;
-
+        
     }
-
+    
     public boolean verificar(String x, String f) {          //verificar va a decir usando un booleano si x palabra existe en algun campo
         String ty = "";
         boolean j = false;
         String po = f;
-
+        
         for (int i = 0; i < x.length(); i++) {
             if (x.substring(i, i + 1).equals("%%%%%")) {
                 if (ty.equals(po)) {
                     j = true;
-
+                    
                 } else {
                     ty = "";
                 }
@@ -430,29 +447,29 @@ public class Metodos {
                 ty = ty + x.substring(i, i + 1);
             }
         }
-
+        
         return j;
     }
-
+    
     public int NombreArchivo(String f) {
-
+        
         int x = 0;
         for (int i = 0; i < f.length(); i++) {
             if (f.substring(i, i + 1).equals("\\")) {
                 x = i;
             }
         }
-
+        
         return x;
-
+        
     }
-
+    
     public String Desco(String x, int y, String h) {              //Desco se va a encargar que dependiendo de la poscion y, extraer un campo especifico
         int cont = 0;
         int j = 0, i = 0;
         String ty = "";
         while (j == 0) {
-
+            
             if (x.substring(i, i + 1).equals(h)) {
                 cont = cont + 1;
                 if (cont == y) {
@@ -465,12 +482,12 @@ public class Metodos {
             }
             i = i + 1;
         }
-
+        
         return ty;
     }
-
+    
     public int Generador_de_Combobox(String x, JComboBox y, int h2) throws FileNotFoundException, IOException {
-
+        
         File f = new File(x);
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
@@ -487,19 +504,19 @@ public class Metodos {
         br.close();
         return h2;
     }
-
+    
     public void ReincioComboBox(JComboBox... j) {
         for (JComboBox jComboBox : j) {
             jComboBox.setSelectedIndex(0);
         }
     }
-
+    
     public void ReincioJTextField(JTextField... o) {
         for (JTextField jtext : o) {
             jtext.setText("");
         }
     }
-
+    
     public void ReincioTextArea(JTextArea... a) {
         for (JTextArea jTextArea : a) {
             jTextArea.setText("");

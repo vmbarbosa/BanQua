@@ -107,7 +107,10 @@ public class Tema {
         boolean sw=true;
         while (br.ready()) {
             String contenido = AES.decrypt(br.readLine(), "BanQuaAES");
+            System.out.println("\nLinea");
+            System.out.println(contenido);
             Scontenido = Scontenido + contenido;
+            System.out.println(Scontenido);
             Pregunta = Scontenido.split("%%%%%");
             if (Pregunta != null && sw==true) {
                 if (Pregunta.length == 2) {
@@ -120,10 +123,11 @@ public class Tema {
                     }
                 }
                 if(Pregunta.length==4){
-                    Precontenido=Precontenido+"\n"+contenido.split("%%%%%")[0];
+                    Precontenido=Precontenido+"\n"+contenido.split("%%%%%")[1];
                     sw=false;
                 }
             }
+            System.out.println(Precontenido);
             if (contenido != null && !Scontenido.equals("") && Pregunta.length == 4) {
                 String info = Precontenido;
                 String estado = Pregunta[2];
