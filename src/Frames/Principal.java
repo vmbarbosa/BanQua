@@ -775,7 +775,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel62)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(525, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3739,16 +3739,16 @@ public class Principal extends javax.swing.JFrame {
                     nombre = registros.get(i)[2];
                     if (nombre.equals(Usuario1.getText())) {
                         if ((registros.get(i)[0]).equals(Nombre1.getText())) {
-                            Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + NuevaContra.getText() + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
+                            Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + NuevaContra.getText() + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5], "BanQuaAES") + "\r\n";
                         }
                     } else {
-                        Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
+                        Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5], "BanQuaAES") + "\r\n";
                     }
                 }
                 File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(AES.encrypt(Total, "BanQuaAES"));
+                bw.write(Total);
                 bw.close();
                 fw.close();
                 JOptionPane.showMessageDialog(this, "Cambio Exitoso", "Cambio Contraseña", JOptionPane.INFORMATION_MESSAGE);
@@ -5199,17 +5199,17 @@ public class Principal extends javax.swing.JFrame {
             for (int i = 0; i < registros.size(); i++) {
                 nombre = registros.get(i)[2];
                 if (nombre.equals(Usuario1.getText())) {
-                    Total = Total + Nombre1.getText() + "%%%%%" + Cedula1.getText() + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + CorreoPerfil.getText() + "\r\n";
+                    Total = Total + AES.encrypt(Nombre1.getText() + "%%%%%" + Cedula1.getText() + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + CorreoPerfil.getText(),"BanQuaAES") + "\r\n";
                     nombre_profesor = Nombre1.getText();
                     Correo = CorreoPerfil.getText();
                 } else {
-                    Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
+                    Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5],"BanQuaAES") + "\r\n";
                 }
             }
             File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
             fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(AES.encrypt(Total, "BanQuaAES"));
+            bw.write(Total);
             bw.close();
             fw.close();
             JOptionPane.showMessageDialog(this, "Los cambios se han realizado con exito.", "Modificacion Perfil", JOptionPane.INFORMATION_MESSAGE);
@@ -5350,16 +5350,16 @@ public class Principal extends javax.swing.JFrame {
             nombre = registros.get(i)[2];
             if (nombre.equals(Usuario)) {
                 if ((registros.get(i)[0]).equals(Nombre)) {
-                    Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + Imagen + "%%%%%" + registros.get(i)[5] + "\r\n";
+                    Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + Imagen + "%%%%%" + registros.get(i)[5], "BanQuaAES") + "\r\n";
                 }
             } else {
-                Total = Total + registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5] + "\r\n";
+                Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5], "BanQuaAES") + "\r\n";
             }
         }
         File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
         FileWriter fw = new FileWriter(file);
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(AES.encrypt(Total, "BanQuaAES"));
+        bw.write(Total);
         bw.close();
         fw.close();
     }
