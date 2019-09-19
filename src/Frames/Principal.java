@@ -39,6 +39,7 @@ import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -83,9 +84,9 @@ public class Principal extends javax.swing.JFrame {
     static boolean sw3 = true; //boolean para preguntas
     Profesor profesor = new Profesor();
     DefaultTableModel modelo;
-    
+
     public Principal() {
-        
+
         initComponents();
         BarraCorrediza();
         this.getContentPane().setBackground(Color.BLACK);;
@@ -265,6 +266,10 @@ public class Principal extends javax.swing.JFrame {
         SeAd = new javax.swing.JLabel();
         TemAd = new javax.swing.JLabel();
         PregActual = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        Tbloq = new javax.swing.JTextField();
+        AvisoMeses = new javax.swing.JLabel();
         EditAsig = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         NomEditAsig = new javax.swing.JTextField();
@@ -1083,6 +1088,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 204;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -1108,7 +1114,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setText("Codigo de la asignatura:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.ipady = 8;
@@ -1117,8 +1123,9 @@ public class Principal extends javax.swing.JFrame {
         Asignatura.add(jLabel5, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 204;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -1137,7 +1144,7 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(15, 20, 0, 0);
@@ -1149,7 +1156,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel12.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 5;
         gridBagConstraints.ipady = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -1165,15 +1172,15 @@ public class Principal extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 12;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1397;
-        gridBagConstraints.ipady = 477;
+        gridBagConstraints.ipadx = 1123;
+        gridBagConstraints.ipady = 223;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(11, 20, 0, 24);
+        gridBagConstraints.insets = new java.awt.Insets(11, 20, 0, 20);
         Asignatura.add(jScrollPane1, gridBagConstraints);
 
         addAsig.setText("Agregar");
@@ -1192,12 +1199,12 @@ public class Principal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.ipadx = 75;
         gridBagConstraints.ipady = 29;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 20, 44, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 317, 0);
         Asignatura.add(addAsig, gridBagConstraints);
 
         Menu.addTab("Asigantura", Asignatura);
@@ -1335,8 +1342,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 16;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1397;
-        gridBagConstraints.ipady = 437;
+        gridBagConstraints.ipadx = 1119;
+        gridBagConstraints.ipady = 223;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -1364,7 +1371,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 75;
         gridBagConstraints.ipady = 29;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 20, 44, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 20, 287, 0);
         Tema.add(ButtonAgregarTema, gridBagConstraints);
 
         AdTema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1515,8 +1522,8 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.gridwidth = 15;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 1397;
-        gridBagConstraints.ipady = 397;
+        gridBagConstraints.ipadx = 1119;
+        gridBagConstraints.ipady = 253;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -1541,7 +1548,7 @@ public class Principal extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 133;
         gridBagConstraints.ipady = 23;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 20, 50, 0);
+        gridBagConstraints.insets = new java.awt.Insets(22, 20, 207, 0);
         Pregunta.add(ButtonAgregarPregunta, gridBagConstraints);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -1986,8 +1993,8 @@ public class Principal extends javax.swing.JFrame {
 
     jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     jLabel22.setForeground(new java.awt.Color(0, 87, 116));
-    jLabel22.setText("Numero de preguntas:");
-    Generar.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 143, -1));
+    jLabel22.setText("semestre(s).");
+    Generar.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 407, 90, -1));
 
     AvisoNumeros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
     AvisoNumeros.setForeground(new java.awt.Color(255, 102, 51));
@@ -2089,6 +2096,37 @@ public class Principal extends javax.swing.JFrame {
     PregActual.setForeground(new java.awt.Color(0, 87, 116));
     PregActual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     Generar.add(PregActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 120, 20));
+
+    jLabel63.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel63.setForeground(new java.awt.Color(0, 87, 116));
+    jLabel63.setText("Numero de preguntas:");
+    Generar.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 143, -1));
+
+    jLabel64.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel64.setForeground(new java.awt.Color(0, 87, 116));
+    jLabel64.setText("Tiempo de bloqueo:");
+    Generar.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 143, -1));
+
+    Tbloq.setMaximumSize(new java.awt.Dimension(7, 20));
+    Tbloq.setMinimumSize(new java.awt.Dimension(7, 20));
+    Tbloq.setPreferredSize(new java.awt.Dimension(7, 20));
+    Tbloq.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            TbloqActionPerformed(evt);
+        }
+    });
+    Tbloq.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            TbloqKeyReleased(evt);
+        }
+    });
+    Generar.add(Tbloq, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 170, 25));
+
+    AvisoMeses.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    AvisoMeses.setForeground(new java.awt.Color(255, 102, 51));
+    AvisoMeses.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    AvisoMeses.setText("*El numero de semestres es solo numerico.");
+    Generar.add(AvisoMeses, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 270, -1));
 
     Menu.addTab("Generar", Generar);
 
@@ -2916,6 +2954,11 @@ public class Principal extends javax.swing.JFrame {
         public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
         }
     });
+    ComboNivPreg.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ComboNivPregActionPerformed(evt);
+        }
+    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 56;
     gridBagConstraints.gridy = 3;
@@ -3118,6 +3161,7 @@ public class Principal extends javax.swing.JFrame {
         SubMenu.setSelectedIndex(0);
         BloqDesBoton(ButtonAddPreg, "...");
         Menu.setSelectedComponent(Generar);
+        AvisoMeses.setVisible(false);
     }//GEN-LAST:event_BottonGenrExamActionPerformed
 
     private void BottonVerInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfoActionPerformed
@@ -3164,7 +3208,7 @@ public class Principal extends javax.swing.JFrame {
     private void ButtonAddPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddPregActionPerformed
 
         Date date = fecha.getDate();
-        if (!evaluacion.getText().equals("") && date != null && !preg.getText().equals("")) {
+        if (!evaluacion.getText().equals("") && date != null && !preg.getText().equals("") && !Tbloq.getText().equals("")) {
             int TotalPreg = TotalPregPorAsig();
             if (TotalPreg >= Integer.parseInt(preg.getText())) {
                 String tem;
@@ -3321,7 +3365,7 @@ public class Principal extends javax.swing.JFrame {
                     String x = "C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt";
                     String temp;
                     temp = met.concatenar(x);
-                    System.out.println("M"+temp+"M");
+                    System.out.println("M" + temp + "M");
                     File carpeta = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna);
                     carpeta.mkdirs();
                     File fichero = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asigna + "/Temas.txt");
@@ -3514,16 +3558,6 @@ public class Principal extends javax.swing.JFrame {
                             "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
 
-                /*evaluacion.setEditable(true);
-                evaluacion.setText("");
-                seme.setEnabled(true);
-                seme.setSelectedIndex(0);
-                asigna.setEnabled(true);
-                asigna.setSelectedIndex(0);
-                fecha.setEnabled(true);
-                fecha.setDate(null);
-                preg.setEditable(true);
-                preg.setText("");*/
                 PregActual.setVisible(false);
                 BottonGenrExam.doClick();
             }
@@ -3552,20 +3586,6 @@ public class Principal extends javax.swing.JFrame {
         String z = String.valueOf(this.nivel.getSelectedIndex());
         this.MostrarPreg(x, y, z, profesor);
     }//GEN-LAST:event_ButtonMostrarDERActionPerformed
-
-    private void pregKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pregKeyReleased
-        Metodos met = new Metodos();
-        System.out.println("entre " + preg.getText());
-        this.AvisoNumeros.setVisible(false);
-        if (met.confNum(this.preg.getText())) {
-            this.AvisoNumeros.setVisible(false);
-            BloqDesBoton(ButtonAddPreg, "");
-        } else {
-            BloqDesBoton(ButtonAddPreg, "...");
-            this.AvisoNumeros.setVisible(true);
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pregKeyReleased
 
     private void Asig2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_Asig2PopupMenuWillBecomeInvisible
         if ("...".equals(Asig2.getSelectedItem())) {
@@ -3993,13 +4013,13 @@ public class Principal extends javax.swing.JFrame {
                     profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
                     profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
                     profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
-                    Total = Total + NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%" + "\r\n";
+                    Total = Total + AES.encrypt(NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
                     if (!Viejo.equals(Nuevo)) {
                         move(Nuevo, Viejo);
                         recursiveDelete(Viejo);
                     }
                 } else {
-                    Total = Total + asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%" + "\r\n";
+                    Total = Total + AES.encrypt(asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
                 }
                 i++;
             }
@@ -4008,7 +4028,7 @@ public class Principal extends javax.swing.JFrame {
             try {
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(AES.encrypt(Total, "BanQuaAES"));
+                bw.write(Total);
                 bw.close();
                 fw.close();
                 MostrarAsig(profesor);
@@ -4138,7 +4158,7 @@ public class Principal extends javax.swing.JFrame {
                     File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
                     temactual.setNombre(NomEditTem.getText());
                     temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
-                    Total = Total + NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%" + "\r\n";
+                    Total = Total + AES.encrypt(NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
                     File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
                     if (!Viejo.equals(Nuevo)) {
                         Nuevo.mkdirs();
@@ -4158,7 +4178,7 @@ public class Principal extends javax.swing.JFrame {
                     }*/
                     }
                 } else {
-                    Total = Total + tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%" + "\r\n";
+                    Total = Total + AES.encrypt(tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
                 }
             }
             File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
@@ -4166,7 +4186,7 @@ public class Principal extends javax.swing.JFrame {
             try {
                 fw = new FileWriter(file);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(AES.encrypt(Total, "BanQuaAES"));
+                bw.write(Total);
                 bw.close();
                 fw.close();
                 MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
@@ -4316,14 +4336,14 @@ public class Principal extends javax.swing.JFrame {
                 if (String.valueOf(ComboNivPreg.getSelectedIndex()).equals(String.valueOf(ComboNivelA.getSelectedIndex()))) {
                     //Si no es asi solo se agregan los cambios que se hicieron
                     PregTemporal.add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
-                    Total = Total + ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%" + "\r\n";
+                    Total = Total + AES.encrypt(ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%", "BanQuaAES") + "\r\n";
                 } else {
                     //Si la pregunta cambio de dificultad es necesario agregarla al txt de preguntas de la nueva dificultad
                     String TotalAuxiliar = "";
                     for (Pregunta pregunt : tematica.getPreguntas(ComboNivelA.getSelectedIndex())) {
-                        TotalAuxiliar = TotalAuxiliar + +pregunt.getNivel() + "%%%%%" + pregunt.getContenido() + "%%%%%" + pregunt.getEstado() + "%%%%%" + pregunt.getFecha() + "%%%%%" + "\r\n";
+                        TotalAuxiliar = TotalAuxiliar + AES.encrypt(pregunt.getNivel() + "%%%%%" + pregunt.getContenido() + "%%%%%" + pregunt.getEstado() + "%%%%%" + pregunt.getFecha() + "%%%%%", "BanQuaAES") + "\r\n";
                     }
-                    TotalAuxiliar = TotalAuxiliar + ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%" + "\r\n";
+                    TotalAuxiliar = TotalAuxiliar + AES.encrypt(ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%", "BanQuaAES") + "\r\n";
                     //Se agregan los cambios a la variable statica Profesor
                     tematica.getPreguntas(ComboNivelA.getSelectedIndex()).add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
                     //Se escribe la pregunta en su nueva dificultad
@@ -4332,7 +4352,7 @@ public class Principal extends javax.swing.JFrame {
                     try {
                         fwA = new FileWriter(fileA);
                         BufferedWriter bwA = new BufferedWriter(fwA);
-                        bwA.write(AES.encrypt(TotalAuxiliar, "BanQuaAES"));
+                        bwA.write(TotalAuxiliar);
                         bwA.close();
                         fwA.close();
                     } catch (IOException ex) {
@@ -4341,7 +4361,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             } else {
                 PregTemporal.add(pregunta);
-                Total = Total + pregunta.getNivel() + "%%%%%" + pregunta.getContenido() + "%%%%%" + pregunta.getEstado() + "%%%%%" + pregunta.getFecha() + "%%%%%" + "\r\n";
+                Total = Total + AES.encrypt(pregunta.getNivel() + "%%%%%" + pregunta.getContenido() + "%%%%%" + pregunta.getEstado() + "%%%%%" + pregunta.getFecha() + "%%%%%", "BanQuaAES") + "\r\n";
             }
 
         }
@@ -4353,7 +4373,7 @@ public class Principal extends javax.swing.JFrame {
             fw = new FileWriter(file);
             ComboNivelA.setSelectedIndex(0);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(AES.encrypt(Total, "BanQuaAES"));
+            bw.write(Total);
             bw.close();
             fw.close();
             EstadPreg.setEditable(false);
@@ -4891,17 +4911,37 @@ public class Principal extends javax.swing.JFrame {
         if (BotonDesBloqueo.getText().equals("Bloquear")) {
             int n = JOptionPane.showConfirmDialog(null, "Desea Bloquear esta pregunta?", "Información", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
-                JDateChooser jd = new JDateChooser();
-                String message = "Seleccione la nueva fecha de ultimo uso:\n";
+                JTextField jd = new JTextField();
+                String message = "Digite el numero de semestre que la pregunta estará bloqueada.";
                 Object[] params = {message, jd};
-                JOptionPane.showConfirmDialog(null, params, "Fecha", JOptionPane.PLAIN_MESSAGE);
-                if (((JDateChooser) params[1]).getDate() != null) {
-                    String s = "";
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-                    s = sdf.format(((JDateChooser) params[1]).getDate());
-                    FechaPreg.setDate(((JDateChooser) params[1]).getDate());
-                    EstadPreg.setText("No Disponible");
+                JOptionPane.showConfirmDialog(null, params, "Tiempo de bloqeo", JOptionPane.PLAIN_MESSAGE);
+                /*if (Contenido[0].equals(preg.getContenido())) {
+                    preg.setEstado("No Disponible");
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+                    Date date = new Date();
+                    preg.setFecha(FechaDef(dateFormat.format(date)));
+                }*/
+                if (params[1] != null) {
+                    System.out.println(jd.getText());
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    Date date = new Date();
+                    String k = FechaDef(dateFormat.format(date), jd.getText());
+                    String[] dateValue = k.split("/");
+                    date = null;
+                    if (dateValue.length == 1) {
+                        date = null;
+                    } else {
+                        try {
+                            date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[0] + "-" + dateValue[1] + "-" + dateValue[2]);
+                        } catch (ParseException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    
                     JOptionPane.showMessageDialog(null, "Si desea mantener los cambios, presione Editar>>Guardar.", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                    FechaPreg.setDate(date);
+                    EstadPreg.setText("No Disponible");
+                    BotonDesBloqueo.setText("Desbloquear");
                     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
                     URL foto = classLoader.getResource("Imagenes/Des.png");
                     BotonDesBloqueo.setColorHover(Color.decode("#00FF3F"));
@@ -4925,7 +4965,7 @@ public class Principal extends javax.swing.JFrame {
             }
         }
         BotonDesBloqueo.setEnabled(true);
-        if (EstadPreg.equals("Disponible")) {
+        /*if (BotonDesBloqueo.getText().equals("Desbloquear")) {
             BotonDesBloqueo.setText("Bloquear");
             ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             URL foto = classLoader.getResource("Imagenes/Bloq.png");
@@ -4941,7 +4981,7 @@ public class Principal extends javax.swing.JFrame {
             BotonDesBloqueo.setColorNormal(Color.decode("#00CC33"));
             BotonDesBloqueo.setColorPressed(Color.decode("#00CC33"));
             BotonDesBloqueo.setIcon(new ImageIcon(foto));
-        }
+        }*/
     }//GEN-LAST:event_BotonDesBloqueoActionPerformed
 
     private void ComboAsigEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboAsigEditActionPerformed
@@ -5138,7 +5178,8 @@ public class Principal extends javax.swing.JFrame {
         AvisoNumeros.setVisible(false);
         SubMenu.setSelectedIndex(0);
         BloqDesBoton(ButtonAddPreg, "...");
-        Menu.setSelectedComponent(Generar);        // TODO add your handling code here:
+        Menu.setSelectedComponent(Generar);
+        AvisoMeses.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_BottonGenrExam1ActionPerformed
 
     private void BottonVerInfo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonVerInfo3ActionPerformed
@@ -5179,7 +5220,8 @@ public class Principal extends javax.swing.JFrame {
         AvisoNumeros.setVisible(false);
         SubMenu.setSelectedIndex(0);
         BloqDesBoton(ButtonAddPreg, "...");
-        Menu.setSelectedComponent(Generar);        // TODO add your handling code here:
+        Menu.setSelectedComponent(Generar);
+        AvisoMeses.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_BottonGenrExam2ActionPerformed
 
     private void ButtomEditPreg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomEditPreg1ActionPerformed
@@ -5199,11 +5241,11 @@ public class Principal extends javax.swing.JFrame {
             for (int i = 0; i < registros.size(); i++) {
                 nombre = registros.get(i)[2];
                 if (nombre.equals(Usuario1.getText())) {
-                    Total = Total + AES.encrypt(Nombre1.getText() + "%%%%%" + Cedula1.getText() + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + CorreoPerfil.getText(),"BanQuaAES") + "\r\n";
+                    Total = Total + AES.encrypt(Nombre1.getText() + "%%%%%" + Cedula1.getText() + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + CorreoPerfil.getText(), "BanQuaAES") + "\r\n";
                     nombre_profesor = Nombre1.getText();
                     Correo = CorreoPerfil.getText();
                 } else {
-                    Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5],"BanQuaAES") + "\r\n";
+                    Total = Total + AES.encrypt(registros.get(i)[0] + "%%%%%" + registros.get(i)[1] + "%%%%%" + registros.get(i)[2] + "%%%%%" + registros.get(i)[3] + "%%%%%" + registros.get(i)[4] + "%%%%%" + registros.get(i)[5], "BanQuaAES") + "\r\n";
                 }
             }
             File file = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
@@ -5265,10 +5307,6 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Nombre1KeyReleased
 
-    private void pregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pregActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pregActionPerformed
-
     private void BottonCambiarDeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonCambiarDeUsuarioActionPerformed
         // TODO add your handling code here:
         this.CambiarDeCuenta();
@@ -5277,6 +5315,45 @@ public class Principal extends javax.swing.JFrame {
     private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
 
     }//GEN-LAST:event_jLabel61MouseClicked
+
+    private void pregKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pregKeyReleased
+        Metodos met = new Metodos();
+        System.out.println("entre " + preg.getText());
+        this.AvisoNumeros.setVisible(false);
+        if (met.confNum(this.preg.getText())) {
+            this.AvisoNumeros.setVisible(false);
+            BloqDesBoton(ButtonAddPreg, "");
+        } else {
+            BloqDesBoton(ButtonAddPreg, "...");
+            this.AvisoNumeros.setVisible(true);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pregKeyReleased
+
+    private void pregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pregActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pregActionPerformed
+
+    private void TbloqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TbloqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TbloqActionPerformed
+
+    private void TbloqKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TbloqKeyReleased
+        Metodos met = new Metodos();
+        System.out.println("entre " + Tbloq.getText());
+        this.AvisoMeses.setVisible(false);
+        if (met.confNum(this.Tbloq.getText())) {
+            this.AvisoMeses.setVisible(false);
+            BloqDesBoton(ButtonAddPreg, "");
+        } else {
+            BloqDesBoton(ButtonAddPreg, "...");
+            this.AvisoMeses.setVisible(true);
+        }
+    }//GEN-LAST:event_TbloqKeyReleased
+
+    private void ComboNivPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboNivPregActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboNivPregActionPerformed
 
     ///METODOS!!
     public void CambiarDeCuenta() {
@@ -5453,7 +5530,7 @@ public class Principal extends javax.swing.JFrame {
             modelo.setColumnCount(0);
             modelo.addColumn("Pregunta");
             modelo.addColumn("Estado");
-            modelo.addColumn("Ultima vez");
+            modelo.addColumn("Fecha Desbloqueo");
             sw3 = false;
         }
         String pre = "";
@@ -5549,16 +5626,17 @@ public class Principal extends javax.swing.JFrame {
                     preg.setEstado("No Disponible");
                     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                     Date date = new Date();
-                    preg.setFecha(dateFormat.format(date));
+                    preg.setFecha(FechaDef(dateFormat.format(date), Tbloq.getText()));
                 }
                 info = preg.getNivel() + "%%%%%" + preg.getContenido() + "%%%%%" + preg.getEstado() + "%%%%%" + preg.getFecha() + "%%%%%";
+                info = AES.encrypt(info, "BanQuaAES");
                 L = L + info + "\r\n";
             }
             File f = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + a + "/" + profesor.getAsignaturas().get(asigna.getSelectedIndex() - 1).getTemas().get(b).getNombre() + "/Preguntas_" + c + ".txt");
             System.out.println(f);
             try (FileWriter fw = new FileWriter(f)) {
                 PrintWriter pw = new PrintWriter(fw);
-                pw.write(AES.encrypt(L, "BanQuaAES"));
+                pw.write(L);
                 pw.close();
             }
         }
@@ -5578,17 +5656,17 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay Asignaturas, deberia agregar alguna.");
         }
     }
-    
-    private String FechaDef(String Fecha) {
+
+    private String FechaDef(String Fecha, String Semestre) {
         String[] elementos = Fecha.split("/");
-        String Semestre="";
-        int mes = (Integer.parseInt(elementos[1])+Integer.parseInt(Semestre))%12;
-        int año = (Integer.parseInt(elementos[1])+Integer.parseInt(Semestre))/12;
-        if(año>0){
-        elementos[2]=String.valueOf(Integer.parseInt(elementos[2])+año);
+
+        int mes = (Integer.parseInt(elementos[1]) + (Integer.parseInt(Semestre) * 6)) % 12;
+        int año = (Integer.parseInt(elementos[1]) + (Integer.parseInt(Semestre) * 6)) / 12;
+        if (año > 0) {
+            elementos[2] = String.valueOf(Integer.parseInt(elementos[2]) + año);
         }
-        elementos[1]=String.valueOf(mes);
-        return elementos[0]+"/"+elementos[1]+"/"+elementos[2];
+        elementos[1] = String.valueOf(mes);
+        return elementos[0] + "/" + elementos[1] + "/" + elementos[2];
     }
 
 
@@ -5612,6 +5690,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Asig2;
     private javax.swing.JComboBox<String> Asig3;
     private javax.swing.JPanel Asignatura;
+    private javax.swing.JLabel AvisoMeses;
     private javax.swing.JLabel AvisoNumeros;
     private rsbuttom.RSButtonMetro BotonDesBloqueo;
     private rsbuttom.RSButtonMetro BottonAsignatura;
@@ -5703,6 +5782,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable TablaPreg;
     private javax.swing.JTable TablaPregEdit;
     private javax.swing.JTable TablaTem;
+    private javax.swing.JTextField Tbloq;
     private javax.swing.JLabel TemAd;
     private javax.swing.JPanel Tema;
     private javax.swing.JTextField Usuario1;
@@ -5773,6 +5853,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

@@ -234,15 +234,14 @@ public class Metodos {
         
     }
 
-    /*public String LeerArchivo(String Nombre) throws IOException {
+    public String LeerAes(String Nombre) throws IOException {
         File F = new File(Nombre);
         FileReader fw = new FileReader(F);
         BufferedReader bw = new BufferedReader(fw);
         String L = "";
         String x = "";
         while (x != null) {
-            x = AES.decrypt(bw.readLine(), "BanQuaAES");
-            System.out.println("Desencriotado" + x + "aqui");
+            x =bw.readLine();
             if (x != null && !x.equals("")) {
                 L = L + x + "\r\n";
             }
@@ -250,7 +249,7 @@ public class Metodos {
         bw.close();
         fw.close();
         return L;
-    }*/
+    }
     
     public void modificar_contraseña(String cod, String con) throws FileNotFoundException, IOException {
         File originalFile = new File("C:\\ProgramData\\BanQua\\Usuario.txt");
@@ -391,7 +390,7 @@ public class Metodos {
     }
     
     public String concatenar(String nombre) throws IOException {
-        String temp = this.LeerArchivo2(nombre);
+        String temp = this.LeerAes(nombre);
         if ("null".equals(temp) || "".equals(temp)) {
             temp = "";
         }
@@ -496,7 +495,6 @@ public class Metodos {
             g = AES.decrypt(br.readLine(), "BanQuaAES");
             Metodos p = new Metodos();
             String kp = g.split("%%%%%")[0];
-            // String h = p.Desco(g, 1, "%%%%%");
             y.addItem(kp);
             h2 = h2 + 1;
         }

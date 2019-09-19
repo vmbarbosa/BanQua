@@ -104,38 +104,36 @@ public class Tema {
         String Scontenido = "";
         String Precontenido = "";//Esto se hace con el fin de que cuando la pregunta tenga espacios se conseve con los espacios al momento de escribirla
         String[] Pregunta = null;
-        boolean sw=true;
+        boolean sw = true;
         while (br.ready()) {
             String contenido = AES.decrypt(br.readLine(), "BanQuaAES");
-            System.out.println("\nLinea");
-            System.out.println(contenido);
             Scontenido = Scontenido + contenido;
-            System.out.println(Scontenido);
+           // gzlLKJnFph4bCwuclMrbQ4Zt8emtl6m15P0bXVX9TRujSDcaN42TjhLZQmvtFA/4iw5tv7gOcmH0I4cEY4v14XUsnZz+ZY8kGNu1LJ//G2D/2j6o+XgcItDM/jU7j92Q
+            
+            //System.out.println(contenido);
+            
             Pregunta = Scontenido.split("%%%%%");
-            if (Pregunta != null && sw==true) {
+            /*if (Pregunta != null && sw == true) {
                 if (Pregunta.length == 2) {
                     if (Precontenido.equals("")) {
-                    
-                    Precontenido = Pregunta[1];
+                        Precontenido = Pregunta[1];
                     } else {
-                        
-                    Precontenido = Precontenido + "\n" + contenido;
+                        Precontenido = Precontenido + "\n" + contenido;
                     }
                 }
-                if(Pregunta.length==4){
-                    Precontenido=Precontenido+"\n"+contenido.split("%%%%%")[1];
-                    sw=false;
+                if (Pregunta.length == 4) {
+                    Precontenido = Precontenido + "\n" + contenido.split("%%%%%")[1];
+                    sw = false;
                 }
-            }
-            System.out.println(Precontenido);
+            }*/
             if (contenido != null && !Scontenido.equals("") && Pregunta.length == 4) {
-                String info = Precontenido;
+                String info = Pregunta[1];
                 String estado = Pregunta[2];
                 String fecha = Pregunta[3];
                 int Dificultad = Integer.parseInt(Pregunta[0]);
                 Scontenido = "";
                 Precontenido = "";
-                sw=true;
+                sw = true;
                 switch (Dificultad) {
                     case 1:
                         addPregunta_1(new Pregunta(info, 1, estado, fecha));

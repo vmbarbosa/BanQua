@@ -160,8 +160,6 @@ public class Profesor {
         int Dia = Integer.parseInt(e.Desco(x, 3, "/"));
         int Mes = Integer.parseInt(e.Desco(x, 2, "/"));
         int Año = Integer.parseInt(e.Desco(x, 1, "/"));
-        int MesOpen = Mes;
-        int AñoOpen = 1 + Año;
         /*int MesOpen = (18 + Mes) % 12;
         int AñoOpen = ((6 + Mes) / 12) + Año;
         if (MesOpen == 0) {
@@ -174,10 +172,15 @@ public class Profesor {
         int AñoDef = Integer.parseInt(DFY.format(date));
         int MesDef = Integer.parseInt(DFM.format(date));
         int DiaDef = Integer.parseInt(DFD.format(date));
-        if (AñoDef >= AñoOpen) {
-            if (AñoDef == AñoOpen) {
-                if (MesDef >= MesOpen) {
-                    if (MesDef == MesOpen) {
+        /*System.out.println(Año+"...."+AñoDef+"....");
+        System.out.println(Mes+"...."+MesDef+"....");
+        System.out.println(Dia+"...."+DiaDef+"....");
+        
+        System.out.println("-----");*/
+        if (AñoDef >= Año) {
+            if (AñoDef == Año) {
+                if (MesDef >= Mes) {
+                    if (MesDef == Mes) {
                         if (DiaDef >= Dia) {
                             return true;
                         }
