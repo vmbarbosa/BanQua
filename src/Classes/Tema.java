@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  * Crea ArrayList con preguntas, esto depende de la dificultad
@@ -67,7 +68,17 @@ public class Tema {
     public ArrayList<Pregunta> getPreguntas_1() {
         return preguntas_1;
     }
-
+    
+    public boolean VerificarPregunta3(String pregu, String dif) {
+        for (Pregunta preg : this.getPreguntas(Integer.parseInt(dif))) {
+            if (preg.getContenido().equals(pregu)) {
+                JOptionPane.showMessageDialog(null, "La pregunta ya fue agregada");
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void setPreguntas_1(ArrayList<Pregunta> preguntas_1) {
         this.preguntas_1 = preguntas_1;
     }

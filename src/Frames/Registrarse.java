@@ -62,6 +62,7 @@ public class Registrarse extends javax.swing.JFrame {
         IconCerrar = new javax.swing.JLabel();
         IconCerrar1 = new javax.swing.JLabel();
         IconMin = new javax.swing.JLabel();
+        BotonManual = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -161,6 +162,10 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         jPanel2.add(IconMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 30, 33));
+
+        BotonManual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2753(0)_40.png"))); // NOI18N
+        BotonManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(BotonManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 40, 30));
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
@@ -582,6 +587,7 @@ ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
     }//GEN-LAST:event_formWindowActivated
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotonManual;
     private rsbuttom.RSButtonMetro BottonIngresarFoto;
     private rsbuttom.RSButtonMetro BottonRegistrar;
     private javax.swing.JTextField Cedula1;

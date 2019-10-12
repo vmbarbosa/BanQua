@@ -103,7 +103,16 @@ public class Profesor {
         }
         return false;
     }
-
+    
+    public boolean VerificarPregunta(String Preg, String dif ,String Tema, String asig) {
+        for (Asignatura asignatura : Asignaturas) {
+            if (asignatura.getNombre().equals(asig)) {
+                return asignatura.VerificarPreg2(Preg,dif,Tema);
+            }
+        }
+        return false;
+    }
+    
     public ArrayList<Asignatura> getAsignaturas() {
         return this.Asignaturas;
     }

@@ -131,6 +131,15 @@ public class Asignatura {
         }
         return false;
     }
+    
+    public boolean VerificarPreg2(String Preg,String dif, String Tema) {
+        for (Tema tema1 : temas) {
+            if (tema1.getNombre().equals(Tema)) {
+                return tema1.VerificarPregunta3(Preg, dif);
+            }
+        }
+        return false;
+    }
 
     public String getNombre() {
         return this.Nombre;

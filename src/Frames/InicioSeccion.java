@@ -45,6 +45,7 @@ public class InicioSeccion extends javax.swing.JFrame {
         IconCerrar = new javax.swing.JLabel();
         IconMin = new javax.swing.JLabel();
         IconCerrar1 = new javax.swing.JLabel();
+        BotonManual = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         rSButtonMetro1 = new rsbuttom.RSButtonMetro();
         ButtonRecuperarContraseña = new rsbuttom.RSButtonMetro();
@@ -110,6 +111,10 @@ public class InicioSeccion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(IconCerrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 0, 31, 33));
+
+        BotonManual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Entypo_2753(0)_40.png"))); // NOI18N
+        BotonManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(BotonManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 40, 30));
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
@@ -389,6 +394,7 @@ public class InicioSeccion extends javax.swing.JFrame {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotonManual;
     private rsbuttom.RSButtonMetro BottonRegistro;
     private rsbuttom.RSButtonMetro ButtonRecuperarContraseña;
     private javax.swing.JLabel IconCerrar;

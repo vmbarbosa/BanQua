@@ -146,36 +146,6 @@ public class Principal extends javax.swing.JFrame {
         BottonCambiarDeUsuario = new rsbuttom.RSButtonMetro();
         jPanel5 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
-        Perfil = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        BottonCamContra = new rsbuttom.RSButtonMetro();
-        NuevaContra = new javax.swing.JPasswordField();
-        ValNuevaContra = new javax.swing.JPasswordField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        ButtonCambio = new rsbuttom.RSButtonMetro();
-        Nombre1 = new javax.swing.JTextField();
-        Cedula1 = new javax.swing.JTextField();
-        CorreoPerfil = new javax.swing.JTextField();
-        Usuario1 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        Foto1 = new javax.swing.JLabel();
-        BottonEditFoto = new rsbuttom.RSButtonMetro();
-        ButtonGuardarFoto = new rsbuttom.RSButtonMetro();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        ButtomEditPreg1 = new rsbuttom.RSButtonMetro();
-        GuarEditPreg1 = new rsbuttom.RSButtonMetro();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
         Asignatura = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         NombreDelaAsignatura = new javax.swing.JTextField();
@@ -328,6 +298,37 @@ public class Principal extends javax.swing.JFrame {
         AdAsig14 = new javax.swing.JLabel();
         BotonDesBloqueo = new rsbuttom.RSButtonMetro();
         jLabel29 = new javax.swing.JLabel();
+        Perfil = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        BottonCamContra = new rsbuttom.RSButtonMetro();
+        NuevaContra = new javax.swing.JPasswordField();
+        ValNuevaContra = new javax.swing.JPasswordField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        ButtonCambio = new rsbuttom.RSButtonMetro();
+        Nombre1 = new javax.swing.JTextField();
+        Cedula1 = new javax.swing.JTextField();
+        CorreoPerfil = new javax.swing.JTextField();
+        Usuario1 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Foto1 = new javax.swing.JLabel();
+        BottonEditFoto = new rsbuttom.RSButtonMetro();
+        ButtonGuardarFoto = new rsbuttom.RSButtonMetro();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        ButtomEditPreg1 = new rsbuttom.RSButtonMetro();
+        GuarEditPreg1 = new rsbuttom.RSButtonMetro();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        ButtonGuardarFoto1 = new rsbuttom.RSButtonMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 87, 116));
@@ -732,13 +733,15 @@ public class Principal extends javax.swing.JFrame {
         jPanel4.setPreferredSize(new java.awt.Dimension(250, 150));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BottonCambiarDeUsuario.setText(" Cerrar Sesion");
+        BottonCambiarDeUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FontAwesome_f011(0)_40.png"))); // NOI18N
+        BottonCambiarDeUsuario.setText("Cerrar Sesion");
         BottonCambiarDeUsuario.setColorBorde(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         BottonCambiarDeUsuario.setColorHover(new java.awt.Color(255, 102, 102));
         BottonCambiarDeUsuario.setColorNormal(new java.awt.Color(255, 51, 51));
         BottonCambiarDeUsuario.setColorPressed(new java.awt.Color(239, 0, 0));
         BottonCambiarDeUsuario.setFocusPainted(false);
-        BottonCambiarDeUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        BottonCambiarDeUsuario.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
+        BottonCambiarDeUsuario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BottonCambiarDeUsuario.setMaximumSize(new java.awt.Dimension(150, 35));
         BottonCambiarDeUsuario.setMinimumSize(new java.awt.Dimension(150, 35));
         BottonCambiarDeUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -746,7 +749,7 @@ public class Principal extends javax.swing.JFrame {
                 BottonCambiarDeUsuarioActionPerformed(evt);
             }
         });
-        jPanel4.add(BottonCambiarDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 183, 42));
+        jPanel4.add(BottonCambiarDeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 183, 40));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -793,279 +796,6 @@ public class Principal extends javax.swing.JFrame {
         Home.add(jPanel5, java.awt.BorderLayout.PAGE_END);
 
         Menu.addTab("Home", Home);
-
-        Perfil.setBackground(new java.awt.Color(255, 255, 255));
-        Perfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel9.setText("Contraseña:");
-        Perfil.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 660, 80, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Validar contraseña:");
-        Perfil.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 700, 120, 20));
-
-        BottonCamContra.setBackground(new java.awt.Color(255, 255, 255));
-        BottonCamContra.setText("Cambiar contraseña?");
-        BottonCamContra.setColorHover(new java.awt.Color(239, 239, 239));
-        BottonCamContra.setColorNormal(new java.awt.Color(255, 255, 255));
-        BottonCamContra.setColorPressed(new java.awt.Color(239, 239, 239));
-        BottonCamContra.setColorTextHover(new java.awt.Color(0, 75, 104));
-        BottonCamContra.setColorTextNormal(new java.awt.Color(0, 103, 142));
-        BottonCamContra.setColorTextPressed(new java.awt.Color(0, 75, 104));
-        BottonCamContra.setFocusable(false);
-        BottonCamContra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BottonCamContra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonCamContraActionPerformed(evt);
-            }
-        });
-        Perfil.add(BottonCamContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 160, 20));
-
-        NuevaContra.setMaximumSize(new java.awt.Dimension(7, 20));
-        NuevaContra.setMinimumSize(new java.awt.Dimension(7, 20));
-        NuevaContra.setPreferredSize(new java.awt.Dimension(7, 20));
-        NuevaContra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NuevaContraActionPerformed(evt);
-            }
-        });
-        Perfil.add(NuevaContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 660, 361, 25));
-
-        ValNuevaContra.setMaximumSize(new java.awt.Dimension(7, 20));
-        ValNuevaContra.setMinimumSize(new java.awt.Dimension(7, 20));
-        ValNuevaContra.setPreferredSize(new java.awt.Dimension(7, 20));
-        ValNuevaContra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ValNuevaContraActionPerformed(evt);
-            }
-        });
-        ValNuevaContra.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ValNuevaContraKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ValNuevaContraKeyReleased(evt);
-            }
-        });
-        Perfil.add(ValNuevaContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 700, 361, 25));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("Foto del Perfil");
-        Perfil.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
-
-        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setText("Las contraseñas no son iguales.");
-        Perfil.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 740, 200, -1));
-
-        ButtonCambio.setText("Hacer Cambio");
-        ButtonCambio.setColorHover(new java.awt.Color(1, 165, 228));
-        ButtonCambio.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonCambio.setColorPressed(new java.awt.Color(2, 95, 130));
-        ButtonCambio.setFocusable(false);
-        ButtonCambio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonCambioActionPerformed(evt);
-            }
-        });
-        Perfil.add(ButtonCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 770, 160, 40));
-
-        Nombre1.setEditable(false);
-        Nombre1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Nombre1.setForeground(new java.awt.Color(51, 51, 51));
-        Nombre1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Nombre1.setMaximumSize(new java.awt.Dimension(7, 28));
-        Nombre1.setMinimumSize(new java.awt.Dimension(7, 28));
-        Nombre1.setOpaque(false);
-        Nombre1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Nombre1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nombre1KeyReleased(evt);
-            }
-        });
-        Perfil.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 360, 25));
-
-        Cedula1.setEditable(false);
-        Cedula1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Cedula1.setForeground(new java.awt.Color(51, 51, 51));
-        Cedula1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Cedula1.setMaximumSize(new java.awt.Dimension(7, 28));
-        Cedula1.setMinimumSize(new java.awt.Dimension(7, 28));
-        Cedula1.setOpaque(false);
-        Cedula1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Cedula1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Cedula1KeyReleased(evt);
-            }
-        });
-        Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 360, 25));
-
-        CorreoPerfil.setEditable(false);
-        CorreoPerfil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        CorreoPerfil.setForeground(new java.awt.Color(51, 51, 51));
-        CorreoPerfil.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        CorreoPerfil.setMaximumSize(new java.awt.Dimension(7, 28));
-        CorreoPerfil.setMinimumSize(new java.awt.Dimension(7, 28));
-        CorreoPerfil.setOpaque(false);
-        CorreoPerfil.setPreferredSize(new java.awt.Dimension(7, 28));
-        CorreoPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CorreoPerfilActionPerformed(evt);
-            }
-        });
-        CorreoPerfil.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                CorreoPerfilKeyReleased(evt);
-            }
-        });
-        Perfil.add(CorreoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 360, 25));
-
-        Usuario1.setEditable(false);
-        Usuario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usuario1.setForeground(new java.awt.Color(51, 51, 51));
-        Usuario1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Usuario1.setMaximumSize(new java.awt.Dimension(7, 28));
-        Usuario1.setMinimumSize(new java.awt.Dimension(7, 28));
-        Usuario1.setOpaque(false);
-        Usuario1.setPreferredSize(new java.awt.Dimension(7, 28));
-        Perfil.add(Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 360, 25));
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel18.setText("Correo:");
-        Perfil.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 72, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel3.setText("Nickname: ");
-        Perfil.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 72, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel2.setText("Cedula: ");
-        Perfil.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 70, -1));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel1.setText("Nombre:");
-        Perfil.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 72, -1));
-
-        Foto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Foto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Perfil Azul.png"))); // NOI18N
-        Foto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 103, 142), 4));
-        Perfil.add(Foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 180, 200));
-
-        BottonEditFoto.setText("Editar foto");
-        BottonEditFoto.setColorHover(new java.awt.Color(1, 165, 228));
-        BottonEditFoto.setColorNormal(new java.awt.Color(1, 128, 176));
-        BottonEditFoto.setColorPressed(new java.awt.Color(2, 95, 130));
-        BottonEditFoto.setFocusable(false);
-        BottonEditFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonEditFotoActionPerformed(evt);
-            }
-        });
-        Perfil.add(BottonEditFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 183, 38));
-
-        ButtonGuardarFoto.setText("Imagen por Defecto");
-        ButtonGuardarFoto.setColorHover(new java.awt.Color(1, 165, 228));
-        ButtonGuardarFoto.setColorNormal(new java.awt.Color(1, 128, 176));
-        ButtonGuardarFoto.setColorPressed(new java.awt.Color(2, 95, 130));
-        ButtonGuardarFoto.setFocusable(false);
-        ButtonGuardarFoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonGuardarFotoActionPerformed(evt);
-            }
-        });
-        Perfil.add(ButtonGuardarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 184, 38));
-
-        jLabel39.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel39.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
-        jLabel39.setToolTipText("");
-        Perfil.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1780, -1));
-
-        jLabel41.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel41.setText("Ingrese la nueva contraseña");
-        Perfil.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 180, -1));
-
-        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel42.setText("Datos del Perfil");
-        Perfil.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 180, -1));
-
-        jLabel43.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel43.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
-        jLabel43.setToolTipText("");
-        Perfil.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1770, -1));
-
-        jLabel44.setForeground(new java.awt.Color(0, 103, 142));
-        jLabel44.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
-        jLabel44.setToolTipText("");
-        Perfil.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1780, -1));
-
-        ButtomEditPreg1.setText("Editar");
-        ButtomEditPreg1.setColorBorde(null);
-        ButtomEditPreg1.setColorHover(new java.awt.Color(255, 157, 61));
-        ButtomEditPreg1.setColorNormal(new java.awt.Color(255, 127, 0));
-        ButtomEditPreg1.setColorPressed(new java.awt.Color(244, 121, 0));
-        ButtomEditPreg1.setFocusable(false);
-        ButtomEditPreg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        ButtomEditPreg1.setMaximumSize(new java.awt.Dimension(125, 17));
-        ButtomEditPreg1.setMinimumSize(new java.awt.Dimension(125, 17));
-        ButtomEditPreg1.setPreferredSize(new java.awt.Dimension(125, 17));
-        ButtomEditPreg1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtomEditPreg1ActionPerformed(evt);
-            }
-        });
-        Perfil.add(ButtomEditPreg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 140, 40));
-
-        GuarEditPreg1.setText("Guardar");
-        GuarEditPreg1.setColorHover(new java.awt.Color(1, 165, 228));
-        GuarEditPreg1.setColorNormal(new java.awt.Color(1, 128, 176));
-        GuarEditPreg1.setColorPressed(new java.awt.Color(2, 95, 130));
-        GuarEditPreg1.setFocusable(false);
-        GuarEditPreg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        GuarEditPreg1.setMaximumSize(new java.awt.Dimension(125, 17));
-        GuarEditPreg1.setMinimumSize(new java.awt.Dimension(125, 17));
-        GuarEditPreg1.setPreferredSize(new java.awt.Dimension(125, 17));
-        GuarEditPreg1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuarEditPreg1ActionPerformed(evt);
-            }
-        });
-        Perfil.add(GuarEditPreg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 150, 40));
-
-        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel37.setText("*Obligatorio tener un @");
-        Perfil.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 490, 200, -1));
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel38.setText("*No puede estar vacio el nombre");
-        Perfil.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 220, -1));
-
-        jLabel60.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel60.setText("*Campo solo numerico");
-        Perfil.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 200, -1));
-
-        Menu.addTab("Perfil", Perfil);
 
         Asignatura.setBackground(new java.awt.Color(255, 255, 255));
         Asignatura.setLayout(new java.awt.GridBagLayout());
@@ -3079,6 +2809,293 @@ public class Principal extends javax.swing.JFrame {
 
     Menu.addTab("Pregunta", EditPreg);
 
+    Perfil.setBackground(new java.awt.Color(255, 255, 255));
+    Perfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel9.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel9.setText("Contraseña:");
+    Perfil.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 660, 80, -1));
+
+    jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel7.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel7.setText("Validar contraseña:");
+    Perfil.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 700, 120, 20));
+
+    BottonCamContra.setBackground(new java.awt.Color(255, 255, 255));
+    BottonCamContra.setText("Cambiar contraseña?");
+    BottonCamContra.setColorHover(new java.awt.Color(239, 239, 239));
+    BottonCamContra.setColorNormal(new java.awt.Color(255, 255, 255));
+    BottonCamContra.setColorPressed(new java.awt.Color(239, 239, 239));
+    BottonCamContra.setColorTextHover(new java.awt.Color(0, 75, 104));
+    BottonCamContra.setColorTextNormal(new java.awt.Color(0, 103, 142));
+    BottonCamContra.setColorTextPressed(new java.awt.Color(0, 75, 104));
+    BottonCamContra.setFocusable(false);
+    BottonCamContra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    BottonCamContra.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            BottonCamContraActionPerformed(evt);
+        }
+    });
+    Perfil.add(BottonCamContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 160, 20));
+
+    NuevaContra.setMaximumSize(new java.awt.Dimension(7, 20));
+    NuevaContra.setMinimumSize(new java.awt.Dimension(7, 20));
+    NuevaContra.setPreferredSize(new java.awt.Dimension(7, 20));
+    NuevaContra.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            NuevaContraActionPerformed(evt);
+        }
+    });
+    Perfil.add(NuevaContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 660, 361, 25));
+
+    ValNuevaContra.setMaximumSize(new java.awt.Dimension(7, 20));
+    ValNuevaContra.setMinimumSize(new java.awt.Dimension(7, 20));
+    ValNuevaContra.setPreferredSize(new java.awt.Dimension(7, 20));
+    ValNuevaContra.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ValNuevaContraActionPerformed(evt);
+        }
+    });
+    ValNuevaContra.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            ValNuevaContraKeyPressed(evt);
+        }
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            ValNuevaContraKeyReleased(evt);
+        }
+    });
+    Perfil.add(ValNuevaContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 700, 361, 25));
+
+    jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel8.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel8.setText("Foto del Perfil");
+    Perfil.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 180, -1));
+
+    jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel27.setForeground(new java.awt.Color(255, 51, 51));
+    jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel27.setText("Las contraseñas no son iguales.");
+    Perfil.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 740, 200, -1));
+
+    ButtonCambio.setText("Hacer Cambio");
+    ButtonCambio.setColorHover(new java.awt.Color(1, 165, 228));
+    ButtonCambio.setColorNormal(new java.awt.Color(1, 128, 176));
+    ButtonCambio.setColorPressed(new java.awt.Color(2, 95, 130));
+    ButtonCambio.setFocusable(false);
+    ButtonCambio.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ButtonCambioActionPerformed(evt);
+        }
+    });
+    Perfil.add(ButtonCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 770, 160, 40));
+
+    Nombre1.setEditable(false);
+    Nombre1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    Nombre1.setForeground(new java.awt.Color(51, 51, 51));
+    Nombre1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+    Nombre1.setMaximumSize(new java.awt.Dimension(7, 28));
+    Nombre1.setMinimumSize(new java.awt.Dimension(7, 28));
+    Nombre1.setOpaque(false);
+    Nombre1.setPreferredSize(new java.awt.Dimension(7, 28));
+    Nombre1.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            Nombre1KeyReleased(evt);
+        }
+    });
+    Perfil.add(Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 360, 25));
+
+    Cedula1.setEditable(false);
+    Cedula1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    Cedula1.setForeground(new java.awt.Color(51, 51, 51));
+    Cedula1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+    Cedula1.setMaximumSize(new java.awt.Dimension(7, 28));
+    Cedula1.setMinimumSize(new java.awt.Dimension(7, 28));
+    Cedula1.setOpaque(false);
+    Cedula1.setPreferredSize(new java.awt.Dimension(7, 28));
+    Cedula1.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            Cedula1KeyReleased(evt);
+        }
+    });
+    Perfil.add(Cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 360, 25));
+
+    CorreoPerfil.setEditable(false);
+    CorreoPerfil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    CorreoPerfil.setForeground(new java.awt.Color(51, 51, 51));
+    CorreoPerfil.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+    CorreoPerfil.setMaximumSize(new java.awt.Dimension(7, 28));
+    CorreoPerfil.setMinimumSize(new java.awt.Dimension(7, 28));
+    CorreoPerfil.setOpaque(false);
+    CorreoPerfil.setPreferredSize(new java.awt.Dimension(7, 28));
+    CorreoPerfil.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            CorreoPerfilActionPerformed(evt);
+        }
+    });
+    CorreoPerfil.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            CorreoPerfilKeyReleased(evt);
+        }
+    });
+    Perfil.add(CorreoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 360, 25));
+
+    Usuario1.setEditable(false);
+    Usuario1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    Usuario1.setForeground(new java.awt.Color(51, 51, 51));
+    Usuario1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+    Usuario1.setMaximumSize(new java.awt.Dimension(7, 28));
+    Usuario1.setMinimumSize(new java.awt.Dimension(7, 28));
+    Usuario1.setOpaque(false);
+    Usuario1.setPreferredSize(new java.awt.Dimension(7, 28));
+    Perfil.add(Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 360, 25));
+
+    jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel18.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel18.setText("Correo:");
+    Perfil.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 72, -1));
+
+    jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel3.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel3.setText("Nickname: ");
+    Perfil.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 72, -1));
+
+    jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel2.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel2.setText("Cedula: ");
+    Perfil.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 70, -1));
+
+    jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel1.setText("Nombre:");
+    Perfil.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 72, -1));
+
+    Foto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    Foto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Perfil Azul.png"))); // NOI18N
+    Foto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 103, 142), 4));
+    Perfil.add(Foto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 180, 200));
+
+    BottonEditFoto.setText("Editar foto");
+    BottonEditFoto.setColorHover(new java.awt.Color(1, 165, 228));
+    BottonEditFoto.setColorNormal(new java.awt.Color(1, 128, 176));
+    BottonEditFoto.setColorPressed(new java.awt.Color(2, 95, 130));
+    BottonEditFoto.setFocusable(false);
+    BottonEditFoto.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            BottonEditFotoActionPerformed(evt);
+        }
+    });
+    Perfil.add(BottonEditFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 183, 38));
+
+    ButtonGuardarFoto.setText("Imagen por Defecto");
+    ButtonGuardarFoto.setColorHover(new java.awt.Color(1, 165, 228));
+    ButtonGuardarFoto.setColorNormal(new java.awt.Color(1, 128, 176));
+    ButtonGuardarFoto.setColorPressed(new java.awt.Color(2, 95, 130));
+    ButtonGuardarFoto.setFocusable(false);
+    ButtonGuardarFoto.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ButtonGuardarFotoActionPerformed(evt);
+        }
+    });
+    Perfil.add(ButtonGuardarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 184, 38));
+
+    jLabel39.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel39.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
+    jLabel39.setToolTipText("");
+    Perfil.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1780, -1));
+
+    jLabel41.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel41.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel41.setText("Ingrese la nueva contraseña");
+    Perfil.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, 180, -1));
+
+    jLabel42.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel42.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel42.setText("Datos del Perfil");
+    Perfil.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 180, -1));
+
+    jLabel43.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel43.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
+    jLabel43.setToolTipText("");
+    Perfil.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1770, -1));
+
+    jLabel44.setForeground(new java.awt.Color(0, 103, 142));
+    jLabel44.setText("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________-");
+    jLabel44.setToolTipText("");
+    Perfil.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1780, -1));
+
+    ButtomEditPreg1.setText("Editar");
+    ButtomEditPreg1.setColorBorde(null);
+    ButtomEditPreg1.setColorHover(new java.awt.Color(255, 157, 61));
+    ButtomEditPreg1.setColorNormal(new java.awt.Color(255, 127, 0));
+    ButtomEditPreg1.setColorPressed(new java.awt.Color(244, 121, 0));
+    ButtomEditPreg1.setFocusable(false);
+    ButtomEditPreg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    ButtomEditPreg1.setMaximumSize(new java.awt.Dimension(125, 17));
+    ButtomEditPreg1.setMinimumSize(new java.awt.Dimension(125, 17));
+    ButtomEditPreg1.setPreferredSize(new java.awt.Dimension(125, 17));
+    ButtomEditPreg1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ButtomEditPreg1ActionPerformed(evt);
+        }
+    });
+    Perfil.add(ButtomEditPreg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 140, 40));
+
+    GuarEditPreg1.setText("Guardar");
+    GuarEditPreg1.setColorHover(new java.awt.Color(1, 165, 228));
+    GuarEditPreg1.setColorNormal(new java.awt.Color(1, 128, 176));
+    GuarEditPreg1.setColorPressed(new java.awt.Color(2, 95, 130));
+    GuarEditPreg1.setFocusable(false);
+    GuarEditPreg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+    GuarEditPreg1.setMaximumSize(new java.awt.Dimension(125, 17));
+    GuarEditPreg1.setMinimumSize(new java.awt.Dimension(125, 17));
+    GuarEditPreg1.setPreferredSize(new java.awt.Dimension(125, 17));
+    GuarEditPreg1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            GuarEditPreg1ActionPerformed(evt);
+        }
+    });
+    Perfil.add(GuarEditPreg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 150, 40));
+
+    jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel37.setForeground(new java.awt.Color(255, 51, 51));
+    jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel37.setText("*Obligatorio tener un @");
+    Perfil.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 490, 200, -1));
+
+    jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel38.setForeground(new java.awt.Color(255, 51, 51));
+    jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel38.setText("*No puede estar vacio el nombre");
+    Perfil.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 220, -1));
+
+    jLabel60.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+    jLabel60.setForeground(new java.awt.Color(255, 51, 51));
+    jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel60.setText("*Campo solo numerico");
+    Perfil.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 200, -1));
+
+    ButtonGuardarFoto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FontAwesome_f02d(0)_48.png"))); // NOI18N
+    ButtonGuardarFoto1.setText("Manual Avanzado");
+    ButtonGuardarFoto1.setColorHover(new java.awt.Color(26, 190, 253));
+    ButtonGuardarFoto1.setColorNormal(new java.awt.Color(0, 153, 204));
+    ButtonGuardarFoto1.setColorPressed(new java.awt.Color(0, 114, 153));
+    ButtonGuardarFoto1.setFocusable(false);
+    ButtonGuardarFoto1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    ButtonGuardarFoto1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ButtonGuardarFoto1ActionPerformed(evt);
+        }
+    });
+    Perfil.add(ButtonGuardarFoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 190, 38));
+
+    Menu.addTab("Perfil", Perfil);
+
     Fondo.add(Menu, "card2");
 
     getContentPane().add(Fondo, java.awt.BorderLayout.CENTER);
@@ -3288,23 +3305,24 @@ public class Principal extends javax.swing.JFrame {
         Asignatura a = getAsignatura(Asignatura2);
         Tema t = getTema(tema, a);
         String x = "C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + Asignatura2 + "/" + tema + "/Preguntas_" + jor + ".txt";
+        boolean verificar = profesor.VerificarPregunta(InfoPregunta, String.valueOf(jor), tema, Asignatura2);
+        if (verificar == false) {
+            if (InfoPregunta.equals("")) {
+                JOptionPane.showMessageDialog(null, "No ha escrito ninguna pregunta.");
+            } else {
+                try {
+                    temp = e.concatenar(x);
+                    e.guardar(temp, x, total);
+                    Pregunta pregun = new Pregunta(InfoPregunta, jor, "Disponible", "--------");
+                    profesor.getAsignaturas().get(ComboAsignaturaS.getSelectedIndex() - 1).getTemas().get(ComboBoxTemas.getSelectedIndex() - 1).getPreguntas(jor).add(pregun);
+                    JOptionPane.showMessageDialog(null, "Pregunta añadida exitosamente.");
+                    BottonPreguntas.doClick();
 
-        if (InfoPregunta.equals("")) {
-            JOptionPane.showMessageDialog(null, "No ha escrito ninguna pregunta.");
-        } else {
-            try {
-                temp = e.concatenar(x);
-                e.guardar(temp, x, total);
-                Pregunta pregun = new Pregunta(InfoPregunta, jor, "Disponible", "--------");
-                profesor.getAsignaturas().get(ComboAsignaturaS.getSelectedIndex() - 1).getTemas().get(ComboBoxTemas.getSelectedIndex() - 1).getPreguntas(jor).add(pregun);
-                JOptionPane.showMessageDialog(null, "Pregunta añadida exitosamente.");
-                BottonPreguntas.doClick();
-
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
-
 
     }//GEN-LAST:event_ButtonAgregarPreguntaActionPerformed
 
@@ -4006,48 +4024,52 @@ public class Principal extends javax.swing.JFrame {
             Metodos met = new Metodos();
             int i = 0;
             String Total = "";
-            for (Asignatura asignatura : profesor.getAsignaturas()) {
-                if (asignatura.getNombre().equals(TablaAsig.getModel().getValueAt(TablaAsig.getSelectedRow(), 0).toString())) {
-                    File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre());
-                    File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + NomEditAsig.getText());
-                    profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
-                    profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
-                    profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
-                    Total = Total + AES.encrypt(NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
-                    if (!Viejo.equals(Nuevo)) {
-                        move(Nuevo, Viejo);
-                        recursiveDelete(Viejo);
+            boolean verificar = profesor.VerificarAsignatura(NomEditAsig.getText(), CodEditAsig.getText());
+            if (verificar == false) {
+                for (Asignatura asignatura : profesor.getAsignaturas()) {
+                    if (asignatura.getNombre().equals(TablaAsig.getModel().getValueAt(TablaAsig.getSelectedRow(), 0).toString())) {
+                        File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre());
+                        File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + NomEditAsig.getText());
+                        profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
+                        profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
+                        profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
+                        Total = Total + AES.encrypt(NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
+                        if (!Viejo.equals(Nuevo)) {
+                            move(Nuevo, Viejo);
+                            recursiveDelete(Viejo);
+                        }
+                    } else {
+                        Total = Total + AES.encrypt(asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
                     }
-                } else {
-                    Total = Total + AES.encrypt(asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
+                    i++;
                 }
-                i++;
+                File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
+                FileWriter fw;
+                try {
+                    fw = new FileWriter(file);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    bw.write(Total);
+                    bw.close();
+                    fw.close();
+                    MostrarAsig(profesor);
+                    NomEditAsig.setText("");
+                    CodEditAsig.setText("");
+                    DesEditAsig.setText("");
+                    BloqDesBoton(GuaEditAsig, "...");
+                    BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
+                    JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                    NomEditAsig.setEditable(false);
+                    CodEditAsig.setEditable(false);
+                    DesEditAsig.setEditable(false);
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                profesor = new Profesor();
             }
-            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
-            FileWriter fw;
-            try {
-                fw = new FileWriter(file);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
-                bw.close();
-                fw.close();
-                MostrarAsig(profesor);
-                NomEditAsig.setText("");
-                CodEditAsig.setText("");
-                DesEditAsig.setText("");
-                BloqDesBoton(GuaEditAsig, "...");
-                BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
-                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-                NomEditAsig.setEditable(false);
-                CodEditAsig.setEditable(false);
-                DesEditAsig.setEditable(false);
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            profesor = new Profesor();
         } else {
             JOptionPane.showMessageDialog(null, "El nombre de la Asignatura y el codigo son obligatorios.", "Alerta", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_GuaEditAsigActionPerformed
 
     private void ElimEditAsigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElimEditAsigActionPerformed
@@ -4153,18 +4175,20 @@ public class Principal extends javax.swing.JFrame {
             String Total = "";
             Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigEdit.getSelectedIndex() - 1);
             Tema temactual = asignatura.getTemas().get(TablaTem.getSelectedRow());
-            for (Tema tema : asignatura.getTemas()) {
-                if (tema.getNombre().equals(temactual.getNombre())) {
-                    File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
-                    temactual.setNombre(NomEditTem.getText());
-                    temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
-                    Total = Total + AES.encrypt(NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
-                    File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
-                    if (!Viejo.equals(Nuevo)) {
-                        Nuevo.mkdirs();
-                        move(Nuevo, Viejo);
-                        recursiveDelete(Viejo);
-                        /*try {
+            boolean verificar = profesor.VerificarTema(NomEditTem.getText(), asignatura.getNombre(), DesEditTem.getText());
+            if (verificar == false) {
+                for (Tema tema : asignatura.getTemas()) {
+                    if (tema.getNombre().equals(temactual.getNombre())) {
+                        File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
+                        temactual.setNombre(NomEditTem.getText());
+                        temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
+                        Total = Total + AES.encrypt(NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
+                        File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
+                        if (!Viejo.equals(Nuevo)) {
+                            Nuevo.mkdirs();
+                            move(Nuevo, Viejo);
+                            recursiveDelete(Viejo);
+                            /*try {
                         recursiveDelete(Viejo);
                         Nuevo.mkdirs();
                         File p1 = new File("Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText() + "/Preguntas_1");
@@ -4176,36 +4200,37 @@ public class Principal extends javax.swing.JFrame {
                     } catch (IOException ex) {
                         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                     }*/
+                        }
+                    } else {
+                        Total = Total + AES.encrypt(tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
                     }
-                } else {
-                    Total = Total + AES.encrypt(tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
                 }
+                File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
+                FileWriter fw;
+                try {
+                    fw = new FileWriter(file);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    bw.write(Total);
+                    bw.close();
+                    fw.close();
+                    MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
+                    NomEditTem.setText("");
+                    NomEditTem.setEditable(false);
+                    DesEditTem.setText("");
+                    DesEditTem.setEditable(false);
+                    JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                } catch (IOException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                profesor = new Profesor();
+                BloqDesBoton(GuardarTem, "...");
+                BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+                modelo.setColumnCount(0);
+                modelo.setRowCount(0);
+                sw1 = true;
+                sw2 = true;
+                sw3 = true;
             }
-            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
-            FileWriter fw;
-            try {
-                fw = new FileWriter(file);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(Total);
-                bw.close();
-                fw.close();
-                MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
-                NomEditTem.setText("");
-                NomEditTem.setEditable(false);
-                DesEditTem.setText("");
-                DesEditTem.setEditable(false);
-                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-            } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            profesor = new Profesor();
-            BloqDesBoton(GuardarTem, "...");
-            BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
-            modelo.setColumnCount(0);
-            modelo.setRowCount(0);
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
         }
     }//GEN-LAST:event_GuardarTemActionPerformed
 
@@ -4312,7 +4337,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_ElemEditPregActionPerformed
 
     private void GuarEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuarEditPregActionPerformed
-
         Metodos met = new Metodos();
         String ContendioPregunta = "";
         String Total = "";
@@ -4321,84 +4345,87 @@ public class Principal extends javax.swing.JFrame {
         ArrayList<Pregunta> PregTemporal = new ArrayList();
         Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigPreg.getSelectedIndex() - 1);
         Tema tematica = asignatura.getTemas().get(ComboTemPreg.getSelectedIndex() - 1);
-        for (Pregunta pregunta : tematica.getPreguntas(ComboNivPreg.getSelectedIndex())) {
-            if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 0).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString())) {
-                //Entra la informacion de la pregunta coincide
-                Date ka = FechaPreg.getDate();
-                String fech;
-                if (ka == null) {
-                    fech = "--------";
-                } else {
-                    DateFormat FormaFecha = new SimpleDateFormat("yyyy/MM/dd");
-                    fech = FormaFecha.format(FechaPreg.getDate());
-                }
-                //Se prueba si la pregunta se le modifica la dificultad
-                if (String.valueOf(ComboNivPreg.getSelectedIndex()).equals(String.valueOf(ComboNivelA.getSelectedIndex()))) {
-                    //Si no es asi solo se agregan los cambios que se hicieron
-                    PregTemporal.add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
-                    Total = Total + AES.encrypt(ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%", "BanQuaAES") + "\r\n";
-                } else {
-                    //Si la pregunta cambio de dificultad es necesario agregarla al txt de preguntas de la nueva dificultad
-                    String TotalAuxiliar = "";
-                    for (Pregunta pregunt : tematica.getPreguntas(ComboNivelA.getSelectedIndex())) {
-                        TotalAuxiliar = TotalAuxiliar + AES.encrypt(pregunt.getNivel() + "%%%%%" + pregunt.getContenido() + "%%%%%" + pregunt.getEstado() + "%%%%%" + pregunt.getFecha() + "%%%%%", "BanQuaAES") + "\r\n";
+        boolean verificar = profesor.VerificarPregunta(InfoPreg.getText(), String.valueOf(ComboNivelA.getSelectedIndex()), tematica.getNombre(), asignatura.getNombre());
+        if (verificar == false) {
+            for (Pregunta pregunta : tematica.getPreguntas(ComboNivPreg.getSelectedIndex())) {
+                if (pregunta.getContenido().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 0).toString()) && pregunta.getEstado().equals(TablaPregEdit.getModel().getValueAt(TablaPregEdit.getSelectedRow(), 1).toString())) {
+                    //Entra la informacion de la pregunta coincide
+                    Date ka = FechaPreg.getDate();
+                    String fech;
+                    if (ka == null) {
+                        fech = "--------";
+                    } else {
+                        DateFormat FormaFecha = new SimpleDateFormat("yyyy/MM/dd");
+                        fech = FormaFecha.format(FechaPreg.getDate());
                     }
-                    TotalAuxiliar = TotalAuxiliar + AES.encrypt(ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%", "BanQuaAES") + "\r\n";
-                    //Se agregan los cambios a la variable statica Profesor
-                    tematica.getPreguntas(ComboNivelA.getSelectedIndex()).add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
-                    //Se escribe la pregunta en su nueva dificultad
-                    File fileA = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedIndex() + ".txt");
-                    FileWriter fwA;
-                    try {
-                        fwA = new FileWriter(fileA);
-                        BufferedWriter bwA = new BufferedWriter(fwA);
-                        bwA.write(TotalAuxiliar);
-                        bwA.close();
-                        fwA.close();
-                    } catch (IOException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    //Se prueba si la pregunta se le modifica la dificultad
+                    if (String.valueOf(ComboNivPreg.getSelectedIndex()).equals(String.valueOf(ComboNivelA.getSelectedIndex()))) {
+                        //Si no es asi solo se agregan los cambios que se hicieron
+                        PregTemporal.add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
+                        Total = Total + AES.encrypt(ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%", "BanQuaAES") + "\r\n";
+                    } else {
+                        //Si la pregunta cambio de dificultad es necesario agregarla al txt de preguntas de la nueva dificultad
+                        String TotalAuxiliar = "";
+                        for (Pregunta pregunt : tematica.getPreguntas(ComboNivelA.getSelectedIndex())) {
+                            TotalAuxiliar = TotalAuxiliar + AES.encrypt(pregunt.getNivel() + "%%%%%" + pregunt.getContenido() + "%%%%%" + pregunt.getEstado() + "%%%%%" + pregunt.getFecha() + "%%%%%", "BanQuaAES") + "\r\n";
+                        }
+                        TotalAuxiliar = TotalAuxiliar + AES.encrypt(ComboNivelA.getSelectedIndex() + "%%%%%" + InfoPreg.getText() + "%%%%%" + EstadPreg.getText() + "%%%%%" + fech + "%%%%%", "BanQuaAES") + "\r\n";
+                        //Se agregan los cambios a la variable statica Profesor
+                        tematica.getPreguntas(ComboNivelA.getSelectedIndex()).add(new Pregunta(InfoPreg.getText(), ComboNivelA.getSelectedIndex(), EstadPreg.getText(), fech));
+                        //Se escribe la pregunta en su nueva dificultad
+                        File fileA = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivelA.getSelectedIndex() + ".txt");
+                        FileWriter fwA;
+                        try {
+                            fwA = new FileWriter(fileA);
+                            BufferedWriter bwA = new BufferedWriter(fwA);
+                            bwA.write(TotalAuxiliar);
+                            bwA.close();
+                            fwA.close();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
+                } else {
+                    PregTemporal.add(pregunta);
+                    Total = Total + AES.encrypt(pregunta.getNivel() + "%%%%%" + pregunta.getContenido() + "%%%%%" + pregunta.getEstado() + "%%%%%" + pregunta.getFecha() + "%%%%%", "BanQuaAES") + "\r\n";
                 }
-            } else {
-                PregTemporal.add(pregunta);
-                Total = Total + AES.encrypt(pregunta.getNivel() + "%%%%%" + pregunta.getContenido() + "%%%%%" + pregunta.getEstado() + "%%%%%" + pregunta.getFecha() + "%%%%%", "BanQuaAES") + "\r\n";
+
             }
+            tematica.EnviarPreguntas(ComboNivPreg.getSelectedIndex(), PregTemporal);
 
-        }
-        tematica.EnviarPreguntas(ComboNivPreg.getSelectedIndex(), PregTemporal);
-
-        File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
-        FileWriter fw;
-        try {
-            fw = new FileWriter(file);
-            ComboNivelA.setSelectedIndex(0);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(Total);
-            bw.close();
-            fw.close();
-            EstadPreg.setEditable(false);
-            EstadPreg.setText("");
-            InfoPreg.setEditable(false);
-            InfoPreg.setText("");
-            ComboNivelA.setEnabled(false);
-            ComboNivelA.setSelectedIndex(0);
-            FechaPreg.setDate(null);
-            BotonDesBloqueo.setText("");
-            BotonDesBloqueo.setIcon(null);
-            BotonDesBloqueo.setEnabled(false);
-            BloqDesBoton(BotonDesBloqueo, "...");
-            BloqDesBoton(GuarEditPreg, "...");
-            BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
-            sw1 = true;
-            sw2 = true;
-            sw3 = true;
-            String asig = (String) ComboAsigPreg.getSelectedItem();
-            String temap = (String) ComboTemPreg.getSelectedItem();
-            String nivel = String.valueOf(ComboNivPreg.getSelectedIndex());
-            MostrarPreg(asig, temap, nivel, profesor);
-            JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigPreg.getSelectedItem() + "/" + ComboTemPreg.getSelectedItem() + "/Preguntas_" + ComboNivPreg.getSelectedIndex() + ".txt");
+            FileWriter fw;
+            try {
+                fw = new FileWriter(file);
+                ComboNivelA.setSelectedIndex(0);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(Total);
+                bw.close();
+                fw.close();
+                EstadPreg.setEditable(false);
+                EstadPreg.setText("");
+                InfoPreg.setEditable(false);
+                InfoPreg.setText("");
+                ComboNivelA.setEnabled(false);
+                ComboNivelA.setSelectedIndex(0);
+                FechaPreg.setDate(null);
+                BotonDesBloqueo.setText("");
+                BotonDesBloqueo.setIcon(null);
+                BotonDesBloqueo.setEnabled(false);
+                BloqDesBoton(BotonDesBloqueo, "...");
+                BloqDesBoton(GuarEditPreg, "...");
+                BloqDesBotonEdit(ElemEditPreg, ButtomEditPreg, "...");
+                sw1 = true;
+                sw2 = true;
+                sw3 = true;
+                String asig = (String) ComboAsigPreg.getSelectedItem();
+                String temap = (String) ComboTemPreg.getSelectedItem();
+                String nivel = String.valueOf(ComboNivPreg.getSelectedIndex());
+                MostrarPreg(asig, temap, nivel, profesor);
+                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_GuarEditPregActionPerformed
 
@@ -4937,7 +4964,7 @@ public class Principal extends javax.swing.JFrame {
                             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
-                    
+
                     JOptionPane.showMessageDialog(null, "Si desea mantener los cambios, presione Editar>>Guardar.", "Informacion", JOptionPane.INFORMATION_MESSAGE);
                     FechaPreg.setDate(date);
                     EstadPreg.setText("No Disponible");
@@ -5355,6 +5382,10 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboNivPregActionPerformed
 
+    private void ButtonGuardarFoto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGuardarFoto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonGuardarFoto1ActionPerformed
+
     ///METODOS!!
     public void CambiarDeCuenta() {
         InicioSeccion.usuario = "";
@@ -5719,6 +5750,7 @@ public class Principal extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro ButtonCambio;
     private rsbuttom.RSButtonMetro ButtonGenerarInforme;
     private rsbuttom.RSButtonMetro ButtonGuardarFoto;
+    private rsbuttom.RSButtonMetro ButtonGuardarFoto1;
     private rsbuttom.RSButtonMetro ButtonMostrarCENT;
     private rsbuttom.RSButtonMetro ButtonMostrarDER;
     private rsbuttom.RSButtonMetro ButtonMostrarIZQ;
