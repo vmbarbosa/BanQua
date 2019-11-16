@@ -4024,52 +4024,47 @@ public class Principal extends javax.swing.JFrame {
             Metodos met = new Metodos();
             int i = 0;
             String Total = "";
-            boolean verificar = profesor.VerificarAsignatura(NomEditAsig.getText(), CodEditAsig.getText());
-            if (verificar == false) {
-                for (Asignatura asignatura : profesor.getAsignaturas()) {
-                    if (asignatura.getNombre().equals(TablaAsig.getModel().getValueAt(TablaAsig.getSelectedRow(), 0).toString())) {
-                        File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre());
-                        File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + NomEditAsig.getText());
-                        profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
-                        profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
-                        profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
-                        Total = Total + AES.encrypt(NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
-                        if (!Viejo.equals(Nuevo)) {
-                            move(Nuevo, Viejo);
-                            recursiveDelete(Viejo);
-                        }
-                    } else {
-                        Total = Total + AES.encrypt(asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
-                    }
-                    i++;
+//            boolean verificar = profesor.VerificarAsignatura(NomEditAsig.getText(), CodEditAsig.getText());
+//            if (verificar == false) {
+            for (Asignatura asignatura : profesor.getAsignaturas()) {
+                if (asignatura.getNombre().equals(TablaAsig.getModel().getValueAt(TablaAsig.getSelectedRow(), 0).toString())) {
+                    File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre());
+                    File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + NomEditAsig.getText());
+                    Viejo.renameTo(Nuevo);
+                    profesor.getAsignaturas().get(i).setCodigo(CodEditAsig.getText());
+                    profesor.getAsignaturas().get(i).setDescripcion(DesNoNull(DesEditAsig.getText()));
+                    profesor.getAsignaturas().get(i).setNombre(NomEditAsig.getText());
+                    Total = Total + AES.encrypt(NomEditAsig.getText() + "%%%%%" + CodEditAsig.getText() + "%%%%%" + DesNoNull(DesEditAsig.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
+                } else {
+                    Total = Total + AES.encrypt(asignatura.getNombre() + "%%%%%" + asignatura.getCodigo() + "%%%%%" + asignatura.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
                 }
-                File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
-                FileWriter fw;
-                try {
-                    fw = new FileWriter(file);
-                    BufferedWriter bw = new BufferedWriter(fw);
-                    bw.write(Total);
-                    bw.close();
-                    fw.close();
-                    MostrarAsig(profesor);
-                    NomEditAsig.setText("");
-                    CodEditAsig.setText("");
-                    DesEditAsig.setText("");
-                    BloqDesBoton(GuaEditAsig, "...");
-                    BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
-                    JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-                    NomEditAsig.setEditable(false);
-                    CodEditAsig.setEditable(false);
-                    DesEditAsig.setEditable(false);
-                } catch (IOException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                profesor = new Profesor();
+                i++;
             }
+            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt");
+            FileWriter fw;
+            try {
+                fw = new FileWriter(file);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(Total);
+                bw.close();
+                fw.close();
+                MostrarAsig(profesor);
+                NomEditAsig.setText("");
+                CodEditAsig.setText("");
+                DesEditAsig.setText("");
+                BloqDesBoton(GuaEditAsig, "...");
+                BloqDesBotonEdit(ElimEditAsig, BottonEditAsig, "...");
+                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+                NomEditAsig.setEditable(false);
+                CodEditAsig.setEditable(false);
+                DesEditAsig.setEditable(false);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            profesor = new Profesor();
         } else {
             JOptionPane.showMessageDialog(null, "El nombre de la Asignatura y el codigo son obligatorios.", "Alerta", JOptionPane.ERROR_MESSAGE);
         }
-
     }//GEN-LAST:event_GuaEditAsigActionPerformed
 
     private void ElimEditAsigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElimEditAsigActionPerformed
@@ -4175,6 +4170,50 @@ public class Principal extends javax.swing.JFrame {
             String Total = "";
             Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigEdit.getSelectedIndex() - 1);
             Tema temactual = asignatura.getTemas().get(TablaTem.getSelectedRow());
+            for (Tema tema : asignatura.getTemas()) {
+                if (tema.getNombre().equals(temactual.getNombre())) {
+                    File Viejo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + temactual.getNombre());
+                    temactual.setNombre(NomEditTem.getText());
+                    temactual.setDescripcion(DesNoNull(DesEditTem.getText()));
+                    Total = Total + AES.encrypt(NomEditTem.getText() + "%%%%%" + DesNoNull(DesEditTem.getText()) + "%%%%%", "BanQuaAES") + "\r\n";
+                    File Nuevo = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + asignatura.getNombre() + "/" + NomEditTem.getText());
+                    Viejo.renameTo(Nuevo);
+                } else {
+                    Total = Total + AES.encrypt(tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
+                }
+            }
+            File file = new File("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/" + ComboAsigEdit.getSelectedItem() + "/Temas.txt");
+            FileWriter fw;
+            try {
+                fw = new FileWriter(file);
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(Total);
+                bw.close();
+                fw.close();
+                MostrarTem((String) ComboAsigEdit.getSelectedItem(), profesor);
+                NomEditTem.setText("");
+                NomEditTem.setEditable(false);
+                DesEditTem.setText("");
+                DesEditTem.setEditable(false);
+                JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            profesor = new Profesor();
+            BloqDesBoton(GuardarTem, "...");
+            BloqDesBotonEdit(ElimEditTem, ButtomEditTem, "...");
+            modelo.setColumnCount(0);
+            modelo.setRowCount(0);
+            sw1 = true;
+            sw2 = true;
+            sw3 = true;
+        }
+
+        /*if (!NomEditTem.equals("")) {
+            Metodos met = new Metodos();
+            String Total = "";
+            Asignatura asignatura = profesor.getAsignaturas().get(ComboAsigEdit.getSelectedIndex() - 1);
+            Tema temactual = asignatura.getTemas().get(TablaTem.getSelectedRow());
             boolean verificar = profesor.VerificarTema(NomEditTem.getText(), asignatura.getNombre(), DesEditTem.getText());
             if (verificar == false) {
                 for (Tema tema : asignatura.getTemas()) {
@@ -4199,7 +4238,7 @@ public class Principal extends javax.swing.JFrame {
                         p3.createNewFile();
                     } catch (IOException ex) {
                         Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    }*/
+                    }
                         }
                     } else {
                         Total = Total + AES.encrypt(tema.getNombre() + "%%%%%" + tema.getDescripcion() + "%%%%%", "BanQuaAES") + "\r\n";
@@ -4231,7 +4270,7 @@ public class Principal extends javax.swing.JFrame {
                 sw2 = true;
                 sw3 = true;
             }
-        }
+        }*/
     }//GEN-LAST:event_GuardarTemActionPerformed
 
     private void ButtomEditPregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomEditPregActionPerformed
@@ -4329,7 +4368,8 @@ public class Principal extends javax.swing.JFrame {
                 BloqDesBoton(BotonDesBloqueo, "...");
                 BotonDesBloqueo.setEnabled(false);
             } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             JOptionPane.showMessageDialog(null, "La pregunta ha sido eliminada.");
 
@@ -4382,7 +4422,8 @@ public class Principal extends javax.swing.JFrame {
                             bwA.close();
                             fwA.close();
                         } catch (IOException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(Principal.class
+                                    .getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                 } else {
@@ -4424,7 +4465,8 @@ public class Principal extends javax.swing.JFrame {
                 MostrarPreg(asig, temap, nivel, profesor);
                 JOptionPane.showMessageDialog(null, "Cambios guardados exitosamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
             } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_GuarEditPregActionPerformed
@@ -4455,7 +4497,8 @@ public class Principal extends javax.swing.JFrame {
                     AdAsig5.setVisible(false);
                 }
             } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             AdAsig5.setVisible(true);
@@ -4553,7 +4596,8 @@ public class Principal extends javax.swing.JFrame {
             try {
                 date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[2] + "-" + dateValue[1] + "-" + dateValue[0]);
             } catch (ParseException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         }
         FechaPreg.setDate(date);
@@ -4600,7 +4644,8 @@ public class Principal extends javax.swing.JFrame {
             try {
                 date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[2] + "-" + dateValue[1] + "-" + dateValue[0]);
             } catch (ParseException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         }
         FechaPreg.setDate(date);
@@ -4739,7 +4784,8 @@ public class Principal extends javax.swing.JFrame {
                     BloqDesBoton(ButtonAddPreg, "...");
                 }
             } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
 
             fecha.setEnabled(true);
@@ -4869,7 +4915,8 @@ public class Principal extends javax.swing.JFrame {
                     ComboTemPreg.setEnabled(true);
                 }
             } catch (IOException ex) {
-                Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Principal.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             ComboTemPreg.setEnabled(false);
@@ -4961,7 +5008,8 @@ public class Principal extends javax.swing.JFrame {
                         try {
                             date = new SimpleDateFormat("dd-MM-yyyy").parse(dateValue[0] + "-" + dateValue[1] + "-" + dateValue[2]);
                         } catch (ParseException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(Principal.class
+                                    .getName()).log(Level.SEVERE, null, ex);
                         }
                     }
 
@@ -5065,7 +5113,8 @@ public class Principal extends javax.swing.JFrame {
             met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", Asig3, h);
             Menu.setSelectedComponent(Ver);
         } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Principal.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_BottonVerInfo1ActionPerformed
@@ -5093,7 +5142,8 @@ public class Principal extends javax.swing.JFrame {
         try {
             h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", ComboAsigPreg, h);
         } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Principal.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         AdAsig11.setVisible(false);
         AdAsig14.setVisible(false);
@@ -5128,7 +5178,8 @@ public class Principal extends javax.swing.JFrame {
         try {
             h = met.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", ComboAsigEdit, h);
         } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Principal.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
         NomEditTem.setEditable(false);
@@ -5283,7 +5334,8 @@ public class Principal extends javax.swing.JFrame {
             fw.close();
             JOptionPane.showMessageDialog(this, "Los cambios se han realizado con exito.", "Modificacion Perfil", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Principal.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_GuarEditPreg1ActionPerformed
 
@@ -5681,7 +5733,8 @@ public class Principal extends javax.swing.JFrame {
         try {
             h = e.Generador_de_Combobox("C:\\ProgramData\\BanQua\\Profesor/" + usuario + "/Asignatura.txt", asignatura, h);
         } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Principal.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         if (h < 1) {
             JOptionPane.showMessageDialog(null, "No hay Asignaturas, deberia agregar alguna.");
